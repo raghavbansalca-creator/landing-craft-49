@@ -1,10 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { FileText, HelpCircle, TrendingUp, Users, Building, Settings, Package, BarChart3, Laptop } from "lucide-react";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Navigation />
+      
       {/* Hero Section */}
       <section className="relative py-20 px-4 text-center bg-gradient-to-br from-primary/10 via-accent to-background">
         <div className="max-w-4xl mx-auto">
@@ -279,6 +283,8 @@ const Index = () => {
           </Button>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 };
