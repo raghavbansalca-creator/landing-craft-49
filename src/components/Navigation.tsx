@@ -32,7 +32,7 @@ const Navigation = () => {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-56 bg-popover border border-border shadow-lg z-50">
                   <DropdownMenuItem>
-                    <a href="#performance" className="w-full">Performance Optimization</a>
+                    <a href="/services/performance-optimization" className="w-full">Performance Optimization</a>
                   </DropdownMenuItem>
                   <DropdownMenuItem>
                     <a href="#structure" className="w-full">Structure Design</a>
