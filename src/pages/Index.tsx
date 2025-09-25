@@ -14,9 +14,6 @@ const Index = () => {
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
             Transform chaotic manual processes into clear, controlled operations with our 'What Could Go Wrong' methodology.
           </p>
-          <Button size="lg" className="text-lg px-8 py-6">
-            Schedule Free Business Audit
-          </Button>
         </div>
       </section>
 
@@ -194,16 +191,80 @@ const Index = () => {
 
       {/* Social Proof */}
       <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-8 text-foreground">
-            Trusted by startups and enterprises alike
-          </h2>
-          <div className="text-2xl font-semibold text-primary mb-4">
-            70,000+ employees across 200+ organizations and counting...
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold mb-8 text-foreground">
+              Trusted by MSME's and Startups
+            </h2>
+            <div className="text-2xl font-semibold text-primary mb-8">
+              40+ organisations and 3000+ employees covered
+            </div>
           </div>
-          <p className="text-lg text-muted-foreground">
-            Feedback from Companies
-          </p>
+
+          {/* Company Logos */}
+          <div className="mb-16">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center opacity-60">
+              <div className="bg-muted rounded-lg p-6 text-center min-h-[80px] flex items-center justify-center">
+                <span className="text-sm font-medium text-muted-foreground">Company Logo</span>
+              </div>
+              <div className="bg-muted rounded-lg p-6 text-center min-h-[80px] flex items-center justify-center">
+                <span className="text-sm font-medium text-muted-foreground">Company Logo</span>
+              </div>
+              <div className="bg-muted rounded-lg p-6 text-center min-h-[80px] flex items-center justify-center">
+                <span className="text-sm font-medium text-muted-foreground">Company Logo</span>
+              </div>
+              <div className="bg-muted rounded-lg p-6 text-center min-h-[80px] flex items-center justify-center">
+                <span className="text-sm font-medium text-muted-foreground">Company Logo</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Testimonials */}
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className="p-6">
+              <CardContent className="pt-6">
+                <div className="mb-4">
+                  <div className="flex text-primary mb-2">
+                    {"★".repeat(5)}
+                  </div>
+                  <p className="text-muted-foreground italic mb-4">
+                    "Their 'What Could Go Wrong' methodology completely transformed our operations. We went from chaos to clarity in just 3 months."
+                  </p>
+                </div>
+                <div className="flex items-center">
+                  <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-3">
+                    <span className="text-primary font-semibold text-sm">JD</span>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-sm">John Doe</p>
+                    <p className="text-xs text-muted-foreground">CEO, Tech Startup</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="p-6">
+              <CardContent className="pt-6">
+                <div className="mb-4">
+                  <div className="flex text-primary mb-2">
+                    {"★".repeat(5)}
+                  </div>
+                  <p className="text-muted-foreground italic mb-4">
+                    "Finally, we have complete visibility into our finances and operations. The team actually sits with you until everything works perfectly."
+                  </p>
+                </div>
+                <div className="flex items-center">
+                  <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-3">
+                    <span className="text-primary font-semibold text-sm">SP</span>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-sm">Sarah Patel</p>
+                    <p className="text-xs text-muted-foreground">Founder, Manufacturing MSME</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
