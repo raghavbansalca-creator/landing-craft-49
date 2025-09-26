@@ -41,19 +41,13 @@ const Navigation = () => {
                     <a href="/services/process-optimisation" className="w-full">Process Optimisation</a>
                   </DropdownMenuItem>
                   <DropdownMenuItem>
-                    <a href="#structure" className="w-full">Structure Design</a>
+                    <a href="/services/inventory-supply-chain" className="w-full">Inventory & Supply Chain</a>
                   </DropdownMenuItem>
                   <DropdownMenuItem>
-                    <a href="#process" className="w-full">Process Optimization</a>
+                    <a href="/services/financial-planning" className="w-full">Financial Planning & Budget</a>
                   </DropdownMenuItem>
                   <DropdownMenuItem>
-                    <a href="#inventory" className="w-full">Stock Systems</a>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem>
-                    <a href="#financial" className="w-full">Financial Control</a>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem>
-                    <a href="#technology" className="w-full">Technology Setup</a>
+                    <a href="/services/erp-implementation" className="w-full">ERP Implementation</a>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
