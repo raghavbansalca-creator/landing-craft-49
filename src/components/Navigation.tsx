@@ -1,22 +1,13 @@
 import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { ChevronDown } from "lucide-react";
-
 const Navigation = () => {
-  return (
-    <nav className="bg-background border-b border-border sticky top-0 z-50">
+  return <nav className="bg-background border-b border-border sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="/" className="text-2xl font-bold text-primary">
-              BusinessFlow
-            </a>
+            <a href="/" className="text-2xl font-bold text-primary">7 Labs Vision</a>
           </div>
 
           {/* Navigation Links */}
@@ -41,13 +32,19 @@ const Navigation = () => {
                     <a href="/services/process-optimisation" className="w-full">Process Optimisation</a>
                   </DropdownMenuItem>
                   <DropdownMenuItem>
-                    <a href="/services/inventory-supply-chain" className="w-full">Inventory & Supply Chain</a>
+                    <a href="#structure" className="w-full">Structure Design</a>
                   </DropdownMenuItem>
                   <DropdownMenuItem>
-                    <a href="/services/financial-planning" className="w-full">Financial Planning & Budget</a>
+                    <a href="#process" className="w-full">Process Optimization</a>
                   </DropdownMenuItem>
                   <DropdownMenuItem>
-                    <a href="/services/erp-implementation" className="w-full">ERP Implementation</a>
+                    <a href="#inventory" className="w-full">Stock Systems</a>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <a href="#financial" className="w-full">Financial Control</a>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    <a href="#technology" className="w-full">Technology Setup</a>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
@@ -72,8 +69,6 @@ const Navigation = () => {
           </div>
         </div>
       </div>
-    </nav>
-  );
+    </nav>;
 };
-
 export default Navigation;
