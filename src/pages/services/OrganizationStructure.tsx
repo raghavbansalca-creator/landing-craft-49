@@ -75,39 +75,139 @@ const OrganizationStructure = () => {
         </div>
       </section>
 
-      {/* After Our Work Section */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-orange-700">
-            What You'll Have:
-          </h2>
+      {/* Our Organization System */}
+      <section className="py-20 px-4 bg-gradient-to-b from-orange-50 to-red-50 dark:from-orange-950/10 dark:to-red-950/10">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-6 text-foreground">
+              Our Organization Structure System
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Build a self-running organization where every level knows their authority, responsibilities, and when to escalate
+            </p>
+          </div>
+          
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                <CheckCircle className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-xl font-bold mb-4 text-orange-700">Clear Decision Authority</h3>
-              <p className="text-gray-600 leading-relaxed">
-                "Every employee knows exactly what decisions they can make and when to escalate—no more bottlenecks."
-              </p>
+            <Card className="text-center border-orange-200 dark:border-orange-800">
+              <CardContent className="p-6">
+                <div className="w-16 h-16 bg-orange-100 dark:bg-orange-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Building className="w-8 h-8 text-orange-600" />
+                </div>
+                <h3 className="text-xl font-semibold text-orange-800 dark:text-orange-200 mb-3">Clear Authority Matrix</h3>
+                <p className="text-orange-700 dark:text-orange-300 mb-4">
+                  Define exactly what decisions each role can make without approval—from petty cash to vendor selection.
+                </p>
+                <div className="text-sm space-y-1 text-orange-600 dark:text-orange-400">
+                  <p>• Decision-making limits by role</p>
+                  <p>• Escalation pathways</p>
+                  <p>• Authority documentation</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center border-orange-200 dark:border-orange-800">
+              <CardContent className="p-6">
+                <div className="w-16 h-16 bg-orange-100 dark:bg-orange-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Users className="w-8 h-8 text-orange-600" />
+                </div>
+                <h3 className="text-xl font-semibold text-orange-800 dark:text-orange-200 mb-3">Delegation Framework</h3>
+                <p className="text-orange-700 dark:text-orange-300 mb-4">
+                  Systematic approach to delegate tasks with clear accountability and reporting structures.
+                </p>
+                <div className="text-sm space-y-1 text-orange-600 dark:text-orange-400">
+                  <p>• Task ownership mapping</p>
+                  <p>• Accountability systems</p>
+                  <p>• Regular review cycles</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center border-orange-200 dark:border-orange-800">
+              <CardContent className="p-6">
+                <div className="w-16 h-16 bg-orange-100 dark:bg-orange-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Shield className="w-8 h-8 text-orange-600" />
+                </div>
+                <h3 className="text-xl font-semibold text-orange-800 dark:text-orange-200 mb-3">Backup Leadership</h3>
+                <p className="text-orange-700 dark:text-orange-300 mb-4">
+                  Train secondary leaders who can step in and make decisions when key people are unavailable.
+                </p>
+                <div className="text-sm space-y-1 text-orange-600 dark:text-orange-400">
+                  <p>• Leadership development</p>
+                  <p>• Cross-training programs</p>
+                  <p>• Succession planning</p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* What You'll Have After Implementation */}
+      <section className="py-20 px-4">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-16 text-foreground">
+            What You'll Have After Implementation
+          </h2>
+          
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <Card className="p-6 border-l-4 border-l-orange-500">
+                <div className="flex items-start space-x-4">
+                  <CheckCircle className="w-6 h-6 text-orange-500 mt-1" />
+                  <div>
+                    <h3 className="font-semibold text-lg mb-2">80% Fewer Interruptions</h3>
+                    <p className="text-muted-foreground">
+                      Your team handles routine decisions independently. No more constant "Can I do this?" questions throughout the day.
+                    </p>
+                  </div>
+                </div>
+              </Card>
+
+              <Card className="p-6 border-l-4 border-l-red-500">
+                <div className="flex items-start space-x-4">
+                  <Building className="w-6 h-6 text-red-500 mt-1" />
+                  <div>
+                    <h3 className="font-semibold text-lg mb-2">Business Runs Without You</h3>
+                    <p className="text-muted-foreground">
+                      Take vacations, attend conferences, or focus on growth—your business operates smoothly in your absence.
+                    </p>
+                  </div>
+                </div>
+              </Card>
+
+              <Card className="p-6 border-l-4 border-l-amber-500">
+                <div className="flex items-start space-x-4">
+                  <Zap className="w-6 h-6 text-amber-500 mt-1" />
+                  <div>
+                    <h3 className="font-semibold text-lg mb-2">Faster Decision Speed</h3>
+                    <p className="text-muted-foreground">
+                      Decisions that used to wait for you are now made instantly at the right level—no more bottlenecks slowing everything down.
+                    </p>
+                  </div>
+                </div>
+              </Card>
             </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Users className="h-8 w-8 text-white" />
+
+            <div className="bg-orange-50 dark:bg-orange-950/20 p-8 rounded-lg">
+              <h3 className="text-2xl font-bold text-orange-800 dark:text-orange-200 mb-4">Authority Matrix Example</h3>
+              <div className="space-y-4 text-sm">
+                <div className="flex justify-between items-center p-3 bg-white dark:bg-orange-900/30 rounded">
+                  <span className="text-orange-700 dark:text-orange-300">Supervisor Level</span>
+                  <span className="font-bold text-orange-800 dark:text-orange-200">Up to ₹5,000</span>
+                </div>
+                <div className="flex justify-between items-center p-3 bg-white dark:bg-orange-900/30 rounded">
+                  <span className="text-orange-700 dark:text-orange-300">Manager Level</span>
+                  <span className="font-bold text-orange-800 dark:text-orange-200">Up to ₹25,000</span>
+                </div>
+                <div className="flex justify-between items-center p-3 bg-white dark:bg-orange-900/30 rounded">
+                  <span className="text-orange-700 dark:text-orange-300">Department Head</span>
+                  <span className="font-bold text-orange-800 dark:text-orange-200">Up to ₹1,00,000</span>
+                </div>
+                <div className="flex justify-between items-center p-3 bg-white dark:bg-orange-900/30 rounded">
+                  <span className="text-orange-700 dark:text-orange-300">Owner Approval</span>
+                  <span className="font-bold text-red-600">Above ₹1,00,000</span>
+                </div>
               </div>
-              <h3 className="text-xl font-bold mb-4 text-orange-700">Smooth Operations Without You</h3>
-              <p className="text-gray-600 leading-relaxed">
-                "Your business runs seamlessly whether you're in the office, traveling, or taking time off."
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Zap className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-xl font-bold mb-4 text-orange-700">Faster Decision Making</h3>
-              <p className="text-gray-600 leading-relaxed">
-                "No more delays waiting for your approval—the right person makes the right decision at the right level."
-              </p>
             </div>
           </div>
         </div>
