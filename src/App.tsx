@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import PerformanceOptimization from "./pages/services/PerformanceOptimization";
+import OrganizationStructure from "./pages/services/OrganizationStructure";
 
 const queryClient = new QueryClient();
 
@@ -18,6 +19,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/services/performance-optimization" element={<PerformanceOptimization />} />
+          <Route path="/services/organization-structure" element={<OrganizationStructure />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

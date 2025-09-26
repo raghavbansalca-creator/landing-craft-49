@@ -35,6 +35,9 @@ const Navigation = () => {
                     <a href="/services/performance-optimization" className="w-full">Performance Optimization</a>
                   </DropdownMenuItem>
                   <DropdownMenuItem>
+                    <a href="/services/organization-structure" className="w-full">Organization Structure & Hierarchy</a>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
                     <a href="#structure" className="w-full">Structure Design</a>
                   </DropdownMenuItem>
                   <DropdownMenuItem>
