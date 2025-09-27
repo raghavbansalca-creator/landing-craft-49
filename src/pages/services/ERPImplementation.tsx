@@ -10,17 +10,49 @@ const ERPImplementation = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary to-primary/80 text-primary-foreground py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Stop Juggling Between WhatsApp, Excel, And Paper
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 text-primary-foreground/90 max-w-4xl mx-auto">
-            One system for everything—from orders to payments, inventory to reports—all connected and automated.
-          </p>
-          <Button size="lg" variant="secondary" className="text-lg px-8 py-4">
-            Get Digital Transformation Audit
-          </Button>
+      <section className="bg-gradient-to-br from-gray-900 via-blue-900 to-indigo-900 text-white py-20 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-500/20"></div>
+          <div className="absolute top-0 left-0 w-full h-full">
+            <div className="grid grid-cols-8 grid-rows-6 h-full opacity-10">
+              {Array.from({length: 48}).map((_, i) => (
+                <div key={i} className="border border-cyan-500/30"></div>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-12">
+            <div className="flex justify-center items-center gap-4 mb-8">
+              <div className="p-3 bg-red-500/20 rounded-lg border border-red-500/30">
+                <Smartphone className="w-8 h-8 text-red-400" />
+              </div>
+              <div className="text-4xl text-white/30">+</div>
+              <div className="p-3 bg-yellow-500/20 rounded-lg border border-yellow-500/30">
+                <FileSpreadsheet className="w-8 h-8 text-yellow-400" />
+              </div>
+              <div className="text-4xl text-white/30">+</div>
+              <div className="p-3 bg-orange-500/20 rounded-lg border border-orange-500/30">
+                <FileText className="w-8 h-8 text-orange-400" />
+              </div>
+              <div className="text-6xl text-white/30">→</div>
+              <div className="p-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg">
+                <Database className="w-12 h-12 text-white" />
+              </div>
+            </div>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+              Stop Juggling Between{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">
+                WhatsApp, Excel, And Paper
+              </span>
+            </h1>
+            <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-4xl mx-auto">
+              One system for everything—from orders to payments, inventory to reports—all connected and automated.
+            </p>
+            <Button size="lg" className="text-lg px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white border-0 shadow-xl">
+              Get Digital Transformation Audit
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -54,37 +86,77 @@ const ERPImplementation = () => {
       </section>
 
       {/* What You'll Have After Implementation */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">What You'll Have:</h2>
+      <section className="py-20 bg-gradient-to-br from-slate-900 to-blue-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-blue-500/10"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">What You'll Have:</h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="text-center">
-              <CardHeader>
-                <Database className="w-12 h-12 text-primary mx-auto mb-4" />
-                <CardTitle className="text-xl text-primary mb-4">Everything In One Place</CardTitle>
+          <div className="grid lg:grid-cols-3 gap-8">
+            <Card className="bg-gradient-to-br from-slate-800/80 to-blue-900/80 backdrop-blur-sm border border-cyan-500/20 text-white shadow-2xl">
+              <CardHeader className="text-center">
+                <div className="mx-auto mb-6 p-4 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl w-fit">
+                  <Database className="w-12 h-12 text-white" />
+                </div>
+                <CardTitle className="text-2xl text-cyan-400 mb-4">Everything In One Place</CardTitle>
               </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">Orders, inventory, accounts, reports—all connected in one system that talks to each other.</p>
+              <CardContent className="text-center">
+                <p className="text-gray-300 text-lg">Orders, inventory, accounts, reports—all connected in one system that talks to each other.</p>
+                <div className="mt-6 grid grid-cols-2 gap-3">
+                  <div className="bg-cyan-500/20 rounded-lg p-3 border border-cyan-500/30">
+                    <div className="text-cyan-400 font-semibold text-sm">Orders</div>
+                  </div>
+                  <div className="bg-blue-500/20 rounded-lg p-3 border border-blue-500/30">
+                    <div className="text-blue-400 font-semibold text-sm">Inventory</div>
+                  </div>
+                  <div className="bg-purple-500/20 rounded-lg p-3 border border-purple-500/30">
+                    <div className="text-purple-400 font-semibold text-sm">Accounts</div>
+                  </div>
+                  <div className="bg-green-500/20 rounded-lg p-3 border border-green-500/30">
+                    <div className="text-green-400 font-semibold text-sm">Reports</div>
+                  </div>
+                </div>
               </CardContent>
             </Card>
-            <Card className="text-center">
-              <CardHeader>
-                <Zap className="w-12 h-12 text-primary mx-auto mb-4" />
-                <CardTitle className="text-xl text-primary mb-4">Automatic Data Flow</CardTitle>
+            
+            <Card className="bg-gradient-to-br from-slate-800/80 to-indigo-900/80 backdrop-blur-sm border border-blue-500/20 text-white shadow-2xl">
+              <CardHeader className="text-center">
+                <div className="mx-auto mb-6 p-4 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-2xl w-fit">
+                  <Zap className="w-12 h-12 text-white" />
+                </div>
+                <CardTitle className="text-2xl text-blue-400 mb-4">Automatic Data Flow</CardTitle>
               </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">Enter information once, it updates everywhere automatically—no more double entry or manual errors.</p>
+              <CardContent className="text-center">
+                <p className="text-gray-300 text-lg">Enter information once, it updates everywhere automatically—no more double entry or manual errors.</p>
+                <div className="mt-6 flex items-center justify-center gap-2">
+                  <div className="bg-green-500/20 rounded-full p-2 border border-green-500/30">
+                    <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                  </div>
+                  <div className="text-2xl text-blue-400">→</div>
+                  <div className="bg-blue-500/20 rounded-full p-2 border border-blue-500/30">
+                    <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse"></div>
+                  </div>
+                  <div className="text-2xl text-blue-400">→</div>
+                  <div className="bg-purple-500/20 rounded-full p-2 border border-purple-500/30">
+                    <div className="w-3 h-3 bg-purple-400 rounded-full animate-pulse"></div>
+                  </div>
+                </div>
               </CardContent>
             </Card>
-            <Card className="text-center">
-              <CardHeader>
-                <BarChart3 className="w-12 h-12 text-primary mx-auto mb-4" />
-                <CardTitle className="text-xl text-primary mb-4">Instant Business Reports</CardTitle>
+            
+            <Card className="bg-gradient-to-br from-slate-800/80 to-purple-900/80 backdrop-blur-sm border border-purple-500/20 text-white shadow-2xl">
+              <CardHeader className="text-center">
+                <div className="mx-auto mb-6 p-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl w-fit">
+                  <BarChart3 className="w-12 h-12 text-white" />
+                </div>
+                <CardTitle className="text-2xl text-purple-400 mb-4">Instant Business Reports</CardTitle>
               </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">Get any report instantly—sales, inventory, profitability, performance—all at the click of a button.</p>
+              <CardContent className="text-center">
+                <p className="text-gray-300 text-lg">Get any report instantly—sales, inventory, profitability, performance—all at the click of a button.</p>
+                <div className="mt-6 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-lg p-4 border border-purple-500/30">
+                  <div className="text-sm text-purple-400 mb-2">Report Generation Time</div>
+                  <div className="text-3xl font-bold text-pink-400">0.3s</div>
+                </div>
               </CardContent>
             </Card>
           </div>
