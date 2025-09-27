@@ -231,20 +231,6 @@ const ERPImplementation = () => {
         </div>
       </section>
 
-      {/* Client Transformation */}
-      <section className="py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8">Real Results</h2>
-          <Card className="bg-primary/5 border-primary/20">
-            <CardContent className="p-8">
-              <blockquote className="text-xl md:text-2xl italic text-foreground mb-6">
-                "Before, it took 3 days to prepare a sales report. Now I get real-time sales data on my phone. Our order processing time reduced from 2 hours to 10 minutes."
-              </blockquote>
-              <div className="text-muted-foreground font-medium">— Manufacturing Company, Ghaziabad</div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
 
       {/* Call to Action */}
       <section className="py-20 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground">

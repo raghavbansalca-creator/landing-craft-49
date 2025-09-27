@@ -166,20 +166,6 @@ const InventorySupplyChain = () => {
         </div>
       </section>
 
-      {/* Client Transformation */}
-      <section className="py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8">Real Results</h2>
-          <Card className="bg-primary/5 border-primary/20">
-            <CardContent className="p-8">
-              <blockquote className="text-xl md:text-2xl italic text-foreground mb-6">
-                "We reduced our inventory holding by 40% while never running out of stock. Our cash flow improved by ₹25 lakhs in 6 months just from better inventory management."
-              </blockquote>
-              <div className="text-muted-foreground font-medium">— Retail Chain, Gurgaon</div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
 
       {/* Call to Action */}
       <section className="py-20 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground">

@@ -223,27 +223,6 @@ const ProcessOptimisation = () => {
         </div>
       </section>
 
-      {/* Client Transformation */}
-      <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12">
-            Real Results
-          </h2>
-          
-          <Card className="border-emerald-200 dark:border-emerald-800 bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-950/20 dark:to-teal-950/20">
-            <CardContent className="p-8">
-              <blockquote className="text-lg md:text-xl text-foreground mb-6 leading-relaxed">
-                "We used to find defects at the end of production. Now we catch problems at each stage. 
-                Our rework costs dropped <span className="font-bold text-emerald-600 dark:text-emerald-400">70%</span> and 
-                customer complaints are almost zero."
-              </blockquote>
-              <cite className="text-muted-foreground font-medium">
-                — Manufacturing Unit, Faridabad
-              </cite>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
 
       {/* Call to Action */}
       <section className="py-20 px-4 bg-gradient-to-br from-emerald-600 to-teal-600 dark:from-emerald-700 dark:to-teal-700">

@@ -213,25 +213,6 @@ const OrganizationStructure = () => {
         </div>
       </section>
 
-      {/* Client Transformation */}
-      <section className="py-16 px-4 bg-gradient-to-br from-orange-50 to-red-50">
-        <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-orange-700">
-            Real Results
-          </h2>
-          <Card className="border-orange-200 bg-white/90 backdrop-blur-sm">
-            <CardContent className="p-8">
-              <blockquote className="text-lg md:text-xl text-gray-700 italic mb-6 leading-relaxed">
-                "I used to get 50+ calls daily for approvals. Now my team handles 80% of decisions independently. 
-                I finally took a 2-week vacation without a single emergency call."
-              </blockquote>
-              <div className="border-t border-orange-200 pt-4">
-                <p className="font-semibold text-orange-700">— Restaurant Chain Owner, Delhi</p>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
 
       {/* Call to Action */}
       <section className="py-16 px-4 bg-gradient-to-r from-orange-600 to-red-600">
