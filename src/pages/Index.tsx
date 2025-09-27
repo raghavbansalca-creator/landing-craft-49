@@ -3,6 +3,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { FileText, HelpCircle, TrendingUp, Users, Building, Settings, Package, BarChart3, Laptop } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import businessCollaboration from "@/assets/business-collaboration.jpg";
+import businessGrowth from "@/assets/business-growth.jpg";
 
 const Index = () => {
   return (
@@ -10,8 +12,17 @@ const Index = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative py-20 px-4 text-center bg-gradient-to-br from-primary/10 via-accent to-background">
-        <div className="max-w-4xl mx-auto">
+      <section className="relative py-20 px-4 text-center bg-gradient-to-br from-primary/10 via-accent to-background overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src={businessCollaboration} 
+            alt="Business collaboration" 
+            className="w-full h-full object-cover opacity-20"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-background/80 to-background/60"></div>
+        </div>
+        <div className="max-w-4xl mx-auto relative z-10">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 text-foreground">
             Stop Running Your Business Blind
           </h1>
@@ -28,7 +39,7 @@ const Index = () => {
             Still Struggling With...
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="text-center p-6">
+            <Card className="text-center p-6 hover-lift">
               <CardHeader>
                 <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                   <FileText className="w-8 h-8 text-primary" />
@@ -42,7 +53,7 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="text-center p-6">
+            <Card className="text-center p-6 hover-lift">
               <CardHeader>
                 <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                   <HelpCircle className="w-8 h-8 text-primary" />
@@ -56,7 +67,7 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="text-center p-6">
+            <Card className="text-center p-6 hover-lift">
               <CardHeader>
                 <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                   <TrendingUp className="w-8 h-8 text-primary" />
@@ -89,96 +100,116 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="p-6">
-              <CardHeader>
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <Users className="w-6 h-6 text-primary" />
-                </div>
-                <CardTitle className="text-lg mb-2">Performance Optimization</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-sm">
-                  KRAs, KPIs, appraisal systems, real-time dashboards—make every team member accountable with clear metrics.
-                </CardDescription>
-              </CardContent>
-            </Card>
+            <a href="/services/performance-optimization" className="block">
+              <Card className="p-6 hover-lift cursor-pointer">
+                <CardHeader>
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                    <Users className="w-6 h-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-lg mb-2">Performance Optimization</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-sm">
+                    KRAs, KPIs, appraisal systems, real-time dashboards—make every team member accountable with clear metrics.
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            </a>
 
-            <Card className="p-6">
-              <CardHeader>
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <Building className="w-6 h-6 text-primary" />
-                </div>
-                <CardTitle className="text-lg mb-2">Structure Design</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-sm">
-                  Clear roles, reporting lines, decision authority, accountability frameworks—build scalable organizational systems.
-                </CardDescription>
-              </CardContent>
-            </Card>
+            <a href="/services/organization-structure" className="block">
+              <Card className="p-6 hover-lift cursor-pointer">
+                <CardHeader>
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                    <Building className="w-6 h-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-lg mb-2">Structure Design</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-sm">
+                    Clear roles, reporting lines, decision authority, accountability frameworks—build scalable organizational systems.
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            </a>
 
-            <Card className="p-6">
-              <CardHeader>
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <Settings className="w-6 h-6 text-primary" />
-                </div>
-                <CardTitle className="text-lg mb-2">Process Optimization</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-sm">
-                  SOPs, workflow automation, 'What Could Go Wrong' analysis, risk controls—eliminate chaos and inefficiencies.
-                </CardDescription>
-              </CardContent>
-            </Card>
+            <a href="/services/process-optimisation" className="block">
+              <Card className="p-6 hover-lift cursor-pointer">
+                <CardHeader>
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                    <Settings className="w-6 h-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-lg mb-2">Process Optimization</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-sm">
+                    SOPs, workflow automation, 'What Could Go Wrong' analysis, risk controls—eliminate chaos and inefficiencies.
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            </a>
 
-            <Card className="p-6">
-              <CardHeader>
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <Package className="w-6 h-6 text-primary" />
-                </div>
-                <CardTitle className="text-lg mb-2">Stock Systems</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-sm">
-                  Real-time inventory tracking, automated reordering, supplier management—reduce wastage and stockouts.
-                </CardDescription>
-              </CardContent>
-            </Card>
+            <a href="/services/inventory-supply-chain" className="block">
+              <Card className="p-6 hover-lift cursor-pointer">
+                <CardHeader>
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                    <Package className="w-6 h-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-lg mb-2">Stock Systems</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-sm">
+                    Real-time inventory tracking, automated reordering, supplier management—reduce wastage and stockouts.
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            </a>
 
-            <Card className="p-6">
-              <CardHeader>
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <BarChart3 className="w-6 h-6 text-primary" />
-                </div>
-                <CardTitle className="text-lg mb-2">Financial Control</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-sm">
-                  Business models, budget vs actual analysis, financial forecasting, variance reporting—complete money visibility.
-                </CardDescription>
-              </CardContent>
-            </Card>
+            <a href="/services/financial-planning" className="block">
+              <Card className="p-6 hover-lift cursor-pointer">
+                <CardHeader>
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                    <BarChart3 className="w-6 h-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-lg mb-2">Financial Control</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-sm">
+                    Business models, budget vs actual analysis, financial forecasting, variance reporting—complete money visibility.
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            </a>
 
-            <Card className="p-6">
-              <CardHeader>
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <Laptop className="w-6 h-6 text-primary" />
-                </div>
-                <CardTitle className="text-lg mb-2">Technology Setup</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-sm">
-                  Zoho, Odoo, custom systems implementation, software selection—centralize and automate all operations.
-                </CardDescription>
-              </CardContent>
-            </Card>
+            <a href="/services/erp-implementation" className="block">
+              <Card className="p-6 hover-lift cursor-pointer">
+                <CardHeader>
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                    <Laptop className="w-6 h-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-lg mb-2">Technology Setup</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-sm">
+                    Zoho, Odoo, custom systems implementation, software selection—centralize and automate all operations.
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            </a>
           </div>
         </div>
       </section>
 
       {/* What Sets Us Apart */}
-      <section className="py-20 px-4 bg-accent">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="py-20 px-4 bg-accent relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src={businessGrowth} 
+            alt="Business growth visualization" 
+            className="w-full h-full object-cover opacity-10"
+          />
+        </div>
+        <div className="max-w-4xl mx-auto text-center relative z-10">
           <h2 className="text-4xl font-bold mb-8 text-foreground">
             What Sets Us Apart
           </h2>
