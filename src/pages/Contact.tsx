@@ -183,9 +183,9 @@ const Contact = () => {
                       <Phone className="w-5 h-5 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-foreground">Phone</h3>
-                      <p className="text-muted-foreground">+1 (555) 123-4567</p>
-                      <p className="text-sm text-muted-foreground">Mon-Fri, 9AM-6PM EST</p>
+                      <h3 className="font-semibold text-foreground">Call Us</h3>
+                      <p className="text-muted-foreground">+919193580737</p>
+                      <p className="text-sm text-muted-foreground">Mon-Sat from 11 am to 6 pm</p>
                     </div>
                   </div>
 
@@ -194,12 +194,22 @@ const Contact = () => {
                       <MapPin className="w-5 h-5 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-foreground">Office</h3>
-                      <p className="text-muted-foreground">
-                        123 Business District<br />
-                        Suite 456<br />
-                        New York, NY 10001
-                      </p>
+                      <h3 className="font-semibold text-foreground">Our Offices</h3>
+                      <div className="space-y-3 text-muted-foreground">
+                        <div>
+                          <p className="font-medium text-foreground">Agra:</p>
+                          <p>House No-39, Ring Road Colony<br />Agra, Uttar Pradesh, 282004</p>
+                        </div>
+                        <div>
+                          <p className="font-medium text-foreground">Jaipur:</p>
+                          <p>6/371, Sector 6, Vidyadhar Nagar<br />Jaipur, 302039</p>
+                        </div>
+                        <div>
+                          <p className="font-medium text-foreground">Delhi:</p>
+                          <p>2C, Indian Institute of Technology Delhi<br />Hauz Khas, New Delhi, Delhi, 1100165</p>
+                        </div>
+                      </div>
+                      <p className="text-sm text-muted-foreground mt-2">We are available in Agra, Delhi & Jaipur</p>
                     </div>
                   </div>
 
@@ -210,8 +220,7 @@ const Contact = () => {
                     <div>
                       <h3 className="font-semibold text-foreground">Business Hours</h3>
                       <p className="text-muted-foreground">
-                        Monday - Friday: 9:00 AM - 6:00 PM<br />
-                        Saturday: 10:00 AM - 2:00 PM<br />
+                        Monday - Saturday: 11:00 AM - 6:00 PM<br />
                         Sunday: Closed
                       </p>
                     </div>
