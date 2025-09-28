@@ -11,57 +11,71 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useState } from "react";
-
 const contactSchema = z.object({
-  name: z.string().trim().min(1, { message: "Name is required" }).max(100, { message: "Name must be less than 100 characters" }),
-  email: z.string().trim().email({ message: "Invalid email address" }).max(255, { message: "Email must be less than 255 characters" }),
-  company: z.string().trim().max(100, { message: "Company name must be less than 100 characters" }).optional(),
-  phone: z.string().trim().max(20, { message: "Phone must be less than 20 characters" }).optional(),
-  subject: z.string().trim().min(1, { message: "Subject is required" }).max(200, { message: "Subject must be less than 200 characters" }),
-  message: z.string().trim().min(1, { message: "Message is required" }).max(1000, { message: "Message must be less than 1000 characters" })
+  name: z.string().trim().min(1, {
+    message: "Name is required"
+  }).max(100, {
+    message: "Name must be less than 100 characters"
+  }),
+  email: z.string().trim().email({
+    message: "Invalid email address"
+  }).max(255, {
+    message: "Email must be less than 255 characters"
+  }),
+  company: z.string().trim().max(100, {
+    message: "Company name must be less than 100 characters"
+  }).optional(),
+  phone: z.string().trim().max(20, {
+    message: "Phone must be less than 20 characters"
+  }).optional(),
+  subject: z.string().trim().min(1, {
+    message: "Subject is required"
+  }).max(200, {
+    message: "Subject must be less than 200 characters"
+  }),
+  message: z.string().trim().min(1, {
+    message: "Message is required"
+  }).max(1000, {
+    message: "Message must be less than 1000 characters"
+  })
 });
-
 type ContactForm = z.infer<typeof contactSchema>;
-
 const Contact = () => {
-  const { toast } = useToast();
+  const {
+    toast
+  } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
-
   const {
     register,
     handleSubmit,
     reset,
-    formState: { errors },
+    formState: {
+      errors
+    }
   } = useForm<ContactForm>({
-    resolver: zodResolver(contactSchema),
+    resolver: zodResolver(contactSchema)
   });
-
   const onSubmit = async (data: ContactForm) => {
     setIsSubmitting(true);
-    
     try {
       // Simulate API call - replace with actual implementation
       await new Promise(resolve => setTimeout(resolve, 2000));
-      
       toast({
         title: "Message sent successfully!",
-        description: "We'll get back to you within 24 hours.",
+        description: "We'll get back to you within 24 hours."
       });
-      
       reset();
     } catch (error) {
       toast({
         title: "Error sending message",
         description: "Please try again or contact us directly.",
-        variant: "destructive",
+        variant: "destructive"
       });
     } finally {
       setIsSubmitting(false);
     }
   };
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Navigation />
       
       {/* Hero Section */}
@@ -98,94 +112,44 @@ const Contact = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="name">Name *</Label>
-                      <Input
-                        id="name"
-                        {...register("name")}
-                        placeholder="Your full name"
-                        className={errors.name ? "border-destructive" : ""}
-                      />
-                      {errors.name && (
-                        <p className="text-sm text-destructive">{errors.name.message}</p>
-                      )}
+                      <Input id="name" {...register("name")} placeholder="Your full name" className={errors.name ? "border-destructive" : ""} />
+                      {errors.name && <p className="text-sm text-destructive">{errors.name.message}</p>}
                     </div>
                     
                     <div className="space-y-2">
                       <Label htmlFor="email">Email *</Label>
-                      <Input
-                        id="email"
-                        type="email"
-                        {...register("email")}
-                        placeholder="your.email@company.com"
-                        className={errors.email ? "border-destructive" : ""}
-                      />
-                      {errors.email && (
-                        <p className="text-sm text-destructive">{errors.email.message}</p>
-                      )}
+                      <Input id="email" type="email" {...register("email")} placeholder="your.email@company.com" className={errors.email ? "border-destructive" : ""} />
+                      {errors.email && <p className="text-sm text-destructive">{errors.email.message}</p>}
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="company">Company</Label>
-                      <Input
-                        id="company"
-                        {...register("company")}
-                        placeholder="Your company name"
-                        className={errors.company ? "border-destructive" : ""}
-                      />
-                      {errors.company && (
-                        <p className="text-sm text-destructive">{errors.company.message}</p>
-                      )}
+                      <Input id="company" {...register("company")} placeholder="Your company name" className={errors.company ? "border-destructive" : ""} />
+                      {errors.company && <p className="text-sm text-destructive">{errors.company.message}</p>}
                     </div>
                     
                     <div className="space-y-2">
                       <Label htmlFor="phone">Phone</Label>
-                      <Input
-                        id="phone"
-                        type="tel"
-                        {...register("phone")}
-                        placeholder="+1 (555) 123-4567"
-                        className={errors.phone ? "border-destructive" : ""}
-                      />
-                      {errors.phone && (
-                        <p className="text-sm text-destructive">{errors.phone.message}</p>
-                      )}
+                      <Input id="phone" type="tel" {...register("phone")} placeholder="+1 (555) 123-4567" className={errors.phone ? "border-destructive" : ""} />
+                      {errors.phone && <p className="text-sm text-destructive">{errors.phone.message}</p>}
                     </div>
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="subject">Subject *</Label>
-                    <Input
-                      id="subject"
-                      {...register("subject")}
-                      placeholder="What can we help you with?"
-                      className={errors.subject ? "border-destructive" : ""}
-                    />
-                    {errors.subject && (
-                      <p className="text-sm text-destructive">{errors.subject.message}</p>
-                    )}
+                    <Input id="subject" {...register("subject")} placeholder="What can we help you with?" className={errors.subject ? "border-destructive" : ""} />
+                    {errors.subject && <p className="text-sm text-destructive">{errors.subject.message}</p>}
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="message">Message *</Label>
-                    <Textarea
-                      id="message"
-                      {...register("message")}
-                      placeholder="Tell us about your business challenges and goals..."
-                      rows={5}
-                      className={errors.message ? "border-destructive" : ""}
-                    />
-                    {errors.message && (
-                      <p className="text-sm text-destructive">{errors.message.message}</p>
-                    )}
+                    <Textarea id="message" {...register("message")} placeholder="Tell us about your business challenges and goals..." rows={5} className={errors.message ? "border-destructive" : ""} />
+                    {errors.message && <p className="text-sm text-destructive">{errors.message.message}</p>}
                   </div>
 
-                  <Button 
-                    type="submit" 
-                    size="lg" 
-                    className="w-full"
-                    disabled={isSubmitting}
-                  >
+                  <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
                     {isSubmitting ? "Sending..." : "Send Message"}
                   </Button>
                 </form>
@@ -209,7 +173,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold text-foreground">Email</h3>
-                      <p className="text-muted-foreground">hello@7labsvision.com</p>
+                      <p className="text-muted-foreground">admin@sevenlabs.in</p>
                       <p className="text-sm text-muted-foreground">We respond within 24 hours</p>
                     </div>
                   </div>
@@ -276,8 +240,6 @@ const Contact = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Contact;
