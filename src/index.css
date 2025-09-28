@@ -112,3 +112,17 @@ All colors MUST be HSL.
 .hover-lift:hover {
   @apply transform scale-105 shadow-lg;
 }
+
+/* Logo carousel animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+}
