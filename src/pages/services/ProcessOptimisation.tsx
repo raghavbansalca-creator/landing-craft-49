@@ -3,10 +3,8 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle, AlertTriangle, Target, TrendingUp } from "lucide-react";
-
 const ProcessOptimisation = () => {
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Navigation />
       
       {/* Hero Section */}
@@ -34,9 +32,7 @@ const ProcessOptimisation = () => {
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Are You Still...
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">As commonly observed</h2>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
@@ -240,8 +236,6 @@ const ProcessOptimisation = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default ProcessOptimisation;
