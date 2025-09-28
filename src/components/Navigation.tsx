@@ -56,6 +56,11 @@ const Navigation = () => {
                 </DropdownMenuContent>
               </DropdownMenu>
 
+              {/* For Startup Ecosystem */}
+              <Button variant="ghost" asChild>
+                <a href="/startup-ecosystem">For Startup Ecosystem</a>
+              </Button>
+
               {/* About Us */}
               <Button variant="ghost" asChild>
                 <a href="/about">About Us</a>
@@ -129,6 +134,15 @@ const Navigation = () => {
                       ERP Implementation
                     </a>
                   </div>
+
+                  {/* Mobile For Startup Ecosystem */}
+                  <a 
+                    href="/startup-ecosystem" 
+                    className="block px-3 py-2 text-lg font-semibold text-foreground hover:text-primary transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    For Startup Ecosystem
+                  </a>
 
                   {/* Mobile About Us */}
                   <a 
