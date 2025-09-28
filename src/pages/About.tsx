@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Users, Target, Shield, Zap } from 'lucide-react';
+import { Users, Target, Shield, Zap, Building, ShoppingCart, Wrench, Banknote, GraduationCap } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import TeamLeads from './Team';
@@ -41,7 +41,7 @@ const HeroSection = () => {
 // Story Section Component
 const StorySection = () => {
   return (
-    <div className="py-20 bg-secondary/20">
+    <div className="py-20 bg-background">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div
@@ -87,6 +87,74 @@ const StorySection = () => {
               </div>
             </div>
           </motion.div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// Industries Section Component
+const IndustriesSection = () => {
+  const industries = [
+    {
+      icon: <Building className="w-10 h-10 text-primary" />,
+      title: "Real Estate & Infrastructure"
+    },
+    {
+      icon: <ShoppingCart className="w-10 h-10 text-primary" />,
+      title: "Consumer Markets"
+    },
+    {
+      icon: <Wrench className="w-10 h-10 text-primary" />,
+      title: "Industrial Markets"
+    },
+    {
+      icon: <Banknote className="w-10 h-10 text-primary" />,
+      title: "Food & Beverage"
+    },
+    {
+      icon: <Zap className="w-10 h-10 text-primary" />,
+      title: "Aviation"
+    },
+    {
+      icon: <GraduationCap className="w-10 h-10 text-primary" />,
+      title: "Government & Banking"
+    }
+  ];
+
+  return (
+    <div className="py-20 bg-secondary/20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Industries We Serve
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Our expertise spans across diverse sectors, bringing specialized knowledge to every engagement.
+          </p>
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {industries.map((industry, index) => (
+            <motion.div
+              key={index}
+              initial={{ y: 30, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="flex items-center gap-4 p-6 rounded-xl bg-card border border-border hover:shadow-lg transition-shadow"
+            >
+              <div className="flex-shrink-0">
+                {industry.icon}
+              </div>
+              <h3 className="text-lg font-semibold text-foreground">{industry.title}</h3>
+            </motion.div>
+          ))}
         </div>
       </div>
     </div>
@@ -164,6 +232,7 @@ const AboutPage = () => {
       <HeroSection />
       <StorySection />
       <TeamLeads />
+      <IndustriesSection />
       <ValuesSection />
       <Footer />
     </>
