@@ -3,10 +3,8 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Smartphone, FileSpreadsheet, FileText, Database, Zap, BarChart3, Settings } from "lucide-react";
-
 const ERPImplementation = () => {
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Navigation />
       
       {/* Hero Section */}
@@ -15,9 +13,9 @@ const ERPImplementation = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-500/20"></div>
           <div className="absolute top-0 left-0 w-full h-full">
             <div className="grid grid-cols-8 grid-rows-6 h-full opacity-10">
-              {Array.from({length: 48}).map((_, i) => (
-                <div key={i} className="border border-cyan-500/30"></div>
-              ))}
+              {Array.from({
+              length: 48
+            }).map((_, i) => <div key={i} className="border border-cyan-500/30"></div>)}
             </div>
           </div>
         </div>
@@ -49,9 +47,7 @@ const ERPImplementation = () => {
             <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-4xl mx-auto">
               One system for everything—from orders to payments, inventory to reports—all connected and automated.
             </p>
-            <Button size="lg" className="text-lg px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white border-0 shadow-xl">
-              Get Digital Transformation Audit
-            </Button>
+            
           </div>
         </div>
       </section>
@@ -243,8 +239,6 @@ const ERPImplementation = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default ERPImplementation;
