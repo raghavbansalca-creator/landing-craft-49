@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Clock, Eye, Scale, Users, Building, Settings, Package, BarChart3, Laptop } from "lucide-react";
+import { Clock, DollarSign, Scale, Users, Building, Settings, Package, BarChart3, Laptop } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import businessCollaboration from "@/assets/business-collaboration.jpg";
@@ -68,7 +68,7 @@ const Index = () => {
             <Card className="text-center p-6 hover-lift">
               <CardHeader>
                 <div className="mx-auto w-16 h-16 bg-orange-500/10 rounded-full flex items-center justify-center mb-4">
-                  <Eye className="w-8 h-8 text-orange-600" />
+                  <DollarSign className="w-8 h-8 text-orange-600" />
                 </div>
                 <CardTitle className="text-xl mb-2">No Clear Picture Of Your Money</CardTitle>
               </CardHeader>
