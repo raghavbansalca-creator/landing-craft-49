@@ -8,9 +8,31 @@ import {
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  
+  const isStartupContext = location.pathname === "/startup-ecosystem";
+
+  const regularSolutions = [
+    { href: "/services/performance-optimization", title: "Performance Optimization" },
+    { href: "/services/organization-structure", title: "Organization Structure & Hierarchy" },
+    { href: "/services/process-optimisation", title: "Process Optimisation" },
+    { href: "/services/inventory-supply-chain", title: "Inventory & Supply Chain" },
+    { href: "/services/financial-planning", title: "Financial Planning & Budget" },
+    { href: "/services/erp-implementation", title: "ERP Implementation" }
+  ];
+
+  const startupSolutions = [
+    { href: "/contact", title: "Growth Operations Setup" },
+    { href: "/contact", title: "Financial Modeling & Planning" },
+    { href: "/contact", title: "Product Strategy & Validation" },
+    { href: "/contact", title: "Technology & Infrastructure" }
+  ];
+
+  const currentSolutions = isStartupContext ? startupSolutions : regularSolutions;
 
   return (
     <nav className="bg-background border-b border-border sticky top-0 z-50">
@@ -35,24 +57,11 @@ const Navigation = () => {
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-56 bg-popover border border-border shadow-lg z-50">
-                  <DropdownMenuItem>
-                    <a href="/services/performance-optimization" className="w-full">Performance Optimization</a>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem>
-                    <a href="/services/organization-structure" className="w-full">Organization Structure & Hierarchy</a>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem>
-                    <a href="/services/process-optimisation" className="w-full">Process Optimisation</a>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem>
-                    <a href="/services/inventory-supply-chain" className="w-full">Inventory & Supply Chain</a>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem>
-                    <a href="/services/financial-planning" className="w-full">Financial Planning & Budget</a>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem>
-                    <a href="/services/erp-implementation" className="w-full">ERP Implementation</a>
-                  </DropdownMenuItem>
+                  {currentSolutions.map((solution, index) => (
+                    <DropdownMenuItem key={index}>
+                      <a href={solution.href} className="w-full">{solution.title}</a>
+                    </DropdownMenuItem>
+                  ))}
                 </DropdownMenuContent>
               </DropdownMenu>
 
@@ -95,49 +104,19 @@ const Navigation = () => {
                   
                   {/* Mobile Solutions */}
                   <div className="space-y-3">
-                    <div className="text-lg font-semibold text-foreground mb-3">Solutions</div>
-                    <a 
-                      href="/services/performance-optimization" 
-                      className="block px-3 py-2 text-muted-foreground hover:text-foreground transition-colors"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Performance Optimization
-                    </a>
-                    <a 
-                      href="/services/organization-structure" 
-                      className="block px-3 py-2 text-muted-foreground hover:text-foreground transition-colors"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Organization Structure & Hierarchy
-                    </a>
-                    <a 
-                      href="/services/process-optimisation" 
-                      className="block px-3 py-2 text-muted-foreground hover:text-foreground transition-colors"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Process Optimisation
-                    </a>
-                    <a 
-                      href="/services/inventory-supply-chain" 
-                      className="block px-3 py-2 text-muted-foreground hover:text-foreground transition-colors"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Inventory & Supply Chain
-                    </a>
-                    <a 
-                      href="/services/financial-planning" 
-                      className="block px-3 py-2 text-muted-foreground hover:text-foreground transition-colors"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      Financial Planning & Budget
-                    </a>
-                    <a 
-                      href="/services/erp-implementation" 
-                      className="block px-3 py-2 text-muted-foreground hover:text-foreground transition-colors"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      ERP Implementation
-                    </a>
+                    <div className="text-lg font-semibold text-foreground mb-3">
+                      {isStartupContext ? "Startup Solutions" : "Solutions"}
+                    </div>
+                    {currentSolutions.map((solution, index) => (
+                      <a 
+                        key={index}
+                        href={solution.href}
+                        className="block px-3 py-2 text-muted-foreground hover:text-foreground transition-colors"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        {solution.title}
+                      </a>
+                    ))}
                   </div>
 
                   {/* Mobile For Startup Ecosystem */}
