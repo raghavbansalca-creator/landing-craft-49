@@ -15,50 +15,42 @@ const IndustriesSection = () => {
         {
             icon: <Building className="w-12 h-12 text-blue-500" />,
             title: "Real Estate",
-            description: "Property management optimization, investment analysis, and portfolio growth strategies.",
-            projects: "50+ Projects"
+            description: "Property management optimization, investment analysis, and portfolio growth strategies."
         },
         {
             icon: <ShoppingCart className="w-12 h-12 text-blue-500" />,
             title: "E-commerce & Retail",
-            description: "Supply chain optimization, inventory management, and digital transformation initiatives.",
-            projects: "75+ Projects"
+            description: "Supply chain optimization, inventory management, and digital transformation initiatives."
         },
         {
             icon: <Stethoscope className="w-12 h-12 text-blue-500" />,
             title: "Healthcare",
-            description: "Operational efficiency, compliance management, and technology integration solutions.",
-            projects: "30+ Projects"
+            description: "Operational efficiency, compliance management, and technology integration solutions."
         },
         {
             icon: <GraduationCap className="w-12 h-12 text-blue-500" />,
             title: "Education",
-            description: "Institution management, process automation, and financial planning for educational organizations.",
-            projects: "25+ Projects"
+            description: "Institution management, process automation, and financial planning for educational organizations."
         },
         {
             icon: <Wrench className="w-12 h-12 text-blue-500" />,
             title: "Manufacturing",
-            description: "Production optimization, quality control systems, and lean manufacturing implementation.",
-            projects: "40+ Projects"
+            description: "Production optimization, quality control systems, and lean manufacturing implementation."
         },
         {
             icon: <Truck className="w-12 h-12 text-blue-500" />,
             title: "Logistics & Transportation",
-            description: "Route optimization, fleet management, and supply chain efficiency improvements.",
-            projects: "35+ Projects"
+            description: "Route optimization, fleet management, and supply chain efficiency improvements."
         },
         {
             icon: <Banknote className="w-12 h-12 text-blue-500" />,
             title: "Financial Services",
-            description: "Risk management, compliance systems, and operational process improvements.",
-            projects: "20+ Projects"
+            description: "Risk management, compliance systems, and operational process improvements."
         },
         {
             icon: <Zap className="w-12 h-12 text-blue-500" />,
             title: "Technology",
-            description: "Startup scaling, operational frameworks, and growth strategy implementation.",
-            projects: "60+ Projects"
+            description: "Startup scaling, operational frameworks, and growth strategy implementation."
         }
     ];
 
@@ -138,17 +130,12 @@ const IndustriesSection = () => {
                                 {industry.description}
                             </p>
                             
-                            <div className="flex items-center justify-between">
-                                <span className="text-blue-600 text-sm font-medium">
-                                    {industry.projects}
-                                </span>
-                                <motion.div
-                                    whileHover={{ x: 5 }}
-                                    className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center group-hover:bg-blue-200 transition-colors"
-                                >
-                                    <div className="w-3 h-3 bg-blue-500 rounded-full" />
-                                </motion.div>
-                            </div>
+                            <motion.div
+                                whileHover={{ x: 5 }}
+                                className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center group-hover:bg-blue-200 transition-colors ml-auto"
+                            >
+                                <div className="w-3 h-3 bg-blue-500 rounded-full" />
+                            </motion.div>
                         </motion.div>
                     ))}
                 </motion.div>

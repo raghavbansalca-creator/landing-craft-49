@@ -2,8 +2,8 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Users, Target, Clock, TrendingUp, Award, Zap, Globe, Briefcase, Shield, Search, Filter } from 'lucide-react';
 import IndustriesSection from './Industries';
 import Navigation from '@/components/Navigation';
-import TeamLeads from './Team';
 import Footer from '@/components/Footer';
+import TeamLeads from './Team';
 
 // Hero Section Component
 const HeroSection = () => {
@@ -266,33 +266,9 @@ const ValuesSection = () => {
         </div>;
 };
 
-// Awards Section Component
-export const AwardsSection = () => {
-  const awards = [{
-    title: "Business Innovation Award",
-    organization: "Global Business Forum",
-    year: "2022",
-    icon: <Zap className="w-10 h-10 text-yellow-500" />
-  }, {
-    title: "Best Consulting Firm",
-    organization: "Finance Excellence Awards",
-    year: "2023",
-    icon: <Award className="w-10 h-10 text-yellow-500" />
-  }, {
-    title: "Client Satisfaction Excellence",
-    organization: "International Service Standards",
-    year: "2024",
-    icon: <Users className="w-10 h-10 text-yellow-500" />
-  }, {
-    title: "Top Growth Consultancy",
-    organization: "Business Growth Alliance",
-    year: "2025",
-    icon: <TrendingUp className="w-10 h-10 text-yellow-500" />
-  }];
-  return;
-};
 const AboutPage = () => {
-  return <>
+    return (
+        <>
             {/* Hero Section */}
             <HeroSection />
 
@@ -306,9 +282,8 @@ const AboutPage = () => {
 
             <IndustriesSection />
 
-            <AwardsSection />
-
             <Footer />
-        </>;
+        </>
+    );
 };
 export default AboutPage;
