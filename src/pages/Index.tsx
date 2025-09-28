@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { FileText, HelpCircle, TrendingUp, Users, Building, Settings, Package, BarChart3, Laptop } from "lucide-react";
+import { Clock, Eye, Scale, Users, Building, Settings, Package, BarChart3, Laptop } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import businessCollaboration from "@/assets/business-collaboration.jpg";
@@ -53,8 +53,8 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="text-center p-6 hover-lift">
               <CardHeader>
-                <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                  <FileText className="w-8 h-8 text-primary" />
+                <div className="mx-auto w-16 h-16 bg-red-500/10 rounded-full flex items-center justify-center mb-4">
+                  <Clock className="w-8 h-8 text-red-600" />
                 </div>
                 <CardTitle className="text-xl mb-2">Everything Depends On You Being There</CardTitle>
               </CardHeader>
@@ -67,8 +67,8 @@ const Index = () => {
 
             <Card className="text-center p-6 hover-lift">
               <CardHeader>
-                <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                  <HelpCircle className="w-8 h-8 text-primary" />
+                <div className="mx-auto w-16 h-16 bg-orange-500/10 rounded-full flex items-center justify-center mb-4">
+                  <Eye className="w-8 h-8 text-orange-600" />
                 </div>
                 <CardTitle className="text-xl mb-2">No Clear Picture Of Your Money</CardTitle>
               </CardHeader>
@@ -81,8 +81,8 @@ const Index = () => {
 
             <Card className="text-center p-6 hover-lift">
               <CardHeader>
-                <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                  <TrendingUp className="w-8 h-8 text-primary" />
+                <div className="mx-auto w-16 h-16 bg-red-500/10 rounded-full flex items-center justify-center mb-4">
+                  <Scale className="w-8 h-8 text-red-600" />
                 </div>
                 <CardTitle className="text-xl mb-2">Can't Scale Like The Big Players</CardTitle>
               </CardHeader>
