@@ -23,12 +23,14 @@ const OrganizationStructure = () => {
             Build a structure where decisions happen without you—even when you're not there.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-8">
-              Get Organization Structure Audit
-              <ArrowRight className="ml-2 h-5 w-5" />
+            <Button size="lg" className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-8" asChild>
+              <a href="/contact">
+                Get Organization Structure Audit
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
             </Button>
-            <Button variant="outline" size="lg" className="px-8">
-              Learn More
+            <Button variant="outline" size="lg" className="px-8" asChild>
+              <a href="/contact">Learn More</a>
             </Button>
           </div>
         </div>
@@ -226,9 +228,12 @@ const OrganizationStructure = () => {
           <Button 
             size="lg" 
             className="bg-white text-orange-600 hover:bg-orange-50 font-semibold px-8 py-3"
+            asChild
           >
-            Get Organization Structure Audit
-            <ArrowRight className="ml-2 h-5 w-5" />
+            <a href="/contact">
+              Get Organization Structure Audit
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </a>
           </Button>
         </div>
       </section>

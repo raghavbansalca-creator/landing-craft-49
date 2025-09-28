@@ -19,8 +19,8 @@ const InventorySupplyChain = () => {
               <p className="text-xl md:text-2xl mb-8 text-white/90">
                 Know exactly what you have, what you need, and when to order—never run out or overstock again.
               </p>
-              <Button size="lg" className="text-lg px-8 py-4 bg-white text-orange-600 hover:bg-gray-100">
-                Get Inventory Audit
+              <Button size="lg" className="text-lg px-8 py-4 bg-white text-orange-600 hover:bg-gray-100" asChild>
+                <a href="/contact">Get Inventory Audit</a>
               </Button>
             </div>
             <div className="hidden lg:flex justify-center">
@@ -169,8 +169,8 @@ const InventorySupplyChain = () => {
       <section className="py-20 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to optimize your inventory?</h2>
-          <Button size="lg" variant="secondary" className="text-lg px-8 py-4">
-            Get Inventory Audit
+          <Button size="lg" variant="secondary" className="text-lg px-8 py-4" asChild>
+            <a href="/contact">Get Inventory Audit</a>
           </Button>
         </div>
       </section>

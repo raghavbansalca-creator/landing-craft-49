@@ -257,8 +257,8 @@ const PerformanceOptimization = () => {
           <p className="text-xl mb-10 opacity-90 max-w-2xl mx-auto">
             Stop guessing and start measuring. Get a custom performance dashboard for your team in 30 days.
           </p>
-          <Button size="lg" variant="secondary" className="text-lg px-8 py-6 bg-white text-blue-600 hover:bg-gray-50">
-            Get Your Performance Audit
+          <Button size="lg" variant="secondary" className="text-lg px-8 py-6 bg-white text-blue-600 hover:bg-gray-50" asChild>
+            <a href="/contact">Get Your Performance Audit</a>
           </Button>
           <p className="text-sm mt-4 opacity-75">Free 30-minute consultation • No commitment required</p>
         </div>

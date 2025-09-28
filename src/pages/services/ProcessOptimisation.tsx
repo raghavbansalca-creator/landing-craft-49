@@ -225,8 +225,8 @@ const ProcessOptimisation = () => {
           <p className="text-xl text-emerald-100 mb-8">
             Get your free process assessment and see exactly where you're losing time and money.
           </p>
-          <Button size="lg" variant="secondary" className="bg-white text-emerald-700 hover:bg-emerald-50">
-            Get Process Optimisation Audit
+          <Button size="lg" variant="secondary" className="bg-white text-emerald-700 hover:bg-emerald-50" asChild>
+            <a href="/contact">Get Process Optimisation Audit</a>
           </Button>
         </div>
       </section>

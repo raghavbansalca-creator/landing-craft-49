@@ -42,9 +42,9 @@ const Index = () => {
             <div className="flex justify-center">
               <div className="relative group">
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg blur-sm group-hover:blur-md transition duration-300 opacity-70"></div>
-                <button className="relative px-8 py-4 bg-white text-gray-900 font-semibold rounded-lg hover:scale-105 transition-all duration-300">
+                <a href="/contact" className="relative px-8 py-4 bg-white text-gray-900 font-semibold rounded-lg hover:scale-105 transition-all duration-300 block text-center">
                   Get Your Free Business Audit
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -340,8 +340,8 @@ const Index = () => {
           <h2 className="text-4xl font-bold mb-8">
             Ready to See Everything?
           </h2>
-          <Button size="lg" variant="secondary" className="text-lg px-8 py-6">
-            Schedule Free Business Audit
+          <Button size="lg" variant="secondary" className="text-lg px-8 py-6" asChild>
+            <a href="/contact">Schedule Free Business Audit</a>
           </Button>
         </div>
       </section>

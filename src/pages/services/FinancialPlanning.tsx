@@ -37,8 +37,8 @@ const FinancialPlanning = () => {
           <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-4xl mx-auto">
             Know exactly where every rupee comes from and goes—make decisions based on real numbers, not hunches.
           </p>
-          <Button size="lg" className="text-lg px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0">
-            Get Financial Audit
+          <Button size="lg" className="text-lg px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0" asChild>
+            <a href="/contact">Get Financial Audit</a>
           </Button>
         </div>
       </section>
@@ -202,8 +202,8 @@ const FinancialPlanning = () => {
       <section className="py-20 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to take control of your finances?</h2>
-          <Button size="lg" variant="secondary" className="text-lg px-8 py-4">
-            Get Financial Audit
+          <Button size="lg" variant="secondary" className="text-lg px-8 py-4" asChild>
+            <a href="/contact">Get Financial Audit</a>
           </Button>
         </div>
       </section>

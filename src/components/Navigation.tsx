@@ -72,8 +72,8 @@ const Navigation = () => {
               </Button>
 
               {/* CTA Button */}
-              <Button>
-                Schedule Free Audit
+              <Button asChild>
+                <a href="/contact">Schedule Free Audit</a>
               </Button>
             </div>
           </div>
@@ -168,8 +168,8 @@ const Navigation = () => {
                   </a>
 
                   {/* Mobile CTA Button */}
-                  <Button className="mt-6 w-full" onClick={() => setIsMobileMenuOpen(false)}>
-                    Schedule Free Audit
+                  <Button className="mt-6 w-full" onClick={() => setIsMobileMenuOpen(false)} asChild>
+                    <a href="/contact">Schedule Free Audit</a>
                   </Button>
                 </div>
               </SheetContent>

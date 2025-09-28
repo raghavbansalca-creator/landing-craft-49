@@ -19,8 +19,8 @@ const StartupEcosystem = () => {
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
             From idea to IPO - we provide the strategic foundation, operational excellence, and growth systems that turn promising startups into industry leaders.
           </p>
-          <Button size="lg" className="text-lg px-8 py-3">
-            Get Your Startup Assessment
+          <Button size="lg" className="text-lg px-8 py-3" asChild>
+            <a href="/contact">Get Your Startup Assessment</a>
           </Button>
         </div>
       </section>
@@ -253,8 +253,8 @@ const StartupEcosystem = () => {
           <p className="text-lg text-muted-foreground mb-8">
             Get a free startup assessment and discover the operational improvements that will accelerate your growth.
           </p>
-          <Button size="lg" className="text-lg px-8 py-3">
-            Book Your Free Startup Assessment
+          <Button size="lg" className="text-lg px-8 py-3" asChild>
+            <a href="/contact">Book Your Free Startup Assessment</a>
           </Button>
         </div>
       </section>
