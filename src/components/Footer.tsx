@@ -1,13 +1,10 @@
 const Footer = () => {
-  return (
-    <footer className="bg-muted/30 border-t border-border">
+  return <footer className="bg-muted/30 border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="col-span-1 md:col-span-1">
-            <div className="text-2xl font-bold text-primary mb-4">
-              BusinessFlow
-            </div>
+            <div className="text-2xl font-bold text-primary mb-4">Seven Labs</div>
             <p className="text-muted-foreground text-sm">
               Transform chaotic manual processes into clear, controlled operations with our proven methodology.
             </p>
@@ -130,8 +127,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
