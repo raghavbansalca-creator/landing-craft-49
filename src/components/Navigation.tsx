@@ -5,9 +5,13 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { ChevronDown } from "lucide-react";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { ChevronDown, Menu, X } from "lucide-react";
+import { useState } from "react";
 
 const Navigation = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <nav className="bg-background border-b border-border sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -19,7 +23,7 @@ const Navigation = () => {
             </a>
           </div>
 
-          {/* Navigation Links */}
+          {/* Desktop Navigation Links */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               {/* Solutions Dropdown */}
@@ -64,11 +68,84 @@ const Navigation = () => {
             </div>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile menu */}
           <div className="md:hidden">
-            <Button variant="ghost" size="sm">
-              Menu
-            </Button>
+            <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="sm" className="p-2">
+                  <Menu className="h-6 w-6" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+                <div className="flex flex-col space-y-4 mt-8">
+                  {/* Mobile Logo */}
+                  <div className="text-xl font-bold text-primary mb-8">
+                    7 Labs Vision
+                  </div>
+                  
+                  {/* Mobile Solutions */}
+                  <div className="space-y-3">
+                    <div className="text-lg font-semibold text-foreground mb-3">Solutions</div>
+                    <a 
+                      href="/services/performance-optimization" 
+                      className="block px-3 py-2 text-muted-foreground hover:text-foreground transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Performance Optimization
+                    </a>
+                    <a 
+                      href="/services/organization-structure" 
+                      className="block px-3 py-2 text-muted-foreground hover:text-foreground transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Organization Structure & Hierarchy
+                    </a>
+                    <a 
+                      href="/services/process-optimisation" 
+                      className="block px-3 py-2 text-muted-foreground hover:text-foreground transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Process Optimisation
+                    </a>
+                    <a 
+                      href="/services/inventory-supply-chain" 
+                      className="block px-3 py-2 text-muted-foreground hover:text-foreground transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Inventory & Supply Chain
+                    </a>
+                    <a 
+                      href="/services/financial-planning" 
+                      className="block px-3 py-2 text-muted-foreground hover:text-foreground transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Financial Planning & Budget
+                    </a>
+                    <a 
+                      href="/services/erp-implementation" 
+                      className="block px-3 py-2 text-muted-foreground hover:text-foreground transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      ERP Implementation
+                    </a>
+                  </div>
+
+                  {/* Mobile About Us */}
+                  <a 
+                    href="/about" 
+                    className="block px-3 py-2 text-lg font-semibold text-foreground hover:text-primary transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    About Us
+                  </a>
+
+                  {/* Mobile CTA Button */}
+                  <Button className="mt-6 w-full" onClick={() => setIsMobileMenuOpen(false)}>
+                    Schedule Free Audit
+                  </Button>
+                </div>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </div>
