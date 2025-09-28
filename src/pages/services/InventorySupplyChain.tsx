@@ -3,10 +3,8 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle, Package, TrendingUp, AlertTriangle, BarChart, Clock, Target } from "lucide-react";
-
 const InventorySupplyChain = () => {
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Navigation />
       
       {/* Hero Section */}
@@ -47,7 +45,7 @@ const InventorySupplyChain = () => {
       <section className="py-20 bg-gradient-to-br from-red-50 to-orange-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-red-800">Are You Still...</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-red-800">Age old problems...</h2>
           </div>
           <div className="space-y-8 max-w-4xl mx-auto">
             <div className="flex items-start gap-6 bg-white/60 backdrop-blur-sm rounded-xl p-8 border border-red-200 shadow-lg">
@@ -178,8 +176,6 @@ const InventorySupplyChain = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default InventorySupplyChain;
