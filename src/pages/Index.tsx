@@ -12,23 +12,42 @@ const Index = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative py-20 px-4 text-center bg-gradient-to-br from-primary/10 via-accent to-background overflow-hidden">
+      <section className="relative py-24 px-4 text-center bg-gradient-to-br from-blue-950/40 via-purple-900/30 to-indigo-950/40 overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute top-20 left-20 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl animate-pulse delay-500"></div>
+        </div>
+        
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img 
             src={businessCollaboration} 
             alt="Business collaboration" 
-            className="w-full h-full object-cover opacity-20"
+            className="w-full h-full object-cover opacity-15"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-background/80 to-background/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-950/90 via-purple-900/85 to-indigo-950/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-background/40"></div>
         </div>
+        
         <div className="max-w-4xl mx-auto relative z-10">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-foreground">
-            Stop Running Your Business Blind
-          </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Transform chaotic manual processes into clear, controlled operations with our 'What Could Go Wrong' methodology.
-          </p>
+          <div className="animate-fade-in">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent">
+              Stop Running Your Business Blind
+            </h1>
+            <p className="text-xl md:text-2xl text-blue-100 mb-12 max-w-3xl mx-auto leading-relaxed">
+              Transform chaotic manual processes into clear, controlled operations with our 'What Could Go Wrong' methodology.
+            </p>
+            <div className="flex justify-center">
+              <div className="relative group">
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg blur-sm group-hover:blur-md transition duration-300 opacity-70"></div>
+                <button className="relative px-8 py-4 bg-white text-gray-900 font-semibold rounded-lg hover:scale-105 transition-all duration-300">
+                  Get Your Free Business Audit
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
