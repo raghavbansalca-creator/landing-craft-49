@@ -66,6 +66,11 @@ const Navigation = () => {
                 <a href="/about">About Us</a>
               </Button>
 
+              {/* Contact Us */}
+              <Button variant="ghost" asChild>
+                <a href="/contact">Contact Us</a>
+              </Button>
+
               {/* CTA Button */}
               <Button>
                 Schedule Free Audit
@@ -151,6 +156,15 @@ const Navigation = () => {
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     About Us
+                  </a>
+
+                  {/* Mobile Contact Us */}
+                  <a 
+                    href="/contact" 
+                    className="block px-3 py-2 text-lg font-semibold text-foreground hover:text-primary transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Contact Us
                   </a>
 
                   {/* Mobile CTA Button */}
