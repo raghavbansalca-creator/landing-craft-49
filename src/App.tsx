@@ -13,6 +13,7 @@ import FinancialPlanning from "./pages/services/FinancialPlanning";
 import ERPImplementation from "./pages/services/ERPImplementation";
 import StartupEcosystem from "./pages/StartupEcosystem";
 import Contact from "./pages/Contact";
+import About from "./pages/About";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/services/erp-implementation" element={<ERPImplementation />} />
           <Route path="/startup-ecosystem" element={<StartupEcosystem />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
