@@ -197,16 +197,16 @@ const Contact = () => {
                       <h3 className="font-semibold text-foreground">Our Offices</h3>
                       <div className="space-y-3 text-muted-foreground">
                         <div>
-                          <p className="font-medium text-foreground">Agra:</p>
-                          <p>House No-39, Ring Road Colony<br />Agra, Uttar Pradesh, 282004</p>
+                          <p className="font-medium text-foreground">Delhi:</p>
+                          <p>2C, Indian Institute of Technology Delhi<br />Hauz Khas, New Delhi, Delhi, 1100165</p>
                         </div>
                         <div>
                           <p className="font-medium text-foreground">Jaipur:</p>
                           <p>6/371, Sector 6, Vidyadhar Nagar<br />Jaipur, 302039</p>
                         </div>
                         <div>
-                          <p className="font-medium text-foreground">Delhi:</p>
-                          <p>2C, Indian Institute of Technology Delhi<br />Hauz Khas, New Delhi, Delhi, 1100165</p>
+                          <p className="font-medium text-foreground">Agra:</p>
+                          <p>House No-39, Ring Road Colony<br />Agra, Uttar Pradesh, 282004</p>
                         </div>
                       </div>
                       <p className="text-sm text-muted-foreground mt-2">We are available in Agra, Delhi & Jaipur</p>
