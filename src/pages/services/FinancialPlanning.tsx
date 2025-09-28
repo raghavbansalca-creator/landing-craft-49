@@ -32,7 +32,7 @@ const FinancialPlanning = () => {
             </div>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-            Stop Flying Blind With Your Business Money
+            "Take Care of the Pennies and the Pounds Will Take Care of Themselves"
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-4xl mx-auto">
             Know exactly where every rupee comes from and goes—make decisions based on real numbers, not hunches.
