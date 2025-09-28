@@ -33,11 +33,23 @@ const Index = () => {
       </section>
 
       {/* Pain Points Section */}
-      <section className="py-20 px-4 bg-muted/30">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16 text-foreground">
+      <section className="py-20 px-4 bg-gradient-to-br from-red-950/20 via-red-900/10 to-background relative overflow-hidden">
+        {/* Warning Pattern Overlay */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-10 left-10 w-32 h-32 border-2 border-red-500 rotate-45"></div>
+          <div className="absolute top-32 right-20 w-24 h-24 border-2 border-orange-500 rotate-12"></div>
+          <div className="absolute bottom-20 left-32 w-28 h-28 border-2 border-red-400 -rotate-12"></div>
+        </div>
+        <div className="max-w-6xl mx-auto relative z-10">
+          <h2 className="text-4xl font-bold text-center mb-4 text-foreground">
             Still Struggling With...
           </h2>
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 bg-red-500/10 border border-red-500/20 rounded-full px-6 py-2">
+              <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+              <span className="text-red-600 dark:text-red-400 font-medium text-sm">These problems are costing you money every day</span>
+            </div>
+          </div>
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="text-center p-6 hover-lift">
               <CardHeader>
