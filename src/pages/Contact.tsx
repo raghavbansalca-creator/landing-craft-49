@@ -11,34 +11,52 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useState } from "react";
+
 const contactSchema = z.object({
   name: z.string().trim().min(1, {
     message: "Name is required"
+  }).min(2, {
+    message: "Name must be at least 2 characters"
   }).max(100, {
     message: "Name must be less than 100 characters"
+  }).regex(/^[a-zA-Z\s'-]+$/, {
+    message: "Name can only contain letters, spaces, hyphens and apostrophes"
   }),
-  email: z.string().trim().email({
+  email: z.string().trim().min(1, {
+    message: "Email is required"
+  }).email({
     message: "Invalid email address"
   }).max(255, {
     message: "Email must be less than 255 characters"
+  }).regex(/^[^\s@]+@[^\s@]+\.[^\s@]+$/, {
+    message: "Please enter a valid email format"
   }),
   company: z.string().trim().max(100, {
     message: "Company name must be less than 100 characters"
-  }).optional(),
-  phone: z.string().trim().max(20, {
+  }).optional().or(z.literal('')),
+  phone: z.string().trim().regex(/^[\d\s+()-]*$/, {
+    message: "Phone can only contain numbers, spaces, +, ( ) and -"
+  }).min(10, {
+    message: "Phone must be at least 10 digits"
+  }).max(20, {
     message: "Phone must be less than 20 characters"
-  }).optional(),
+  }).optional().or(z.literal('')),
   subject: z.string().trim().min(1, {
     message: "Subject is required"
+  }).min(5, {
+    message: "Subject must be at least 5 characters"
   }).max(200, {
     message: "Subject must be less than 200 characters"
   }),
   message: z.string().trim().min(1, {
     message: "Message is required"
+  }).min(20, {
+    message: "Message must be at least 20 characters"
   }).max(1000, {
     message: "Message must be less than 1000 characters"
   })
 });
+
 type ContactForm = z.infer<typeof contactSchema>;
 const Contact = () => {
   const {
@@ -55,19 +73,38 @@ const Contact = () => {
   } = useForm<ContactForm>({
     resolver: zodResolver(contactSchema)
   });
-  const onSubmit = async (data: ContactForm) => {
+
+
+const onSubmit = async (data: ContactForm) => {
     setIsSubmitting(true);
     try {
-      // Simulate API call - replace with actual implementation
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      const whatsappMessage = `*New Contact Form Submission*\n\n` +
+        `*Name:* ${data.name}\n` +
+        `*Email:* ${data.email}\n` +
+        `${data.company ? `*Company:* ${data.company}\n` : ''}` +
+        `${data.phone ? `*Phone:* ${data.phone}\n` : ''}` +
+        `*Subject:* ${data.subject}\n\n` +
+        `*Message:*\n${data.message}`;
+      const whatsappNumber = "919997155444";
+      
+      const encodedMessage = encodeURIComponent(whatsappMessage);
+      
+      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+      
+      window.open(whatsappURL, '_blank');
+      
       toast({
-        title: "Message sent successfully!",
-        description: "We'll get back to you within 24 hours."
+        title: "Redirecting to WhatsApp!",
+        description: "You'll be redirected to WhatsApp to send your message."
       });
-      reset();
+      
+      setTimeout(() => {
+        reset();
+      }, 1000);
+      
     } catch (error) {
       toast({
-        title: "Error sending message",
+        title: "Error opening WhatsApp",
         description: "Please try again or contact us directly.",
         variant: "destructive"
       });
@@ -75,6 +112,8 @@ const Contact = () => {
       setIsSubmitting(false);
     }
   };
+
+
   return <div className="min-h-screen bg-background">
       <Navigation />
       
