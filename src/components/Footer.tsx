@@ -56,9 +56,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="/careers" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Careers
-                </a>
+                
               </li>
               <li>
                 <a href="/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
