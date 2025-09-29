@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Clock, DollarSign, Scale, Users, Building, Settings, Package, BarChart3, Laptop } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import LogoCarousel from "@/components/LogoCarousel";
 import businessCollaboration from "@/assets/business-collaboration.jpg";
 import businessGrowth from "@/assets/business-growth.jpg";
 
@@ -269,20 +270,7 @@ const Index = () => {
 
           {/* Company Logos */}
           <div className="mb-16">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center opacity-60">
-              <div className="bg-muted rounded-lg p-6 text-center min-h-[80px] flex items-center justify-center">
-                <span className="text-sm font-medium text-muted-foreground">Company Logo</span>
-              </div>
-              <div className="bg-muted rounded-lg p-6 text-center min-h-[80px] flex items-center justify-center">
-                <span className="text-sm font-medium text-muted-foreground">Company Logo</span>
-              </div>
-              <div className="bg-muted rounded-lg p-6 text-center min-h-[80px] flex items-center justify-center">
-                <span className="text-sm font-medium text-muted-foreground">Company Logo</span>
-              </div>
-              <div className="bg-muted rounded-lg p-6 text-center min-h-[80px] flex items-center justify-center">
-                <span className="text-sm font-medium text-muted-foreground">Company Logo</span>
-              </div>
-            </div>
+            <LogoCarousel />
           </div>
 
           {/* Testimonials */}
