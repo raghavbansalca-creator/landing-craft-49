@@ -11,7 +11,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      
+
       {/* Hero Section */}
       <section className="relative py-24 px-4 text-center bg-gradient-to-br from-blue-950/40 via-blue-900/30 to-blue-800/40 overflow-hidden">
         {/* Animated Background Elements */}
@@ -20,18 +20,18 @@ const Index = () => {
           <div className="absolute bottom-20 right-20 w-80 h-80 bg-blue-400/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-600/5 rounded-full blur-3xl animate-pulse delay-500"></div>
         </div>
-        
+
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
-          <img 
-            src={businessCollaboration} 
-            alt="Business collaboration" 
+          <img
+            src={businessCollaboration}
+            alt="Business collaboration"
             className="w-full h-full object-cover opacity-15"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-blue-950/90 via-blue-900/85 to-blue-800/90"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-background/40"></div>
         </div>
-        
+
         <div className="max-w-4xl mx-auto relative z-10">
           <div className="animate-fade-in">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white">
@@ -235,9 +235,9 @@ const Index = () => {
       <section className="py-20 px-4 bg-accent relative overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
-          <img 
-            src={businessGrowth} 
-            alt="Business growth visualization" 
+          <img
+            src={businessGrowth}
+            alt="Business growth visualization"
             className="w-full h-full object-cover opacity-10"
           />
         </div>
@@ -274,6 +274,7 @@ const Index = () => {
           </div>
 
           {/* Testimonials */}
+          {/* Testimonials */}
           <div className="grid md:grid-cols-2 gap-8">
             <Card className="p-6">
               <CardContent className="pt-6">
@@ -287,11 +288,11 @@ const Index = () => {
                 </div>
                 <div className="flex items-center">
                   <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-3">
-                    <span className="text-primary font-semibold text-sm">JD</span>
+                    <span className="text-primary font-semibold text-sm">MI</span>
                   </div>
                   <div>
-                    <p className="font-semibold text-sm">John Doe</p>
-                    <p className="text-xs text-muted-foreground">CEO, Tech Startup</p>
+                    <p className="font-semibold text-sm">Modi Illva India Pvt. Ltd.</p>
+                    <p className="text-xs text-muted-foreground">Manager and Team</p>
                   </div>
                 </div>
               </CardContent>
@@ -309,15 +310,60 @@ const Index = () => {
                 </div>
                 <div className="flex items-center">
                   <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-3">
-                    <span className="text-primary font-semibold text-sm">SP</span>
+                    <span className="text-primary font-semibold text-sm">TO</span>
                   </div>
                   <div>
-                    <p className="font-semibold text-sm">Sarah Patel</p>
+                    <p className="font-semibold text-sm">Tonoto</p>
                     <p className="text-xs text-muted-foreground">Founder, Manufacturing MSME</p>
                   </div>
                 </div>
               </CardContent>
             </Card>
+
+            <Card className="p-6">
+              <CardContent className="pt-6">
+                <div className="mb-4">
+                  <div className="flex text-primary mb-2">
+                    {"★".repeat(5)}
+                  </div>
+                  <p className="text-muted-foreground italic mb-4">
+                    "The automation solutions they implemented saved us 15+ hours weekly on inventory management. Our order processing is now seamless and error-free."
+                  </p>
+                </div>
+                <div className="flex items-center">
+                  <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-3">
+                    <span className="text-primary font-semibold text-sm">MS</span>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-sm">Machphy Solution</p>
+                    <p className="text-xs text-muted-foreground">Operations Head, Tech Solutions</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="p-6">
+              <CardContent className="pt-6">
+                <div className="mb-4">
+                  <div className="flex text-primary mb-2">
+                    {"★".repeat(5)}
+                  </div>
+                  <p className="text-muted-foreground italic mb-4">
+                    "Their logistics optimization reduced our delivery costs by 30% while improving customer satisfaction. Exceptional support throughout the implementation."
+                  </p>
+                </div>
+                <div className="flex items-center">
+                  <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-3">
+                    <span className="text-primary font-semibold text-sm">CP</span>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-sm">Carry Pro</p>
+                    <p className="text-xs text-muted-foreground">CEO, Logistics & Supply Chain</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
           </div>
         </div>
       </section>
