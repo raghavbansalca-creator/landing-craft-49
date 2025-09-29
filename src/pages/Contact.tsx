@@ -230,17 +230,8 @@ const Contact = () => {
               </Card>
 
               <Card className="border-2 bg-primary/5">
-                <CardHeader>
-                  <CardTitle className="text-xl">Free Business Assessment</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4">
-                    Not sure where to start? Book a free 30-minute consultation to discuss your business challenges and discover improvement opportunities.
-                  </p>
-                  <Button className="w-full" disabled>
-                    Schedule Free Consultation
-                  </Button>
-                </CardContent>
+                
+                
               </Card>
 
             </div>
