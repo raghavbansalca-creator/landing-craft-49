@@ -309,16 +309,16 @@ const Index = () => {
                     {"★".repeat(5)}
                   </div>
                   <p className="text-muted-foreground italic mb-4">
-                    "Their 'What Could Go Wrong' methodology completely transformed our operations. We went from chaos to clarity in just 3 months."
+                    "The Ind AS transformation project was executed flawlessly by 7 Labs Vision. Their expertise and systematic approach made a complex transition smooth and efficient. Highly recommended!"
                   </p>
                 </div>
                 <div className="flex items-center">
                   <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-3">
-                    <span className="text-primary font-semibold text-sm">MI</span>
+                    <span className="text-primary font-semibold text-sm">PP</span>
                   </div>
                   <div>
-                    <p className="font-semibold text-sm">Modi Illva India Pvt. Ltd.</p>
-                    <p className="text-xs text-muted-foreground">Manager and Team</p>
+                    <p className="font-semibold text-sm">Mr. Prem Prakash</p>
+                    <p className="text-xs text-muted-foreground">CFO, Modi Illva India Pvt. Ltd.</p>
                   </div>
                 </div>
               </CardContent>
