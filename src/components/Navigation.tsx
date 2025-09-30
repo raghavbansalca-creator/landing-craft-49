@@ -42,7 +42,7 @@ const Navigation = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center">
-              <img src={logo} alt="7 Labs Vision" className="h-12 w-auto" />
+              <span className="text-3xl font-bold text-primary">7 Labs Vision</span>
             </Link>
           </div>
 
