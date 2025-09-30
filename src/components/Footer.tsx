@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return <footer className="bg-muted/30 border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -17,29 +19,29 @@ const Footer = () => {
             </h3>
             <ul className="space-y-2">
               <li>
-                <a href="/privacy-policy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/privacy-policy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   Privacy Policy
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/cookies-policy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/cookies-policy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   Cookies Policy
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/terms-of-use" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/terms-of-use" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   Terms of Use
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/sub-processors" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/sub-processors" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   Sub-processors
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/report-vulnerability" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/report-vulnerability" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   Report a Vulnerability
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -51,22 +53,22 @@ const Footer = () => {
             </h3>
             <ul className="space-y-2">
               <li>
-                <a href="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   About
-                </a>
+                </Link>
               </li>
               <li>
                 
               </li>
               <li>
-                <a href="/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   Contact Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/corporate-information" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/corporate-information" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   Corporate Information
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -78,34 +80,34 @@ const Footer = () => {
             </h3>
             <ul className="space-y-2">
               <li>
-                <a href="/services/performance-optimization" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/services/performance-optimization" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   Performance Optimization
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/services/structure-design" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/services/structure-design" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   Structure Design
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/services/process-optimization" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/services/process-optimization" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   Process Optimization
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/services/stock-systems" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/services/stock-systems" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   Stock Systems
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/services/financial-control" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/services/financial-control" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   Financial Control
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/services/technology-setup" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/services/technology-setup" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   Technology Setup
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

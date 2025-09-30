@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import LogoCarousel from "@/components/LogoCarousel";
 import businessCollaboration from "@/assets/business-collaboration.jpg";
 import businessGrowth from "@/assets/business-growth.jpg";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   return (
@@ -41,11 +42,11 @@ const Index = () => {
               Transform chaotic manual processes into clear, controlled operations with our 'What Could Go Wrong' methodology.
             </p>
             <div className="flex justify-center">
-              <div className="relative group">
+            <div className="relative group">
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg blur-sm group-hover:blur-md transition duration-300 opacity-70"></div>
-                <a href="/contact" className="relative px-8 py-4 bg-white text-gray-900 font-semibold rounded-lg hover:scale-105 transition-all duration-300 block text-center">
+                <Link to="/contact" className="relative px-8 py-4 bg-white text-gray-900 font-semibold rounded-lg hover:scale-105 transition-all duration-300 block text-center">
                   Get Your Free Business Audit
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -375,7 +376,7 @@ const Index = () => {
             Ready to See Everything?
           </h2>
           <Button size="lg" variant="secondary" className="text-lg px-8 py-6" asChild>
-            <a href="/contact">Schedule Free Business Audit</a>
+            <Link to="/contact">Schedule Free Business Audit</Link>
           </Button>
         </div>
       </section>

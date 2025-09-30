@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Rocket, TrendingUp, Users, Zap, Target, DollarSign, BarChart3, Lightbulb, Shield, Globe } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const StartupEcosystem = () => {
   return (
@@ -20,7 +21,7 @@ const StartupEcosystem = () => {
             From idea to IPO - we provide the strategic foundation, operational excellence, and growth systems that turn promising startups into industry leaders.
           </p>
           <Button size="lg" className="text-lg px-8 py-3" asChild>
-            <a href="/contact">Get Your Startup Assessment</a>
+            <Link to="/contact">Get Your Startup Assessment</Link>
           </Button>
         </div>
       </section>
@@ -254,7 +255,7 @@ const StartupEcosystem = () => {
             Get a free startup assessment and discover the operational improvements that will accelerate your growth.
           </p>
           <Button size="lg" className="text-lg px-8 py-3" asChild>
-            <a href="/contact">Book Your Free Startup Assessment</a>
+            <Link to="/contact">Book Your Free Startup Assessment</Link>
           </Button>
         </div>
       </section>

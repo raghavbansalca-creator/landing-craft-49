@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle, Users, ArrowRight, Building, Shield, Zap } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { Link } from "react-router-dom";
 
 const OrganizationStructure = () => {
   return (
@@ -24,13 +25,13 @@ const OrganizationStructure = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-8" asChild>
-              <a href="/contact">
+              <Link to="/contact">
                 Get Organization Structure Audit
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </a>
+              </Link>
             </Button>
             <Button variant="outline" size="lg" className="px-8" asChild>
-              <a href="/contact">Learn More</a>
+              <Link to="/contact">Learn More</Link>
             </Button>
           </div>
         </div>
@@ -230,10 +231,10 @@ const OrganizationStructure = () => {
             className="bg-white text-orange-600 hover:bg-orange-50 font-semibold px-8 py-3"
             asChild
           >
-            <a href="/contact">
+            <Link to="/contact">
               Get Organization Structure Audit
               <ArrowRight className="ml-2 h-5 w-5" />
-            </a>
+            </Link>
           </Button>
         </div>
       </section>

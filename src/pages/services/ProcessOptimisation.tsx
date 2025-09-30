@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle, AlertTriangle, Target, TrendingUp } from "lucide-react";
+import { Link } from "react-router-dom";
 const ProcessOptimisation = () => {
   return <div className="min-h-screen bg-background">
       <Navigation />
@@ -226,7 +227,7 @@ const ProcessOptimisation = () => {
             Get your free process assessment and see exactly where you're losing time and money.
           </p>
           <Button size="lg" variant="secondary" className="bg-white text-emerald-700 hover:bg-emerald-50" asChild>
-            <a href="/contact">Get Process Optimisation Audit</a>
+            <Link to="/contact">Get Process Optimisation Audit</Link>
           </Button>
         </div>
       </section>

@@ -8,7 +8,7 @@ import {
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -40,9 +40,9 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="/" className="text-2xl font-bold text-primary">
+            <Link to="/" className="text-2xl font-bold text-primary">
               7 Labs Vision
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Navigation Links */}
@@ -59,7 +59,7 @@ const Navigation = () => {
                 <DropdownMenuContent className="w-56 bg-popover border border-border shadow-lg z-50">
                   {currentSolutions.map((solution, index) => (
                     <DropdownMenuItem key={index}>
-                      <a href={solution.href} className="w-full">{solution.title}</a>
+                      <Link to={solution.href} className="w-full">{solution.title}</Link>
                     </DropdownMenuItem>
                   ))}
                 </DropdownMenuContent>
@@ -67,22 +67,22 @@ const Navigation = () => {
 
               {/* For Startup Ecosystem */}
               <Button variant="ghost" asChild>
-                <a href="/startup-ecosystem">For Startup Ecosystem</a>
+                <Link to="/startup-ecosystem">For Startup Ecosystem</Link>
               </Button>
 
               {/* About Us */}
               <Button variant="ghost" asChild>
-                <a href="/about">About Us</a>
+                <Link to="/about">About Us</Link>
               </Button>
 
               {/* Contact Us */}
               <Button variant="ghost" asChild>
-                <a href="/contact">Contact Us</a>
+                <Link to="/contact">Contact Us</Link>
               </Button>
 
               {/* CTA Button */}
               <Button asChild>
-                <a href="/contact">Schedule Free Audit</a>
+                <Link to="/contact">Schedule Free Audit</Link>
               </Button>
             </div>
           </div>
@@ -108,47 +108,47 @@ const Navigation = () => {
                       {isStartupContext ? "Startup Solutions" : "Solutions"}
                     </div>
                     {currentSolutions.map((solution, index) => (
-                      <a 
+                      <Link 
                         key={index}
-                        href={solution.href}
+                        to={solution.href}
                         className="block px-3 py-2 text-muted-foreground hover:text-foreground transition-colors"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         {solution.title}
-                      </a>
+                      </Link>
                     ))}
                   </div>
 
                   {/* Mobile For Startup Ecosystem */}
-                  <a 
-                    href="/startup-ecosystem" 
+                  <Link 
+                    to="/startup-ecosystem" 
                     className="block px-3 py-2 text-lg font-semibold text-foreground hover:text-primary transition-colors"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     For Startup Ecosystem
-                  </a>
+                  </Link>
 
                   {/* Mobile About Us */}
-                  <a 
-                    href="/about" 
+                  <Link 
+                    to="/about" 
                     className="block px-3 py-2 text-lg font-semibold text-foreground hover:text-primary transition-colors"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     About Us
-                  </a>
+                  </Link>
 
                   {/* Mobile Contact Us */}
-                  <a 
-                    href="/contact" 
+                  <Link 
+                    to="/contact" 
                     className="block px-3 py-2 text-lg font-semibold text-foreground hover:text-primary transition-colors"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Contact Us
-                  </a>
+                  </Link>
 
                   {/* Mobile CTA Button */}
                   <Button className="mt-6 w-full" onClick={() => setIsMobileMenuOpen(false)} asChild>
-                    <a href="/contact">Schedule Free Audit</a>
+                    <Link to="/contact">Schedule Free Audit</Link>
                   </Button>
                 </div>
               </SheetContent>

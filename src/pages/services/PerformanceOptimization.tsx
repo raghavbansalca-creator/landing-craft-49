@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { CheckCircle, AlertCircle, Target, BarChart3, Users, Calendar, Clock, Award } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { Link } from "react-router-dom";
 
 const PerformanceOptimization = () => {
   return (
@@ -258,7 +259,7 @@ const PerformanceOptimization = () => {
             Stop guessing and start measuring. Get a custom performance dashboard for your team in 30 days.
           </p>
           <Button size="lg" variant="secondary" className="text-lg px-8 py-6 bg-white text-blue-600 hover:bg-gray-50" asChild>
-            <a href="/contact">Get Your Performance Audit</a>
+            <Link to="/contact">Get Your Performance Audit</Link>
           </Button>
           <p className="text-sm mt-4 opacity-75">Free 30-minute consultation • No commitment required</p>
         </div>

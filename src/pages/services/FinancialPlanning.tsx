@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { TrendingUp, AlertCircle, PieChart, Calculator, BarChart, Target, DollarSign } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const FinancialPlanning = () => {
   return (
@@ -38,7 +39,7 @@ const FinancialPlanning = () => {
             Know exactly where every rupee comes from and goes—make decisions based on real numbers, not hunches.
           </p>
           <Button size="lg" className="text-lg px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0" asChild>
-            <a href="/contact">Get Financial Audit</a>
+            <Link to="/contact">Get Financial Audit</Link>
           </Button>
         </div>
       </section>
@@ -203,7 +204,7 @@ const FinancialPlanning = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to take control of your finances?</h2>
           <Button size="lg" variant="secondary" className="text-lg px-8 py-4" asChild>
-            <a href="/contact">Get Financial Audit</a>
+            <Link to="/contact">Get Financial Audit</Link>
           </Button>
         </div>
       </section>
