@@ -386,7 +386,7 @@ const Index = () => {
                   </div>
                   <div>
                     <p className="font-semibold text-sm">Yaksha Hospitality</p>
-                    <p className="text-xs text-muted-foreground">CEO, Logistics & Supply Chain</p>
+                    <p className="text-xs text-muted-foreground">CEO</p>
                   </div>
                 </div>
               </CardContent>
