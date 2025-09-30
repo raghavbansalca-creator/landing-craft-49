@@ -8,10 +8,8 @@ import businessCollaboration from "@/assets/business-collaboration.jpg";
 import businessGrowth from "@/assets/business-growth.jpg";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-
 const Index = () => {
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Navigation />
 
       {/* Hero Section */}
@@ -25,11 +23,7 @@ const Index = () => {
 
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
-          <img
-            src={businessCollaboration}
-            alt="Business collaboration"
-            className="w-full h-full object-cover opacity-15"
-          />
+          <img src={businessCollaboration} alt="Business collaboration" className="w-full h-full object-cover opacity-15" />
           <div className="absolute inset-0 bg-gradient-to-br from-blue-950/90 via-blue-900/85 to-blue-800/90"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-background/40"></div>
         </div>
@@ -55,13 +49,15 @@ const Index = () => {
       </section>
 
       {/* Pain Points Section */}
-      <motion.section 
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="py-20 px-4 bg-gradient-to-br from-red-950/20 via-red-900/10 to-background relative overflow-hidden"
-      >
+      <motion.section initial={{
+      opacity: 0
+    }} whileInView={{
+      opacity: 1
+    }} transition={{
+      duration: 0.6
+    }} viewport={{
+      once: true
+    }} className="py-20 px-4 bg-gradient-to-br from-red-950/20 via-red-900/10 to-background relative overflow-hidden">
         {/* Warning Pattern Overlay */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-10 left-10 w-32 h-32 border-2 border-red-500 rotate-45"></div>
@@ -125,13 +121,17 @@ const Index = () => {
       </motion.section>
 
       {/* What We Do Section */}
-      <motion.section 
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="py-20 px-4"
-      >
+      <motion.section initial={{
+      opacity: 0,
+      y: 30
+    }} whileInView={{
+      opacity: 1,
+      y: 0
+    }} transition={{
+      duration: 0.6
+    }} viewport={{
+      once: true
+    }} className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 text-foreground">
@@ -246,20 +246,18 @@ const Index = () => {
       </motion.section>
 
       {/* What Sets Us Apart */}
-      <motion.section 
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="py-20 px-4 bg-accent relative overflow-hidden"
-      >
+      <motion.section initial={{
+      opacity: 0
+    }} whileInView={{
+      opacity: 1
+    }} transition={{
+      duration: 0.6
+    }} viewport={{
+      once: true
+    }} className="py-20 px-4 bg-accent relative overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
-          <img
-            src={businessGrowth}
-            alt="Business growth visualization"
-            className="w-full h-full object-cover opacity-10"
-          />
+          <img src={businessGrowth} alt="Business growth visualization" className="w-full h-full object-cover opacity-10" />
         </div>
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h2 className="text-4xl font-bold mb-8 text-foreground">
@@ -277,13 +275,17 @@ const Index = () => {
       </motion.section>
 
       {/* Social Proof */}
-      <motion.section 
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="py-20 px-4"
-      >
+      <motion.section initial={{
+      opacity: 0,
+      y: 30
+    }} whileInView={{
+      opacity: 1,
+      y: 0
+    }} transition={{
+      duration: 0.6
+    }} viewport={{
+      once: true
+    }} className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold mb-8 text-foreground">
@@ -309,16 +311,16 @@ const Index = () => {
                     {"★".repeat(5)}
                   </div>
                   <p className="text-muted-foreground italic mb-4">
-                    "The Ind AS transformation project was executed flawlessly by 7 Labs Vision. Their expertise and systematic approach made a complex transition smooth and efficient. Highly recommended!"
+                    "Their 'What Could Go Wrong' methodology completely transformed our operations. We went from chaos to clarity in just 3 months."
                   </p>
                 </div>
                 <div className="flex items-center">
                   <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-3">
-                    <span className="text-primary font-semibold text-sm">PP</span>
+                    <span className="text-primary font-semibold text-sm">MI</span>
                   </div>
                   <div>
-                    <p className="font-semibold text-sm">Mr. Prem Prakash</p>
-                    <p className="text-xs text-muted-foreground">CFO, Modi Illva India Pvt. Ltd.</p>
+                    <p className="font-semibold text-sm">Modi Illva India Pvt. Ltd.</p>
+                    <p className="text-xs text-muted-foreground">Manager and Team</p>
                   </div>
                 </div>
               </CardContent>
@@ -339,8 +341,8 @@ const Index = () => {
                     <span className="text-primary font-semibold text-sm">TO</span>
                   </div>
                   <div>
-                    <p className="font-semibold text-sm">Tonoto</p>
-                    <p className="text-xs text-muted-foreground">Founder, Manufacturing MSME</p>
+                    <p className="font-semibold text-sm">Mr. Ruchit Dugar</p>
+                    <p className="text-xs text-muted-foreground">Founder-Tonoto, Manufacturing MSME</p>
                   </div>
                 </div>
               </CardContent>
@@ -407,8 +409,6 @@ const Index = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
