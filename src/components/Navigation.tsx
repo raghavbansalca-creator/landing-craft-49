@@ -9,6 +9,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { useLocation, Link } from "react-router-dom";
+import logo from "@/assets/7labs-logo.png";
 
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -40,8 +41,8 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link to="/" className="text-2xl font-bold text-primary">
-              7 Labs Vision
+            <Link to="/" className="flex items-center">
+              <img src={logo} alt="7 Labs Vision" className="h-12 w-auto" />
             </Link>
           </div>
 
@@ -98,8 +99,8 @@ const Navigation = () => {
               <SheetContent side="right" className="w-[300px] sm:w-[400px]">
                 <div className="flex flex-col space-y-4 mt-8">
                   {/* Mobile Logo */}
-                  <div className="text-xl font-bold text-primary mb-8">
-                    7 Labs Vision
+                  <div className="mb-8">
+                    <img src={logo} alt="7 Labs Vision" className="h-10 w-auto" />
                   </div>
                   
                   {/* Mobile Solutions */}

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from "@/assets/7labs-logo.png";
 
 const Footer = () => {
   return <footer className="bg-muted/30 border-t border-border">
@@ -6,7 +7,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="col-span-1 md:col-span-1">
-            <div className="text-2xl font-bold text-primary mb-4">Seven Labs</div>
+            <img src={logo} alt="7 Labs Vision" className="h-16 w-auto mb-4" />
             <p className="text-muted-foreground text-sm">
               Transform chaotic manual processes into clear, controlled operations with our proven methodology.
             </p>
@@ -117,7 +118,7 @@ const Footer = () => {
         <div className="mt-8 pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-muted-foreground">
-              © 2024 BusinessFlow. All rights reserved.
+              © 2024 7 Labs Vision. All rights reserved.
             </p>
             <div className="mt-4 md:mt-0">
               <p className="text-sm text-muted-foreground">
