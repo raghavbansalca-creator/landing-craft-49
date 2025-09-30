@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import logo from "@/assets/7labs-logo.png";
-
 const Footer = () => {
   return <footer className="bg-muted/30 border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -35,14 +34,10 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/sub-processors" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Sub-processors
-                </Link>
+                
               </li>
               <li>
-                <Link to="/report-vulnerability" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Report a Vulnerability
-                </Link>
+                
               </li>
             </ul>
           </div>
