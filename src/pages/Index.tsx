@@ -385,7 +385,7 @@ const Index = () => {
                     <span className="text-primary font-semibold text-sm">CP</span>
                   </div>
                   <div>
-                    <p className="font-semibold text-sm">Carry Pro</p>
+                    <p className="font-semibold text-sm">Yaksha Hospitality</p>
                     <p className="text-xs text-muted-foreground">CEO, Logistics & Supply Chain</p>
                   </div>
                 </div>
