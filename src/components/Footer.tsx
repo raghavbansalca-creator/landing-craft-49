@@ -33,12 +33,6 @@ const Footer = () => {
                   Terms of Use
                 </Link>
               </li>
-              <li>
-                
-              </li>
-              <li>
-                
-              </li>
             </ul>
           </div>
 
@@ -54,15 +48,9 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                
-              </li>
-              <li>
                 <Link to="/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   Contact Us
                 </Link>
-              </li>
-              <li>
-                
               </li>
             </ul>
           </div>
@@ -79,27 +67,27 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/services/structure-design" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/services/organization-structure" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   Structure Design
                 </Link>
               </li>
               <li>
-                <Link to="/services/process-optimization" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/services/process-optimisation" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   Process Optimization
                 </Link>
               </li>
               <li>
-                <Link to="/services/stock-systems" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/services/inventory-supply-chain" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   Stock Systems
                 </Link>
               </li>
               <li>
-                <Link to="/services/financial-control" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/services/financial-planning" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   Financial Control
                 </Link>
               </li>
               <li>
-                <Link to="/services/technology-setup" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/services/erp-implementation" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   Technology Setup
                 </Link>
               </li>
