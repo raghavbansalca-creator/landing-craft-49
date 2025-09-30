@@ -4,6 +4,7 @@ import { CheckCircle, AlertCircle, Target, BarChart3, Users, Calendar, Clock, Aw
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const PerformanceOptimization = () => {
   return (
@@ -32,7 +33,13 @@ const PerformanceOptimization = () => {
       </section>
 
       {/* Performance Problems */}
-      <section className="py-20 px-4">
+      <motion.section 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="py-20 px-4"
+      >
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6 text-foreground">
@@ -101,10 +108,16 @@ const PerformanceOptimization = () => {
             </Card>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Our Performance System */}
-      <section className="py-20 px-4 bg-gradient-to-b from-green-50 to-emerald-50 dark:from-green-950/10 dark:to-emerald-950/10">
+      <motion.section 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="py-20 px-4 bg-gradient-to-b from-green-50 to-emerald-50 dark:from-green-950/10 dark:to-emerald-950/10"
+      >
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6 text-foreground">
@@ -174,10 +187,16 @@ const PerformanceOptimization = () => {
             </Card>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* What You Get */}
-      <section className="py-20 px-4">
+      <motion.section 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="py-20 px-4"
+      >
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-16 text-foreground">
             What You'll Have After Implementation
@@ -245,7 +264,7 @@ const PerformanceOptimization = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
 
       {/* Call to Action */}

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle, AlertTriangle, Target, TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 const ProcessOptimisation = () => {
   return <div className="min-h-screen bg-background">
       <Navigation />
@@ -26,7 +27,13 @@ const ProcessOptimisation = () => {
       </section>
 
       {/* Current Problem Section */}
-      <section className="py-20 px-4">
+      <motion.section 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="py-20 px-4"
+      >
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">As commonly observed</h2>
@@ -70,10 +77,16 @@ const ProcessOptimisation = () => {
             </Card>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Our Process System */}
-      <section className="py-20 px-4 bg-gradient-to-b from-emerald-50 to-teal-50 dark:from-emerald-950/10 dark:to-teal-950/10">
+      <motion.section 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="py-20 px-4 bg-gradient-to-b from-emerald-50 to-teal-50 dark:from-emerald-950/10 dark:to-teal-950/10"
+      >
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6 text-foreground">
@@ -143,10 +156,16 @@ const ProcessOptimisation = () => {
             </Card>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* What You'll Have After Implementation */}
-      <section className="py-20 px-4">
+      <motion.section 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="py-20 px-4"
+      >
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-16 text-foreground">
             What You'll Have After Implementation
@@ -214,7 +233,7 @@ const ProcessOptimisation = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
 
       {/* Call to Action */}

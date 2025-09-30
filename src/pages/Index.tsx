@@ -7,6 +7,7 @@ import LogoCarousel from "@/components/LogoCarousel";
 import businessCollaboration from "@/assets/business-collaboration.jpg";
 import businessGrowth from "@/assets/business-growth.jpg";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Index = () => {
   return (
@@ -54,7 +55,13 @@ const Index = () => {
       </section>
 
       {/* Pain Points Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-red-950/20 via-red-900/10 to-background relative overflow-hidden">
+      <motion.section 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="py-20 px-4 bg-gradient-to-br from-red-950/20 via-red-900/10 to-background relative overflow-hidden"
+      >
         {/* Warning Pattern Overlay */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-10 left-10 w-32 h-32 border-2 border-red-500 rotate-45"></div>
@@ -115,10 +122,16 @@ const Index = () => {
             </Card>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* What We Do Section */}
-      <section className="py-20 px-4">
+      <motion.section 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="py-20 px-4"
+      >
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4 text-foreground">
@@ -230,10 +243,16 @@ const Index = () => {
             </a>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* What Sets Us Apart */}
-      <section className="py-20 px-4 bg-accent relative overflow-hidden">
+      <motion.section 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="py-20 px-4 bg-accent relative overflow-hidden"
+      >
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
@@ -255,10 +274,16 @@ const Index = () => {
             </p>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Social Proof */}
-      <section className="py-20 px-4">
+      <motion.section 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="py-20 px-4"
+      >
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold mb-8 text-foreground">
@@ -367,7 +392,7 @@ const Index = () => {
 
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Final CTA */}
       <section className="py-20 px-4 bg-primary text-primary-foreground text-center">

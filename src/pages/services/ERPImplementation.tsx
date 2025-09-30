@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Smartphone, FileSpreadsheet, FileText, Database, Zap, BarChart3, Settings } from "lucide-react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 const ERPImplementation = () => {
   return <div className="min-h-screen bg-background">
       <Navigation />
@@ -54,7 +55,13 @@ const ERPImplementation = () => {
       </section>
 
       {/* Current Problem Section */}
-      <section className="py-16 bg-muted/30">
+      <motion.section 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="py-16 bg-muted/30"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Are You Still...</h2>
@@ -80,10 +87,16 @@ const ERPImplementation = () => {
             </Card>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* What You'll Have After Implementation */}
-      <section className="py-20 bg-gradient-to-br from-slate-900 to-blue-900 text-white relative overflow-hidden">
+      <motion.section 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="py-20 bg-gradient-to-br from-slate-900 to-blue-900 text-white relative overflow-hidden"
+      >
         <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-blue-500/10"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
@@ -158,10 +171,16 @@ const ERPImplementation = () => {
             </Card>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Our Digital System Section */}
-      <section className="py-16 bg-muted/30">
+      <motion.section 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="py-16 bg-muted/30"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Digital Transformation System</h2>
@@ -226,7 +245,7 @@ const ERPImplementation = () => {
             </Card>
           </div>
         </div>
-      </section>
+      </motion.section>
 
 
       {/* Call to Action */}

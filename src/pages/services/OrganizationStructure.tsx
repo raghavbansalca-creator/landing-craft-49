@@ -4,6 +4,7 @@ import { CheckCircle, Users, ArrowRight, Building, Shield, Zap } from "lucide-re
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const OrganizationStructure = () => {
   return (
@@ -38,7 +39,13 @@ const OrganizationStructure = () => {
       </section>
 
       {/* Current Problem Section */}
-      <section className="py-16 px-4 bg-gradient-to-r from-red-50 to-orange-50">
+      <motion.section 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="py-16 px-4 bg-gradient-to-r from-red-50 to-orange-50"
+      >
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-red-700">
             Are You Still...
@@ -76,10 +83,16 @@ const OrganizationStructure = () => {
             </Card>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Our Organization System */}
-      <section className="py-20 px-4 bg-gradient-to-b from-orange-50 to-red-50 dark:from-orange-950/10 dark:to-red-950/10">
+      <motion.section 
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="py-20 px-4 bg-gradient-to-b from-orange-50 to-red-50 dark:from-orange-950/10 dark:to-red-950/10"
+      >
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6 text-foreground">
@@ -143,10 +156,16 @@ const OrganizationStructure = () => {
             </Card>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* What You'll Have After Implementation */}
-      <section className="py-20 px-4">
+      <motion.section 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="py-20 px-4"
+      >
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-16 text-foreground">
             What You'll Have After Implementation
@@ -214,7 +233,7 @@ const OrganizationStructure = () => {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
 
       {/* Call to Action */}
