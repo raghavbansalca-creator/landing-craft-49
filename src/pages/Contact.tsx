@@ -12,112 +12,87 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
 
 const contactSchema = z.object({
-  name: z.string().trim().min(1, {
-    message: "Name is required"
-  }).min(2, {
-    message: "Name must be at least 2 characters"
-  }).max(100, {
-    message: "Name must be less than 100 characters"
-  }).regex(/^[a-zA-Z\s'-]+$/, {
-    message: "Name can only contain letters, spaces, hyphens and apostrophes"
-  }),
-  email: z.string().trim().min(1, {
-    message: "Email is required"
-  }).email({
-    message: "Invalid email address"
-  }).max(255, {
-    message: "Email must be less than 255 characters"
-  }).regex(/^[^\s@]+@[^\s@]+\.[^\s@]+$/, {
-    message: "Please enter a valid email format"
-  }),
-  company: z.string().trim().max(100, {
-    message: "Company name must be less than 100 characters"
-  }).optional().or(z.literal('')),
-  phone: z.string().trim().regex(/^[\d\s+()-]*$/, {
-    message: "Phone can only contain numbers, spaces, +, ( ) and -"
-  }).min(10, {
-    message: "Phone must be at least 10 digits"
-  }).max(20, {
-    message: "Phone must be less than 20 characters"
-  }).optional().or(z.literal('')),
-  subject: z.string().trim().min(1, {
-    message: "Subject is required"
-  }).min(5, {
-    message: "Subject must be at least 5 characters"
-  }).max(200, {
-    message: "Subject must be less than 200 characters"
-  }),
-  message: z.string().trim().min(1, {
-    message: "Message is required"
-  }).min(20, {
-    message: "Message must be at least 20 characters"
-  }).max(1000, {
-    message: "Message must be less than 1000 characters"
-  })
+  name: z.string().trim().min(2, { message: "Name must be at least 2 characters" }),
+  email: z.string().trim().email({ message: "Invalid email address" }),
+  company: z.string().trim().optional().or(z.literal("")),
+  phone: z.string().trim().optional().or(z.literal("")),
+  subject: z.string().trim().min(5, { message: "Subject must be at least 5 characters" }),
+  message: z.string().trim().min(20, { message: "Message must be at least 20 characters" }),
 });
 
 type ContactForm = z.infer<typeof contactSchema>;
+
 const Contact = () => {
-  const {
-    toast
-  } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: {
-      errors
-    }
-  } = useForm<ContactForm>({
-    resolver: zodResolver(contactSchema)
+  const { toast } = useToast();
+  const [isSubmittingEmail, setIsSubmittingEmail] = useState(false);
+  const [isSubmittingWhatsApp, setIsSubmittingWhatsApp] = useState(false);
+
+  const { register, handleSubmit, reset, formState: { errors } } = useForm<ContactForm>({
+    resolver: zodResolver(contactSchema),
   });
 
-
-const onSubmit = async (data: ContactForm) => {
-    setIsSubmitting(true);
+  // ✅ EmailJS handler
+  const sendEmail = async (data: ContactForm) => {
+    setIsSubmittingEmail(true);
     try {
-      const whatsappMessage = `*New Contact Form Submission*\n\n` +
-        `*Name:* ${data.name}\n` +
-        `*Email:* ${data.email}\n` +
-        `${data.company ? `*Company:* ${data.company}\n` : ''}` +
-        `${data.phone ? `*Phone:* ${data.phone}\n` : ''}` +
-        `*Subject:* ${data.subject}\n\n` +
-        `*Message:*\n${data.message}`;
-      const whatsappNumber = "919997155444";
-      
-      const encodedMessage = encodeURIComponent(whatsappMessage);
-      
-      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-      
-      window.open(whatsappURL, '_blank');
-      
-      toast({
-        title: "Redirecting to WhatsApp!",
-        description: "You'll be redirected to WhatsApp to send your message."
-      });
-      
-      setTimeout(() => {
-        reset();
-      }, 1000);
-      
+      await emailjs.send(
+        "service_pwseayy",
+        "template_pnd6nkb",
+        {
+          from_name: data.name,
+          from_email: data.email,
+          company: data.company || "N/A",
+          phone: data.phone || "N/A",
+          subject: data.subject,
+          message: data.message,
+        },
+        "M6fSoECJy7UbJ3hXu"
+      );
+
+      toast({ title: "Success!", description: "Email sent successfully 🚀" });
+      reset();
     } catch (error) {
-      toast({
-        title: "Error opening WhatsApp",
-        description: "Please try again or contact us directly.",
-        variant: "destructive"
-      });
+      toast({ title: "Error", description: "Failed to send email", variant: "destructive" });
     } finally {
-      setIsSubmitting(false);
+      setIsSubmittingEmail(false);
     }
   };
 
+  // ✅ WhatsApp handler
+  const sendWhatsApp = (data: ContactForm) => {
+    setIsSubmittingWhatsApp(true);
+    try {
+      const whatsappMessage =
+        `*New Contact Form Submission*\n\n` +
+        `*Name:* ${data.name}\n` +
+        `*Email:* ${data.email}\n` +
+        `${data.company ? `*Company:* ${data.company}\n` : ""}` +
+        `${data.phone ? `*Phone:* ${data.phone}\n` : ""}` +
+        `*Subject:* ${data.subject}\n\n` +
+        `*Message:*\n${data.message}`;
 
-  return <div className="min-h-screen bg-background">
+      const whatsappNumber = "919997155444";
+      const encodedMessage = encodeURIComponent(whatsappMessage);
+      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+      window.open(whatsappURL, "_blank");
+
+      toast({ title: "Redirecting!", description: "Opening WhatsApp..." });
+      reset();
+    } catch (error) {
+      toast({ title: "Error", description: "Failed to open WhatsApp", variant: "destructive" });
+    } finally {
+      setIsSubmittingWhatsApp(false);
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-background">
       <Navigation />
-      
+
       {/* Hero Section */}
       <section className="relative pt-20 pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/5" />
@@ -132,7 +107,7 @@ const onSubmit = async (data: ContactForm) => {
       </section>
 
       {/* Contact Section */}
-      <motion.section 
+      <motion.section
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -140,7 +115,7 @@ const onSubmit = async (data: ContactForm) => {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            
+
             {/* Contact Form */}
             <Card className="border-2">
               <CardHeader>
@@ -153,14 +128,14 @@ const onSubmit = async (data: ContactForm) => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                <form className="space-y-6">
+                  {/* Inputs */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="name">Name *</Label>
                       <Input id="name" {...register("name")} placeholder="Your full name" className={errors.name ? "border-destructive" : ""} />
                       {errors.name && <p className="text-sm text-destructive">{errors.name.message}</p>}
                     </div>
-                    
                     <div className="space-y-2">
                       <Label htmlFor="email">Email *</Label>
                       <Input id="email" type="email" {...register("email")} placeholder="your.email@company.com" className={errors.email ? "border-destructive" : ""} />
@@ -171,32 +146,46 @@ const onSubmit = async (data: ContactForm) => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="company">Company</Label>
-                      <Input id="company" {...register("company")} placeholder="Your company name" className={errors.company ? "border-destructive" : ""} />
-                      {errors.company && <p className="text-sm text-destructive">{errors.company.message}</p>}
+                      <Input id="company" {...register("company")} placeholder="Your company name" />
                     </div>
-                    
                     <div className="space-y-2">
                       <Label htmlFor="phone">Phone</Label>
-                      <Input id="phone" type="tel" {...register("phone")} placeholder="+1 (555) 123-4567" className={errors.phone ? "border-destructive" : ""} />
-                      {errors.phone && <p className="text-sm text-destructive">{errors.phone.message}</p>}
+                      <Input id="phone" type="tel" {...register("phone")} placeholder="+1 (555) 123-4567" />
                     </div>
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="subject">Subject *</Label>
-                    <Input id="subject" {...register("subject")} placeholder="What can we help you with?" className={errors.subject ? "border-destructive" : ""} />
-                    {errors.subject && <p className="text-sm text-destructive">{errors.subject.message}</p>}
+                    <Input id="subject" {...register("subject")} placeholder="What can we help you with?" />
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="message">Message *</Label>
-                    <Textarea id="message" {...register("message")} placeholder="Tell us about your business challenges and goals..." rows={5} className={errors.message ? "border-destructive" : ""} />
-                    {errors.message && <p className="text-sm text-destructive">{errors.message.message}</p>}
+                    <Textarea id="message" {...register("message")} placeholder="Tell us about your business challenges and goals..." rows={5} />
                   </div>
 
-                  <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
-                    {isSubmitting ? "Sending..." : "Send Message"}
-                  </Button>
+                  {/* Buttons */}
+                  <div className="flex gap-4">
+                    <Button
+                      type="button"
+                      size="lg"
+                      className="w-1/2 bg-blue-600"
+                      disabled={isSubmittingEmail}
+                      onClick={handleSubmit(sendEmail)}
+                    >
+                      {isSubmittingEmail ? "Sending..." : "Send Email"}
+                    </Button>
+
+                    <Button
+                      type="button"
+                      size="lg"
+                      className="w-1/2 bg-green-600"
+                      disabled={isSubmittingWhatsApp}
+                      onClick={handleSubmit(sendWhatsApp)}
+                    >
+                      {isSubmittingWhatsApp ? "Opening..." : "Send WhatsApp"}
+                    </Button>
+                  </div>
                 </form>
               </CardContent>
             </Card>
@@ -211,7 +200,6 @@ const onSubmit = async (data: ContactForm) => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-6">
-                  
                   <div className="flex items-start space-x-4">
                     <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                       <Mail className="w-5 h-5 text-primary" />
@@ -270,21 +258,16 @@ const onSubmit = async (data: ContactForm) => {
                       </p>
                     </div>
                   </div>
-
                 </CardContent>
               </Card>
-
-              <Card className="border-2 bg-primary/5">
-                
-                
-              </Card>
-
             </div>
           </div>
         </div>
       </motion.section>
 
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default Contact;
