@@ -377,7 +377,7 @@ const Index = () => {
                     {"★".repeat(5)}
                   </div>
                   <p className="text-muted-foreground italic mb-4">
-                    "Their logistics optimization reduced our delivery costs by 30% while improving customer satisfaction. Exceptional support throughout the implementation."
+                    "They took complete control of our finances—from budgeting to forecasting. Now we have crystal-clear visibility into every rupee and make data-driven decisions with confidence."
                   </p>
                 </div>
                 <div className="flex items-center">
