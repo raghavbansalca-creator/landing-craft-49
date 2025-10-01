@@ -146,7 +146,7 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <a href="/services/performance-optimization" className="block">
+            <Link to="/services/performance-optimization" className="block">
               <Card className="p-6 hover-lift cursor-pointer">
                 <CardHeader>
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
@@ -160,9 +160,9 @@ const Index = () => {
                   </CardDescription>
                 </CardContent>
               </Card>
-            </a>
+            </Link>
 
-            <a href="/services/organization-structure" className="block">
+            <Link to="/services/organization-structure" className="block">
               <Card className="p-6 hover-lift cursor-pointer">
                 <CardHeader>
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
@@ -176,9 +176,9 @@ const Index = () => {
                   </CardDescription>
                 </CardContent>
               </Card>
-            </a>
+            </Link>
 
-            <a href="/services/process-optimisation" className="block">
+            <Link to="/services/process-optimisation" className="block">
               <Card className="p-6 hover-lift cursor-pointer">
                 <CardHeader>
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
@@ -192,9 +192,9 @@ const Index = () => {
                   </CardDescription>
                 </CardContent>
               </Card>
-            </a>
+            </Link>
 
-            <a href="/services/inventory-supply-chain" className="block">
+            <Link to="/services/inventory-supply-chain" className="block">
               <Card className="p-6 hover-lift cursor-pointer">
                 <CardHeader>
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
@@ -208,9 +208,9 @@ const Index = () => {
                   </CardDescription>
                 </CardContent>
               </Card>
-            </a>
+            </Link>
 
-            <a href="/services/financial-planning" className="block">
+            <Link to="/services/financial-planning" className="block">
               <Card className="p-6 hover-lift cursor-pointer">
                 <CardHeader>
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
@@ -224,9 +224,9 @@ const Index = () => {
                   </CardDescription>
                 </CardContent>
               </Card>
-            </a>
+            </Link>
 
-            <a href="/services/erp-implementation" className="block">
+            <Link to="/services/erp-implementation" className="block">
               <Card className="p-6 hover-lift cursor-pointer">
                 <CardHeader>
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
@@ -240,7 +240,7 @@ const Index = () => {
                   </CardDescription>
                 </CardContent>
               </Card>
-            </a>
+            </Link>
           </div>
         </div>
       </motion.section>
