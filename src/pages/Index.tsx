@@ -25,7 +25,7 @@ const Index = () => {
         <div className="absolute inset-0 z-0">
           <img src={businessCollaboration} alt="Business collaboration" className="w-full h-full object-cover opacity-15" />
           <div className="absolute inset-0 bg-gradient-to-br from-blue-950/90 via-blue-900/85 to-blue-800/90"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-background/10"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-background/10 px-px"></div>
         </div>
 
         <div className="max-w-4xl mx-auto relative z-10">
@@ -59,7 +59,7 @@ const Index = () => {
       once: true
     }} className="py-20 px-4 bg-gradient-to-br from-red-950/20 via-red-900/10 to-background relative overflow-hidden">
         {/* Warning Pattern Overlay */}
-        <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0 opacity-5 mx-[5px] px-[5px]">
           <div className="absolute top-10 left-10 w-32 h-32 border-2 border-red-500 rotate-45"></div>
           <div className="absolute top-32 right-20 w-24 h-24 border-2 border-orange-500 rotate-12"></div>
           <div className="absolute bottom-20 left-32 w-28 h-28 border-2 border-red-400 -rotate-12"></div>
