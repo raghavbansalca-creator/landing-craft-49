@@ -25,7 +25,7 @@ const Index = () => {
         <div className="absolute inset-0 z-0">
           <img src={businessCollaboration} alt="Business collaboration" className="w-full h-full object-cover opacity-15" />
           <div className="absolute inset-0 bg-gradient-to-br from-blue-950/90 via-blue-900/85 to-blue-800/90"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-background/40"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-background/10"></div>
         </div>
 
         <div className="max-w-4xl mx-auto relative z-10">
