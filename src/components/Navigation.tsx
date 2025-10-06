@@ -96,23 +96,23 @@ const Navigation = () => {
                   <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-                <div className="flex flex-col space-y-4 mt-8">
+              <SheetContent side="right" className="w-[260px] sm:w-[300px]">
+                <div className="flex flex-col space-y-2 mt-4">
                   {/* Mobile Logo */}
-                  <div className="mb-8">
-                    <img src={logo} alt="7 Labs Vision" className="h-10 w-auto" />
+                  <div className="mb-4">
+                    <img src={logo} alt="7 Labs Vision" className="h-7 w-auto" />
                   </div>
                   
                   {/* Mobile Solutions */}
-                  <div className="space-y-3">
-                    <div className="text-lg font-semibold text-foreground mb-3">
+                  <div className="space-y-1">
+                    <div className="text-sm font-semibold text-foreground mb-2">
                       {isStartupContext ? "Startup Solutions" : "Solutions"}
                     </div>
                     {currentSolutions.map((solution, index) => (
                       <Link 
                         key={index}
                         to={solution.href}
-                        className="block px-3 py-2 text-muted-foreground hover:text-foreground transition-colors"
+                        className="block px-2 py-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         {solution.title}
@@ -123,7 +123,7 @@ const Navigation = () => {
                   {/* Mobile For Startup Ecosystem */}
                   <Link 
                     to="/startup-ecosystem" 
-                    className="block px-3 py-2 text-lg font-semibold text-foreground hover:text-primary transition-colors"
+                    className="block px-2 py-1.5 text-sm font-semibold text-foreground hover:text-primary transition-colors"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     For Startup Ecosystem
@@ -132,7 +132,7 @@ const Navigation = () => {
                   {/* Mobile About Us */}
                   <Link 
                     to="/about" 
-                    className="block px-3 py-2 text-lg font-semibold text-foreground hover:text-primary transition-colors"
+                    className="block px-2 py-1.5 text-sm font-semibold text-foreground hover:text-primary transition-colors"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     About Us
@@ -141,14 +141,14 @@ const Navigation = () => {
                   {/* Mobile Contact Us */}
                   <Link 
                     to="/contact" 
-                    className="block px-3 py-2 text-lg font-semibold text-foreground hover:text-primary transition-colors"
+                    className="block px-2 py-1.5 text-sm font-semibold text-foreground hover:text-primary transition-colors"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Contact Us
                   </Link>
 
                   {/* Mobile CTA Button */}
-                  <Button className="mt-6 w-full" onClick={() => setIsMobileMenuOpen(false)} asChild>
+                  <Button size="sm" className="mt-4 w-full" onClick={() => setIsMobileMenuOpen(false)} asChild>
                     <Link to="/contact">Schedule Free Audit</Link>
                   </Button>
                 </div>
