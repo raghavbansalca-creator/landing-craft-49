@@ -302,15 +302,14 @@ const Index = () => {
           </div>
 
           {/* Testimonials */}
-          {/* Testimonials */}
-          <div className="grid md:grid-cols-2 gap-4 md:gap-8">
-            <Card className="p-4 md:p-6">
+          <div className="flex gap-4 overflow-x-auto pb-4 md:grid md:grid-cols-2 md:gap-8 md:overflow-visible snap-x snap-mandatory md:snap-none">
+            <Card className="p-4 md:p-6 min-w-[85vw] md:min-w-0 snap-center">
               <CardContent className="pt-4 md:pt-6">
                 <div className="mb-4">
                   <div className="flex text-primary mb-2">
                     {"★".repeat(5)}
                   </div>
-                  <p className="text-muted-foreground italic mb-4">
+                  <p className="text-muted-foreground italic mb-4 text-sm">
                     "Their 'What Could Go Wrong' methodology completely transformed our operations. We went from chaos to clarity in just 3 months."
                   </p>
                 </div>
@@ -326,13 +325,13 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="p-6">
-              <CardContent className="pt-6">
+            <Card className="p-4 md:p-6 min-w-[85vw] md:min-w-0 snap-center">
+              <CardContent className="pt-4 md:pt-6">
                 <div className="mb-4">
                   <div className="flex text-primary mb-2">
                     {"★".repeat(5)}
                   </div>
-                  <p className="text-muted-foreground italic mb-4">
+                  <p className="text-muted-foreground italic mb-4 text-sm">
                     "Finally, we have complete visibility into our finances and operations. The team actually sits with you until everything works perfectly."
                   </p>
                 </div>
@@ -348,13 +347,13 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="p-6">
-              <CardContent className="pt-6">
+            <Card className="p-4 md:p-6 min-w-[85vw] md:min-w-0 snap-center">
+              <CardContent className="pt-4 md:pt-6">
                 <div className="mb-4">
                   <div className="flex text-primary mb-2">
                     {"★".repeat(5)}
                   </div>
-                  <p className="text-muted-foreground italic mb-4">
+                  <p className="text-muted-foreground italic mb-4 text-sm">
                     "The automation solutions they implemented saved us 15+ hours weekly on inventory management. Our order processing is now seamless and error-free."
                   </p>
                 </div>
@@ -370,13 +369,13 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="p-6">
-              <CardContent className="pt-6">
+            <Card className="p-4 md:p-6 min-w-[85vw] md:min-w-0 snap-center">
+              <CardContent className="pt-4 md:pt-6">
                 <div className="mb-4">
                   <div className="flex text-primary mb-2">
                     {"★".repeat(5)}
                   </div>
-                  <p className="text-muted-foreground italic mb-4">
+                  <p className="text-muted-foreground italic mb-4 text-sm">
                     "They took complete control of our finances—from budgeting to forecasting. Now we have crystal-clear visibility into every rupee and make data-driven decisions with confidence."
                   </p>
                 </div>
@@ -391,7 +390,6 @@ const Index = () => {
                 </div>
               </CardContent>
             </Card>
-
           </div>
         </div>
       </motion.section>
