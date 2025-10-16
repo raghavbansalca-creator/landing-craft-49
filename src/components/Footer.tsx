@@ -99,7 +99,7 @@ const Footer = () => {
         <div className="mt-8 pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-muted-foreground">
-              © 2024 7 Labs Vision. All rights reserved.
+              © 2025 7 Labs Vision. All rights reserved.
             </p>
             <div className="mt-4 md:mt-0">
               <p className="text-sm text-muted-foreground">
