@@ -135,6 +135,7 @@ const StartupEcosystem = () => {
 
       {/* Our Startup Solutions */}
       <motion.section 
+        id="solutions"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -152,7 +153,7 @@ const StartupEcosystem = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="border-2 hover:shadow-xl transition-all hover:border-primary/50">
+            <Card className="border-2 hover:shadow-xl transition-all hover:border-primary/50" id="financial">
               <CardHeader className="pb-4">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                   <DollarSign className="w-8 h-8 text-primary" />
@@ -190,7 +191,7 @@ const StartupEcosystem = () => {
               </CardContent>
             </Card>
 
-            <Card className="border-2 hover:shadow-xl transition-all hover:border-primary/50">
+            <Card className="border-2 hover:shadow-xl transition-all hover:border-primary/50" id="due-diligence">
               <CardHeader className="pb-4">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                   <FileCheck className="w-8 h-8 text-primary" />
@@ -228,7 +229,7 @@ const StartupEcosystem = () => {
               </CardContent>
             </Card>
 
-            <Card className="border-2 hover:shadow-xl transition-all hover:border-primary/50">
+            <Card className="border-2 hover:shadow-xl transition-all hover:border-primary/50" id="strategic">
               <CardHeader className="pb-4">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                   <Briefcase className="w-8 h-8 text-primary" />

@@ -27,10 +27,10 @@ const Navigation = () => {
   ];
 
   const startupSolutions = [
-    { href: "/contact", title: "Growth Operations Setup" },
-    { href: "/contact", title: "Financial Modeling & Planning" },
-    { href: "/contact", title: "Product Strategy & Validation" },
-    { href: "/contact", title: "Technology & Infrastructure" }
+    { href: "/startup-ecosystem#financial", title: "Financial Services & Modeling" },
+    { href: "/startup-ecosystem#due-diligence", title: "Transaction & Due Diligence" },
+    { href: "/startup-ecosystem#strategic", title: "Strategic & Operational Services" },
+    { href: "/contact", title: "Schedule Startup Assessment" }
   ];
 
   const currentSolutions = isStartupContext ? startupSolutions : regularSolutions;
