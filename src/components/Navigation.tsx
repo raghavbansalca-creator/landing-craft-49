@@ -53,7 +53,7 @@ const Navigation = () => {
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="ghost" className="flex items-center">
-                    Solutions
+                    {isStartupContext ? "Startup Solutions" : "Business Solutions"}
                     <ChevronDown className="ml-1 h-4 w-4" />
                   </Button>
                 </DropdownMenuTrigger>
@@ -109,7 +109,7 @@ const Navigation = () => {
                   {/* Mobile Solutions */}
                   <div className="space-y-1">
                     <div className="text-sm font-semibold text-foreground mb-2">
-                      {isStartupContext ? "Startup Solutions" : "Solutions"}
+                      {isStartupContext ? "Startup Solutions" : "Business Solutions"}
                     </div>
                     {currentSolutions.map((solution, index) => (
                       <Link 
