@@ -5,10 +5,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Rocket, TrendingUp, Users, Zap, Target, DollarSign, BarChart3, Lightbulb, Shield, Globe, AlertTriangle, Scale, FileText, Briefcase, FileCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-
 const StartupEcosystem = () => {
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Navigation />
       
       {/* Hero Section */}
@@ -22,19 +20,23 @@ const StartupEcosystem = () => {
             From idea to IPO - we provide the strategic foundation, operational excellence, and growth systems that turn promising startups into industry leaders.
           </p>
           <Button size="default" className="md:text-lg md:px-8 md:py-3" asChild>
-            <Link to="/contact">Get Your Startup Assessment</Link>
+            
           </Button>
         </div>
       </section>
 
       {/* Startup Challenges */}
-      <motion.section 
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="py-8 md:py-12 bg-muted/30"
-      >
+      <motion.section initial={{
+      opacity: 0,
+      y: 30
+    }} whileInView={{
+      opacity: 1,
+      y: 0
+    }} transition={{
+      duration: 0.6
+    }} viewport={{
+      once: true
+    }} className="py-8 md:py-12 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-6 md:mb-10">
             <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-2 md:mb-3">
@@ -134,14 +136,17 @@ const StartupEcosystem = () => {
       </motion.section>
 
       {/* Our Startup Solutions */}
-      <motion.section 
-        id="solutions"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="py-16"
-      >
+      <motion.section id="solutions" initial={{
+      opacity: 0,
+      y: 30
+    }} whileInView={{
+      opacity: 1,
+      y: 0
+    }} transition={{
+      duration: 0.6
+    }} viewport={{
+      once: true
+    }} className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -271,13 +276,15 @@ const StartupEcosystem = () => {
       </motion.section>
 
       {/* Why Choose Us for Your Startup */}
-      <motion.section 
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-        className="py-16 bg-muted/30"
-      >
+      <motion.section initial={{
+      opacity: 0
+    }} whileInView={{
+      opacity: 1
+    }} transition={{
+      duration: 0.6
+    }} viewport={{
+      once: true
+    }} className="py-16 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -335,8 +342,6 @@ const StartupEcosystem = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default StartupEcosystem;
