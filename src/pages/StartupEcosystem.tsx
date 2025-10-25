@@ -12,16 +12,16 @@ const StartupEcosystem = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative pt-20 pb-16 overflow-hidden">
+      <section className="relative pt-12 pb-8 md:pt-20 md:pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/5" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
+          <h1 className="text-3xl md:text-6xl font-bold text-foreground mb-3 md:mb-6">
             Empowering <span className="bg-gradient-to-r from-primary via-primary/80 to-primary bg-clip-text text-transparent">Startups</span> to Scale
           </h1>
-          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+          <p className="text-base md:text-xl text-muted-foreground mb-4 md:mb-8 max-w-3xl mx-auto">
             From idea to IPO - we provide the strategic foundation, operational excellence, and growth systems that turn promising startups into industry leaders.
           </p>
-          <Button size="lg" className="text-lg px-8 py-3" asChild>
+          <Button size="default" className="md:text-lg md:px-8 md:py-3" asChild>
             <Link to="/contact">Get Your Startup Assessment</Link>
           </Button>
         </div>
@@ -33,98 +33,98 @@ const StartupEcosystem = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="py-12 bg-muted/30"
+        className="py-8 md:py-12 bg-muted/30"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
+          <div className="text-center mb-6 md:mb-10">
+            <h2 className="text-2xl md:text-4xl font-bold text-foreground mb-2 md:mb-3">
               Common Startup Challenges We Solve
             </h2>
-            <p className="text-base text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">
               Every startup faces unique challenges. We've identified the most critical ones that can make or break your growth trajectory.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             <Card className="border hover:shadow-lg transition-shadow">
-              <CardHeader className="pb-3">
-                <BarChart3 className="w-8 h-8 text-primary mb-2" />
-                <CardTitle className="text-lg">No Financial Model</CardTitle>
+              <CardHeader className="pb-2 md:pb-3">
+                <BarChart3 className="w-6 h-6 md:w-8 md:h-8 text-primary mb-1 md:mb-2" />
+                <CardTitle className="text-base md:text-lg">No Financial Model</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-sm">
+                <CardDescription className="text-xs md:text-sm">
                   Inaccurate forecasting leads to poor scalability and operations management.
                 </CardDescription>
               </CardContent>
             </Card>
 
             <Card className="border hover:shadow-lg transition-shadow">
-              <CardHeader className="pb-3">
-                <Shield className="w-8 h-8 text-primary mb-2" />
-                <CardTitle className="text-lg">Unprepared Due Diligence</CardTitle>
+              <CardHeader className="pb-2 md:pb-3">
+                <Shield className="w-6 h-6 md:w-8 md:h-8 text-primary mb-1 md:mb-2" />
+                <CardTitle className="text-base md:text-lg">Unprepared Due Diligence</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-sm">
+                <CardDescription className="text-xs md:text-sm">
                   Hampered funding opportunities due to inadequate due diligence preparation.
                 </CardDescription>
               </CardContent>
             </Card>
 
             <Card className="border hover:shadow-lg transition-shadow">
-              <CardHeader className="pb-3">
-                <FileText className="w-8 h-8 text-primary mb-2" />
-                <CardTitle className="text-lg">Compliance Burden</CardTitle>
+              <CardHeader className="pb-2 md:pb-3">
+                <FileText className="w-6 h-6 md:w-8 md:h-8 text-primary mb-1 md:mb-2" />
+                <CardTitle className="text-base md:text-lg">Compliance Burden</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-sm">
+                <CardDescription className="text-xs md:text-sm">
                   Overwhelmed by regulatory compliance requirements? We streamline compliance processes.
                 </CardDescription>
               </CardContent>
             </Card>
 
             <Card className="border hover:shadow-lg transition-shadow">
-              <CardHeader className="pb-3">
-                <AlertTriangle className="w-8 h-8 text-primary mb-2" />
-                <CardTitle className="text-lg">Contract Risks</CardTitle>
+              <CardHeader className="pb-2 md:pb-3">
+                <AlertTriangle className="w-6 h-6 md:w-8 md:h-8 text-primary mb-1 md:mb-2" />
+                <CardTitle className="text-base md:text-lg">Contract Risks</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-sm">
+                <CardDescription className="text-xs md:text-sm">
                   Exposure to risks from poorly drafted contracts and agreements.
                 </CardDescription>
               </CardContent>
             </Card>
 
             <Card className="border hover:shadow-lg transition-shadow">
-              <CardHeader className="pb-3">
-                <Lightbulb className="w-8 h-8 text-primary mb-2" />
-                <CardTitle className="text-lg">Government Schemes Awareness</CardTitle>
+              <CardHeader className="pb-2 md:pb-3">
+                <Lightbulb className="w-6 h-6 md:w-8 md:h-8 text-primary mb-1 md:mb-2" />
+                <CardTitle className="text-base md:text-lg">Government Schemes Awareness</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-sm">
+                <CardDescription className="text-xs md:text-sm">
                   Missing out on government schemes and initiatives for startups?
                 </CardDescription>
               </CardContent>
             </Card>
 
             <Card className="border hover:shadow-lg transition-shadow">
-              <CardHeader className="pb-3">
-                <DollarSign className="w-8 h-8 text-primary mb-2" />
-                <CardTitle className="text-lg">Debt Crunching</CardTitle>
+              <CardHeader className="pb-2 md:pb-3">
+                <DollarSign className="w-6 h-6 md:w-8 md:h-8 text-primary mb-1 md:mb-2" />
+                <CardTitle className="text-base md:text-lg">Debt Crunching</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-sm">
+                <CardDescription className="text-xs md:text-sm">
                   Struggling with debt management and financial pressure?
                 </CardDescription>
               </CardContent>
             </Card>
 
             <Card className="border hover:shadow-lg transition-shadow">
-              <CardHeader className="pb-3">
-                <Scale className="w-8 h-8 text-primary mb-2" />
-                <CardTitle className="text-lg">Regulatory Struggles</CardTitle>
+              <CardHeader className="pb-2 md:pb-3">
+                <Scale className="w-6 h-6 md:w-8 md:h-8 text-primary mb-1 md:mb-2" />
+                <CardTitle className="text-base md:text-lg">Regulatory Struggles</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-sm">
+                <CardDescription className="text-xs md:text-sm">
                   Navigating complex regulations is challenging for growing startups.
                 </CardDescription>
               </CardContent>
