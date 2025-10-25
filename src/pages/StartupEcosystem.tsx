@@ -33,99 +33,99 @@ const StartupEcosystem = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="py-16 bg-muted/30"
+        className="py-12 bg-muted/30"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
               Common Startup Challenges We Solve
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-base text-muted-foreground max-w-2xl mx-auto">
               Every startup faces unique challenges. We've identified the most critical ones that can make or break your growth trajectory.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="border-2 hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <BarChart3 className="w-12 h-12 text-primary mb-4" />
-                <CardTitle>No Financial Model</CardTitle>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <Card className="border hover:shadow-lg transition-shadow">
+              <CardHeader className="pb-3">
+                <BarChart3 className="w-8 h-8 text-primary mb-2" />
+                <CardTitle className="text-lg">No Financial Model</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription>
-                  Inaccurate forecasting leads to poor scalability and operations management. We help you build robust financial models for sustainable growth.
+                <CardDescription className="text-sm">
+                  Inaccurate forecasting leads to poor scalability and operations management.
                 </CardDescription>
               </CardContent>
             </Card>
 
-            <Card className="border-2 hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <Shield className="w-12 h-12 text-primary mb-4" />
-                <CardTitle>Unprepared Due Diligence</CardTitle>
+            <Card className="border hover:shadow-lg transition-shadow">
+              <CardHeader className="pb-3">
+                <Shield className="w-8 h-8 text-primary mb-2" />
+                <CardTitle className="text-lg">Unprepared Due Diligence</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription>
-                  Hampered funding opportunities due to inadequate due diligence preparation. We ensure you're investor-ready with comprehensive documentation.
+                <CardDescription className="text-sm">
+                  Hampered funding opportunities due to inadequate due diligence preparation.
                 </CardDescription>
               </CardContent>
             </Card>
 
-            <Card className="border-2 hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <FileText className="w-12 h-12 text-primary mb-4" />
-                <CardTitle>Compliance Burden</CardTitle>
+            <Card className="border hover:shadow-lg transition-shadow">
+              <CardHeader className="pb-3">
+                <FileText className="w-8 h-8 text-primary mb-2" />
+                <CardTitle className="text-lg">Compliance Burden</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription>
-                  Overwhelmed by regulatory compliance requirements? We streamline compliance processes to reduce administrative burden.
+                <CardDescription className="text-sm">
+                  Overwhelmed by regulatory compliance requirements? We streamline compliance processes.
                 </CardDescription>
               </CardContent>
             </Card>
 
-            <Card className="border-2 hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <AlertTriangle className="w-12 h-12 text-primary mb-4" />
-                <CardTitle>Contract Risks</CardTitle>
+            <Card className="border hover:shadow-lg transition-shadow">
+              <CardHeader className="pb-3">
+                <AlertTriangle className="w-8 h-8 text-primary mb-2" />
+                <CardTitle className="text-lg">Contract Risks</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription>
-                  Exposure to risks from poorly drafted contracts and agreements. We help review and structure legally sound agreements.
+                <CardDescription className="text-sm">
+                  Exposure to risks from poorly drafted contracts and agreements.
                 </CardDescription>
               </CardContent>
             </Card>
 
-            <Card className="border-2 hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <Lightbulb className="w-12 h-12 text-primary mb-4" />
-                <CardTitle>Government Schemes Awareness</CardTitle>
+            <Card className="border hover:shadow-lg transition-shadow">
+              <CardHeader className="pb-3">
+                <Lightbulb className="w-8 h-8 text-primary mb-2" />
+                <CardTitle className="text-lg">Government Schemes Awareness</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription>
-                  Missing out on government schemes and initiatives? We guide you through available programs and incentives for startups.
+                <CardDescription className="text-sm">
+                  Missing out on government schemes and initiatives for startups?
                 </CardDescription>
               </CardContent>
             </Card>
 
-            <Card className="border-2 hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <DollarSign className="w-12 h-12 text-primary mb-4" />
-                <CardTitle>Debt Crunching</CardTitle>
+            <Card className="border hover:shadow-lg transition-shadow">
+              <CardHeader className="pb-3">
+                <DollarSign className="w-8 h-8 text-primary mb-2" />
+                <CardTitle className="text-lg">Debt Crunching</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription>
-                  Struggling with debt management and financial pressure? We develop strategies to optimize debt structure and cash flow.
+                <CardDescription className="text-sm">
+                  Struggling with debt management and financial pressure?
                 </CardDescription>
               </CardContent>
             </Card>
 
-            <Card className="border-2 hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <Scale className="w-12 h-12 text-primary mb-4" />
-                <CardTitle>Regulatory Struggles</CardTitle>
+            <Card className="border hover:shadow-lg transition-shadow">
+              <CardHeader className="pb-3">
+                <Scale className="w-8 h-8 text-primary mb-2" />
+                <CardTitle className="text-lg">Regulatory Struggles</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription>
-                  Navigating complex regulations is challenging. We provide expert guidance to ensure compliance and minimize regulatory risks.
+                <CardDescription className="text-sm">
+                  Navigating complex regulations is challenging for growing startups.
                 </CardDescription>
               </CardContent>
             </Card>
