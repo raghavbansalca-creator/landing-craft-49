@@ -73,6 +73,11 @@ const Navigation = () => {
                 </Link>
               </Button>
 
+              {/* Blog */}
+              <Button variant="ghost" asChild>
+                <Link to="/blogs">Blog</Link>
+              </Button>
+
               {/* About Us */}
               <Button variant="ghost" asChild>
                 <Link to="/about">About Us</Link>
@@ -130,6 +135,15 @@ const Navigation = () => {
                   >
                     {isStartupContext ? "Click here - For Business Ecosystem" : "Click here - For Startup Ecosystem"}
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </Link>
+
+                  {/* Mobile Blog */}
+                  <Link 
+                    to="/blogs" 
+                    className="block px-2 py-1.5 text-sm font-semibold text-foreground hover:text-primary transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Blog
                   </Link>
 
                   {/* Mobile About Us */}
