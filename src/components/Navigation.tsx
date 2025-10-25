@@ -69,7 +69,7 @@ const Navigation = () => {
               {/* For Startup Ecosystem */}
               <Button variant="ghost" asChild>
                 <Link to={isStartupContext ? "/" : "/startup-ecosystem"}>
-                  {isStartupContext ? "For Business Ecosystem" : "For Startup Ecosystem"}
+                  {isStartupContext ? "Click here - For Business Ecosystem" : "Click here - For Startup Ecosystem"}
                 </Link>
               </Button>
 
@@ -128,7 +128,7 @@ const Navigation = () => {
                     className="block px-2 py-1.5 text-sm font-semibold text-foreground hover:text-primary transition-colors"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    {isStartupContext ? "For Business Ecosystem" : "For Startup Ecosystem"}
+                    {isStartupContext ? "Click here - For Business Ecosystem" : "Click here - For Startup Ecosystem"}
                   </Link>
 
                   {/* Mobile About Us */}
