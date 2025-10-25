@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Rocket, TrendingUp, Users, Zap, Target, DollarSign, BarChart3, Lightbulb, Shield, Globe } from "lucide-react";
+import { Rocket, TrendingUp, Users, Zap, Target, DollarSign, BarChart3, Lightbulb, Shield, Globe, AlertTriangle, Scale, FileText } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -48,60 +48,12 @@ const StartupEcosystem = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="border-2 hover:shadow-lg transition-shadow">
               <CardHeader>
-                <Zap className="w-12 h-12 text-primary mb-4" />
-                <CardTitle>Rapid Growth Pains</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>
-                  Struggling to scale operations, hire effectively, or maintain quality while growing fast? We help you build systems that grow with you.
-                </CardDescription>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <DollarSign className="w-12 h-12 text-primary mb-4" />
-                <CardTitle>Cash Flow Management</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>
-                  Running out of runway? We optimize your burn rate, improve unit economics, and create financial models that attract investors.
-                </CardDescription>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <Users className="w-12 h-12 text-primary mb-4" />
-                <CardTitle>Team & Culture Scaling</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>
-                  Building a high-performance team while maintaining startup culture? We design organizational structures that preserve agility.
-                </CardDescription>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <Target className="w-12 h-12 text-primary mb-4" />
-                <CardTitle>Product-Market Fit</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>
-                  Struggling to find your ideal customers or validate your product? We help refine your value proposition and go-to-market strategy.
-                </CardDescription>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 hover:shadow-lg transition-shadow">
-              <CardHeader>
                 <BarChart3 className="w-12 h-12 text-primary mb-4" />
-                <CardTitle>Data-Driven Decisions</CardTitle>
+                <CardTitle>No Financial Model</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription>
-                  Flying blind without proper metrics? We implement analytics systems that provide actionable insights for growth.
+                  Inaccurate forecasting leads to poor scalability and operations management. We help you build robust financial models for sustainable growth.
                 </CardDescription>
               </CardContent>
             </Card>
@@ -109,11 +61,71 @@ const StartupEcosystem = () => {
             <Card className="border-2 hover:shadow-lg transition-shadow">
               <CardHeader>
                 <Shield className="w-12 h-12 text-primary mb-4" />
-                <CardTitle>Investor Readiness</CardTitle>
+                <CardTitle>Unprepared Due Diligence</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription>
-                  Preparing for fundraising? We help you build the operational foundation and metrics that impress investors.
+                  Hampered funding opportunities due to inadequate due diligence preparation. We ensure you're investor-ready with comprehensive documentation.
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <FileText className="w-12 h-12 text-primary mb-4" />
+                <CardTitle>Compliance Burden</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription>
+                  Overwhelmed by regulatory compliance requirements? We streamline compliance processes to reduce administrative burden.
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <AlertTriangle className="w-12 h-12 text-primary mb-4" />
+                <CardTitle>Contract Risks</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription>
+                  Exposure to risks from poorly drafted contracts and agreements. We help review and structure legally sound agreements.
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <Lightbulb className="w-12 h-12 text-primary mb-4" />
+                <CardTitle>Government Schemes Awareness</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription>
+                  Missing out on government schemes and initiatives? We guide you through available programs and incentives for startups.
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <DollarSign className="w-12 h-12 text-primary mb-4" />
+                <CardTitle>Debt Crunching</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription>
+                  Struggling with debt management and financial pressure? We develop strategies to optimize debt structure and cash flow.
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <Scale className="w-12 h-12 text-primary mb-4" />
+                <CardTitle>Regulatory Struggles</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription>
+                  Navigating complex regulations is challenging. We provide expert guidance to ensure compliance and minimize regulatory risks.
                 </CardDescription>
               </CardContent>
             </Card>
