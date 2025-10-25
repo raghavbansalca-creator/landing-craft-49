@@ -144,62 +144,125 @@ const StartupEcosystem = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Startup-Focused Solutions
+              Comprehensive Solutions for Every Stage
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Tailored services designed specifically for the unique needs and constraints of growing startups.
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              From financial modeling to regulatory compliance, we provide end-to-end support to help your startup thrive and scale successfully.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <Card className="border-2">
-              <CardHeader>
-                <DollarSign className="w-10 h-10 text-primary mb-3" />
-                <CardTitle className="text-xl">Financial Services</CardTitle>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Card className="border-2 hover:shadow-xl transition-all hover:border-primary/50">
+              <CardHeader className="pb-4">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                  <DollarSign className="w-8 h-8 text-primary" />
+                </div>
+                <CardTitle className="text-2xl mb-2">Financial Services</CardTitle>
+                <CardDescription className="text-base">
+                  Build a strong financial foundation with expert modeling, compliance, and valuation services.
+                </CardDescription>
               </CardHeader>
-              <CardContent>
-                <ul className="text-sm text-muted-foreground space-y-2">
-                  <li>• Financial modelling and forecasting</li>
-                  <li>• Management information System</li>
-                  <li>• Tax compliance review</li>
-                  <li>• Assistance on government grants and schemes</li>
-                  <li>• Thorough financial statement analysis</li>
-                  <li>• Business Valuation</li>
-                </ul>
+              <CardContent className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  <p className="text-sm text-foreground">Financial modelling and forecasting</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  <p className="text-sm text-foreground">Management information System</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  <p className="text-sm text-foreground">Tax compliance review</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  <p className="text-sm text-foreground">Assistance on government grants and schemes</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  <p className="text-sm text-foreground">Thorough financial statement analysis</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  <p className="text-sm text-foreground">Business Valuation</p>
+                </div>
               </CardContent>
             </Card>
 
-            <Card className="border-2">
-              <CardHeader>
-                <FileCheck className="w-10 h-10 text-primary mb-3" />
-                <CardTitle className="text-xl">Transaction and Due Diligence</CardTitle>
+            <Card className="border-2 hover:shadow-xl transition-all hover:border-primary/50">
+              <CardHeader className="pb-4">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                  <FileCheck className="w-8 h-8 text-primary" />
+                </div>
+                <CardTitle className="text-2xl mb-2">Transaction & Due Diligence</CardTitle>
+                <CardDescription className="text-base">
+                  Navigate funding rounds confidently with comprehensive due diligence and transaction support.
+                </CardDescription>
               </CardHeader>
-              <CardContent>
-                <ul className="text-sm text-muted-foreground space-y-2">
-                  <li>• Framing term sheets, agreements and contracts</li>
-                  <li>• FEMA Compliances</li>
-                  <li>• Due diligence documentation review and prep</li>
-                  <li>• Stakeholders management</li>
-                  <li>• Transaction Analysis</li>
-                  <li>• Framing of ESOP policies & structure</li>
-                </ul>
+              <CardContent className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  <p className="text-sm text-foreground">Framing term sheets, agreements and contracts</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  <p className="text-sm text-foreground">FEMA Compliances</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  <p className="text-sm text-foreground">Due diligence documentation review and prep</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  <p className="text-sm text-foreground">Stakeholders management</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  <p className="text-sm text-foreground">Transaction Analysis</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  <p className="text-sm text-foreground">Framing of ESOP policies & structure</p>
+                </div>
               </CardContent>
             </Card>
 
-            <Card className="border-2">
-              <CardHeader>
-                <Briefcase className="w-10 h-10 text-primary mb-3" />
-                <CardTitle className="text-xl">Strategic and Operational Services</CardTitle>
+            <Card className="border-2 hover:shadow-xl transition-all hover:border-primary/50">
+              <CardHeader className="pb-4">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
+                  <Briefcase className="w-8 h-8 text-primary" />
+                </div>
+                <CardTitle className="text-2xl mb-2">Strategic & Operations</CardTitle>
+                <CardDescription className="text-base">
+                  Streamline operations and build scalable processes for sustainable growth.
+                </CardDescription>
               </CardHeader>
-              <CardContent>
-                <ul className="text-sm text-muted-foreground space-y-2">
-                  <li>• Vendor contracts and process management</li>
-                  <li>• Framing SOP's for business operations</li>
-                  <li>• Digital transformation advisory with respect to workspace management</li>
-                  <li>• Payroll management</li>
-                  <li>• Book keeping and general tax compliances</li>
-                  <li>• Pitch Deck assistance</li>
-                </ul>
+              <CardContent className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  <p className="text-sm text-foreground">Vendor contracts and process management</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  <p className="text-sm text-foreground">Framing SOP's for business operations</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  <p className="text-sm text-foreground">Digital transformation advisory with respect to workspace management</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  <p className="text-sm text-foreground">Payroll management</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  <p className="text-sm text-foreground">Book keeping and general tax compliances</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                  <p className="text-sm text-foreground">Pitch Deck assistance</p>
+                </div>
               </CardContent>
             </Card>
           </div>
