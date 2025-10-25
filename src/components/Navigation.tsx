@@ -6,7 +6,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X, ArrowRight } from "lucide-react";
 import { useState } from "react";
 import { useLocation, Link } from "react-router-dom";
 import logo from "@/assets/7labs-logo.png";
@@ -68,8 +68,9 @@ const Navigation = () => {
 
               {/* For Startup Ecosystem */}
               <Button variant="ghost" asChild>
-                <Link to={isStartupContext ? "/" : "/startup-ecosystem"}>
+                <Link to={isStartupContext ? "/" : "/startup-ecosystem"} className="flex items-center group">
                   {isStartupContext ? "Click here - For Business Ecosystem" : "Click here - For Startup Ecosystem"}
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
               </Button>
 
@@ -125,10 +126,11 @@ const Navigation = () => {
                   {/* Mobile For Startup Ecosystem */}
                   <Link 
                     to={isStartupContext ? "/" : "/startup-ecosystem"}
-                    className="block px-2 py-1.5 text-sm font-semibold text-foreground hover:text-primary transition-colors"
+                    className="flex items-center px-2 py-1.5 text-sm font-semibold text-foreground hover:text-primary transition-colors group"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {isStartupContext ? "Click here - For Business Ecosystem" : "Click here - For Startup Ecosystem"}
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </Link>
 
                   {/* Mobile About Us */}
