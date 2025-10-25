@@ -2,7 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Rocket, TrendingUp, Users, Zap, Target, DollarSign, BarChart3, Lightbulb, Shield, Globe, AlertTriangle, Scale, FileText } from "lucide-react";
+import { Rocket, TrendingUp, Users, Zap, Target, DollarSign, BarChart3, Lightbulb, Shield, Globe, AlertTriangle, Scale, FileText, Briefcase, FileCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -151,75 +151,54 @@ const StartupEcosystem = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <Card className="border-2">
               <CardHeader>
-                <Rocket className="w-10 h-10 text-primary mb-3" />
-                <CardTitle className="text-xl">Growth Operations Setup</CardTitle>
+                <DollarSign className="w-10 h-10 text-primary mb-3" />
+                <CardTitle className="text-xl">Financial Services</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="mb-4">
-                  Build scalable systems from day one. We implement lean operations that grow with your startup without breaking the bank.
-                </CardDescription>
                 <ul className="text-sm text-muted-foreground space-y-2">
-                  <li>• Agile process implementation</li>
-                  <li>• Scalable team structures</li>
-                  <li>• Growth metrics dashboards</li>
-                  <li>• Automation frameworks</li>
+                  <li>• Financial modelling and forecasting</li>
+                  <li>• Management information System</li>
+                  <li>• Tax compliance review</li>
+                  <li>• Assistance on government grants and schemes</li>
+                  <li>• Thorough financial statement analysis</li>
+                  <li>• Business Valuation</li>
                 </ul>
               </CardContent>
             </Card>
 
             <Card className="border-2">
               <CardHeader>
-                <TrendingUp className="w-10 h-10 text-primary mb-3" />
-                <CardTitle className="text-xl">Financial Modeling & Planning</CardTitle>
+                <FileCheck className="w-10 h-10 text-primary mb-3" />
+                <CardTitle className="text-xl">Transaction and Due Diligence</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="mb-4">
-                  Create investor-ready financial models and cash flow management systems that support sustainable growth.
-                </CardDescription>
                 <ul className="text-sm text-muted-foreground space-y-2">
-                  <li>• Unit economics optimization</li>
-                  <li>• Runway extension strategies</li>
-                  <li>• Investor pitch preparation</li>
-                  <li>• Budget planning & monitoring</li>
+                  <li>• Framing term sheets, agreements and contracts</li>
+                  <li>• FEMA Compliances</li>
+                  <li>• Due diligence documentation review and prep</li>
+                  <li>• Stakeholders management</li>
+                  <li>• Transaction Analysis</li>
+                  <li>• Framing of ESOP policies & structure</li>
                 </ul>
               </CardContent>
             </Card>
 
             <Card className="border-2">
               <CardHeader>
-                <Lightbulb className="w-10 h-10 text-primary mb-3" />
-                <CardTitle className="text-xl">Product Strategy & Validation</CardTitle>
+                <Briefcase className="w-10 h-10 text-primary mb-3" />
+                <CardTitle className="text-xl">Strategic and Operational Services</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="mb-4">
-                  Validate your product-market fit and build a roadmap for sustainable growth and customer acquisition.
-                </CardDescription>
                 <ul className="text-sm text-muted-foreground space-y-2">
-                  <li>• Customer discovery processes</li>
-                  <li>• MVP optimization strategies</li>
-                  <li>• Go-to-market planning</li>
-                  <li>• Competitive positioning</li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2">
-              <CardHeader>
-                <Globe className="w-10 h-10 text-primary mb-3" />
-                <CardTitle className="text-xl">Technology & Infrastructure</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="mb-4">
-                  Build a tech foundation that scales. From MVP to enterprise-grade systems without technical debt.
-                </CardDescription>
-                <ul className="text-sm text-muted-foreground space-y-2">
-                  <li>• Scalable architecture design</li>
-                  <li>• Cloud infrastructure setup</li>
-                  <li>• Security & compliance frameworks</li>
-                  <li>• Development process optimization</li>
+                  <li>• Vendor contracts and process management</li>
+                  <li>• Framing SOP's for business operations</li>
+                  <li>• Digital transformation advisory with respect to workspace management</li>
+                  <li>• Payroll management</li>
+                  <li>• Book keeping and general tax compliances</li>
+                  <li>• Pitch Deck assistance</li>
                 </ul>
               </CardContent>
             </Card>
