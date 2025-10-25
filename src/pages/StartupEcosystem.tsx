@@ -16,9 +16,7 @@ const StartupEcosystem = () => {
           <h1 className="text-3xl md:text-6xl font-bold text-foreground mb-3 md:mb-6">
             Empowering <span className="bg-gradient-to-r from-primary via-primary/80 to-primary bg-clip-text text-transparent">Startups</span> to Scale
           </h1>
-          <p className="text-base md:text-xl text-muted-foreground mb-4 md:mb-8 max-w-3xl mx-auto">
-            From idea to IPO - we provide the strategic foundation, operational excellence, and growth systems that turn promising startups into industry leaders.
-          </p>
+          <p className="text-base md:text-xl text-muted-foreground mb-4 md:mb-8 max-w-3xl mx-auto">We provide the strategic foundation, operational excellence, and growth systems</p>
           <Button size="default" className="md:text-lg md:px-8 md:py-3" asChild>
             
           </Button>
