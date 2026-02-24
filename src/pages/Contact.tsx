@@ -231,7 +231,7 @@ const Contact = () => {
                       <div className="space-y-3 text-muted-foreground">
                         <div>
                           <p className="font-medium text-foreground">Delhi:</p>
-                          <p>2C, Indian Institute of Technology Delhi<br />Hauz Khas, New Delhi, Delhi, 1100165</p>
+                          <p>J 8111, Metro Homes, Meerut Road<br />Ghaziabad, Uttar Pradesh, 201206</p>
                         </div>
                         <div>
                           <p className="font-medium text-foreground">Jaipur:</p>
