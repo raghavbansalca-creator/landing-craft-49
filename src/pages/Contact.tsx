@@ -230,7 +230,7 @@ const Contact = () => {
                       <h3 className="font-semibold text-foreground">Our Offices</h3>
                       <div className="space-y-3 text-muted-foreground">
                         <div>
-                          <p className="font-medium text-foreground">Delhi:</p>
+                          <p className="font-medium text-foreground">NCR:</p>
                           <p>J 8111, Metro Homes, Meerut Road<br />Ghaziabad, Uttar Pradesh, 201206</p>
                         </div>
                         <div>
