@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Clock, DollarSign, Scale, Users, Building, Settings, Package, BarChart3, Laptop } from "lucide-react";
+import { Clock, DollarSign, Scale, Users, Building, Settings, Package, BarChart3, Laptop, Shield, CheckCircle, Target, Handshake } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import LogoCarousel from "@/components/LogoCarousel";
@@ -31,10 +31,10 @@ const Index = () => {
         <div className="max-w-4xl mx-auto relative z-10">
           <div className="animate-fade-in">
             <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-4 md:mb-6 text-white">
-              Stop Running Your Business <span className="bg-gradient-to-r from-blue-300 to-blue-100 bg-clip-text text-transparent animate-pulse">Blind</span>
+              Your Business Runs on <span className="bg-gradient-to-r from-blue-300 to-blue-100 bg-clip-text text-transparent animate-pulse">WhatsApp & Excel?</span>
             </h1>
             <p className="text-base md:text-xl lg:text-2xl text-blue-100 mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed">
-              Transform chaotic manual processes into clear, controlled operations with our 'What Could Go Wrong' methodology.
+              40 missed calls a day. No real-time P&L. Every decision waits for you. We fix this — with systems that make your business run without you.
             </p>
             <div className="flex justify-center">
             <div className="relative group">
@@ -152,11 +152,12 @@ const Index = () => {
                   <div className="w-10 h-10 md:w-12 md:h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-2 md:mb-4">
                     <Users className="w-5 h-5 md:w-6 md:h-6 text-primary" />
                   </div>
+                  <p className="text-xs text-red-500 font-medium mb-1">"I don't know if my team is actually performing"</p>
                   <CardTitle className="text-base md:text-lg mb-1 md:mb-2">Performance Optimization</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-xs md:text-sm">
-                    KRAs, KPIs, appraisal systems, real-time dashboards—make every team member accountable with clear metrics.
+                    KRAs, KPIs, appraisal systems, real-time dashboards — make every team member accountable with clear metrics.
                   </CardDescription>
                 </CardContent>
               </Card>
@@ -168,11 +169,12 @@ const Index = () => {
                   <div className="w-10 h-10 md:w-12 md:h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-2 md:mb-4">
                     <Building className="w-5 h-5 md:w-6 md:h-6 text-primary" />
                   </div>
+                  <p className="text-xs text-red-500 font-medium mb-1">"Every decision has to go through me"</p>
                   <CardTitle className="text-base md:text-lg mb-1 md:mb-2">Structure Design</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-xs md:text-sm">
-                    Clear roles, reporting lines, decision authority, accountability frameworks—build scalable organizational systems.
+                    Clear roles, reporting lines, decision authority — build a structure where the business runs without you being the bottleneck.
                   </CardDescription>
                 </CardContent>
               </Card>
@@ -184,11 +186,12 @@ const Index = () => {
                   <div className="w-10 h-10 md:w-12 md:h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-2 md:mb-4">
                     <Settings className="w-5 h-5 md:w-6 md:h-6 text-primary" />
                   </div>
+                  <p className="text-xs text-red-500 font-medium mb-1">"We keep solving the same problems again and again"</p>
                   <CardTitle className="text-base md:text-lg mb-1 md:mb-2">Process Optimization</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-xs md:text-sm">
-                    SOPs, workflow automation, 'What Could Go Wrong' analysis, risk controls—eliminate chaos and inefficiencies.
+                    SOPs, workflow automation, 'What Could Go Wrong' analysis — eliminate chaos and build repeatable, controlled operations.
                   </CardDescription>
                 </CardContent>
               </Card>
@@ -200,11 +203,12 @@ const Index = () => {
                   <div className="w-10 h-10 md:w-12 md:h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-2 md:mb-4">
                     <Package className="w-5 h-5 md:w-6 md:h-6 text-primary" />
                   </div>
+                  <p className="text-xs text-red-500 font-medium mb-1">"Stock ka pata nahi chalta — dead stock bhi hai, shortage bhi"</p>
                   <CardTitle className="text-base md:text-lg mb-1 md:mb-2">Stock Systems</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-xs md:text-sm">
-                    Real-time inventory tracking, automated reordering, supplier management—reduce wastage and stockouts.
+                    Real-time inventory tracking, automated reordering, supplier management — reduce wastage and never miss a sale.
                   </CardDescription>
                 </CardContent>
               </Card>
@@ -216,11 +220,12 @@ const Index = () => {
                   <div className="w-10 h-10 md:w-12 md:h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-2 md:mb-4">
                     <BarChart3 className="w-5 h-5 md:w-6 md:h-6 text-primary" />
                   </div>
+                  <p className="text-xs text-red-500 font-medium mb-1">"Profit year-end ke baad hi pata chalta hai"</p>
                   <CardTitle className="text-base md:text-lg mb-1 md:mb-2">Financial Control</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-xs md:text-sm">
-                    Business models, budget vs actual analysis, financial forecasting, variance reporting—complete money visibility.
+                    Real-time P&L, budget vs actual, cash flow forecasting — know exactly where every rupee is going, every day.
                   </CardDescription>
                 </CardContent>
               </Card>
@@ -232,11 +237,12 @@ const Index = () => {
                   <div className="w-10 h-10 md:w-12 md:h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-2 md:mb-4">
                     <Laptop className="w-5 h-5 md:w-6 md:h-6 text-primary" />
                   </div>
+                  <p className="text-xs text-red-500 font-medium mb-1">"Orders on WhatsApp, billing on Tally, tracking on Excel"</p>
                   <CardTitle className="text-base md:text-lg mb-1 md:mb-2">Technology Setup</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-xs md:text-sm">
-                    Zoho, Odoo, custom systems implementation, software selection—centralize and automate all operations.
+                    Zoho, Odoo, ERPNext implementation — one system to replace the WhatsApp-Excel-paper chaos. We migrate and train.
                   </CardDescription>
                 </CardContent>
               </Card>
@@ -259,17 +265,54 @@ const Index = () => {
         <div className="absolute inset-0 z-0">
           <img src={businessGrowth} alt="Business growth visualization" className="w-full h-full object-cover opacity-10" />
         </div>
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          <h2 className="text-2xl md:text-4xl font-bold mb-4 md:mb-8 text-foreground">
+        <div className="max-w-6xl mx-auto relative z-10">
+          <h2 className="text-2xl md:text-4xl font-bold mb-3 md:mb-4 text-foreground text-center">
             What Sets Us Apart
           </h2>
-          <div className="space-y-4 md:space-y-6 text-sm md:text-lg">
-            <p className="text-foreground font-semibold">
-              We will sit in your office till we get your operations streamlined.
-            </p>
-            <p className="text-muted-foreground">
-              We don't give any gyaan, we implement that gyaan right from day 1.
-            </p>
+          <p className="text-center text-muted-foreground mb-8 md:mb-12 text-sm md:text-lg max-w-2xl mx-auto">
+            We don't advise. We implement. We will sit in your office till we get your operations streamlined — from day 1.
+          </p>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-8 md:mb-12">
+            <div className="text-center p-4 md:p-6 bg-background/60 rounded-xl border border-border">
+              <Handshake className="w-8 h-8 text-primary mx-auto mb-3" />
+              <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">Implementation, Not Advice</h3>
+              <p className="text-xs md:text-sm text-muted-foreground">We sit in your office. No PowerPoints, no reports that collect dust — actual systems that run.</p>
+            </div>
+            <div className="text-center p-4 md:p-6 bg-background/60 rounded-xl border border-border">
+              <Shield className="w-8 h-8 text-primary mx-auto mb-3" />
+              <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">CA + Technology</h3>
+              <p className="text-xs md:text-sm text-muted-foreground">Big 4 trained CAs who also implement ERP, dashboards, and automation. A rare combination at SME level.</p>
+            </div>
+            <div className="text-center p-4 md:p-6 bg-background/60 rounded-xl border border-border">
+              <Target className="w-8 h-8 text-primary mx-auto mb-3" />
+              <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">'What Could Go Wrong'</h3>
+              <p className="text-xs md:text-sm text-muted-foreground">Our proprietary methodology that maps every risk before it hits — tested across 40+ organisations.</p>
+            </div>
+            <div className="text-center p-4 md:p-6 bg-background/60 rounded-xl border border-border">
+              <CheckCircle className="w-8 h-8 text-primary mx-auto mb-3" />
+              <h3 className="font-semibold text-foreground mb-2 text-sm md:text-base">90-Day Transformation</h3>
+              <p className="text-xs md:text-sm text-muted-foreground">Your phone stops ringing 40 times a day. Your business starts running without you being the bottleneck.</p>
+            </div>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-6 md:gap-10 text-center">
+            <div>
+              <div className="text-2xl md:text-4xl font-bold text-primary">40+</div>
+              <div className="text-xs md:text-sm text-muted-foreground">Organisations</div>
+            </div>
+            <div>
+              <div className="text-2xl md:text-4xl font-bold text-primary">3000+</div>
+              <div className="text-xs md:text-sm text-muted-foreground">Employees Covered</div>
+            </div>
+            <div>
+              <div className="text-2xl md:text-4xl font-bold text-primary">3</div>
+              <div className="text-xs md:text-sm text-muted-foreground">Cities</div>
+            </div>
+            <div>
+              <div className="text-2xl md:text-4xl font-bold text-primary">10+</div>
+              <div className="text-xs md:text-sm text-muted-foreground">Years Experience</div>
+            </div>
           </div>
         </div>
       </motion.section>

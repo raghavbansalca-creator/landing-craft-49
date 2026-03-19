@@ -62,19 +62,23 @@ const StorySection = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
               Your growth partner in planning, process & finance
             </h2>
-            <p className="text-lg text-muted-foreground mb-8">Founded in 2021 by three visionaries, we've grown to serve Fortune 500 companies and ambitious startups with innovative approaches to business transformation.</p>
+            <p className="text-lg text-muted-foreground mb-8">Founded by CA professionals with Big 4 experience, Seven Labs bridges the gap between where MSMEs are and where they want to be — with hands-on implementation, not slides. Our audit and assurance practice also extends to Fortune 500 engagements across aviation, F&B, and infrastructure.</p>
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 bg-primary rounded-full"></div>
-                <span className="text-foreground">25+ dedicated professionals</span>
+                <span className="text-foreground">40+ organisations transformed, 3000+ employees covered</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 bg-primary rounded-full"></div>
-                <span className="text-foreground">Serving clients across multiple domains</span>
+                <span className="text-foreground">Offices in Delhi NCR, Agra & Jaipur</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 bg-primary rounded-full"></div>
-                <span className="text-foreground">Trusted by Fortune 500 companies</span>
+                <span className="text-foreground">CA-led team with Big 4 pedigree (KPMG, Grant Thornton)</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-primary rounded-full"></div>
+                <span className="text-foreground">Proprietary 'What Could Go Wrong' methodology</span>
               </div>
             </div>
           </motion.div>
@@ -90,7 +94,24 @@ const StorySection = () => {
         }} transition={{
           duration: 0.6
         }} className="relative">
-            
+            <div className="grid grid-cols-2 gap-6">
+              <div className="bg-primary/10 rounded-2xl p-6 text-center">
+                <div className="text-4xl font-bold text-primary mb-2">40+</div>
+                <div className="text-sm text-muted-foreground">Organisations Transformed</div>
+              </div>
+              <div className="bg-primary/10 rounded-2xl p-6 text-center">
+                <div className="text-4xl font-bold text-primary mb-2">3000+</div>
+                <div className="text-sm text-muted-foreground">Employees Covered</div>
+              </div>
+              <div className="bg-primary/10 rounded-2xl p-6 text-center">
+                <div className="text-4xl font-bold text-primary mb-2">3</div>
+                <div className="text-sm text-muted-foreground">Cities (Delhi NCR, Agra, Jaipur)</div>
+              </div>
+              <div className="bg-primary/10 rounded-2xl p-6 text-center">
+                <div className="text-4xl font-bold text-primary mb-2">90</div>
+                <div className="text-sm text-muted-foreground">Days Avg. Transformation</div>
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>
@@ -100,23 +121,23 @@ const StorySection = () => {
 // Industries Section Component
 const IndustriesSection = () => {
   const industries = [{
+    icon: <Wrench className="w-10 h-10 text-primary" />,
+    title: "Manufacturing (Leather, Footwear, Marble)"
+  }, {
+    icon: <ShoppingCart className="w-10 h-10 text-primary" />,
+    title: "Trading & Distribution"
+  }, {
+    icon: <Banknote className="w-10 h-10 text-primary" />,
+    title: "Food & Beverage / Hospitality"
+  }, {
+    icon: <Zap className="w-10 h-10 text-primary" />,
+    title: "Technology & SaaS"
+  }, {
     icon: <Building className="w-10 h-10 text-primary" />,
     title: "Real Estate & Infrastructure"
   }, {
-    icon: <ShoppingCart className="w-10 h-10 text-primary" />,
-    title: "Consumer Markets"
-  }, {
-    icon: <Wrench className="w-10 h-10 text-primary" />,
-    title: "Industrial Markets"
-  }, {
-    icon: <Banknote className="w-10 h-10 text-primary" />,
-    title: "Food & Beverage"
-  }, {
-    icon: <Zap className="w-10 h-10 text-primary" />,
-    title: "Aviation"
-  }, {
     icon: <GraduationCap className="w-10 h-10 text-primary" />,
-    title: "Government & Banking"
+    title: "Aviation & IFC Services"
   }];
   return <div className="py-20 bg-secondary/20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
