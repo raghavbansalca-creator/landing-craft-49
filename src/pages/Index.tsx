@@ -120,6 +120,66 @@ const Index = () => {
         </div>
       </motion.section>
 
+      {/* Lead Magnet Section */}
+      <motion.section initial={{
+      opacity: 0,
+      y: 20
+    }} whileInView={{
+      opacity: 1,
+      y: 0
+    }} transition={{
+      duration: 0.6
+    }} viewport={{
+      once: true
+    }} className="py-8 md:py-14 px-4 bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5">
+        <div className="max-w-3xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-4 py-1.5 mb-4">
+            <span className="text-primary font-medium text-xs md:text-sm">Free Resource</span>
+          </div>
+          <h2 className="text-xl md:text-3xl font-bold mb-2 md:mb-3 text-foreground">
+            Get Your MSME Operations Health Check
+          </h2>
+          <p className="text-sm md:text-base text-muted-foreground mb-6 max-w-xl mx-auto">
+            A quick self-assessment to find out where your business is leaking time, money, and control. Takes 2 minutes.
+          </p>
+          <form
+            className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+            onSubmit={(e) => {
+              e.preventDefault();
+              const form = e.target as HTMLFormElement;
+              const email = (form.elements.namedItem('lead_email') as HTMLInputElement).value;
+              const name = (form.elements.namedItem('lead_name') as HTMLInputElement).value;
+              const whatsappNumber = "919997155444";
+              const msg = encodeURIComponent(`Hi, I'd like the MSME Operations Health Check.\n\nName: ${name}\nEmail: ${email}`);
+              window.open(`https://wa.me/${whatsappNumber}?text=${msg}`, "_blank");
+              form.reset();
+            }}
+          >
+            <input
+              name="lead_name"
+              type="text"
+              required
+              placeholder="Your name"
+              className="flex-1 px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
+            />
+            <input
+              name="lead_email"
+              type="email"
+              required
+              placeholder="you@company.com"
+              className="flex-1 px-4 py-3 rounded-lg border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
+            />
+            <button
+              type="submit"
+              className="px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-lg hover:opacity-90 transition-opacity text-sm whitespace-nowrap"
+            >
+              Get Free Check
+            </button>
+          </form>
+          <p className="text-xs text-muted-foreground mt-3">No spam. We respect your privacy.</p>
+        </div>
+      </motion.section>
+
       {/* What We Do Section */}
       <motion.section initial={{
       opacity: 0,
