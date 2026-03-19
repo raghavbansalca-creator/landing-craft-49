@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Calendar, Clock, TrendingUp, FileText, Lightbulb, ChevronDown, ChevronUp, Building, ShoppingCart, DollarSign, Users, Target, BarChart3, Laptop } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
@@ -856,24 +856,97 @@ Ready to know exactly how your business is performing — every single day? Get 
     setExpandedBlog(expandedBlog === blogId ? null : blogId);
   };
 
-  const renderContent = (content: string) => {
-    return content.split('\n').map((line, index) => {
-      if (line.startsWith('# ')) {
-        return <h1 key={index} className="text-3xl font-bold text-foreground mt-8 mb-4">{line.substring(2)}</h1>;
-      } else if (line.startsWith('## ')) {
-        return <h2 key={index} className="text-2xl font-bold text-foreground mt-6 mb-3">{line.substring(3)}</h2>;
-      } else if (line.startsWith('### ')) {
-        return <h3 key={index} className="text-xl font-semibold text-foreground mt-4 mb-2">{line.substring(4)}</h3>;
-      } else if (line.startsWith('**') && line.endsWith('**')) {
-        return <p key={index} className="font-semibold text-foreground mt-3 mb-2">{line.replace(/\*\*/g, '')}</p>;
-      } else if (line.startsWith('- ')) {
-        return <li key={index} className="text-muted-foreground ml-6 mb-1 list-disc">{line.substring(2)}</li>;
-      } else if (line.trim() === '') {
-        return <div key={index} className="h-2"></div>;
-      } else {
-        return <p key={index} className="text-muted-foreground leading-relaxed mb-3">{line}</p>;
+  const renderInline = (text: string) => {
+    const parts = text.split(/(\*\*[^*]+\*\*)/g);
+    return parts.map((part, i) => {
+      if (part.startsWith('**') && part.endsWith('**')) {
+        return <strong key={i} className="font-semibold text-foreground">{part.slice(2, -2)}</strong>;
       }
+      return <span key={i}>{part}</span>;
     });
+  };
+
+  const renderContent = (content: string) => {
+    const lines = content.split('\n');
+    const elements: React.ReactNode[] = [];
+    let tableRows: string[][] = [];
+    let inTable = false;
+
+    const flushTable = () => {
+      if (tableRows.length === 0) return;
+      elements.push(
+        <div key={`table-${elements.length}`} className="overflow-x-auto my-4">
+          <table className="w-full text-sm border-collapse">
+            <thead>
+              <tr>
+                {tableRows[0].map((cell, ci) => (
+                  <th key={ci} className="border border-border bg-secondary/30 px-3 py-2 text-left font-semibold text-foreground">{renderInline(cell.trim())}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {tableRows.slice(1).map((row, ri) => (
+                <tr key={ri}>
+                  {row.map((cell, ci) => (
+                    <td key={ci} className="border border-border px-3 py-2 text-muted-foreground">{renderInline(cell.trim())}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
+      tableRows = [];
+      inTable = false;
+    };
+
+    for (let index = 0; index < lines.length; index++) {
+      const line = lines[index];
+
+      // Table separator line (|---|---|)
+      if (/^\|[\s\-:|]+\|$/.test(line.trim())) {
+        continue;
+      }
+
+      // Table row
+      if (line.trim().startsWith('|') && line.trim().endsWith('|')) {
+        const cells = line.trim().slice(1, -1).split('|');
+        tableRows.push(cells);
+        inTable = true;
+        continue;
+      }
+
+      // If we were in a table and now we're not, flush it
+      if (inTable) {
+        flushTable();
+      }
+
+      if (line.startsWith('# ')) {
+        elements.push(<h1 key={index} className="text-3xl font-bold text-foreground mt-8 mb-4">{line.substring(2)}</h1>);
+      } else if (line.startsWith('## ')) {
+        elements.push(<h2 key={index} className="text-2xl font-bold text-foreground mt-6 mb-3">{line.substring(3)}</h2>);
+      } else if (line.startsWith('### ')) {
+        elements.push(<h3 key={index} className="text-xl font-semibold text-foreground mt-4 mb-2">{line.substring(4)}</h3>);
+      } else if (line.startsWith('**') && line.endsWith('**')) {
+        elements.push(<p key={index} className="font-semibold text-foreground mt-3 mb-2">{line.replace(/\*\*/g, '')}</p>);
+      } else if (/^\d+\.\s/.test(line)) {
+        const text = line.replace(/^\d+\.\s/, '');
+        elements.push(<li key={index} className="text-muted-foreground ml-6 mb-1 list-decimal">{renderInline(text)}</li>);
+      } else if (line.startsWith('- ')) {
+        elements.push(<li key={index} className="text-muted-foreground ml-6 mb-1 list-disc">{renderInline(line.substring(2))}</li>);
+      } else if (line.trim() === '') {
+        elements.push(<div key={index} className="h-2"></div>);
+      } else {
+        elements.push(<p key={index} className="text-muted-foreground leading-relaxed mb-3">{renderInline(line)}</p>);
+      }
+    }
+
+    // Flush any remaining table
+    if (inTable) {
+      flushTable();
+    }
+
+    return elements;
   };
 
   return (
