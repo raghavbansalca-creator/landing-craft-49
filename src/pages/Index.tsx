@@ -149,7 +149,7 @@ const Index = () => {
               const form = e.target as HTMLFormElement;
               const email = (form.elements.namedItem('lead_email') as HTMLInputElement).value;
               const name = (form.elements.namedItem('lead_name') as HTMLInputElement).value;
-              const whatsappNumber = "919997155444";
+              const whatsappNumber = "919719113673";
               const msg = encodeURIComponent(`Hi, I'd like the MSME Operations Health Check.\n\nName: ${name}\nEmail: ${email}`);
               window.open(`https://wa.me/${whatsappNumber}?text=${msg}`, "_blank");
               form.reset();

@@ -74,7 +74,7 @@ const Contact = () => {
         `*Subject:* ${data.subject}\n\n` +
         `*Message:*\n${data.message}`;
 
-      const whatsappNumber = "919997155444";
+      const whatsappNumber = "919719113673";
       const encodedMessage = encodeURIComponent(whatsappMessage);
       const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
