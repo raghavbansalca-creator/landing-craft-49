@@ -194,6 +194,7 @@ const StartupEcosystem = () => {
                 </div>
               </CardContent>
             </Card>
+            </Link>
 
             <Card className="border-2 hover:shadow-xl transition-all hover:border-primary/50" id="due-diligence">
               <CardHeader className="pb-4">
