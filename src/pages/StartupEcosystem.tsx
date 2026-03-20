@@ -196,7 +196,8 @@ const StartupEcosystem = () => {
             </Card>
             </Link>
 
-            <Card className="border-2 hover:shadow-xl transition-all hover:border-primary/50" id="due-diligence">
+            <Link to="/startup/transaction-due-diligence">
+            <Card className="border-2 hover:shadow-xl transition-all hover:border-primary/50 cursor-pointer" id="due-diligence">
               <CardHeader className="pb-4">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                   <FileCheck className="w-8 h-8 text-primary" />
