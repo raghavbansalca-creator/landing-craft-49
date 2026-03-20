@@ -236,7 +236,8 @@ const StartupEcosystem = () => {
             </Card>
             </Link>
 
-            <Card className="border-2 hover:shadow-xl transition-all hover:border-primary/50" id="strategic">
+            <Link to="/startup/strategic-operations">
+            <Card className="border-2 hover:shadow-xl transition-all hover:border-primary/50 cursor-pointer" id="strategic">
               <CardHeader className="pb-4">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                   <Briefcase className="w-8 h-8 text-primary" />
