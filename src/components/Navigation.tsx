@@ -15,7 +15,7 @@ const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
   
-  const isStartupContext = location.pathname === "/startup-ecosystem";
+  const isStartupContext = location.pathname === "/startup-ecosystem" || location.pathname.startsWith("/startup/");
 
   const regularSolutions = [
     { href: "/services/performance-optimization", title: "Performance Optimization" },
