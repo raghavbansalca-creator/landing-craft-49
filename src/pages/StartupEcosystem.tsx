@@ -156,7 +156,8 @@ const StartupEcosystem = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="border-2 hover:shadow-xl transition-all hover:border-primary/50" id="financial">
+            <Link to="/startup/financial-services">
+            <Card className="border-2 hover:shadow-xl transition-all hover:border-primary/50 cursor-pointer" id="financial">
               <CardHeader className="pb-4">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                   <DollarSign className="w-8 h-8 text-primary" />
@@ -193,8 +194,10 @@ const StartupEcosystem = () => {
                 </div>
               </CardContent>
             </Card>
+            </Link>
 
-            <Card className="border-2 hover:shadow-xl transition-all hover:border-primary/50" id="due-diligence">
+            <Link to="/startup/transaction-due-diligence">
+            <Card className="border-2 hover:shadow-xl transition-all hover:border-primary/50 cursor-pointer" id="due-diligence">
               <CardHeader className="pb-4">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                   <FileCheck className="w-8 h-8 text-primary" />
@@ -231,8 +234,10 @@ const StartupEcosystem = () => {
                 </div>
               </CardContent>
             </Card>
+            </Link>
 
-            <Card className="border-2 hover:shadow-xl transition-all hover:border-primary/50" id="strategic">
+            <Link to="/startup/strategic-operations">
+            <Card className="border-2 hover:shadow-xl transition-all hover:border-primary/50 cursor-pointer" id="strategic">
               <CardHeader className="pb-4">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                   <Briefcase className="w-8 h-8 text-primary" />
@@ -269,6 +274,7 @@ const StartupEcosystem = () => {
                 </div>
               </CardContent>
             </Card>
+            </Link>
           </div>
         </div>
       </motion.section>

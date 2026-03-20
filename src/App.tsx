@@ -14,6 +14,9 @@ import InventorySupplyChain from "./pages/services/InventorySupplyChain";
 import FinancialPlanning from "./pages/services/FinancialPlanning";
 import ERPImplementation from "./pages/services/ERPImplementation";
 import StartupEcosystem from "./pages/StartupEcosystem";
+import FinancialServices from "./pages/startup/FinancialServices";
+import TransactionDueDiligence from "./pages/startup/TransactionDueDiligence";
+import StrategicOperations from "./pages/startup/StrategicOperations";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -43,6 +46,9 @@ const App = () => (
           <Route path="/services/financial-planning" element={<FinancialPlanning />} />
           <Route path="/services/erp-implementation" element={<ERPImplementation />} />
           <Route path="/startup-ecosystem" element={<StartupEcosystem />} />
+          <Route path="/startup/financial-services" element={<FinancialServices />} />
+          <Route path="/startup/transaction-due-diligence" element={<TransactionDueDiligence />} />
+          <Route path="/startup/strategic-operations" element={<StrategicOperations />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />

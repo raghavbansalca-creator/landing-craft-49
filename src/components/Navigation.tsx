@@ -15,7 +15,7 @@ const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
   
-  const isStartupContext = location.pathname === "/startup-ecosystem";
+  const isStartupContext = location.pathname === "/startup-ecosystem" || location.pathname.startsWith("/startup/");
 
   const regularSolutions = [
     { href: "/services/performance-optimization", title: "Performance Optimization" },
@@ -27,9 +27,9 @@ const Navigation = () => {
   ];
 
   const startupSolutions = [
-    { href: "/startup-ecosystem#financial", title: "Financial Services & Modeling" },
-    { href: "/startup-ecosystem#due-diligence", title: "Transaction & Due Diligence" },
-    { href: "/startup-ecosystem#strategic", title: "Strategic & Operational Services" }
+    { href: "/startup/financial-services", title: "Financial Services & Modeling" },
+    { href: "/startup/transaction-due-diligence", title: "Transaction & Due Diligence" },
+    { href: "/startup/strategic-operations", title: "Strategic & Operational Services" }
   ];
 
   const currentSolutions = isStartupContext ? startupSolutions : regularSolutions;
