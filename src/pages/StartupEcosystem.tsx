@@ -274,6 +274,7 @@ const StartupEcosystem = () => {
                 </div>
               </CardContent>
             </Card>
+            </Link>
           </div>
         </div>
       </motion.section>

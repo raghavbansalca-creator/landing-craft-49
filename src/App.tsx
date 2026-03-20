@@ -46,6 +46,9 @@ const App = () => (
           <Route path="/services/financial-planning" element={<FinancialPlanning />} />
           <Route path="/services/erp-implementation" element={<ERPImplementation />} />
           <Route path="/startup-ecosystem" element={<StartupEcosystem />} />
+          <Route path="/startup/financial-services" element={<FinancialServices />} />
+          <Route path="/startup/transaction-due-diligence" element={<TransactionDueDiligence />} />
+          <Route path="/startup/strategic-operations" element={<StrategicOperations />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
