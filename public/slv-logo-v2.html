@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SLV — Single-Stroke Series</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #eef1f7;
+      padding: 56px 28px 80px;
+    }
+
+    .header { text-align: center; margin-bottom: 52px; }
+    .header .eyebrow {
+      display: block;
+      font-size: 10.5px; font-weight: 600; letter-spacing: 0.22em;
+      text-transform: uppercase; color: #94a3b8; margin-bottom: 14px;
+    }
+    .header h1 {
+      font-size: 34px; font-weight: 800; color: #0f172a;
+      letter-spacing: -0.025em; margin-bottom: 10px;
+    }
+    .header p { font-size: 14px; color: #64748b; }
+
+    /* Reference card */
+    .ref-section { max-width: 1060px; margin: 0 auto 44px; }
+    .ref-label {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; color: #94a3b8; margin-bottom: 12px;
+    }
+    .ref-card {
+      background: white; border-radius: 20px;
+      padding: 32px 48px; display: flex; align-items: center; gap: 48px;
+      box-shadow: 0 1px 3px rgba(15,23,42,0.05), 0 6px 20px rgba(15,23,42,0.07);
+    }
+    .ref-card svg { flex-shrink: 0; }
+    .ref-desc h2 { font-size: 16px; font-weight: 700; color: #1e293b; margin-bottom: 6px; }
+    .ref-desc p { font-size: 13px; color: #64748b; line-height: 1.65; }
+    .ref-tag {
+      display: inline-block; margin-top: 10px;
+      font-size: 10px; font-weight: 600; letter-spacing: 0.04em;
+      padding: 3px 10px; border-radius: 20px;
+      background: #f5f3ff; color: #6d28d9;
+    }
+
+    /* Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      max-width: 1060px;
+      margin: 0 auto;
+    }
+    @media (max-width: 860px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 540px) { .grid { grid-template-columns: 1fr; } }
+
+    .card {
+      background: #fff; border-radius: 20px; overflow: hidden;
+      box-shadow: 0 1px 3px rgba(15,23,42,0.05), 0 6px 20px rgba(15,23,42,0.07);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 2px 6px rgba(15,23,42,0.05), 0 12px 36px rgba(15,23,42,0.12);
+    }
+
+    .visual {
+      height: 196px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .bg-white  { background: #fafafa; }
+    .bg-dark   { background: #0f172a; }
+    .bg-warm   { background: #fffdf7; }
+    .bg-soft   { background: #f5f8ff; }
+    .bg-forest { background: #f0fdf4; }
+    .bg-slate  { background: #f1f5f9; }
+    .bg-rose   { background: #fff1f2; }
+
+    .info { padding: 18px 22px 20px; border-top: 1px solid #f1f5f9; }
+    .card-num {
+      font-size: 10px; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; color: #d1d5db; margin-bottom: 3px;
+    }
+    .card-name { font-size: 14px; font-weight: 700; color: #1e293b; letter-spacing: -0.01em; margin-bottom: 4px; }
+    .card-desc { font-size: 12px; color: #94a3b8; line-height: 1.65; }
+    .tags { display: flex; gap: 5px; margin-top: 10px; flex-wrap: wrap; }
+    .tag { font-size: 9.5px; font-weight: 600; letter-spacing: 0.04em; padding: 2px 8px; border-radius: 20px; }
+    .t-blue   { background: #eff6ff; color: #1d4ed8; }
+    .t-gold   { background: #fffbeb; color: #b45309; }
+    .t-purple { background: #f5f3ff; color: #6d28d9; }
+    .t-green  { background: #f0fdf4; color: #15803d; }
+    .t-slate  { background: #f1f5f9; color: #475569; }
+    .t-dark   { background: #1e293b; color: #94a3b8; }
+    .t-teal   { background: #f0fdfa; color: #0f766e; }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <span class="eyebrow">Seven Labs Vision · Single-Stroke Series</span>
+  <h1>Iterations on the Selected Direction</h1>
+  <p>8 explorations keeping the single-stroke "7" + serif wordmark as the constant</p>
+</div>
+
+<!-- Reference -->
+<div class="ref-section">
+  <div class="ref-label">Selected Direction — Base</div>
+  <div class="ref-card">
+    <svg width="238" height="130" viewBox="0 0 238 130" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="ref-g" x1="0" y1="0" x2="0.8" y2="1">
+          <stop offset="0%" stop-color="#6366f1"/>
+          <stop offset="100%" stop-color="#2563eb"/>
+        </linearGradient>
+      </defs>
+      <path d="M 14,20 L 74,20 L 30,118"
+        stroke="url(#ref-g)" stroke-width="7"
+        stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <circle cx="14" cy="20" r="5.5" fill="#6366f1"/>
+      <text x="96" y="56" font-family="'Playfair Display', Georgia, serif"
+        font-size="24" font-weight="700" fill="#1e293b">Seven</text>
+      <text x="96" y="84" font-family="'Playfair Display', Georgia, serif"
+        font-size="24" font-weight="700" fill="#1e293b">Labs</text>
+      <text x="97" y="103" font-family="'Inter', sans-serif"
+        font-size="9" font-weight="600" fill="#a5b4fc" letter-spacing="5.5">VISION</text>
+    </svg>
+    <div class="ref-desc">
+      <h2>Single-Stroke + Serif Wordmark</h2>
+      <p>Minimal outline "7" as a gradient line stroke (indigo → blue), Playfair Display wordmark, "VISION" in small tracked caps. Refined and modern without being cold. The 8 iterations below vary colour, layout, weight, and accent elements while keeping this DNA intact.</p>
+      <span class="ref-tag">Selected Direction</span>
+    </div>
+  </div>
+</div>
+
+<div class="grid">
+
+  <!-- ══ A: WARM GOLD ══ -->
+  <div class="card">
+    <div class="visual bg-warm">
+      <svg width="238" height="130" viewBox="0 0 238 130" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g-a" x1="0" y1="0" x2="0.8" y2="1">
+            <stop offset="0%" stop-color="#f59e0b"/>
+            <stop offset="100%" stop-color="#dc2626"/>
+          </linearGradient>
+        </defs>
+        <path d="M 14,20 L 74,20 L 30,118"
+          stroke="url(#g-a)" stroke-width="7"
+          stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <circle cx="14" cy="20" r="5.5" fill="#f59e0b"/>
+        <text x="96" y="56" font-family="'Playfair Display', Georgia, serif"
+          font-size="24" font-weight="700" fill="#1c1917">Seven</text>
+        <text x="96" y="84" font-family="'Playfair Display', Georgia, serif"
+          font-size="24" font-weight="700" fill="#1c1917">Labs</text>
+        <text x="97" y="103" font-family="'Inter', sans-serif"
+          font-size="9" font-weight="600" fill="#f59e0b" letter-spacing="5.5">VISION</text>
+      </svg>
+    </div>
+    <div class="info">
+      <div class="card-num">Iteration A</div>
+      <div class="card-name">Warm Gold — Amber to Crimson</div>
+      <div class="card-desc">Same stroke, warmer palette. Feels more human and approachable — less tech-startup, more trusted advisory.</div>
+      <div class="tags"><span class="tag t-gold">Warm</span><span class="tag t-slate">Human</span></div>
+    </div>
+  </div>
+
+  <!-- ══ B: DARK MODE ══ -->
+  <div class="card">
+    <div class="visual bg-dark">
+      <svg width="238" height="130" viewBox="0 0 238 130" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g-b" x1="0" y1="0" x2="0.8" y2="1">
+            <stop offset="0%" stop-color="#818cf8"/>
+            <stop offset="100%" stop-color="#38bdf8"/>
+          </linearGradient>
+        </defs>
+        <path d="M 14,20 L 74,20 L 30,118"
+          stroke="url(#g-b)" stroke-width="7"
+          stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <circle cx="14" cy="20" r="5.5" fill="#818cf8"/>
+        <text x="96" y="56" font-family="'Playfair Display', Georgia, serif"
+          font-size="24" font-weight="700" fill="#f1f5f9">Seven</text>
+        <text x="96" y="84" font-family="'Playfair Display', Georgia, serif"
+          font-size="24" font-weight="700" fill="#f1f5f9">Labs</text>
+        <text x="97" y="103" font-family="'Inter', sans-serif"
+          font-size="9" font-weight="600" fill="#475569" letter-spacing="5.5">VISION</text>
+      </svg>
+    </div>
+    <div class="info">
+      <div class="card-num">Iteration B</div>
+      <div class="card-name">Dark Mode — Violet to Sky</div>
+      <div class="card-desc">Lighter gradient tones on dark navy. Strong for pitch decks, presentations, and dark-themed digital surfaces.</div>
+      <div class="tags"><span class="tag t-dark">Dark</span><span class="tag t-purple">Presentations</span></div>
+    </div>
+  </div>
+
+  <!-- ══ C: HEAVY STROKE ══ -->
+  <div class="card">
+    <div class="visual bg-soft">
+      <svg width="238" height="130" viewBox="0 0 238 130" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g-c" x1="0" y1="0" x2="0.8" y2="1">
+            <stop offset="0%" stop-color="#6366f1"/>
+            <stop offset="100%" stop-color="#2563eb"/>
+          </linearGradient>
+        </defs>
+        <path d="M 14,20 L 74,20 L 30,118"
+          stroke="url(#g-c)" stroke-width="13"
+          stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <circle cx="14" cy="20" r="8" fill="#6366f1"/>
+        <text x="96" y="56" font-family="'Playfair Display', Georgia, serif"
+          font-size="24" font-weight="700" fill="#1e293b">Seven</text>
+        <text x="96" y="84" font-family="'Playfair Display', Georgia, serif"
+          font-size="24" font-weight="700" fill="#1e293b">Labs</text>
+        <text x="97" y="103" font-family="'Inter', sans-serif"
+          font-size="9" font-weight="600" fill="#a5b4fc" letter-spacing="5.5">VISION</text>
+      </svg>
+    </div>
+    <div class="info">
+      <div class="card-num">Iteration C</div>
+      <div class="card-name">Heavy Stroke — More Assertive</div>
+      <div class="card-desc">Same gradient path at 2× stroke weight. More visual presence — lands between "minimal" and "bold." Good for large-format use.</div>
+      <div class="tags"><span class="tag t-blue">Bold</span><span class="tag t-slate">Assertive</span></div>
+    </div>
+  </div>
+
+  <!-- ══ D: VERTICAL STACKED ══ -->
+  <div class="card">
+    <div class="visual bg-white">
+      <svg width="200" height="186" viewBox="0 0 200 186" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g-d" x1="0" y1="0" x2="0.8" y2="1">
+            <stop offset="0%" stop-color="#6366f1"/>
+            <stop offset="100%" stop-color="#2563eb"/>
+          </linearGradient>
+        </defs>
+        <!-- 7 centered in upper half -->
+        <path d="M 64,12 L 136,12 L 90,106"
+          stroke="url(#g-d)" stroke-width="7"
+          stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <circle cx="64" cy="12" r="5.5" fill="#6366f1"/>
+        <!-- Name below, centered -->
+        <text x="100" y="132" font-family="'Playfair Display', Georgia, serif"
+          font-size="22" font-weight="700" fill="#1e293b" text-anchor="middle">Seven</text>
+        <text x="100" y="156" font-family="'Playfair Display', Georgia, serif"
+          font-size="22" font-weight="700" fill="#1e293b" text-anchor="middle">Labs</text>
+        <text x="100" y="174" font-family="'Inter', sans-serif"
+          font-size="9" font-weight="600" fill="#a5b4fc"
+          letter-spacing="5.5" text-anchor="middle">VISION</text>
+      </svg>
+    </div>
+    <div class="info">
+      <div class="card-num">Iteration D</div>
+      <div class="card-name">Vertical Stacked Lockup</div>
+      <div class="card-desc">Icon above, name centered below. Works for square and portrait formats — social profiles, stamps, app icons.</div>
+      <div class="tags"><span class="tag t-blue">Stacked</span><span class="tag t-slate">Square Format</span></div>
+    </div>
+  </div>
+
+  <!-- ══ E: WITH CROSSBAR ══ -->
+  <div class="card">
+    <div class="visual bg-soft">
+      <svg width="238" height="130" viewBox="0 0 238 130" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g-e" x1="0" y1="0" x2="0.8" y2="1">
+            <stop offset="0%" stop-color="#6366f1"/>
+            <stop offset="100%" stop-color="#2563eb"/>
+          </linearGradient>
+        </defs>
+        <path d="M 14,20 L 74,20 L 30,118"
+          stroke="url(#g-e)" stroke-width="7"
+          stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <!-- European crossbar at midpoint of the diagonal leg -->
+        <line x1="38" y1="68" x2="62" y2="68"
+          stroke="url(#g-e)" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="14" cy="20" r="5.5" fill="#6366f1"/>
+        <text x="96" y="56" font-family="'Playfair Display', Georgia, serif"
+          font-size="24" font-weight="700" fill="#1e293b">Seven</text>
+        <text x="96" y="84" font-family="'Playfair Display', Georgia, serif"
+          font-size="24" font-weight="700" fill="#1e293b">Labs</text>
+        <text x="97" y="103" font-family="'Inter', sans-serif"
+          font-size="9" font-weight="600" fill="#a5b4fc" letter-spacing="5.5">VISION</text>
+      </svg>
+    </div>
+    <div class="info">
+      <div class="card-num">Iteration E</div>
+      <div class="card-name">European Crossbar "7"</div>
+      <div class="card-desc">Adds a horizontal bar through the leg — the continental European convention. Small change that makes the mark distinctly ownable.</div>
+      <div class="tags"><span class="tag t-purple">Distinctive</span><span class="tag t-slate">Ownable</span></div>
+    </div>
+  </div>
+
+  <!-- ══ F: EMERALD / TEAL ══ -->
+  <div class="card">
+    <div class="visual bg-forest">
+      <svg width="238" height="130" viewBox="0 0 238 130" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g-f" x1="0" y1="0" x2="0.8" y2="1">
+            <stop offset="0%" stop-color="#059669"/>
+            <stop offset="100%" stop-color="#0891b2"/>
+          </linearGradient>
+        </defs>
+        <path d="M 14,20 L 74,20 L 30,118"
+          stroke="url(#g-f)" stroke-width="7"
+          stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <circle cx="14" cy="20" r="5.5" fill="#059669"/>
+        <text x="96" y="56" font-family="'Playfair Display', Georgia, serif"
+          font-size="24" font-weight="700" fill="#064e3b">Seven</text>
+        <text x="96" y="84" font-family="'Playfair Display', Georgia, serif"
+          font-size="24" font-weight="700" fill="#064e3b">Labs</text>
+        <text x="97" y="103" font-family="'Inter', sans-serif"
+          font-size="9" font-weight="600" fill="#059669" letter-spacing="5.5">VISION</text>
+      </svg>
+    </div>
+    <div class="info">
+      <div class="card-num">Iteration F</div>
+      <div class="card-name">Emerald to Teal — Growth Palette</div>
+      <div class="card-desc">Fresh green → teal gradient. Signals growth and feels less "finance-typical" — good for sustainability or startup-adjacent positioning.</div>
+      <div class="tags"><span class="tag t-green">Growth</span><span class="tag t-teal">Fresh</span></div>
+    </div>
+  </div>
+
+  <!-- ══ G: MONOCHROME NAVY ══ -->
+  <div class="card">
+    <div class="visual bg-white">
+      <svg width="238" height="130" viewBox="0 0 238 130" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 14,20 L 74,20 L 30,118"
+          stroke="#1e3a8a" stroke-width="7"
+          stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <circle cx="14" cy="20" r="5.5" fill="#1e3a8a"/>
+        <text x="96" y="56" font-family="'Playfair Display', Georgia, serif"
+          font-size="24" font-weight="700" fill="#1e3a8a">Seven</text>
+        <text x="96" y="84" font-family="'Playfair Display', Georgia, serif"
+          font-size="24" font-weight="700" fill="#1e3a8a">Labs</text>
+        <text x="97" y="103" font-family="'Inter', sans-serif"
+          font-size="9" font-weight="600" fill="#94a3b8" letter-spacing="5.5">VISION</text>
+      </svg>
+    </div>
+    <div class="info">
+      <div class="card-num">Iteration G</div>
+      <div class="card-name">Monochrome Navy — Print Ready</div>
+      <div class="card-desc">Single colour, no gradient. Necessary for letterpress, embossing, fax, and any context where gradients can't reproduce cleanly.</div>
+      <div class="tags"><span class="tag t-blue">Print</span><span class="tag t-slate">Single-Colour</span></div>
+    </div>
+  </div>
+
+  <!-- ══ H: COMPACT ONE-LINE ══ -->
+  <div class="card">
+    <div class="visual bg-slate">
+      <svg width="264" height="66" viewBox="0 0 264 66" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g-h" x1="0" y1="0" x2="0.8" y2="1">
+            <stop offset="0%" stop-color="#6366f1"/>
+            <stop offset="100%" stop-color="#2563eb"/>
+          </linearGradient>
+        </defs>
+        <!-- Small 7 icon -->
+        <path d="M 12,10 L 44,10 L 22,58"
+          stroke="url(#g-h)" stroke-width="5.5"
+          stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <circle cx="12" cy="10" r="4" fill="#6366f1"/>
+        <!-- Wordmark on two tight lines -->
+        <text x="60" y="26" font-family="'Inter', sans-serif"
+          font-size="15" font-weight="800" fill="#0f172a" letter-spacing="-0.3">SEVEN LABS</text>
+        <rect x="60" y="33" width="196" height="1" rx="0.5" fill="#e2e8f0"/>
+        <text x="60" y="48" font-family="'Inter', sans-serif"
+          font-size="9" font-weight="500" fill="#94a3b8" letter-spacing="5">VISION</text>
+      </svg>
+    </div>
+    <div class="info">
+      <div class="card-num">Iteration H</div>
+      <div class="card-name">Compact Horizontal — Header Format</div>
+      <div class="card-desc">Small "7" icon beside firm name on a single strip. For website headers, email signatures, and letterhead.</div>
+      <div class="tags"><span class="tag t-slate">Compact</span><span class="tag t-blue">Letterhead</span></div>
+    </div>
+  </div>
+
+</div>
+
+<p style="text-align:center; margin-top:44px; font-size:12px; color:#94a3b8; letter-spacing:0.02em;">
+  Seven Labs Vision · SLV · Single-Stroke Series · 2026
+</p>
+
+</body>
+</html>

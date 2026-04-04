@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seven Labs Vision — Logo Explorations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,400;1,700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #eef1f7;
+      padding: 56px 28px 80px;
+      min-height: 100vh;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .header .eyebrow {
+      display: inline-block;
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #94a3b8;
+      margin-bottom: 14px;
+    }
+    .header h1 {
+      font-size: 34px;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.025em;
+      margin-bottom: 10px;
+    }
+    .header p {
+      font-size: 14px;
+      color: #64748b;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      max-width: 1060px;
+      margin: 0 auto;
+    }
+    @media (max-width: 860px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 540px) { .grid { grid-template-columns: 1fr; } }
+
+    .card {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(15,23,42,0.05), 0 6px 20px rgba(15,23,42,0.07);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 2px 6px rgba(15,23,42,0.05), 0 12px 36px rgba(15,23,42,0.12);
+    }
+
+    .visual {
+      height: 196px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .bg-white  { background: #fafafa; }
+    .bg-soft   { background: #f5f8ff; }
+    .bg-warm   { background: #fffdf7; }
+    .bg-dark   { background: #0f172a; }
+    .bg-slate  { background: #f1f5f9; }
+    .bg-cream  { background: #fdf8f3; }
+
+    .info {
+      padding: 18px 22px 20px;
+      border-top: 1px solid #f1f5f9;
+    }
+    .card-num {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #d1d5db;
+      margin-bottom: 3px;
+    }
+    .card-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1e293b;
+      letter-spacing: -0.01em;
+      margin-bottom: 4px;
+    }
+    .card-desc {
+      font-size: 12px;
+      color: #94a3b8;
+      line-height: 1.65;
+    }
+
+    .tags { display: flex; gap: 5px; margin-top: 10px; flex-wrap: wrap; }
+    .tag {
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 2px 8px;
+      border-radius: 20px;
+    }
+    .t-blue   { background: #eff6ff; color: #1d4ed8; }
+    .t-gold   { background: #fffbeb; color: #b45309; }
+    .t-purple { background: #f5f3ff; color: #6d28d9; }
+    .t-green  { background: #f0fdf4; color: #15803d; }
+    .t-slate  { background: #f1f5f9; color: #475569; }
+    .t-dark   { background: #1e293b; color: #94a3b8; }
+    .t-teal   { background: #f0fdfa; color: #0f766e; }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <div class="eyebrow">Seven Labs Vision · Brand Explorations</div>
+  <h1>10 Logo Directions</h1>
+  <p>Select one or more to develop further into a full brand system</p>
+</div>
+
+<div class="grid">
+
+  <!-- ══════════════════════════════════════════
+       01 · SLV MONOGRAM BADGE
+       ══════════════════════════════════════════ -->
+  <div class="card">
+    <div class="visual bg-white">
+      <svg width="200" height="160" viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#1e3a8a"/>
+            <stop offset="100%" stop-color="#2563eb"/>
+          </linearGradient>
+        </defs>
+        <!-- Rounded square badge -->
+        <rect x="62" y="10" width="76" height="76" rx="18" fill="url(#g1)"/>
+        <!-- SLV lettermark -->
+        <text x="100" y="60"
+          font-family="'Inter', 'Helvetica Neue', sans-serif"
+          font-size="30" font-weight="800" fill="white"
+          text-anchor="middle" letter-spacing="2.5">SLV</text>
+        <!-- Firm name below badge -->
+        <text x="100" y="106"
+          font-family="'Inter', sans-serif"
+          font-size="10.5" font-weight="700" fill="#1e3a8a"
+          text-anchor="middle" letter-spacing="3.5">SEVEN LABS</text>
+        <rect x="64" y="112" width="72" height="1" rx="0.5" fill="#e2e8f0"/>
+        <text x="100" y="126"
+          font-family="'Inter', sans-serif"
+          font-size="8.5" font-weight="500" fill="#94a3b8"
+          text-anchor="middle" letter-spacing="5.5">VISION</text>
+      </svg>
+    </div>
+    <div class="info">
+      <div class="card-num">Option 01</div>
+      <div class="card-name">SLV Lettermark</div>
+      <div class="card-desc">Drops the "7" entirely — lets SLV carry the brand. Compact, scalable from app icon to billboard.</div>
+      <div class="tags">
+        <span class="tag t-blue">Consulting</span>
+        <span class="tag t-slate">Timeless</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       02 · ARCHITECTURAL "7" + WORDMARK
+       ══════════════════════════════════════════ -->
+  <div class="card">
+    <div class="visual bg-soft">
+      <svg width="238" height="140" viewBox="0 0 238 140" xmlns="http://www.w3.org/2000/svg">
+        <!-- Drawn "7": top bar + diagonal stroke -->
+        <rect x="12" y="16" width="64" height="12" rx="3.5" fill="#1e3a8a"/>
+        <!-- Diagonal leg from right end of bar -->
+        <line x1="68" y1="22" x2="24" y2="120"
+          stroke="#1e3a8a" stroke-width="12" stroke-linecap="round"/>
+        <!-- European crossbar accent (blue) -->
+        <line x1="34" y1="74" x2="60" y2="74"
+          stroke="#2563eb" stroke-width="5" stroke-linecap="round"/>
+        <!-- Wordmark -->
+        <text x="100" y="48"
+          font-family="'Inter', 'Helvetica Neue', sans-serif"
+          font-size="20" font-weight="800" fill="#0f172a">SEVEN</text>
+        <text x="100" y="70"
+          font-family="'Inter', sans-serif"
+          font-size="20" font-weight="800" fill="#0f172a">LABS</text>
+        <rect x="100" y="78" width="128" height="1.5" rx="0.75" fill="#e2e8f0"/>
+        <text x="100" y="94"
+          font-family="'Inter', sans-serif"
+          font-size="9.5" font-weight="500" fill="#94a3b8" letter-spacing="5">VISION</text>
+      </svg>
+    </div>
+    <div class="info">
+      <div class="card-num">Option 02</div>
+      <div class="card-name">Architectural "7" + Wordmark</div>
+      <div class="card-desc">Precision-drawn numeral with European crossbar — reads as a structured, serious advisory firm.</div>
+      <div class="tags">
+        <span class="tag t-blue">Advisory</span>
+        <span class="tag t-slate">Structured</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       03 · SINGLE-STROKE OUTLINE + SERIF
+       ══════════════════════════════════════════ -->
+  <div class="card">
+    <div class="visual bg-white">
+      <svg width="238" height="140" viewBox="0 0 238 140" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g3" x1="0" y1="0" x2="0.8" y2="1">
+            <stop offset="0%" stop-color="#6366f1"/>
+            <stop offset="100%" stop-color="#2563eb"/>
+          </linearGradient>
+        </defs>
+        <!-- Single-stroke "7" as a path (outline only) -->
+        <path d="M 14,20 L 74,20 L 30,118"
+          stroke="url(#g3)" stroke-width="7"
+          stroke-linecap="round" stroke-linejoin="round"
+          fill="none"/>
+        <!-- Start dot accent -->
+        <circle cx="14" cy="20" r="5.5" fill="#6366f1"/>
+        <!-- Serif wordmark -->
+        <text x="96" y="56"
+          font-family="'Playfair Display', 'DM Serif Display', Georgia, serif"
+          font-size="24" font-weight="700" fill="#1e293b">Seven</text>
+        <text x="96" y="84"
+          font-family="'Playfair Display', Georgia, serif"
+          font-size="24" font-weight="700" fill="#1e293b">Labs</text>
+        <text x="97" y="103"
+          font-family="'Inter', sans-serif"
+          font-size="9" font-weight="600" fill="#a5b4fc" letter-spacing="5.5">VISION</text>
+      </svg>
+    </div>
+    <div class="info">
+      <div class="card-num">Option 03</div>
+      <div class="card-name">Single-Stroke + Serif Wordmark</div>
+      <div class="card-desc">Minimal outline "7" in gradient — refined and modern without being cold. Serif adds credibility.</div>
+      <div class="tags">
+        <span class="tag t-purple">Modern</span>
+        <span class="tag t-slate">Refined</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       04 · DARK PREMIUM GOLD
+       ══════════════════════════════════════════ -->
+  <div class="card">
+    <div class="visual bg-dark">
+      <svg width="238" height="140" viewBox="0 0 238 140" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g4" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#fcd34d"/>
+            <stop offset="100%" stop-color="#d97706"/>
+          </linearGradient>
+        </defs>
+        <!-- Large serif "7" in gold -->
+        <text x="14" y="122"
+          font-family="'Playfair Display', 'DM Serif Display', Georgia, serif"
+          font-size="110" font-weight="700" fill="url(#g4)">7</text>
+        <!-- Wordmark right -->
+        <text x="114" y="62"
+          font-family="'Playfair Display', Georgia, serif"
+          font-size="15" font-weight="700" fill="#fbbf24"
+          letter-spacing="1.5">SEVEN LABS</text>
+        <rect x="114" y="70" width="90" height="0.8" rx="0.4" fill="#d97706" opacity="0.7"/>
+        <text x="114" y="86"
+          font-family="'Inter', sans-serif"
+          font-size="8.5" font-weight="300" fill="#475569" letter-spacing="5.5">VISION</text>
+        <text x="114" y="102"
+          font-family="'Inter', sans-serif"
+          font-size="7" font-weight="500" fill="#334155" letter-spacing="1.5">CHARTERED ADVISORY</text>
+      </svg>
+    </div>
+    <div class="info">
+      <div class="card-num">Option 04</div>
+      <div class="card-name">Dark Premium Gold</div>
+      <div class="card-desc">Private wealth / Tier-1 advisory feel. Gold serif "7" on midnight navy — signals trust and premium positioning.</div>
+      <div class="tags">
+        <span class="tag t-gold">Premium</span>
+        <span class="tag t-dark">Dark Mode</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       05 · HEXAGON BADGE
+       ══════════════════════════════════════════ -->
+  <div class="card">
+    <div class="visual bg-white">
+      <svg width="200" height="170" viewBox="0 0 200 170" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g5" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#1e3a8a"/>
+            <stop offset="100%" stop-color="#2563eb"/>
+          </linearGradient>
+        </defs>
+        <!-- Flat-top hexagon: center (100,75), r=56 -->
+        <!-- Vertices: 0°(156,75) 60°(128,123) 120°(72,123) 180°(44,75) 240°(72,27) 300°(128,27) -->
+        <polygon
+          points="156,75 128,123 72,123 44,75 72,27 128,27"
+          fill="url(#g5)"/>
+        <!-- "7" centered inside hex -->
+        <text x="100" y="107"
+          font-family="'Playfair Display', Georgia, serif"
+          font-size="74" font-weight="700" fill="white"
+          text-anchor="middle">7</text>
+        <!-- Name below -->
+        <text x="100" y="144"
+          font-family="'Inter', sans-serif"
+          font-size="10.5" font-weight="700" fill="#1e3a8a"
+          text-anchor="middle" letter-spacing="3.5">SEVEN LABS</text>
+        <text x="100" y="158"
+          font-family="'Inter', sans-serif"
+          font-size="8.5" font-weight="500" fill="#94a3b8"
+          text-anchor="middle" letter-spacing="5.5">VISION</text>
+      </svg>
+    </div>
+    <div class="info">
+      <div class="card-num">Option 05</div>
+      <div class="card-name">Hexagon Badge</div>
+      <div class="card-desc">Hexagon = precision + structure (think labs, engineering). Strong as a stamp, seal, or favicon. Great for letterhead.</div>
+      <div class="tags">
+        <span class="tag t-blue">Authority</span>
+        <span class="tag t-teal">Seal Format</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       06 · BOLD GRADIENT FINTECH
+       ══════════════════════════════════════════ -->
+  <div class="card">
+    <div class="visual bg-white">
+      <svg width="238" height="140" viewBox="0 0 238 140" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g6" x1="0" y1="1" x2="1" y2="0">
+            <stop offset="0%" stop-color="#7c3aed"/>
+            <stop offset="50%" stop-color="#2563eb"/>
+            <stop offset="100%" stop-color="#06b6d4"/>
+          </linearGradient>
+        </defs>
+        <!-- Heavy "7" in gradient -->
+        <text x="10" y="118"
+          font-family="'Inter', 'Arial Black', 'Helvetica Neue', sans-serif"
+          font-size="110" font-weight="900" fill="url(#g6)">7</text>
+        <!-- Wordmark right -->
+        <text x="100" y="58"
+          font-family="'Inter', sans-serif"
+          font-size="23" font-weight="800" fill="#0f172a">Seven</text>
+        <text x="100" y="84"
+          font-family="'Inter', sans-serif"
+          font-size="23" font-weight="800" fill="url(#g6)">Labs</text>
+        <text x="100" y="103"
+          font-family="'Inter', sans-serif"
+          font-size="9" font-weight="500" fill="#94a3b8" letter-spacing="5">VISION</text>
+      </svg>
+    </div>
+    <div class="info">
+      <div class="card-num">Option 06</div>
+      <div class="card-name">Bold Gradient "7"</div>
+      <div class="card-desc">High-energy gradient — purple to cyan. Works on pitch decks, digital content, and startup-adjacent positioning.</div>
+      <div class="tags">
+        <span class="tag t-purple">Startup Energy</span>
+        <span class="tag t-teal">Digital-first</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       07 · PURE SERIF WORDMARK (no icon)
+       ══════════════════════════════════════════ -->
+  <div class="card">
+    <div class="visual bg-cream">
+      <svg width="230" height="126" viewBox="0 0 230 126" xmlns="http://www.w3.org/2000/svg">
+        <!-- Pure typographic mark -->
+        <text x="12" y="52"
+          font-family="'Playfair Display', 'DM Serif Display', Georgia, serif"
+          font-size="44" font-weight="700" fill="#111827">Seven</text>
+        <text x="12" y="96"
+          font-family="'Playfair Display', Georgia, serif"
+          font-size="44" font-weight="700" fill="#111827">Labs</text>
+        <!-- Blue rule -->
+        <rect x="12" y="103" width="206" height="2.5" rx="1.25" fill="#2563eb"/>
+        <!-- VISION + dot -->
+        <text x="12" y="120"
+          font-family="'Inter', sans-serif"
+          font-size="9" font-weight="600" fill="#6b7280" letter-spacing="5.5">VISION</text>
+        <circle cx="220" cy="116" r="4.5" fill="#2563eb"/>
+      </svg>
+    </div>
+    <div class="info">
+      <div class="card-num">Option 07</div>
+      <div class="card-name">Pure Serif Wordmark</div>
+      <div class="card-desc">No icon — typographic confidence. Works when the name is strong enough to carry on its own. Editorial feel.</div>
+      <div class="tags">
+        <span class="tag t-gold">Editorial</span>
+        <span class="tag t-slate">Minimal</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       08 · CIRCUIT TECH "7"
+       ══════════════════════════════════════════ -->
+  <div class="card">
+    <div class="visual bg-slate">
+      <svg width="238" height="140" viewBox="0 0 238 140" xmlns="http://www.w3.org/2000/svg">
+        <!-- Top bar of "7" -->
+        <rect x="12" y="16" width="60" height="10" rx="2" fill="#0f172a"/>
+        <!-- Right side short drop -->
+        <rect x="62" y="16" width="10" height="22" rx="2" fill="#0f172a"/>
+        <!-- Diagonal stroke down-left -->
+        <line x1="67" y1="38" x2="22" y2="124"
+          stroke="#0f172a" stroke-width="10" stroke-linecap="round"/>
+
+        <!-- Circuit junction nodes -->
+        <circle cx="12" cy="21" r="5.5" fill="#0ea5e9" stroke="#f1f5f9" stroke-width="1.5"/>
+        <circle cx="72" cy="21" r="5.5" fill="#0ea5e9" stroke="#f1f5f9" stroke-width="1.5"/>
+        <circle cx="67" cy="38" r="4.5" fill="#0ea5e9" stroke="#f1f5f9" stroke-width="1.5"/>
+        <circle cx="22" cy="124" r="5.5" fill="#0ea5e9" stroke="#f1f5f9" stroke-width="1.5"/>
+
+        <!-- Branch traces from mid-leg -->
+        <line x1="44" y1="81" x2="14" y2="81"
+          stroke="#0ea5e9" stroke-width="1.5" stroke-dasharray="3,3"/>
+        <circle cx="12" cy="81" r="2.5" fill="#0ea5e9" opacity="0.5"/>
+        <line x1="12" y1="81" x2="12" y2="96"
+          stroke="#0ea5e9" stroke-width="1.5"/>
+        <circle cx="12" cy="98" r="2" fill="#0ea5e9" opacity="0.4"/>
+
+        <!-- Monospace wordmark -->
+        <text x="100" y="50"
+          font-family="'Courier New', 'Lucida Console', monospace"
+          font-size="13.5" font-weight="700" fill="#0f172a" letter-spacing="1.5">SEVEN</text>
+        <text x="100" y="70"
+          font-family="'Courier New', monospace"
+          font-size="13.5" font-weight="700" fill="#0ea5e9" letter-spacing="1.5">LABS</text>
+        <text x="100" y="88"
+          font-family="'Courier New', monospace"
+          font-size="9" font-weight="400" fill="#64748b" letter-spacing="2">VISION</text>
+
+        <!-- Grid dot accent -->
+        <g opacity="0.5">
+          <circle cx="172" cy="36" r="1.5" fill="#cbd5e1"/>
+          <circle cx="182" cy="36" r="1.5" fill="#0ea5e9"/>
+          <circle cx="192" cy="36" r="1.5" fill="#cbd5e1"/>
+          <circle cx="172" cy="48" r="1.5" fill="#0ea5e9"/>
+          <circle cx="182" cy="48" r="1.5" fill="#cbd5e1"/>
+          <circle cx="192" cy="48" r="1.5" fill="#cbd5e1"/>
+          <circle cx="172" cy="60" r="1.5" fill="#cbd5e1"/>
+          <circle cx="182" cy="60" r="1.5" fill="#cbd5e1"/>
+          <circle cx="192" cy="60" r="1.5" fill="#0ea5e9"/>
+        </g>
+      </svg>
+    </div>
+    <div class="info">
+      <div class="card-num">Option 08</div>
+      <div class="card-name">Circuit "7" — Tech Grid</div>
+      <div class="card-desc">Circuit board nodes on the "7" — reinforces Labs + systems advisory. Strong for ERP/tech-forward positioning.</div>
+      <div class="tags">
+        <span class="tag t-teal">Tech</span>
+        <span class="tag t-blue">ERP / Systems</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       09 · GHOST "7" STRUCTURAL BACKDROP
+       ══════════════════════════════════════════ -->
+  <div class="card">
+    <div class="visual bg-soft">
+      <svg width="238" height="138" viewBox="0 0 238 138" xmlns="http://www.w3.org/2000/svg">
+        <!-- Giant ghost "7" as background scaffold -->
+        <text x="-4" y="128"
+          font-family="'Inter', 'Arial Black', sans-serif"
+          font-size="132" font-weight="900" fill="#dde5f0">7</text>
+        <!-- Bold wordmark overlaid on top -->
+        <text x="18" y="50"
+          font-family="'Inter', sans-serif"
+          font-size="26" font-weight="800" fill="#1e3a8a">SEVEN</text>
+        <text x="18" y="78"
+          font-family="'Inter', sans-serif"
+          font-size="26" font-weight="800" fill="#1e3a8a">LABS</text>
+        <!-- Blue accent rule -->
+        <rect x="18" y="85" width="146" height="2.5" rx="1.25" fill="#2563eb"/>
+        <!-- VISION -->
+        <text x="18" y="102"
+          font-family="'Inter', sans-serif"
+          font-size="9.5" font-weight="600" fill="#94a3b8" letter-spacing="5.5">VISION</text>
+      </svg>
+    </div>
+    <div class="info">
+      <div class="card-num">Option 09</div>
+      <div class="card-name">Ghost "7" — Structural Backdrop</div>
+      <div class="card-desc">The "7" recedes as scaffolding — the firm name leads. Unusual and highly memorable. Versatile on any background.</div>
+      <div class="tags">
+        <span class="tag t-purple">Distinctive</span>
+        <span class="tag t-slate">Name-first</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       10 · REFINED CURRENT DNA (EVOLUTIONARY)
+       ══════════════════════════════════════════ -->
+  <div class="card">
+    <div class="visual bg-white">
+      <svg width="210" height="158" viewBox="0 0 210 158" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g10" x1="0" y1="0" x2="0.85" y2="1">
+            <stop offset="0%" stop-color="#1e3a8a"/>
+            <stop offset="55%" stop-color="#1d4ed8"/>
+            <stop offset="100%" stop-color="#3b82f6"/>
+          </linearGradient>
+          <linearGradient id="g10b" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#f59e0b"/>
+            <stop offset="100%" stop-color="#d97706"/>
+          </linearGradient>
+        </defs>
+        <!-- Clean gradient "7" — direct upgrade of current logo -->
+        <text x="8" y="118"
+          font-family="'Playfair Display', 'DM Serif Display', Georgia, serif"
+          font-size="112" font-weight="700" fill="url(#g10)">7</text>
+        <!-- "Labs" in italic gold, overlapping the 7 — keeps current DNA -->
+        <text x="62" y="86"
+          font-family="'Playfair Display', Georgia, serif"
+          font-size="26" font-style="italic" font-weight="400" fill="url(#g10b)">Labs</text>
+        <!-- Thin separator -->
+        <rect x="8" y="126" width="194" height="0.8" rx="0.4" fill="#e2e8f0"/>
+        <!-- VISION with gold dot accent -->
+        <text x="10" y="140"
+          font-family="'Inter', sans-serif"
+          font-size="9.5" font-weight="500" fill="#64748b" letter-spacing="7">VISION</text>
+        <circle cx="182" cy="136" r="3.5" fill="url(#g10b)"/>
+      </svg>
+    </div>
+    <div class="info">
+      <div class="card-num">Option 10</div>
+      <div class="card-name">Refined Current DNA</div>
+      <div class="card-desc">Direct evolution of your existing logo — same "7 + Labs italic" identity, upgraded with a smooth gradient and gold accent. Least disruption to existing brand recognition.</div>
+      <div class="tags">
+        <span class="tag t-gold">Evolution</span>
+        <span class="tag t-blue">Lowest Risk</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Footer note -->
+<p style="text-align:center; margin-top:44px; font-size:12px; color:#94a3b8; letter-spacing:0.02em;">
+  Seven Labs Vision · SLV · Logo Explorations · 2026
+</p>
+
+</body>
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SLV — Directional Series</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: #eef1f7;
+      padding: 56px 28px 80px;
+    }
+
+    .header { text-align: center; margin-bottom: 52px; }
+    .header .eyebrow {
+      display: block; font-size: 10.5px; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: #94a3b8; margin-bottom: 14px;
+    }
+    .header h1 { font-size: 34px; font-weight: 800; color: #0f172a; letter-spacing: -0.025em; margin-bottom: 10px; }
+    .header p { font-size: 14px; color: #64748b; max-width: 540px; margin: 0 auto; line-height: 1.6; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 1060px;
+      margin: 0 auto;
+    }
+    @media (max-width: 860px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+
+    .card {
+      background: #fff; border-radius: 20px; overflow: hidden;
+      box-shadow: 0 1px 3px rgba(15,23,42,0.05), 0 6px 20px rgba(15,23,42,0.07);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 2px 6px rgba(15,23,42,0.05), 0 12px 36px rgba(15,23,42,0.12); }
+
+    /* Wide card spans full width for hero treatment */
+    .card.wide { grid-column: 1 / -1; }
+    .card.wide .visual { height: 240px; }
+    .card.wide .info { display: flex; gap: 40px; align-items: flex-start; padding: 28px 40px 32px; }
+    .card.wide .info .info-meta { flex: 1; }
+    .card.wide .info .info-meaning { flex: 2; font-size: 13px; color: #64748b; line-height: 1.7; border-left: 2px solid #f1f5f9; padding-left: 24px; }
+    .card.wide .info .info-meaning strong { display: block; font-size: 12px; font-weight: 700; color: #1e293b; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.08em; }
+
+    .visual {
+      height: 200px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .bg-white  { background: #fafafa; }
+    .bg-dark   { background: #0f172a; }
+    .bg-soft   { background: #f5f8ff; }
+    .bg-slate  { background: #f1f5f9; }
+    .bg-warm   { background: #fffdf7; }
+
+    .info { padding: 20px 24px 22px; border-top: 1px solid #f1f5f9; }
+    .card-num { font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #d1d5db; margin-bottom: 3px; }
+    .card-name { font-size: 14.5px; font-weight: 700; color: #1e293b; letter-spacing: -0.01em; margin-bottom: 5px; }
+    .card-desc { font-size: 12px; color: #94a3b8; line-height: 1.65; }
+    .tags { display: flex; gap: 5px; margin-top: 10px; flex-wrap: wrap; }
+    .tag { font-size: 9.5px; font-weight: 600; letter-spacing: 0.04em; padding: 2px 8px; border-radius: 20px; }
+    .t-blue   { background: #eff6ff; color: #1d4ed8; }
+    .t-gold   { background: #fffbeb; color: #b45309; }
+    .t-purple { background: #f5f3ff; color: #6d28d9; }
+    .t-green  { background: #f0fdf4; color: #15803d; }
+    .t-slate  { background: #f1f5f9; color: #475569; }
+    .t-dark   { background: #1e293b; color: #94a3b8; }
+    .t-teal   { background: #f0fdfa; color: #0f766e; }
+    .t-amber  { background: #fffbeb; color: #d97706; }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <span class="eyebrow">Seven Labs Vision · Directional Series</span>
+  <h1>Direction & Significance</h1>
+  <p>Each concept below embeds a directional or conceptual meaning into the "7" mark — so the logo says something, not just looks good.</p>
+</div>
+
+<div class="grid">
+
+  <!-- ══ 1: ARROWHEAD TERMINUS (WIDE HERO) ══ -->
+  <div class="card wide">
+    <div class="visual bg-soft">
+      <svg width="420" height="200" viewBox="0 0 420 200" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g1d" x1="0" y1="0" x2="0.8" y2="1">
+            <stop offset="0%" stop-color="#6366f1"/>
+            <stop offset="100%" stop-color="#2563eb"/>
+          </linearGradient>
+          <!-- Arrowhead marker at end of path -->
+          <marker id="arrow1" markerWidth="10" markerHeight="8"
+            refX="8" refY="4" orient="auto" markerUnits="strokeWidth">
+            <path d="M 0,0 L 10,4 L 0,8 Z" fill="#2563eb"/>
+          </marker>
+        </defs>
+        <!-- 7 stroke with arrowhead at terminus -->
+        <path d="M 54,40 L 154,40 L 96,188"
+          stroke="url(#g1d)" stroke-width="7"
+          stroke-linecap="round" stroke-linejoin="round"
+          fill="none" marker-end="url(#arrow1)"/>
+        <!-- Start dot -->
+        <circle cx="54" cy="40" r="6" fill="#6366f1"/>
+        <!-- Wordmark -->
+        <text x="190" y="90"
+          font-family="'Playfair Display', Georgia, serif"
+          font-size="38" font-weight="700" fill="#1e293b">Seven</text>
+        <text x="190" y="138"
+          font-family="'Playfair Display', Georgia, serif"
+          font-size="38" font-weight="700" fill="#1e293b">Labs</text>
+        <text x="192" y="162"
+          font-family="'Inter', sans-serif"
+          font-size="11" font-weight="600" fill="#a5b4fc" letter-spacing="7">VISION</text>
+      </svg>
+    </div>
+    <div class="info">
+      <div class="info-meta">
+        <div class="card-num">Direction 01</div>
+        <div class="card-name">Arrowhead Terminus</div>
+        <div class="tags">
+          <span class="tag t-purple">Forward</span>
+          <span class="tag t-blue">Purposeful</span>
+        </div>
+      </div>
+      <div class="info-meaning">
+        <strong>The Concept</strong>
+        The dot at the top-left is the origin — where you are now. The "7" stroke is the path. The arrowhead at the end is the destination. The whole mark reads as a journey with intention: a firm that knows where it's taking you. "Vision" in the name earns its place — you can see the direction.
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 2: RISING J-CURVE ══ -->
+  <div class="card">
+    <div class="visual bg-white">
+      <svg width="238" height="140" viewBox="0 0 238 140" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g2d" x1="0" y1="0" x2="0.6" y2="1">
+            <stop offset="0%" stop-color="#6366f1"/>
+            <stop offset="100%" stop-color="#2563eb"/>
+          </linearGradient>
+          <marker id="arrow2" markerWidth="9" markerHeight="7"
+            refX="7" refY="3.5" orient="auto" markerUnits="strokeWidth">
+            <path d="M 0,0 L 9,3.5 L 0,7 Z" fill="#2563eb"/>
+          </marker>
+        </defs>
+        <!-- 7 that hooks upward at the base — the J-curve / hockey stick -->
+        <!-- Comes down, then curves back up (rising momentum) -->
+        <path d="M 14,20 L 74,20 L 36,106 C 26,126 54,128 58,110"
+          stroke="url(#g2d)" stroke-width="7"
+          stroke-linecap="round" stroke-linejoin="round"
+          fill="none" marker-end="url(#arrow2)"/>
+        <circle cx="14" cy="20" r="5.5" fill="#6366f1"/>
+        <!-- Wordmark -->
+        <text x="96" y="56"
+          font-family="'Playfair Display', Georgia, serif"
+          font-size="24" font-weight="700" fill="#1e293b">Seven</text>
+        <text x="96" y="84"
+          font-family="'Playfair Display', Georgia, serif"
+          font-size="24" font-weight="700" fill="#1e293b">Labs</text>
+        <text x="97" y="103"
+          font-family="'Inter', sans-serif"
+          font-size="9" font-weight="600" fill="#a5b4fc" letter-spacing="5.5">VISION</text>
+      </svg>
+    </div>
+    <div class="info">
+      <div class="card-num">Direction 02</div>
+      <div class="card-name">Rising J-Curve</div>
+      <div class="card-desc">The stroke descends then hooks upward at the base — the hockey stick / J-curve shape that every CFO knows. Means: things turn around, performance recovers. The firm that helps you get there.</div>
+      <div class="tags"><span class="tag t-green">Growth</span><span class="tag t-teal">FP&A</span></div>
+    </div>
+  </div>
+
+  <!-- ══ 3: TAPERED BRUSH — DIRECTION OF WEIGHT ══ -->
+  <div class="card">
+    <div class="visual bg-soft">
+      <svg width="238" height="140" viewBox="0 0 238 140" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g3d" x1="14" y1="20" x2="30" y2="118" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#6366f1"/>
+            <stop offset="100%" stop-color="#1d4ed8"/>
+          </linearGradient>
+          <linearGradient id="g3d-bar" x1="14" y1="20" x2="74" y2="20" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#818cf8"/>
+            <stop offset="100%" stop-color="#6366f1"/>
+          </linearGradient>
+        </defs>
+        <!-- Horizontal bar — uniform thin rect -->
+        <rect x="14" y="17" width="60" height="6" rx="3" fill="url(#g3d-bar)"/>
+        <!-- Diagonal tapered polygon: thin at top (74,20), thick at bottom (30,118) -->
+        <!-- Diagonal direction vector: (-44, 98), len≈107.4, normalized: (-0.41, 0.91) -->
+        <!-- Perpendicular (right of direction): (0.91, 0.41) -->
+        <!-- At (74,20): half-width=3 → L(71.3,18.8) R(76.7,21.2) -->
+        <!-- At (30,118): half-width=11 → R(40,122.5) L(20,113.5) -->
+        <polygon points="71,19 77,21 40,123 20,114" fill="url(#g3d)"/>
+        <!-- Start dot (thin end) -->
+        <circle cx="14" cy="20" r="3.5" fill="#818cf8"/>
+        <!-- End dot (thick end — the "weight") -->
+        <circle cx="30" cy="118" r="6" fill="#1d4ed8"/>
+        <!-- Wordmark -->
+        <text x="96" y="56"
+          font-family="'Playfair Display', Georgia, serif"
+          font-size="24" font-weight="700" fill="#1e293b">Seven</text>
+        <text x="96" y="84"
+          font-family="'Playfair Display', Georgia, serif"
+          font-size="24" font-weight="700" fill="#1e293b">Labs</text>
+        <text x="97" y="103"
+          font-family="'Inter', sans-serif"
+          font-size="9" font-weight="600" fill="#a5b4fc" letter-spacing="5.5">VISION</text>
+      </svg>
+    </div>
+    <div class="info">
+      <div class="card-num">Direction 03</div>
+      <div class="card-name">Tapered Brush Stroke</div>
+      <div class="card-desc">Stroke starts thin (origin) and grows thick (destination) — like a calligrapher's brush moving with momentum. Weight = direction. The mark feels alive and in motion.</div>
+      <div class="tags"><span class="tag t-purple">Momentum</span><span class="tag t-slate">Calligraphic</span></div>
+    </div>
+  </div>
+
+  <!-- ══ 4: MOTION ECHO ══ -->
+  <div class="card">
+    <div class="visual bg-white">
+      <svg width="238" height="140" viewBox="0 0 238 140" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g4d" x1="0" y1="0" x2="0.8" y2="1">
+            <stop offset="0%" stop-color="#6366f1"/>
+            <stop offset="100%" stop-color="#2563eb"/>
+          </linearGradient>
+        </defs>
+        <!-- Ghost echo 2 — furthest behind, most faded -->
+        <path d="M 22,26 L 82,26 L 38,124"
+          stroke="#6366f1" stroke-width="6"
+          stroke-linecap="round" stroke-linejoin="round"
+          fill="none" opacity="0.07"/>
+        <!-- Ghost echo 1 — mid fade -->
+        <path d="M 18,23 L 78,23 L 34,121"
+          stroke="#6366f1" stroke-width="6.5"
+          stroke-linecap="round" stroke-linejoin="round"
+          fill="none" opacity="0.15"/>
+        <!-- Main stroke — full opacity, on top -->
+        <path d="M 14,20 L 74,20 L 30,118"
+          stroke="url(#g4d)" stroke-width="7"
+          stroke-linecap="round" stroke-linejoin="round"
+          fill="none"/>
+        <circle cx="14" cy="20" r="5.5" fill="#6366f1"/>
+        <!-- Wordmark -->
+        <text x="96" y="56"
+          font-family="'Playfair Display', Georgia, serif"
+          font-size="24" font-weight="700" fill="#1e293b">Seven</text>
+        <text x="96" y="84"
+          font-family="'Playfair Display', Georgia, serif"
+          font-size="24" font-weight="700" fill="#1e293b">Labs</text>
+        <text x="97" y="103"
+          font-family="'Inter', sans-serif"
+          font-size="9" font-weight="600" fill="#a5b4fc" letter-spacing="5.5">VISION</text>
+      </svg>
+    </div>
+    <div class="info">
+      <div class="card-num">Direction 04</div>
+      <div class="card-name">Motion Echo</div>
+      <div class="card-desc">Two faded ghost strokes trail behind the main "7" — a motion blur effect. The mark is clearly in forward motion, not standing still. Speed and trajectory.</div>
+      <div class="tags"><span class="tag t-blue">Velocity</span><span class="tag t-slate">Dynamic</span></div>
+    </div>
+  </div>
+
+  <!-- ══ 5: NORTH STAR ORIGIN ══ -->
+  <div class="card">
+    <div class="visual bg-warm">
+      <svg width="238" height="140" viewBox="0 0 238 140" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g5d" x1="0" y1="0" x2="0.8" y2="1">
+            <stop offset="0%" stop-color="#6366f1"/>
+            <stop offset="100%" stop-color="#2563eb"/>
+          </linearGradient>
+          <linearGradient id="g5d-star" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#fbbf24"/>
+            <stop offset="100%" stop-color="#f59e0b"/>
+          </linearGradient>
+        </defs>
+        <!-- Main stroke — same as base -->
+        <path d="M 14,20 L 74,20 L 30,118"
+          stroke="url(#g5d)" stroke-width="7"
+          stroke-linecap="round" stroke-linejoin="round"
+          fill="none"/>
+        <!-- North Star at the origin point — 4-pointed star -->
+        <!-- A 4-point star centered at (14,20), outer r=9, inner r=4 -->
+        <polygon
+          points="14,11 16.5,18 14,20 11.5,18
+                  5,20 11.5,22 14,29 16.5,22 23,20 16.5,18"
+          fill="url(#g5d-star)"/>
+        <!-- Actually let me simplify with a cross-star shape -->
+        <!-- Horizontal arm -->
+        <rect x="6" y="18.5" width="16" height="3" rx="1.5" fill="url(#g5d-star)"/>
+        <!-- Vertical arm -->
+        <rect x="12.5" y="12" width="3" height="16" rx="1.5" fill="url(#g5d-star)"/>
+        <!-- Diagonal arms (smaller) -->
+        <line x1="8.5" y1="14.5" x2="19.5" y2="25.5" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+        <line x1="19.5" y1="14.5" x2="8.5" y2="25.5" stroke="#fbbf24" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+        <!-- Wordmark -->
+        <text x="96" y="56"
+          font-family="'Playfair Display', Georgia, serif"
+          font-size="24" font-weight="700" fill="#1e293b">Seven</text>
+        <text x="96" y="84"
+          font-family="'Playfair Display', Georgia, serif"
+          font-size="24" font-weight="700" fill="#1e293b">Labs</text>
+        <text x="97" y="103"
+          font-family="'Inter', sans-serif"
+          font-size="9" font-weight="600" fill="#a5b4fc" letter-spacing="5.5">VISION</text>
+      </svg>
+    </div>
+    <div class="info">
+      <div class="card-num">Direction 05</div>
+      <div class="card-name">North Star Origin</div>
+      <div class="card-desc">The origin dot becomes a North Star — a guiding light. The "7" path flows from it. Directly ties into "Vision": a firm with a clear north star, helping clients navigate toward theirs.</div>
+      <div class="tags"><span class="tag t-amber">North Star</span><span class="tag t-purple">Vision</span></div>
+    </div>
+  </div>
+
+  <!-- ══ 6: DOTTED TRAIL — GROWING POINTS ══ -->
+  <div class="card">
+    <div class="visual bg-slate">
+      <svg width="238" height="140" viewBox="0 0 238 140" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g6d" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#6366f1"/>
+            <stop offset="100%" stop-color="#2563eb"/>
+          </linearGradient>
+        </defs>
+        <!-- Dots along the 7 path, growing from small to large -->
+        <!-- Horizontal bar: from (14,20) to (74,20) — 6 dots -->
+        <circle cx="14" cy="20" r="1.5" fill="#818cf8" opacity="0.5"/>
+        <circle cx="26" cy="20" r="2"   fill="#7272f0" opacity="0.6"/>
+        <circle cx="38" cy="20" r="2.5" fill="#6a6aee" opacity="0.7"/>
+        <circle cx="50" cy="20" r="3"   fill="#6060eb" opacity="0.8"/>
+        <circle cx="62" cy="20" r="3.5" fill="#5555e8" opacity="0.9"/>
+        <circle cx="74" cy="20" r="4"   fill="#4a4ae5" opacity="1.0"/>
+        <!-- Diagonal: from (74,20) to (30,118) — 8 dots, growing larger -->
+        <!-- Parameterized: t=0..1, x=74-44t, y=20+98t -->
+        <!-- t=0.14: (67.8,33.7) r=4.5 -->
+        <circle cx="68" cy="34" r="4.5" fill="#4040e0"/>
+        <!-- t=0.29: (61.2,48.4) r=5 -->
+        <circle cx="61" cy="48" r="5.0" fill="#3838d8"/>
+        <!-- t=0.43: (55,62) r=5.5 -->
+        <circle cx="55" cy="62" r="5.5" fill="#3030d0"/>
+        <!-- t=0.57: (49,76) r=6 -->
+        <circle cx="49" cy="76" r="6.0" fill="#2828c8"/>
+        <!-- t=0.71: (43,90) r=6.5 -->
+        <circle cx="43" cy="90" r="6.5" fill="#2020c0"/>
+        <!-- t=0.86: (36.2,104) r=7 -->
+        <circle cx="36" cy="104" r="7.0" fill="#1818b8"/>
+        <!-- t=1.0: (30,118) r=8 — final large dot -->
+        <circle cx="30" cy="118" r="8.0" fill="#1414b0"/>
+        <!-- Wordmark -->
+        <text x="96" y="56"
+          font-family="'Playfair Display', Georgia, serif"
+          font-size="24" font-weight="700" fill="#1e293b">Seven</text>
+        <text x="96" y="84"
+          font-family="'Playfair Display', Georgia, serif"
+          font-size="24" font-weight="700" fill="#1e293b">Labs</text>
+        <text x="97" y="103"
+          font-family="'Inter', sans-serif"
+          font-size="9" font-weight="600" fill="#818cf8" letter-spacing="5.5">VISION</text>
+      </svg>
+    </div>
+    <div class="info">
+      <div class="card-num">Direction 06</div>
+      <div class="card-name">Growing Dot Trail</div>
+      <div class="card-desc">The "7" is made entirely of dots that grow from small → large. Direction is unmistakable. Each dot = a milestone. The path from origin to destination is visible at a glance.</div>
+      <div class="tags"><span class="tag t-blue">Journey</span><span class="tag t-purple">Milestones</span></div>
+    </div>
+  </div>
+
+</div>
+
+<p style="text-align:center; margin-top:48px; font-size:12px; color:#94a3b8; letter-spacing:0.02em;">
+  Seven Labs Vision · SLV · Directional Series · 2026
+</p>
+
+</body>
+</html>
