@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Seven Labs Vision</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<style>
+/* ── Consistent Topbar ── */
+.site-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.85);
+}
+.site-topbar-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 10px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.site-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.site-logo {
+  height: 68px;
+  width: auto;
+}
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.site-nav-link {
+  text-decoration: none;
+  color: #475569;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+.site-nav-link:hover {
+  color: #0f172a;
+}
+.site-dropdown {
+  position: relative;
+}
+.site-dropdown-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  cursor: pointer;
+}
+.site-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 8px;
+  padding-top: 20px;
+  min-width: 280px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+  z-index: 1001;
+}
+.site-dropdown:hover .site-dropdown-menu {
+  display: block;
+}
+.site-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #0f172a;
+  transition: background 0.2s;
+}
+.site-dropdown-item:hover {
+  background: #f5f3ff;
+}
+.site-dropdown-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
+}
+.site-dropdown-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  color: #64748b;
+  margin-top: 2px;
+}
+.site-nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: #0f172a;
+  color: #fff !important;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.site-nav-cta:hover {
+  background: #6366f1;
+  transform: translateY(-1px);
+}
+@media (max-width: 768px) {
+  .site-topbar-inner {
+    padding: 10px 16px;
+  }
+  .site-nav {
+    gap: 16px;
+  }
+  .site-nav-link:not(.site-dropdown-trigger) {
+    display: none;
+  }
+  .site-dropdown-trigger span.material-symbols-outlined {
+    display: none;
+  }
+  .site-logo {
+    height: 56px;
+  }
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}html{overflow-x:hidden;}
+body{font-family:'Inter',sans-serif;background:#fafbfc;color:#191c1e;}
+h1,h2,h3,h4{font-family:'Manrope',sans-serif;}
+.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}
+
+/* Top nav */
+.topbar{
+  position:sticky;top:0;z-index:1000;
+  background:rgba(250,251,252,.92);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(226,232,240,.85);
+}
+.topbar .container{
+  max-width:1280px;margin:0 auto;
+  padding:10px 48px;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+}
+.topbar .brand{
+  display:flex;align-items:center;gap:12px;
+  text-decoration:none;color:#0f172a;
+}
+.topbar .brand-mark{
+  width:38px;height:38px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#0f172a,#6366f1);
+  color:#fff;font-family:'Manrope',sans-serif;font-size:14px;font-weight:800;
+  letter-spacing:-.04em;
+}
+.topbar .brand-text{display:flex;flex-direction:column;gap:2px;}
+.topbar .brand-name{
+  font-family:'Manrope',sans-serif;font-size:15px;font-weight:800;letter-spacing:-.02em;
+}
+.topbar .brand-sub{
+  font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#64748b;
+}
+.topbar .nav-links{display:flex;align-items:center;gap:22px;}
+.topbar .nav-links a{
+  text-decoration:none;color:#475569;font-size:12px;font-weight:600;
+}
+.topbar .nav-links a:hover{color:#0f172a;}
+.topbar .nav-cta{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:10px 16px;border-radius:999px;
+  background:#0f172a;color:#fff !important;
+}
+
+/* Dual icon row */
+.dual-icons{display:flex;align-items:center;gap:4px;}
+.dual-icons svg{width:36px;height:36px;}
+.dual-icons .plus{font-size:10px;color:#c0c7cf;font-weight:700;}
+
+/* ========================================
+   SECTION 1: HERO
+   ======================================== */
+.hero{background:#fafbfc;color:#191c1e;min-height:auto;display:flex;align-items:flex-start;padding:28px 48px 48px;}
+.hero .container{max-width:1280px;margin:0 auto;width:100%;}
+
+/* Visual row — Chaos LEFT, arrow, Order RIGHT */
+.hero .visual-row{display:flex;align-items:center;justify-content:center;gap:56px;flex-wrap:wrap;}
+
+/* ---- ORDER side (RIGHT) ---- */
+.hero .order{
+  display:flex;flex-direction:column;align-items:flex-start;gap:16px;flex:1;max-width:380px;
+  padding:18px;border-radius:24px;background:linear-gradient(180deg,#f5f3ff 0%,#ffffff 100%);
+  border:1px solid #c7d2fe;box-shadow:0 14px 40px rgba(99,102,241,.08);
+}
+.hero .order-label{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;font-weight:800;letter-spacing:2.2px;text-transform:uppercase;color:#4338ca;
+  background:#e0e7ff;border:1px solid #a5b4fc;border-radius:999px;padding:8px 14px;
+}
+.hero .order-label::before{
+  content:'';width:8px;height:8px;border-radius:999px;background:#6366f1;box-shadow:0 0 0 4px rgba(99,102,241,.16);
+}
+.hero .order-box{
+  background:#fff;border:1.5px solid #c7d2fe;border-radius:16px;
+  padding:32px 30px;display:flex;flex-direction:column;align-items:flex-start;gap:16px;
+  box-shadow:0 8px 32px rgba(99,102,241,.06);width:100%;
+}
+.hero .order-icon{
+  width:44px;height:44px;background:linear-gradient(135deg,#6366f1,#a5b4fc);
+  border-radius:10px;display:flex;align-items:center;justify-content:center;
+}
+.hero .order-title{font-family:'Manrope';font-weight:800;font-size:18px;line-height:1.3;}
+.hero .order-list{display:flex;flex-direction:column;gap:6px;width:100%;}
+.hero .order-item{display:flex;align-items:center;gap:6px;font-size:12px;color:#64748b;font-weight:500;}
+.hero .order-item .material-symbols-outlined{font-size:16px;color:#818cf8;font-variation-settings:'FILL' 1;flex-shrink:0;}
+
+/* ---- Arrow (chaos → order, left to right) ---- */
+.hero .arrow-section{display:flex;flex-direction:column;align-items:center;gap:8px;padding:0 20px;}
+.hero .arrow-line{width:80px;height:2px;background:linear-gradient(90deg,#cbd5e1,#6366f1);position:relative;border-radius:1px;}
+.hero .arrow-line::after{content:'';position:absolute;right:-6px;top:-5px;border:6px solid transparent;border-left-color:#6366f1;}
+
+/* ---- CHAOS side — Gentle Float ---- */
+.hero .chaos{
+  display:flex;flex-direction:column;align-items:flex-start;gap:16px;
+  padding:18px;border-radius:24px;background:linear-gradient(180deg,#fff8f8 0%,#ffffff 100%);
+  border:1px solid #fecdd3;box-shadow:0 14px 36px rgba(244,63,94,.08);
+}
+.hero .chaos-label{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;font-weight:800;letter-spacing:2.2px;text-transform:uppercase;color:#be123c;
+  background:#ffe4e6;border:1px solid #fda4af;border-radius:999px;padding:8px 14px;
+}
+.hero .chaos-label::before{
+  content:'';width:8px;height:8px;border-radius:999px;background:#e11d48;box-shadow:0 0 0 4px rgba(244,63,94,.14);
+}
+.hero .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+
+/* Float card */
+.hero .float-card{
+  background:#fff;border:1px solid #eef0f2;border-radius:14px;
+  padding:22px 18px;display:flex;flex-direction:column;align-items:center;gap:10px;
+  width:155px;position:relative;cursor:pointer;z-index:1;
+  transition:border-color .3s,box-shadow .3s,z-index 0s;
+}
+.hero .float-card:hover{border-color:#cbd5e1;box-shadow:0 4px 20px rgba(0,0,0,.06);z-index:20;}
+.hero .float-card:nth-child(1){animation:floatUp 3.2s ease-in-out infinite;}
+.hero .float-card:nth-child(2){animation:floatUp 3.2s ease-in-out .4s infinite;}
+.hero .float-card:nth-child(3){animation:floatUp 3.2s ease-in-out .8s infinite;}
+.hero .float-card:nth-child(4){animation:floatUp 3.2s ease-in-out 1.2s infinite;}
+.hero .float-card:nth-child(5){animation:floatUp 3.2s ease-in-out 1.6s infinite;}
+.hero .float-card:nth-child(6){animation:floatUp 3.2s ease-in-out 2.0s infinite;}
+@keyframes floatUp{0%,100%{transform:translateY(0);}50%{transform:translateY(-14px);}}
+
+.hero .float-card svg{width:52px;height:52px;}
+.hero .float-card .dual-icons svg{width:36px;height:36px;}
+.hero .float-card .card-front{display:flex;flex-direction:column;align-items:center;gap:10px;}
+.hero .float-card .name{font-size:11px;font-weight:600;color:#64748b;letter-spacing:.2px;text-align:center;}
+
+/* Tooltip */
+.hero .float-card .hover-tip{
+  display:block;position:absolute;
+  top:50%;left:calc(100% + 14px);transform:translateY(-50%) translateX(6px);
+  width:260px;background:#0f172a;border:1px solid #334155;border-radius:12px;
+  padding:18px 20px;text-align:left;
+  z-index:9999;box-shadow:0 12px 40px rgba(0,0,0,.3);
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .2s ease,transform .2s ease,visibility .2s ease;
+}
+.hero .float-card:hover .hover-tip,
+.hero .float-card .hover-tip.is-visible{
+  opacity:1;visibility:visible;
+  transform:translateY(-50%) translateX(0);
+}
+.hero .float-card:nth-child(3n) .hover-tip{
+  left:auto;right:calc(100% + 14px);
+  transform:translateY(-50%) translateX(-6px);
+}
+.hero .float-card:nth-child(3n):hover .hover-tip,
+.hero .float-card:nth-child(3n) .hover-tip.is-visible{
+  transform:translateY(-50%) translateX(0);
+}
+.hero .float-card .hover-tip.is-mobile{
+  border-radius:16px 16px 0 0;padding:24px 24px 32px;
+  animation:tipSlideUp .25s ease;
+}
+@keyframes tipSlideUp{from{transform:translateY(100%);}to{transform:translateY(0);}}
+/* Arrow — used by mobile JS */
+.tip-arrow{position:absolute;width:0;height:0;border:8px solid transparent;}
+.tip-arrow.arrow-up{border-bottom-color:#0f172a;}
+.tip-arrow.arrow-down{border-top-color:#0f172a;}
+.tip-arrow.arrow-left{border-right-color:#0f172a;}
+.tip-arrow.arrow-right{border-left-color:#0f172a;}
+.hero .hover-tip .ht-problem{
+  font-size:13px;line-height:1.5;color:#f87171;font-weight:600;margin-bottom:6px;
+}
+.hero .hover-tip .ht-text{
+  font-size:12px;line-height:1.5;color:#94a3b8;
+}
+/* Mobile overlay backdrop */
+.tip-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.3);z-index:9998;}
+
+/* ---- Text row ---- */
+.hero .text-row{margin:32px 0 0;width:100%;}
+.hero .hero-punch{
+  font-size:clamp(28px,4vw,46px);font-weight:800;letter-spacing:-1.4px;
+  line-height:1.12;margin-bottom:18px;color:#0f172a;
+  max-width:640px;
+}
+.hero .cta-group{display:flex;flex-direction:column;align-items:center;}
+.hero .hero-punch .headline-line{white-space:nowrap;}
+.hero .hero-punch .punch-accent{
+  background:linear-gradient(135deg,#6366f1,#a5b4fc);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.hero .sub-services{
+  display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px;justify-content:center;
+}
+.hero .sub-services .service-tag{
+  font-size:12px;font-weight:600;color:#475569;
+  background:#f1f5f9;border:1px solid #e2e8f0;border-radius:6px;
+  padding:6px 14px;letter-spacing:.2px;
+}
+.hero .cta-btn{
+  display:flex;align-items:center;gap:8px;background:#0f172a;color:#fff;
+  padding:14px 28px;font-size:13px;font-weight:700;border:none;cursor:pointer;
+  border-radius:6px;transition:transform .15s,box-shadow .15s;
+  width:max-content;margin:0 auto;
+}
+.hero .cta-btn:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(15,23,42,.15);}
+
+/* Contact modal */
+.contact-modal{
+  position:fixed;inset:0;display:none;align-items:center;justify-content:center;
+  padding:24px;background:rgba(15,23,42,.42);backdrop-filter:blur(10px);z-index:1200;
+}
+.contact-modal.is-open{display:flex;}
+.contact-panel{
+  width:min(920px,100%);max-height:min(88vh,860px);overflow:auto;
+  background:linear-gradient(180deg,#ffffff 0%,#f8fbfa 100%);
+  border:1px solid #dbe7e2;border-radius:28px;
+  box-shadow:0 28px 80px rgba(15,23,42,.22);
+  display:grid;grid-template-columns:320px minmax(0,1fr);
+}
+.contact-side{
+  padding:34px 28px;background:linear-gradient(160deg,#0f172a 0%,#312e81 100%);
+  color:#fff;display:flex;flex-direction:column;justify-content:space-between;gap:28px;
+  border-radius:28px 0 0 28px;
+}
+.contact-kicker{
+  display:inline-flex;align-items:center;gap:8px;width:max-content;
+  padding:8px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.08);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+}
+.contact-kicker::before{
+  content:'';width:8px;height:8px;border-radius:999px;background:#a5b4fc;box-shadow:0 0 0 4px rgba(129,140,248,.18);
+}
+.contact-side h2{
+  font-family:'Manrope',sans-serif;font-size:34px;line-height:1.05;letter-spacing:-.04em;margin-top:16px;
+}
+.contact-side p{font-size:14px;line-height:1.65;color:rgba(255,255,255,.76);}
+.contact-points{display:flex;flex-direction:column;gap:12px;}
+.contact-point{
+  display:flex;align-items:flex-start;gap:12px;padding:14px 16px;border-radius:16px;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);
+}
+.contact-point .material-symbols-outlined{font-size:18px;color:#a5b4fc;margin-top:1px;}
+.contact-point strong{display:block;font-size:13px;margin-bottom:2px;}
+.contact-point span{font-size:12px;color:rgba(255,255,255,.72);}
+.contact-main{padding:34px 34px 30px;position:relative;}
+.contact-close{
+  position:absolute;top:18px;right:18px;width:40px;height:40px;border:none;border-radius:999px;
+  background:#f1f5f9;color:#0f172a;display:flex;align-items:center;justify-content:center;cursor:pointer;
+}
+.contact-close:hover{background:#e2e8f0;}
+.contact-main h3{
+  font-family:'Manrope',sans-serif;font-size:28px;letter-spacing:-.03em;color:#0f172a;margin-bottom:8px;
+}
+.contact-main > p{font-size:14px;line-height:1.6;color:#64748b;margin-bottom:24px;max-width:440px;}
+.contact-form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
+.contact-field{display:flex;flex-direction:column;gap:7px;}
+.contact-field.full{grid-column:1 / -1;}
+.contact-field label{font-size:12px;font-weight:700;letter-spacing:.04em;color:#334155;}
+.contact-field input,.contact-field textarea{
+  width:100%;border:1px solid #dbe4ea;border-radius:14px;background:#fff;
+  padding:14px 15px;font:inherit;color:#0f172a;outline:none;
+  transition:border-color .18s ease,box-shadow .18s ease;
+}
+.contact-field input:focus,.contact-field textarea:focus{
+  border-color:#818cf8;box-shadow:0 0 0 4px rgba(99,102,241,.12);
+}
+.contact-field textarea{min-height:124px;resize:vertical;}
+.contact-actions{
+  grid-column:1 / -1;display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:4px;
+}
+.contact-note{font-size:12px;line-height:1.5;color:#64748b;max-width:320px;}
+.contact-submit{
+  display:inline-flex;align-items:center;gap:8px;border:none;border-radius:999px;cursor:pointer;
+  padding:13px 22px;background:#0f172a;color:#fff;font:inherit;font-weight:700;
+  box-shadow:0 12px 24px rgba(15,23,42,.12);transition:transform .15s ease,box-shadow .15s ease;
+}
+.contact-submit:hover{transform:translateY(-1px);box-shadow:0 16px 28px rgba(15,23,42,.16);}
+.contact-success{
+  display:none;align-items:flex-start;gap:14px;padding:18px 20px;border-radius:18px;
+  background:#f5f3ff;border:1px solid #c7d2fe;color:#3730a3;
+}
+.contact-success.is-visible{display:flex;}
+.contact-success .material-symbols-outlined{font-size:22px;margin-top:2px;}
+.contact-success strong{display:block;margin-bottom:4px;font-size:14px;}
+.contact-success span{font-size:13px;line-height:1.55;color:#3730a3;}
+
+/* ========================================
+   SECTION 2: TRUST BAR — Light theme, horizontal slider
+   ======================================== */
+.trust-bar{background:#f1f5f9;color:#191c1e;padding:64px 40px;position:relative;overflow:hidden;}
+.trust-bar .container{max-width:1100px;margin:0 auto;text-align:center;}
+.trust-bar .trust-heading{
+  font-family:'Manrope';font-size:clamp(18px,2vw,24px);font-weight:500;
+  color:#64748b;font-style:italic;margin-bottom:40px;letter-spacing:-.3px;
+}
+
+/* Slider wrapper */
+.trust-bar .slider-wrap{
+  overflow:clip visible;
+  mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
+}
+.trust-bar .slider-track{
+  display:flex;gap:40px;width:max-content;
+  animation:trustSlide 20s linear infinite;
+}
+.trust-bar .slider-track:hover{animation-play-state:paused;}
+@keyframes trustSlide{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+/* Logo item inside slider */
+.trust-bar .logo-item{
+  flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+}
+.trust-bar .logo-item img{
+  height:50px;width:auto;max-width:140px;object-fit:contain;
+  filter:grayscale(100%);opacity:0.7;transition:all 0.3s;
+}
+.trust-bar .logo-item img:hover{
+  filter:grayscale(0%);opacity:1;
+}
+
+/* Testimonial tooltip on hover */
+.trust-bar .logo-item{position:relative;}
+.trust-bar .logo-item .logo-tooltip{
+  position:absolute;bottom:calc(100% + 12px);left:50%;transform:translateX(-50%) scale(0.95);
+  background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:14px 16px;
+  min-width:260px;max-width:300px;box-shadow:0 8px 30px rgba(0,0,0,0.1);
+  opacity:0;pointer-events:none;transition:all 0.25s ease;z-index:100;
+  text-align:left;white-space:normal;
+}
+.trust-bar .logo-item .logo-tooltip::after{
+  content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);
+  border:6px solid transparent;border-top-color:#fff;
+}
+.trust-bar .logo-item:hover .logo-tooltip{
+  opacity:1;transform:translateX(-50%) scale(1);pointer-events:auto;
+}
+.trust-bar .logo-tooltip .tt-quote{
+  font-size:12px;line-height:1.5;color:#334155;font-style:italic;margin-bottom:8px;
+}
+.trust-bar .logo-tooltip .tt-author{
+  font-size:11px;font-weight:700;color:#0f172a;
+}
+.trust-bar .logo-tooltip .tt-role{
+  font-size:10px;color:#94a3b8;
+}
+.trust-bar .logo-tooltip .tt-stars{
+  font-size:11px;color:#f59e0b;margin-bottom:6px;letter-spacing:1px;
+}
+
+/* Decorative quote marks */
+.trust-bar .deco-quote{
+  position:absolute;font-size:120px;font-family:Georgia,serif;
+  color:rgba(99,102,241,.06);line-height:1;pointer-events:none;
+  font-weight:700;
+}
+.trust-bar .deco-quote.left{left:5%;bottom:10%;}
+.trust-bar .deco-quote.right{right:5%;bottom:10%;}
+
+/* Stats strip */
+.trust-bar .stats-strip{
+  display:flex;justify-content:center;gap:40px;margin-top:48px;padding-top:28px;
+  border-top:1px solid #e2e8f0;
+}
+.trust-bar .stats-strip .ss-item{text-align:center;}
+.trust-bar .stats-strip .ss-num{font-family:'Manrope';font-size:22px;font-weight:800;color:#0f172a;}
+.trust-bar .stats-strip .ss-label{font-size:9px;color:#94a3b8;margin-top:2px;text-transform:uppercase;letter-spacing:1px;}
+
+/* ========================================
+   SECTION 3: SERVICES — Three Operating Foundations
+   ======================================== */
+.services{background:#fafbfc;color:#191c1e;padding:80px 40px;}
+.services .container{max-width:1100px;margin:0 auto;}
+.services .section-tag{
+  font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;
+  color:#94a3b8;margin-bottom:10px;text-align:center;
+}
+.services .section-heading{
+  font-family:'Manrope';font-size:clamp(24px,3vw,36px);font-weight:800;
+  color:#0f172a;text-align:center;margin-bottom:8px;letter-spacing:-.5px;
+}
+.services .section-sub{
+  font-size:14px;color:#94a3b8;text-align:center;margin-bottom:56px;font-weight:400;
+}
+.services .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.services .s-card{
+  background:#fff;border:1px solid #eef0f2;border-radius:18px;
+  padding:36px 28px;display:flex;flex-direction:column;gap:20px;
+  transition:transform .2s,box-shadow .2s,border-color .3s;
+  position:relative;overflow:hidden;
+}
+.services .s-card:hover{
+  transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,.06);
+  border-color:#c7d2fe;
+}
+/* Icon circle */
+.services .s-card .s-icon{
+  width:52px;height:52px;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  background:#f5f3ff;
+}
+.services .s-card .s-icon .material-symbols-outlined{
+  font-size:26px;color:#6366f1;font-variation-settings:'FILL' 1;
+}
+/* Text */
+.services .s-card .s-headline{
+  font-family:'Manrope';font-size:19px;font-weight:800;color:#0f172a;
+  letter-spacing:-.3px;line-height:1.3;
+}
+.services .s-card .s-subline{
+  font-size:13px;color:#64748b;line-height:1.55;font-weight:400;
+}
+/* Bullets */
+.services .s-card .s-bullets{display:flex;flex-direction:column;gap:8px;margin-top:auto;}
+.services .s-card .s-bullet{
+  display:flex;align-items:center;gap:8px;font-size:12.5px;color:#475569;font-weight:500;
+}
+.services .s-card .s-bullet .material-symbols-outlined{
+  font-size:16px;color:#818cf8;font-variation-settings:'FILL' 1;flex-shrink:0;
+}
+/* Hover detail */
+.services .s-card .s-hover{
+  position:absolute;inset:0;background:linear-gradient(160deg,#0f172a,#111827);
+  border-radius:18px;padding:32px 28px;
+  display:flex;flex-direction:column;justify-content:center;gap:14px;
+  opacity:0;transform:translateY(8px);
+  transition:opacity .3s,transform .3s;
+  pointer-events:none;
+}
+.services .s-card:hover .s-hover{opacity:1;transform:translateY(0);pointer-events:auto;}
+.services .s-hover .sh-label{
+  font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#a5b4fc;
+}
+.services .s-hover .sh-text{font-size:13.5px;line-height:1.65;color:#cbd5e1;}
+.services .s-hover .sh-bullets{display:flex;flex-direction:column;gap:6px;margin-top:4px;}
+.services .s-hover .sh-bullet{
+  display:flex;align-items:center;gap:7px;font-size:12px;color:#94a3b8;font-weight:500;
+}
+.services .s-hover .sh-bullet .material-symbols-outlined{
+  font-size:15px;color:#a5b4fc;font-variation-settings:'FILL' 1;flex-shrink:0;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media(max-width:768px){
+  .topbar .container{padding:10px 16px;gap:14px;}
+  .topbar .brand-mark{width:34px;height:34px;border-radius:10px;font-size:13px;}
+  .topbar .brand-name{font-size:14px;}
+  .topbar .brand-sub{font-size:9px;}
+  .topbar .nav-links{gap:10px;flex-wrap:wrap;justify-content:flex-end;}
+  .topbar .nav-links a{font-size:11px;}
+  .topbar .nav-links a:not(.nav-cta){display:none;}
+  .topbar .nav-cta{padding:8px 12px;font-size:11px;}
+  .hero{min-height:auto;padding:18px 16px 32px;}
+  .hero .visual-row{flex-direction:column;align-items:center;gap:24px;flex-wrap:wrap;}
+  .hero .chaos,.hero .order{align-items:center;width:100%;min-width:0;max-width:none;}
+  .hero .chaos{gap:10px;}
+  .hero .chaos,.hero .order{padding:14px;border-radius:20px;}
+  .hero .chaos-label,.hero .order-label{font-size:10px;letter-spacing:1.8px;padding:7px 12px;}
+  .hero .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;width:100%;max-width:320px;}
+  .hero .float-card{
+    width:auto;min-height:118px;padding:0;overflow:hidden;
+    transform-style:preserve-3d;transition:transform .35s ease,box-shadow .25s ease,border-color .25s ease;
+  }
+  .hero .float-card:nth-child(n){animation:none;}
+  .hero .float-card.is-flipped{transform:rotateY(180deg);}
+  .hero .float-card .card-front,
+  .hero .float-card .hover-tip{
+    position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;
+    backface-visibility:hidden;
+  }
+  .hero .float-card .card-front{padding:16px 12px;}
+  .hero .float-card .card-front .name{font-size:10px;line-height:1.35;}
+  .hero .float-card svg{width:44px;height:44px;}
+  .hero .float-card .dual-icons svg{width:30px;height:30px;}
+  .hero .float-card .hover-tip{
+    display:flex;top:0;left:0;right:auto;bottom:auto;width:auto;max-width:none;
+    padding:14px 12px;border:none;border-radius:0;box-shadow:none;
+    opacity:1;visibility:visible;pointer-events:none;
+    transform:rotateY(180deg);transition:none;
+    background:linear-gradient(160deg,#0f172a,#111827);
+  }
+  .hero .float-card:nth-child(3n) .hover-tip{left:0;right:auto;transform:rotateY(180deg);}
+  .hero .hover-tip .ht-problem{font-size:10px;line-height:1.35;margin-bottom:4px;}
+  .hero .hover-tip .ht-text{font-size:9px;line-height:1.4;}
+  .hero .order-box{min-width:auto;width:100%;max-width:320px;padding:22px 18px;gap:12px;}
+  .hero .order-title{font-size:16px;}
+  .hero .order-item{font-size:11px;gap:6px;}
+  .hero .order-item .material-symbols-outlined{font-size:15px;}
+  .hero .arrow-section{display:none;}
+  .hero .text-row{margin:22px auto 0;max-width:100%;text-align:center;}
+  .hero .hero-punch{font-size:clamp(24px,7.4vw,32px);letter-spacing:-1px;line-height:1.14;}
+  .hero .hero-punch .headline-line{white-space:normal;}
+  .hero .sub-services{justify-content:center;gap:6px;margin-bottom:22px;}
+  .hero .sub-services .service-tag{font-size:10px;padding:5px 10px;}
+  .hero .cta-btn{padding:12px 20px;font-size:12px;}
+  .contact-modal{padding:12px;}
+  .contact-panel{grid-template-columns:1fr;max-height:92vh;border-radius:22px;}
+  .contact-side{border-radius:22px 22px 0 0;padding:24px 20px;gap:20px;}
+  .contact-side h2{font-size:26px;}
+  .contact-main{padding:24px 20px 22px;}
+  .contact-main h3{font-size:23px;padding-right:36px;}
+  .contact-form{grid-template-columns:1fr;}
+  .contact-actions{flex-direction:column;align-items:stretch;}
+  .contact-submit{justify-content:center;width:100%;}
+  .trust-bar{padding:48px 20px;}
+  .trust-bar .trust-heading{margin-bottom:28px;}
+  .trust-bar .stats-strip{gap:20px;flex-wrap:wrap;}
+  .services{padding:56px 20px;}
+  .services .cards{grid-template-columns:1fr;max-width:400px;margin:0 auto;}
+  .services .s-card .s-hover{display:none;}
+  footer{padding:48px 20px 24px !important;} footer > div > div:first-child { grid-template-columns: 1fr !important; gap: 32px !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── Consistent Topbar ── -->
+<nav class="site-topbar">
+  <div class="site-topbar-inner">
+    <a href="index.html" class="site-brand">
+      <img src="slv-northstar-logo.svg" alt="Seven Labs Vision" class="site-logo">
+    </a>
+    <div class="site-nav">
+      <a href="index.html" class="site-nav-link">Home</a>
+      <div class="site-dropdown">
+        <a href="#" class="site-nav-link site-dropdown-trigger">Services <span class="material-symbols-outlined" style="font-size:16px;vertical-align:middle;">expand_more</span></a>
+        <div class="site-dropdown-menu">
+          <a href="virtual-cfo.html" class="site-dropdown-item">
+            <span class="material-symbols-outlined" style="font-size:18px;color:#6366f1;">monitoring</span>
+            <div>
+              <div class="site-dropdown-title">Virtual CFO</div>
+              <div class="site-dropdown-desc">MIS, cash forecasting, margin analysis</div>
+            </div>
+          </a>
+          <a href="process-design.html" class="site-dropdown-item">
+            <span class="material-symbols-outlined" style="font-size:18px;color:#6366f1;">design_services</span>
+            <div>
+              <div class="site-dropdown-title">Process Design</div>
+              <div class="site-dropdown-desc">SOPs, KPIs, audit-ready systems</div>
+            </div>
+          </a>
+          <a href="erp-implementation.html" class="site-dropdown-item">
+            <span class="material-symbols-outlined" style="font-size:18px;color:#6366f1;">deployed_code</span>
+            <div>
+              <div class="site-dropdown-title">ERP Implementation</div>
+              <div class="site-dropdown-desc">ERPNext, Zoho, Odoo, Tally</div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <a href="about.html" class="site-nav-link">About</a>
+      <a href="blog.html" class="site-nav-link">Blog</a>
+      <a href="contact.html" class="site-nav-link">Contact</a>
+      <a href="contact.html" class="site-nav-cta">Get Free Audit</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ==========================================
+     SECTION 1: HERO
+     ========================================== -->
+<section class="hero" id="hero">
+<div class="container">
+  <div class="visual-row">
+
+    <!-- CHAOS — 3x3 grid with gentle float + hover tooltips -->
+    <div class="chaos">
+      <div class="chaos-label">Your Business Today</div>
+      <div class="grid">
+
+        <div class="float-card">
+          <div class="card-front">
+            <div class="dual-icons">
+              <svg viewBox="0 0 48 48"><rect width="48" height="48" rx="8" fill="#4338ca"/><text x="24" y="30" text-anchor="middle" fill="#fff" font-family="Arial" font-weight="bold" font-size="18">X</text></svg>
+              <span class="plus">+</span>
+              <svg viewBox="0 0 48 48"><rect width="48" height="48" rx="8" fill="#0F9D58"/><rect x="10" y="10" width="28" height="28" rx="3" fill="#fff"/><rect x="14" y="16" width="8" height="4" rx="1" fill="#0F9D58"/><rect x="14" y="22" width="8" height="4" rx="1" fill="#0F9D58"/><rect x="14" y="28" width="8" height="4" rx="1" fill="#0F9D58"/><rect x="26" y="16" width="8" height="4" rx="1" fill="#57BB8A"/><rect x="26" y="22" width="8" height="4" rx="1" fill="#57BB8A"/><rect x="26" y="28" width="8" height="4" rx="1" fill="#57BB8A"/></svg>
+            </div>
+            <span class="name">Excel / Sheets</span>
+          </div>
+          <div class="hover-tip">
+            <div class="ht-problem">50 versions. No one knows which is current.</div>
+            <div class="ht-text">Critical business data trapped in personal files. No audit trail. One wrong formula breaks the whole chain.</div>
+          </div>
+        </div>
+
+        <div class="float-card">
+          <div class="card-front">
+            <div class="dual-icons">
+              <svg viewBox="0 0 48 48"><rect width="48" height="48" rx="8" fill="#25D366"/><path d="M24 11.2c-7.04 0-12.8 5.76-12.8 12.8 0 2.26.6 4.46 1.72 6.38l-1.82 6.62 6.8-1.78A12.72 12.72 0 0024 36.8c7.04 0 12.8-5.76 12.8-12.8S31.04 11.2 24 11.2z" fill="#fff"/></svg>
+              <span class="plus">+</span>
+              <svg viewBox="0 0 48 48"><rect width="48" height="48" rx="8" fill="#4A154B"/><path d="M18.5 28.5a3 3 0 11-6 0 3 3 0 016 0zm0-9a3 3 0 11-6 0 3 3 0 016 0zm9 9a3 3 0 11-6 0 3 3 0 016 0zm0-9a3 3 0 11-6 0 3 3 0 016 0zM18.5 16.5h9M18.5 25.5h9M15.5 19.5v9M24.5 19.5v9" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <span class="name">WhatsApp / Slack</span>
+          </div>
+          <div class="hover-tip">
+            <div class="ht-problem">Approvals buried in 12 group chats.</div>
+            <div class="ht-text">Decisions happen in messages and get lost in scroll. No record. No accountability. "I told you on WhatsApp" is the new excuse.</div>
+          </div>
+        </div>
+
+        <div class="float-card">
+          <div class="card-front">
+            <img src="logos/tallyprime.png" alt="Tally Prime" style="width:48px;height:48px;object-fit:contain;">
+            <span class="name">Tally / ERP</span>
+          </div>
+          <div class="hover-tip">
+            <div class="ht-problem">Used for billing. Nothing else.</div>
+            <div class="ht-text">Tally runs the books but inventory, sales, and operations live elsewhere. Data enters twice — or not at all.</div>
+          </div>
+        </div>
+
+        <div class="float-card">
+          <div class="card-front">
+            <svg viewBox="0 0 48 48"><rect width="48" height="48" rx="8" fill="#FFF8E1"/><rect x="10" y="6" width="28" height="36" rx="3" fill="#FFF" stroke="#D4A373" stroke-width="1.5"/><rect x="10" y="6" width="6" height="36" rx="1" fill="#D4A373" opacity=".3"/><circle cx="13" cy="14" r="1.5" fill="#A8896C"/><circle cx="13" cy="22" r="1.5" fill="#A8896C"/><circle cx="13" cy="30" r="1.5" fill="#A8896C"/><line x1="20" y1="14" x2="34" y2="14" stroke="#D4A373" stroke-width="1" opacity=".6"/><line x1="20" y1="18" x2="30" y2="18" stroke="#D4A373" stroke-width="1" opacity=".6"/><line x1="20" y1="22" x2="34" y2="22" stroke="#D4A373" stroke-width="1" opacity=".6"/><line x1="20" y1="26" x2="28" y2="26" stroke="#D4A373" stroke-width="1" opacity=".6"/><line x1="20" y1="30" x2="32" y2="30" stroke="#D4A373" stroke-width="1" opacity=".6"/><line x1="20" y1="34" x2="26" y2="34" stroke="#D4A373" stroke-width="1" opacity=".6"/></svg>
+            <span class="name">Paper Registers</span>
+          </div>
+          <div class="hover-tip">
+            <div class="ht-problem">If the register is lost, so is the data.</div>
+            <div class="ht-text">Attendance, stock counts, dispatch logs — all handwritten. Unsearchable. Unverifiable. Fire or water damage = gone forever.</div>
+          </div>
+        </div>
+
+        <div class="float-card">
+          <div class="card-front">
+            <svg viewBox="0 0 48 48"><rect width="48" height="48" rx="8" fill="#EFF6FF"/><circle cx="24" cy="16" r="7" fill="#3B82F6"/><ellipse cx="24" cy="36" rx="12" ry="8" fill="#3B82F6" opacity=".7"/><circle cx="24" cy="16" r="4" fill="#BFDBFE"/><path d="M35 10l-3 3m3-3l-3-3m3 3h-4" stroke="#EF4444" stroke-width="2" stroke-linecap="round"/></svg>
+            <span class="name">Key Person Risk</span>
+          </div>
+          <div class="hover-tip">
+            <div class="ht-problem">One person leaves. Operations stop.</div>
+            <div class="ht-text">The rates are in his head. The process is in her memory. No documentation. No backup. One resignation = three months of chaos.</div>
+          </div>
+        </div>
+
+        <div class="float-card">
+          <div class="card-front">
+            <svg viewBox="0 0 48 48"><rect width="48" height="48" rx="8" fill="#F3E8FF"/><path d="M16.5 12.5c.6-.6 1.6-.6 2.2 0l3 3c.6.6.6 1.6 0 2.2l-1.8 1.8c.9 2.2 2.4 4.2 4.2 5.8 1.6 1.4 3.4 2.4 5.4 3l1.8-1.8c.6-.6 1.6-.6 2.2 0l3 3c.6.6.6 1.6 0 2.2l-2.2 2.2c-1 1-2.4 1.4-3.8 1-3.4-.8-6.8-2.8-9.6-5.6-2.8-2.8-4.8-6.2-5.6-9.6-.4-1.4 0-2.8 1-3.8l2.2-2.4z" fill="#7C3AED"/><path d="M28 10v6h6" stroke="#A78BFA" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M34 10l-6 6" stroke="#A78BFA" stroke-width="2" stroke-linecap="round"/></svg>
+            <span class="name">Chasing Answers</span>
+          </div>
+          <div class="hover-tip">
+            <div class="ht-problem">40 calls on a Sunday for a stock number.</div>
+            <div class="ht-text">The owner is the lookup table. Every question needs a phone call. No self-serve data. The business can't run without you in the loop.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ARROW -->
+    <div class="arrow-section">
+      <div class="arrow-line"></div>
+    </div>
+
+    <!-- ORDER — on the RIGHT -->
+    <div class="order">
+      <div class="order-label">Your Business After</div>
+      <div class="order-box">
+        <div class="order-icon"><span class="material-symbols-outlined" style="color:#fff;font-size:24px;font-variation-settings:'FILL' 1;">dashboard</span></div>
+        <div class="order-title">One System. Real Numbers.</div>
+        <div class="order-list">
+          <div class="order-item"><span class="material-symbols-outlined">check_circle</span>Sales &rarr; Inventory &rarr; Accounts. Connected.</div>
+          <div class="order-item"><span class="material-symbols-outlined">check_circle</span>Automatic data checking</div>
+          <div class="order-item"><span class="material-symbols-outlined">check_circle</span>Written steps for every task</div>
+          <div class="order-item"><span class="material-symbols-outlined">check_circle</span>Doesn't depend on one person</div>
+          <div class="order-item"><span class="material-symbols-outlined">check_circle</span>Owner reporting — real-time</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="text-row" id="services">
+    <div class="hero-punch"><span class="headline-line">Your business runs on <span class="punch-accent">scattered tools.</span></span><br/>We bring it into one system.</div>
+    <div class="cta-group">
+      <div class="sub-services">
+        <span class="service-tag">Process Design & Automation</span>
+        <span class="service-tag">ERP Implementation</span>
+        <span class="service-tag">LLM Integration</span>
+        <span class="service-tag">Financial Planning & Analytics</span>
+      </div>
+      <a href="contact.html" class="cta-btn" style="text-decoration:none;display:inline-flex;align-items:center;">Get Free Audit <span class="material-symbols-outlined" style="font-size:16px;">arrow_forward</span></a>
+    </div>
+  </div>
+</div>
+
+</section>
+
+<div class="contact-modal" id="contact-modal" aria-hidden="true">
+  <div class="contact-panel" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+    <div class="contact-side">
+      <div>
+        <div class="contact-kicker">Contact Us</div>
+        <h2>Let’s map your business into one system.</h2>
+        <p>Tell us where operations feel scattered today. We’ll help you frame the right process, ERP, and reporting setup for your team.</p>
+      </div>
+      <div class="contact-points">
+        <div class="contact-point">
+          <span class="material-symbols-outlined">bolt</span>
+          <div>
+            <strong>Fast first response</strong>
+            <span>We usually come back with next steps within one business day.</span>
+          </div>
+        </div>
+        <div class="contact-point">
+          <span class="material-symbols-outlined">conversion_path</span>
+          <div>
+            <strong>Practical system design</strong>
+            <span>We focus on sales, inventory, accounts, workflows, and owner reporting.</span>
+          </div>
+        </div>
+        <div class="contact-point">
+          <span class="material-symbols-outlined">verified</span>
+          <div>
+            <strong>Built for growing teams</strong>
+            <span>Simple enough to adopt, structured enough to scale across departments.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-main">
+      <button class="contact-close" type="button" aria-label="Close contact form" data-close-contact>
+        <span class="material-symbols-outlined">close</span>
+      </button>
+      <h3 id="contact-title">Request a demo</h3>
+      <p>Share a few details and we’ll set up the right conversation for your business.</p>
+      <div class="contact-success" id="contact-success" aria-live="polite">
+        <span class="material-symbols-outlined">check_circle</span>
+        <div>
+          <strong>Request received</strong>
+          <span>Thanks. We’ll reach out shortly to schedule your demo and understand your current systems.</span>
+        </div>
+      </div>
+      <form class="contact-form" id="contact-form">
+        <div class="contact-field">
+          <label for="demo-name">Full name</label>
+          <input id="demo-name" name="name" type="text" placeholder="Your name" required/>
+        </div>
+        <div class="contact-field">
+          <label for="demo-company">Company</label>
+          <input id="demo-company" name="company" type="text" placeholder="Your company" required/>
+        </div>
+        <div class="contact-field">
+          <label for="demo-email">Work email</label>
+          <input id="demo-email" name="email" type="email" placeholder="name@company.com" required/>
+        </div>
+        <div class="contact-field">
+          <label for="demo-phone">Phone</label>
+          <input id="demo-phone" name="phone" type="tel" placeholder="+91 ..." />
+        </div>
+        <div class="contact-field full">
+          <label for="demo-needs">What do you want help with?</label>
+          <textarea id="demo-needs" name="needs" placeholder="Example: inventory mismatch, scattered approvals, manual reporting, ERP implementation..." required></textarea>
+        </div>
+        <div class="contact-actions">
+          <div class="contact-note">This is a design prototype form. It will show a success state on submit and can later be connected to email, CRM, or a backend workflow.</div>
+          <button class="contact-submit" type="submit">Send Request <span class="material-symbols-outlined" style="font-size:18px;">north_east</span></button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ==========================================
+     SECTION 2: TRUST BAR + HOVER TESTIMONIALS
+     ========================================== -->
+<section class="trust-bar" id="trust">
+  <span class="deco-quote left">&ldquo;</span>
+  <span class="deco-quote right">&rdquo;</span>
+  <div class="container">
+    <div class="trust-heading">Trusted by leading organisations</div>
+    <div class="slider-wrap">
+      <div class="slider-track">
+
+        <!-- Set 1 -->
+        <div class="logo-item">
+          <img src="logos/1.png" alt="Modi Illva India">
+          <div class="logo-tooltip">
+            <div class="tt-stars">★★★★★</div>
+            <div class="tt-quote">"Their 'What Could Go Wrong' methodology completely transformed our operations. We went from chaos to clarity in just 3 months."</div>
+            <div class="tt-author">Modi Illva India Pvt. Ltd.</div>
+            <div class="tt-role">Manager and Team</div>
+          </div>
+        </div>
+        <div class="logo-item"><img src="logos/2.png" alt="Client"></div>
+        <div class="logo-item">
+          <img src="logos/3.png" alt="Tonoto">
+          <div class="logo-tooltip">
+            <div class="tt-stars">★★★★★</div>
+            <div class="tt-quote">"Finally, we have complete visibility into our finances and operations. The team actually sits with you until everything works perfectly."</div>
+            <div class="tt-author">Mr. Ruchit Dugar</div>
+            <div class="tt-role">Founder, Tonoto</div>
+          </div>
+        </div>
+        <div class="logo-item"><img src="logos/4.png" alt="Client"></div>
+        <div class="logo-item">
+          <img src="logos/5.png" alt="Machphy Solutions">
+          <div class="logo-tooltip">
+            <div class="tt-stars">★★★★★</div>
+            <div class="tt-quote">"The automation solutions they implemented saved us 15+ hours weekly on inventory management. Our order processing is now seamless and error-free."</div>
+            <div class="tt-author">Machphy Solution</div>
+            <div class="tt-role">Operations Head</div>
+          </div>
+        </div>
+        <div class="logo-item"><img src="logos/6.png" alt="Client"></div>
+        <div class="logo-item"><img src="logos/8.png" alt="Client"></div>
+        <div class="logo-item"><img src="logos/10.png" alt="Client"></div>
+        <div class="logo-item"><img src="logos/11.png" alt="Client"></div>
+        <div class="logo-item"><img src="logos/13.png" alt="Client"></div>
+        <div class="logo-item"><img src="logos/14.jpeg" alt="Devyani International"></div>
+        <div class="logo-item"><img src="logos/15.png" alt="Oxfam India"></div>
+        <div class="logo-item"><img src="logos/16.png" alt="Mixar"></div>
+
+        <!-- Set 2 (duplicate for seamless loop) -->
+        <div class="logo-item">
+          <img src="logos/1.png" alt="Modi Illva India">
+          <div class="logo-tooltip">
+            <div class="tt-stars">★★★★★</div>
+            <div class="tt-quote">"Their 'What Could Go Wrong' methodology completely transformed our operations. We went from chaos to clarity in just 3 months."</div>
+            <div class="tt-author">Modi Illva India Pvt. Ltd.</div>
+            <div class="tt-role">Manager and Team</div>
+          </div>
+        </div>
+        <div class="logo-item"><img src="logos/2.png" alt="Client"></div>
+        <div class="logo-item">
+          <img src="logos/3.png" alt="Tonoto">
+          <div class="logo-tooltip">
+            <div class="tt-stars">★★★★★</div>
+            <div class="tt-quote">"Finally, we have complete visibility into our finances and operations. The team actually sits with you until everything works perfectly."</div>
+            <div class="tt-author">Mr. Ruchit Dugar</div>
+            <div class="tt-role">Founder, Tonoto</div>
+          </div>
+        </div>
+        <div class="logo-item"><img src="logos/4.png" alt="Client"></div>
+        <div class="logo-item">
+          <img src="logos/5.png" alt="Machphy Solutions">
+          <div class="logo-tooltip">
+            <div class="tt-stars">★★★★★</div>
+            <div class="tt-quote">"The automation solutions they implemented saved us 15+ hours weekly on inventory management. Our order processing is now seamless and error-free."</div>
+            <div class="tt-author">Machphy Solution</div>
+            <div class="tt-role">Operations Head</div>
+          </div>
+        </div>
+        <div class="logo-item"><img src="logos/6.png" alt="Client"></div>
+        <div class="logo-item"><img src="logos/8.png" alt="Client"></div>
+        <div class="logo-item"><img src="logos/10.png" alt="Client"></div>
+        <div class="logo-item"><img src="logos/11.png" alt="Client"></div>
+        <div class="logo-item"><img src="logos/13.png" alt="Client"></div>
+        <div class="logo-item"><img src="logos/14.jpeg" alt="Devyani International"></div>
+        <div class="logo-item"><img src="logos/15.png" alt="Oxfam India"></div>
+        <div class="logo-item"><img src="logos/16.png" alt="Mixar"></div>
+
+      </div>
+    </div>
+
+    <div class="stats-strip">
+      <div class="ss-item"><div class="ss-num">60+</div><div class="ss-label">Organisations</div></div>
+      <div class="ss-item"><div class="ss-num">3000+</div><div class="ss-label">Employees</div></div>
+      <div class="ss-item"><div class="ss-num">3</div><div class="ss-label">Cities</div></div>
+      <div class="ss-item"><div class="ss-num">10+</div><div class="ss-label">Years</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     SECTION 3: SERVICES — Three Operating Foundations
+     ========================================== -->
+<section class="services">
+<div class="container">
+  <div class="section-tag">What We Build</div>
+  <div class="section-heading">Three Operating Foundations</div>
+  <div class="section-sub">Build control into every system.</div>
+
+  <div class="cards">
+
+    <!-- CARD 1: Process Design & Automation -->
+    <div class="s-card" onclick="window.location.href='process-design.html'" style="cursor:pointer;">
+      <div class="s-icon"><span class="material-symbols-outlined">done_all</span></div>
+      <div class="s-headline">Approvals route by authority</div>
+      <div class="s-subline">Right person, right time. Bottlenecks visible. Audit-ready always.</div>
+      <div class="s-bullets">
+        <div class="s-bullet"><span class="material-symbols-outlined">check_circle</span>Authority rules auto-route</div>
+        <div class="s-bullet"><span class="material-symbols-outlined">check_circle</span>Bottlenecks show up real-time</div>
+        <div class="s-bullet"><span class="material-symbols-outlined">check_circle</span>Audit trail is automatic</div>
+      </div>
+      <!-- Hover overlay -->
+      <div class="s-hover">
+        <div class="sh-label">Process Design &amp; Automation</div>
+        <div class="sh-text">Governance that scales. Control that auditors trust. No more email chains hunting approvals.</div>
+        <div class="sh-bullets">
+          <div class="sh-bullet"><span class="material-symbols-outlined">check_circle</span>SOPs documented on the floor</div>
+          <div class="sh-bullet"><span class="material-symbols-outlined">check_circle</span>'What Could Go Wrong' methodology</div>
+          <div class="sh-bullet"><span class="material-symbols-outlined">check_circle</span>Key-person dependency eliminated</div>
+          <div class="sh-bullet"><span class="material-symbols-outlined">check_circle</span>New hires productive in weeks</div>
+        </div>
+        <div style="margin-top:12px;font-size:12px;font-weight:600;color:#a5b4fc;letter-spacing:.5px;">Learn more →</div>
+      </div>
+    </div>
+
+    <!-- CARD 2: ERP Implementation -->
+    <div class="s-card" onclick="window.location.href='erp-implementation.html'" style="cursor:pointer;">
+      <div class="s-icon"><span class="material-symbols-outlined">inventory_2</span></div>
+      <div class="s-headline">One system of record</div>
+      <div class="s-subline">Live stock, GST, cash. Numbers that match reality.</div>
+      <div class="s-bullets">
+        <div class="s-bullet"><span class="material-symbols-outlined">check_circle</span>FIFO / weighted-average costing built in</div>
+        <div class="s-bullet"><span class="material-symbols-outlined">check_circle</span>GST pre-checked before filing</div>
+        <div class="s-bullet"><span class="material-symbols-outlined">check_circle</span>Cash position updates daily</div>
+      </div>
+      <!-- Hover overlay -->
+      <div class="s-hover">
+        <div class="sh-label">ERP Implementation</div>
+        <div class="sh-text">Inventory and cash move together. No reconciliation surprises. Compliance built in, not bolted on.</div>
+        <div class="sh-bullets">
+          <div class="sh-bullet"><span class="material-symbols-outlined">check_circle</span>Zoho / Odoo / ERPNext configured</div>
+          <div class="sh-bullet"><span class="material-symbols-outlined">check_circle</span>Tally automation &amp; bank feeds</div>
+          <div class="sh-bullet"><span class="material-symbols-outlined">check_circle</span>Data migration &amp; team training</div>
+          <div class="sh-bullet"><span class="material-symbols-outlined">check_circle</span>Go-live in 8–16 weeks</div>
+        </div>
+        <div style="margin-top:12px;font-size:12px;font-weight:600;color:#a5b4fc;letter-spacing:.5px;">Learn more →</div>
+      </div>
+    </div>
+
+    <!-- CARD 3: FP&A -->
+    <div class="s-card" onclick="window.location.href='virtual-cfo.html'" style="cursor:pointer;">
+      <div class="s-icon"><span class="material-symbols-outlined">trending_up</span></div>
+      <div class="s-headline">Margins visible by mid-month</div>
+      <div class="s-subline">Real P&amp;L. Real profitability. Forecast vs. actual aligned.</div>
+      <div class="s-bullets">
+        <div class="s-bullet"><span class="material-symbols-outlined">check_circle</span>Month-end close in 5 days</div>
+        <div class="s-bullet"><span class="material-symbols-outlined">check_circle</span>Margin by product visible</div>
+        <div class="s-bullet"><span class="material-symbols-outlined">check_circle</span>Forecast vs. actual built in</div>
+      </div>
+      <!-- Hover overlay -->
+      <div class="s-hover">
+        <div class="sh-label">Financial Planning &amp; Analytics</div>
+        <div class="sh-text">See profit reality before surprises hit. Make margin decisions on live data, not month-old guesses.</div>
+        <div class="sh-bullets">
+          <div class="sh-bullet"><span class="material-symbols-outlined">check_circle</span>CA-led monthly MIS &amp; reconciliation</div>
+          <div class="sh-bullet"><span class="material-symbols-outlined">check_circle</span>Cash flow forecasting 30/60/90 days</div>
+          <div class="sh-bullet"><span class="material-symbols-outlined">check_circle</span>Investor-ready board decks</div>
+          <div class="sh-bullet"><span class="material-symbols-outlined">check_circle</span>Big 4 pedigree, SME pricing</div>
+        </div>
+        <div style="margin-top:12px;font-size:12px;font-weight:600;color:#a5b4fc;letter-spacing:.5px;">Learn more →</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<footer style="background:#0f172a;padding:64px 48px 32px;color:#94a3b8;">
+  <div style="max-width:1280px;margin:0 auto;">
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;">
+      <div>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+          <img src="slv-northstar-logo.svg" alt="Seven Labs Vision" style="height:44px;width:auto;filter:brightness(0) invert(1);">
+        </div>
+        <p style="font-size:13px;line-height:1.7;margin-bottom:16px;">CA-led advisory firm transforming MSMEs and startups with hands-on implementation — ERP, SOPs, KPIs, financial control.</p>
+        <p style="font-size:13px;"><span style="color:#64748b;">Email:</span> admin@sevenlabs.in</p>
+        <p style="font-size:13px;"><span style="color:#64748b;">Phone:</span> +91 91935 80737</p>
+        <div style="display:flex;gap:12px;margin-top:16px;">
+          <a href="https://www.linkedin.com/company/seven-labs-vision/" style="color:#94a3b8;font-size:13px;text-decoration:none;" target="_blank">LinkedIn</a>
+          <a href="https://www.instagram.com/sevenlabsvision/" style="color:#94a3b8;font-size:13px;text-decoration:none;" target="_blank">Instagram</a>
+          <a href="https://www.facebook.com/sevenlabsvision" style="color:#94a3b8;font-size:13px;text-decoration:none;" target="_blank">Facebook</a>
+        </div>
+      </div>
+      <div>
+        <h4 style="font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:#fff;margin-bottom:16px;text-transform:uppercase;letter-spacing:1px;">Services</h4>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <a href="virtual-cfo.html" style="font-size:13px;color:#94a3b8;text-decoration:none;">Virtual CFO</a>
+          <a href="process-design.html" style="font-size:13px;color:#94a3b8;text-decoration:none;">Process Design</a>
+          <a href="erp-implementation.html" style="font-size:13px;color:#94a3b8;text-decoration:none;">ERP Implementation</a>
+        </div>
+      </div>
+      <div>
+        <h4 style="font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:#fff;margin-bottom:16px;text-transform:uppercase;letter-spacing:1px;">Company</h4>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <a href="about.html" style="font-size:13px;color:#94a3b8;text-decoration:none;">About Us</a>
+          <a href="careers.html" style="font-size:13px;color:#94a3b8;text-decoration:none;">Careers</a>
+          <a href="blog.html" style="font-size:13px;color:#94a3b8;text-decoration:none;">Blog</a>
+          <a href="contact.html" style="font-size:13px;color:#94a3b8;text-decoration:none;">Contact</a>
+          <a href="index.html" style="font-size:13px;color:#94a3b8;text-decoration:none;">Home</a>
+        </div>
+      </div>
+      <div>
+        <h4 style="font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:#fff;margin-bottom:16px;text-transform:uppercase;letter-spacing:1px;">Offices</h4>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <p style="font-size:13px;">Delhi NCR (Ghaziabad)</p>
+          <p style="font-size:13px;">Agra</p>
+          <p style="font-size:13px;">Jaipur</p>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid #1e293b;padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+      <p style="font-size:12px;color:#64748b;">© 2026 Seven Labs Vision. All rights reserved.</p>
+      <p style="font-size:12px;color:#64748b;">Founded by CA Raghav Bansal</p>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/919193580737" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" style="position:fixed;bottom:28px;right:28px;z-index:9999;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,0.15);transition:transform 0.2s,box-shadow 0.2s;text-decoration:none;" onmouseover="this.style.transform='scale(1.1)';this.style.boxShadow='0 6px 20px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 14px rgba(0,0,0,0.15)'">
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+(function(){
+  var cards = document.querySelectorAll('.hero .float-card');
+  var openContactButtons = document.querySelectorAll('[data-open-contact], #contact');
+  var contactModal = document.getElementById('contact-modal');
+  var contactForm = document.getElementById('contact-form');
+  var contactSuccess = document.getElementById('contact-success');
+  var contactCloseButtons = document.querySelectorAll('[data-close-contact]');
+  var activeCard = null, overlay = null;
+  var isMobile = function(){ return window.innerWidth <= 768; };
+
+  function openContactModal(){
+    if(!contactModal) return;
+    contactModal.classList.add('is-open');
+    contactModal.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeContactModal(){
+    if(!contactModal) return;
+    contactModal.classList.remove('is-open');
+    contactModal.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+
+  function closeAll(){
+    cards.forEach(function(c){
+      c.classList.remove('is-flipped');
+      var tip = c.querySelector('.hover-tip');
+      if(!tip) return;
+      tip.classList.remove('is-visible','is-mobile');
+      tip.removeAttribute('style');
+      var arr = tip.querySelector('.tip-arrow');
+      if(arr) arr.remove();
+    });
+    if(overlay){ overlay.remove(); overlay = null; }
+    activeCard = null;
+  }
+
+  function showTip(card){
+    var tip = card.querySelector('.hover-tip');
+    if(!tip) return;
+
+    if(isMobile()){
+      if(activeCard === card && card.classList.contains('is-flipped')){
+        closeAll();
+        return;
+      }
+      closeAll();
+      activeCard = card;
+      card.classList.add('is-flipped');
+      return;
+    }
+
+    closeAll();
+    activeCard = card;
+    // Desktop: CSS handles anchored positioning beside the card
+    tip.classList.add('is-visible');
+  }
+
+  // Desktop hover
+  cards.forEach(function(card){
+    card.addEventListener('mouseenter', function(){ if(!isMobile()) showTip(card); });
+    card.addEventListener('mouseleave', function(){ if(!isMobile()) closeAll(); });
+    // Tap/click for mobile + desktop fallback
+    card.addEventListener('click', function(e){
+      e.stopPropagation();
+      if(activeCard === card){ closeAll(); return; }
+      showTip(card);
+    });
+  });
+
+  openContactButtons.forEach(function(button){
+    button.addEventListener('click', function(e){
+      e.preventDefault();
+      openContactModal();
+    });
+  });
+
+  contactCloseButtons.forEach(function(button){
+    button.addEventListener('click', closeContactModal);
+  });
+
+  if(contactModal){
+    contactModal.addEventListener('click', function(e){
+      if(e.target === contactModal) closeContactModal();
+    });
+  }
+
+  if(contactForm){
+    contactForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      if(contactSuccess) contactSuccess.classList.add('is-visible');
+      contactForm.reset();
+    });
+  }
+
+  document.addEventListener('click', function(e){
+    if(activeCard && !activeCard.contains(e.target)) closeAll();
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      closeAll();
+      closeContactModal();
+    }
+  });
+  window.addEventListener('resize', closeAll);
+})();
+</script>
+</body>
+</html>
