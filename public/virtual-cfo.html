@@ -342,16 +342,21 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       .hero { padding: 48px 24px 0; }
-      .excel-section { padding: 0 16px; }
-      .excel-grid table { font-size: 10px; }
-      .excel-grid th.col-a { min-width: 140px; }
-      .excel-grid th.wk { min-width: 64px; }
+      .excel-section { padding: 0 12px; }
+      .excel-window { border-radius: 8px; }
+      .excel-grid { overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100%; }
+      .excel-grid table { font-size: 10px; width: max-content; }
+      .excel-grid th.col-a { min-width: 110px; }
+      .excel-grid th.wk { min-width: 56px; }
+      .excel-grid td.label-cell { position: static; padding-left: 10px; }
+      .excel-tabs { overflow-x: auto; }
       .metrics-section { padding: 56px 24px 0; }
       .metrics-strip { grid-template-columns: repeat(2, 1fr); }
       .metric { border-bottom: 1px solid var(--border); }
       .deliverables { grid-template-columns: 1fr; }
       .cta-section { padding: 56px 24px; }
       footer{padding:48px 20px 24px !important;}
+      footer > div > div:first-child { grid-template-columns: 1fr !important; gap: 32px !important; }
     }
   </style>
 </head>
