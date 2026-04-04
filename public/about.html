@@ -193,22 +193,24 @@
       font-size: 28px; font-weight: 700; color: var(--navy); margin-bottom: 6px;
     }
     .team-header p { font-size: 14px; color: var(--muted); }
-    .team-grid { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+    .team-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 900px; margin: 0 auto; }
     .team-card {
-      width: 220px; text-align: center; padding: 28px 20px;
+      text-align: center; padding: 36px 28px;
       border: 1px solid var(--border); border-radius: 16px;
       transition: border-color 0.2s;
     }
     .team-card:hover { border-color: var(--indigo); }
     .team-avatar {
-      width: 64px; height: 64px; border-radius: 50%;
+      width: 72px; height: 72px; border-radius: 50%;
       background: linear-gradient(135deg, var(--navy), var(--indigo));
       display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 14px;
+      margin: 0 auto 16px;
     }
-    .team-avatar .initials { font-size: 20px; font-weight: 800; color: white; }
-    .team-card h4 { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 2px; }
-    .team-card .role { font-size: 12px; color: var(--muted); line-height: 1.4; }
+    .team-avatar .initials { font-size: 22px; font-weight: 800; color: white; }
+    .team-card h4 { font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 2px; }
+    .team-credentials { font-size: 13px; font-weight: 600; color: var(--indigo); margin-bottom: 2px; }
+    .team-card .role { font-size: 13px; color: var(--muted); font-weight: 500; margin-bottom: 14px; }
+    .team-bio { font-size: 13px; color: var(--slate); line-height: 1.7; }
 
     /* ── CTA ── */
     .cta-section {
@@ -251,6 +253,7 @@
       .founder-card { flex-direction: column; text-align: center; gap: 16px; }
       .diffs { grid-template-columns: 1fr; }
       .team-section { padding: 48px 24px 0; }
+      .team-grid { grid-template-columns: 1fr; }
       .cta-section { padding: 56px 24px; }
       footer{padding:48px 20px 24px !important;}
       footer > div > div:first-child { grid-template-columns: 1fr !important; gap: 32px !important; }
@@ -381,12 +384,16 @@
     <div class="team-card">
       <div class="team-avatar"><span class="initials">RB</span></div>
       <h4>CA Raghav Bansal</h4>
-      <div class="role">Founder & Principal</div>
+      <div class="team-credentials">Chartered Accountant</div>
+      <div class="role">Founder & Principal · Ex-KPMG & Grant Thornton</div>
+      <p class="team-bio">Decade-long experience in audit and transaction advisory. Industries catered include Aviation, Food & Beverage, Consumer Markets, Infrastructure & Real Estate, and Industrial Markets. Expertise in corporate structuring, IFC, assurance, and financial modelling.</p>
     </div>
     <div class="team-card">
       <div class="team-avatar"><span class="initials">ST</span></div>
       <h4>CA Shashank Tiwari</h4>
-      <div class="role">Partner</div>
+      <div class="team-credentials">FCA, DISA</div>
+      <div class="role">Partner · Fellow Chartered Accountant</div>
+      <p class="team-bio">A distinguished Chartered Accountant with over a decade of expertise in government and bank audits. Career kickstarted in 2008, he has specialised in direct and indirect taxation with core focus on litigation on GST matters.</p>
     </div>
   </div>
 </section>
