@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 238 130" width="476" height="260" role="img" aria-label="Seven Labs Vision">
+
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&amp;family=Playfair+Display:wght@700&amp;display=swap');
+    </style>
+
+    <!-- "7" stroke: indigo → blue, along the stroke path -->
+    <linearGradient id="stroke-grad" x1="14" y1="20" x2="30" y2="118" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+
+    <!-- North Star fill: warm gold -->
+    <linearGradient id="star-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#fde68a"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+
+    <!-- Subtle glow behind the star -->
+    <radialGradient id="star-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#fbbf24" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#fbbf24" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- ── The "7" stroke ── -->
+  <path
+    d="M 14,20 L 74,20 L 30,118"
+    stroke="url(#stroke-grad)"
+    stroke-width="7"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"/>
+
+  <!-- ── North Star at origin (14,20) ──
+       4-pointed sparkle: outer radius 9, inner radius 3.2
+       Points: top → NE-inner → right → SE-inner → bottom → SW-inner → left → NW-inner -->
+  <!-- Soft glow halo -->
+  <circle cx="14" cy="20" r="14" fill="url(#star-glow)"/>
+
+  <!-- Star polygon -->
+  <polygon
+    points="14,11 16.3,17.8 23,20 16.3,22.2 14,29 11.7,22.2 5,20 11.7,17.8"
+    fill="url(#star-grad)"/>
+
+  <!-- ── Wordmark ── -->
+  <text
+    x="96" y="58"
+    font-family="'Playfair Display', 'Georgia', 'Times New Roman', serif"
+    font-size="26" font-weight="700"
+    fill="#1e293b">Seven</text>
+
+  <text
+    x="96" y="87"
+    font-family="'Playfair Display', 'Georgia', 'Times New Roman', serif"
+    font-size="26" font-weight="700"
+    fill="#1e293b">Labs</text>
+
+  <!-- Thin separator -->
+  <rect x="96" y="97" width="136" height="0.8" rx="0.4" fill="#e2e8f0"/>
+
+  <!-- VISION in tracked caps, matches top of gradient -->
+  <text
+    x="96" y="113"
+    font-family="'Inter', 'Helvetica Neue', 'Arial', sans-serif"
+    font-size="8.5" font-weight="600"
+    fill="#6366f1"
+    letter-spacing="6">VISION</text>
+
+</svg>

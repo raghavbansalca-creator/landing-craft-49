@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@400,0&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html{overflow-x:hidden;}
 
     :root {
       --navy: #0f172a;
@@ -35,7 +36,7 @@
     .site-topbar { position: sticky; top: 0; z-index: 1000; background: rgba(255,255,255,0.95); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(226,232,240,0.85); }
     .site-topbar-inner { max-width: 1280px; margin: 0 auto; padding: 10px 48px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
     .site-brand { display: flex; align-items: center; text-decoration: none; }
-    .site-logo { height: 52px; width: auto; }
+    .site-logo { height: 68px; width: auto; }
     .site-nav { display: flex; align-items: center; gap: 28px; }
     .site-nav-link { text-decoration: none; color: #475569; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600; transition: color 0.2s; }
     .site-nav-link:hover { color: #0f172a; }
@@ -54,7 +55,7 @@
       .site-nav { gap: 16px; }
       .site-nav-link:not(.site-dropdown-trigger) { display: none; }
       .site-dropdown-trigger span.material-symbols-outlined { display: none; }
-      .site-logo { height: 44px; }
+      .site-logo { height: 56px; }
     }
 
     /* ── Hero ── */
@@ -490,6 +491,7 @@
       .section-heading { font-size: 28px; }
       .cta-section h2 { font-size: 28px; }
       .cta-buttons { flex-direction: column; align-items: center; }
+      footer{padding:48px 20px 24px !important;}
     }
     @media (max-width: 480px) {
       .pillars-grid { grid-template-columns: 1fr; }
@@ -904,7 +906,7 @@
     <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;">
       <div>
         <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
-          <img src="slv-northstar-logo.svg" alt="Seven Labs Vision" style="height:36px;width:auto;filter:brightness(0) invert(1);">
+          <img src="slv-northstar-logo.svg" alt="Seven Labs Vision" style="height:44px;width:auto;filter:brightness(0) invert(1);">
         </div>
         <p style="font-size:13px;line-height:1.7;margin-bottom:16px;">CA-led advisory firm transforming MSMEs and startups with hands-on implementation — ERP, SOPs, KPIs, financial control.</p>
         <p style="font-size:13px;"><span style="color:#64748b;">Email:</span> admin@sevenlabs.in</p>
