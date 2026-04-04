@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ERP Implementation for SMEs in India: The Complete 2026 Guide | Seven Labs Vision</title>
+<meta name="description" content="Everything Indian SME owners need to know about ERP implementation -- costs, timelines, platforms (ERPNext, Zoho, Odoo), and how to avoid the 50% failure rate.">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<style>
+/* ── Consistent Topbar ── */
+.site-topbar{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,0.95);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(226,232,240,0.85);}
+.site-topbar-inner{max-width:1280px;margin:0 auto;padding:10px 48px;display:flex;align-items:center;justify-content:space-between;gap:24px;}
+.site-brand{display:flex;align-items:center;text-decoration:none;}
+.site-logo{height:52px;width:auto;}
+.site-nav{display:flex;align-items:center;gap:28px;}
+.site-nav-link{text-decoration:none;color:#475569;font-family:'Inter',sans-serif;font-size:15px;font-weight:600;transition:color 0.2s;}
+.site-nav-link:hover{color:#0f172a;}
+.site-dropdown{position:relative;}
+.site-dropdown-trigger{display:inline-flex;align-items:center;gap:2px;cursor:pointer;}
+.site-dropdown-menu{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:8px;padding-top:20px;min-width:280px;box-shadow:0 12px 40px rgba(0,0,0,0.1);z-index:1001;}
+.site-dropdown:hover .site-dropdown-menu{display:block;}
+.site-dropdown-item{display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:10px;text-decoration:none;color:#0f172a;transition:background 0.2s;}
+.site-dropdown-item:hover{background:#f5f3ff;}
+.site-dropdown-title{font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;color:#0f172a;}
+.site-dropdown-desc{font-family:'Inter',sans-serif;font-size:11px;color:#64748b;margin-top:2px;}
+.site-nav-cta{display:inline-flex;align-items:center;justify-content:center;padding:10px 20px;border-radius:999px;background:#0f172a;color:#fff !important;font-family:'Inter',sans-serif;font-size:15px;font-weight:600;text-decoration:none;transition:all 0.2s;}
+.site-nav-cta:hover{background:#6366f1;transform:translateY(-1px);}
+@media(max-width:768px){
+  .site-topbar-inner{padding:10px 16px;}
+  .site-nav{gap:16px;}
+  .site-nav-link:not(.site-dropdown-trigger){display:none;}
+  .site-dropdown-trigger span.material-symbols-outlined{display:none;}
+  .site-logo{height:44px;}
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:#fafbfc;color:#191c1e;line-height:1.7;}
+h1,h2,h3,h4,h5,h6{font-family:'Manrope',sans-serif;font-weight:700;}
+a{color:inherit;text-decoration:none;}
+.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}
+
+/* ── Blog Post ── */
+.blog-hero-img{width:100%;max-height:420px;object-fit:cover;display:block;}
+.blog-back{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:#6366f1;margin-bottom:32px;transition:gap 0.2s;}
+.blog-back:hover{gap:10px;}
+.blog-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:32px;}
+.blog-meta-tag{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#6366f1;background:#f5f3ff;padding:4px 10px;border-radius:999px;}
+.blog-meta span{display:inline-flex;align-items:center;gap:4px;font-size:13px;color:#94a3b8;}
+.blog-meta .material-symbols-outlined{font-size:14px;}
+
+.blog-content{max-width:760px;margin:0 auto;padding:48px 24px 80px;}
+.blog-content h1{font-size:clamp(28px,4vw,40px);font-weight:800;color:#0f172a;line-height:1.2;margin-bottom:24px;}
+.blog-content h2{font-size:24px;font-weight:800;color:#0f172a;margin-top:40px;margin-bottom:16px;line-height:1.3;}
+.blog-content h3{font-size:18px;font-weight:700;color:#0f172a;margin-top:28px;margin-bottom:12px;line-height:1.4;}
+.blog-content p{font-size:16px;line-height:1.8;color:#334155;margin-bottom:16px;}
+.blog-content ul,.blog-content ol{margin:12px 0 20px 24px;color:#334155;}
+.blog-content li{font-size:16px;line-height:1.8;margin-bottom:8px;}
+.blog-content strong{color:#0f172a;font-weight:700;}
+.blog-content table{width:100%;border-collapse:collapse;margin:20px 0 24px;font-size:14px;}
+.blog-content th{background:#f5f3ff;border:1px solid #e2e8f0;padding:10px 14px;text-align:left;font-weight:700;color:#0f172a;font-family:'Manrope',sans-serif;}
+.blog-content td{border:1px solid #e2e8f0;padding:10px 14px;color:#334155;}
+.blog-content tr:hover td{background:#fafbfc;}
+
+/* ── CTA ── */
+.blog-cta{background:#f5f3ff;border-radius:16px;padding:40px;text-align:center;margin-top:48px;}
+.blog-cta h3{font-size:22px;font-weight:800;color:#0f172a;margin-bottom:10px;}
+.blog-cta p{font-size:15px;color:#64748b;margin-bottom:20px;max-width:500px;margin-left:auto;margin-right:auto;}
+.cta-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:999px;background:#6366f1;color:#fff;font-family:'Inter',sans-serif;font-size:14px;font-weight:700;text-decoration:none;transition:all 0.2s;}
+.cta-btn:hover{background:#4338ca;transform:translateY(-2px);box-shadow:0 8px 24px rgba(99,102,241,0.2);}
+
+@media(max-width:768px){
+  .blog-content{padding:32px 16px 60px;}
+  .blog-cta{padding:28px 20px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ── Topbar ── -->
+<nav class="site-topbar">
+  <div class="site-topbar-inner">
+    <a href="index.html" class="site-brand"><img src="slv-northstar-logo.svg" alt="Seven Labs Vision" class="site-logo"></a>
+    <div class="site-nav">
+      <a href="index.html" class="site-nav-link">Home</a>
+      <div class="site-dropdown">
+        <a href="#" class="site-nav-link site-dropdown-trigger">Services <span class="material-symbols-outlined" style="font-size:16px;vertical-align:middle;">expand_more</span></a>
+        <div class="site-dropdown-menu">
+          <a href="virtual-cfo.html" class="site-dropdown-item"><span class="material-symbols-outlined" style="font-size:18px;color:#6366f1;">monitoring</span><div><div class="site-dropdown-title">Virtual CFO</div><div class="site-dropdown-desc">MIS, cash forecasting, margin analysis</div></div></a>
+          <a href="process-design.html" class="site-dropdown-item"><span class="material-symbols-outlined" style="font-size:18px;color:#6366f1;">design_services</span><div><div class="site-dropdown-title">Process Design</div><div class="site-dropdown-desc">SOPs, KPIs, audit-ready systems</div></div></a>
+          <a href="erp-implementation.html" class="site-dropdown-item"><span class="material-symbols-outlined" style="font-size:18px;color:#6366f1;">deployed_code</span><div><div class="site-dropdown-title">ERP Implementation</div><div class="site-dropdown-desc">ERPNext, Zoho, Odoo, Tally</div></div></a>
+        </div>
+      </div>
+      <a href="about.html" class="site-nav-link">About</a>
+      <a href="blog.html" class="site-nav-link">Blog</a>
+      <a href="contact.html" class="site-nav-link">Contact</a>
+      <a href="contact.html" class="site-nav-cta">Get Free Audit</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── Hero Image ── -->
+<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1400&h=500&fit=crop" alt="ERP Implementation for SMEs in India" class="blog-hero-img">
+
+<!-- ── Blog Content ── -->
+<article class="blog-content">
+  <a href="blog.html" class="blog-back"><span class="material-symbols-outlined" style="font-size:16px;">arrow_back</span> Back to Blog</a>
+
+  <div class="blog-meta">
+    <span class="blog-meta-tag">ERP &amp; Technology</span>
+    <span><span class="material-symbols-outlined">schedule</span> 15 min read</span>
+    <span><span class="material-symbols-outlined">calendar_today</span> 18 Mar 2026</span>
+  </div>
+
+  <h1>ERP Implementation for SMEs in India: The Complete 2026 Guide</h1>
+
+  <p>Your business crossed ₹5 Crore. You have 30+ employees. Orders come in on WhatsApp, billing happens on Tally, inventory is tracked on Excel, and you're fielding 40+ calls a day because nobody has the information they need.</p>
+
+  <p>Sound familiar? You're not alone. According to CRISIL, only 53% of Indian SMEs have adopted even basic digital platforms. The rest — including most businesses in the ₹5-50 Cr range — are still running on a patchwork of disconnected tools.</p>
+
+  <p>This guide covers everything you need to know about implementing an ERP system for your SME in India — from choosing the right platform to understanding real costs to avoiding the mistakes that cause 50% of ERP projects to fail.</p>
+
+  <h2>What is ERP and Why Does Your MSME Need It?</h2>
+
+  <p>ERP (Enterprise Resource Planning) is a single software system that connects every department in your business — sales, purchase, inventory, accounting, HR, and manufacturing — into one platform. Instead of checking Tally for finances, Excel for inventory, and WhatsApp for order status, everything lives in one place.</p>
+
+  <p>For Indian MSMEs, ERP solves three critical problems:</p>
+
+  <p><strong>1. Owner Dependency</strong><br>
+  When every decision requires you because information is scattered across 5 different places, you become the bottleneck. An ERP gives your team self-serve access to the data they need — stock levels, customer history, payment status — without calling you.</p>
+
+  <p><strong>2. No Real-Time Financial Visibility</strong><br>
+  Most MSME owners discover their actual profit only after the CA prepares year-end accounts. With an ERP, you get real-time P&amp;L, cash flow tracking, and budget vs. actual variance — every single day.</p>
+
+  <p><strong>3. Inability to Scale</strong><br>
+  You can manage 10 orders a day on WhatsApp. You cannot manage 100. ERP provides the operational backbone that lets your business grow from ₹10 Cr to ₹50 Cr without everything breaking.</p>
+
+  <h2>The Three ERP Platforms That Matter for Indian SMEs</h2>
+
+  <p>For businesses in the ₹5-50 Cr range, three platforms dominate:</p>
+
+  <h3>ERPNext (Open Source, Made in India)</h3>
+  <ul>
+    <li><strong>License cost:</strong> Free (open-source)</li>
+    <li><strong>Hosting:</strong> Self-hosted or Frappe Cloud from ₹410/month</li>
+    <li><strong>Best for:</strong> Manufacturing, trading, and distribution businesses with some in-house IT capability</li>
+    <li><strong>GST compliance:</strong> Built-in e-invoicing, e-way bill, and GSTR filing</li>
+    <li><strong>Strengths:</strong> Zero license fees, deep India-specific features, strong manufacturing (MRP) module, active Indian community</li>
+    <li><strong>Watch out for:</strong> Requires a good implementation partner; self-implementation without expertise often fails</li>
+  </ul>
+
+  <h3>Zoho One</h3>
+  <ul>
+    <li><strong>License cost:</strong> ₹1,500/employee/month (billed annually in India)</li>
+    <li><strong>Best for:</strong> Service businesses, professional firms, and companies wanting a quick SaaS rollout</li>
+    <li><strong>GST compliance:</strong> Native support</li>
+    <li><strong>Strengths:</strong> 45+ integrated apps (CRM, Books, Payroll, Inventory), low-code customization, fast deployment</li>
+    <li><strong>Watch out for:</strong> Manufacturing/MRP capabilities are limited compared to ERPNext and Odoo; costs scale linearly with headcount</li>
+  </ul>
+
+  <h3>Odoo Enterprise</h3>
+  <ul>
+    <li><strong>License cost:</strong> $24-54/user/month depending on plan</li>
+    <li><strong>Best for:</strong> Mid-size businesses with complex workflows and heavy customization needs</li>
+    <li><strong>GST compliance:</strong> Via modules</li>
+    <li><strong>Strengths:</strong> Highly modular — pick only what you need; strong manufacturing and inventory; large global ecosystem</li>
+    <li><strong>Watch out for:</strong> Enterprise license costs add up; customizations can increase total cost of ownership significantly over 3 years</li>
+  </ul>
+
+  <h2>What Does ERP Implementation Actually Cost?</h2>
+
+  <p>This is the question every MSME owner asks first. Here's the honest answer based on our experience implementing all three platforms:</p>
+
+  <h3>Small Deployment (5-20 users)</h3>
+  <table>
+    <thead>
+      <tr><th>Component</th><th>ERPNext</th><th>Zoho One</th><th>Odoo</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Software/License</td><td>Free</td><td>₹1.8-3.6 lakh/year</td><td>₹2.4-6.5 lakh/year</td></tr>
+      <tr><td>Implementation</td><td>₹2-5 lakh</td><td>₹1.5-3.5 lakh</td><td>₹3-10 lakh</td></tr>
+      <tr><td>Data Migration</td><td>₹50K-1.5 lakh</td><td>₹30K-1 lakh</td><td>₹1-3 lakh</td></tr>
+      <tr><td>Training</td><td>₹30K-1 lakh</td><td>₹20K-50K</td><td>₹50K-1.5 lakh</td></tr>
+      <tr><td><strong>Year 1 Total</strong></td><td><strong>₹3-8 lakh</strong></td><td><strong>₹4-8.5 lakh</strong></td><td><strong>₹7-21 lakh</strong></td></tr>
+    </tbody>
+  </table>
+
+  <h3>Mid-Size Deployment (20-50 users)</h3>
+  <table>
+    <thead>
+      <tr><th>Component</th><th>ERPNext</th><th>Zoho One</th><th>Odoo</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Software/License</td><td>Free</td><td>₹3.6-9 lakh/year</td><td>₹5.8-16 lakh/year</td></tr>
+      <tr><td>Implementation</td><td>₹5-15 lakh</td><td>₹3.5-10 lakh</td><td>₹15-50 lakh</td></tr>
+      <tr><td><strong>Year 1 Total</strong></td><td><strong>₹7-20 lakh</strong></td><td><strong>₹8-22 lakh</strong></td><td><strong>₹25-70 lakh</strong></td></tr>
+    </tbody>
+  </table>
+
+  <p><strong>Rule of thumb:</strong> Indian SMEs in the ₹5-50 Cr revenue range typically budget 1-3% of annual revenue for ERP implementation.</p>
+
+  <h2>Why 50% of ERP Implementations Fail (And How to Avoid It)</h2>
+
+  <p>Global statistics are sobering: 50% of ERP implementations fail on their first attempt. Gartner predicts 70% won't meet business goals by 2027. In India, the failure rate is arguably higher for MSMEs because of three additional factors:</p>
+
+  <p><strong>1. Choosing Software Before Fixing Processes</strong><br>
+  The most common mistake. If your purchase process is chaotic, putting it on an ERP just gives you digitised chaos. You need to map and fix your business processes FIRST, then configure the ERP to support them.</p>
+
+  <p>This is exactly why we use our "What Could Go Wrong" methodology — we map every process, identify every risk point, design the corrected workflow, and THEN implement it in the ERP.</p>
+
+  <p><strong>2. No Change Management</strong><br>
+  Your team has been doing things a certain way for years. Dropping an ERP on them without training, handholding, and on-site support guarantees resistance. The technology works — it's the people adoption that fails.</p>
+
+  <p>We sit in your office during implementation. Not remote calls. Not training videos. Physical presence until your team is comfortable and the system is running.</p>
+
+  <p><strong>3. Hiring a Software Vendor Instead of a Business Partner</strong><br>
+  ERP vendors implement software. They configure modules, migrate data, and hand you the keys. But they don't understand your purchase approval workflow, your inventory counting problems, or why your Agra warehouse always has stock mismatches.</p>
+
+  <p>You need a partner who understands both the business process AND the technology. A CA firm that implements ERP combines financial controls expertise with technical implementation — a combination that's rare at the SME level.</p>
+
+  <h2>The ERP Implementation Timeline: What's Realistic?</h2>
+
+  <p>Forget vendor claims of "go-live in 2 weeks." Here's what actually happens:</p>
+
+  <p><strong>Phase 1: Discovery &amp; Process Mapping (Weeks 1-4)</strong></p>
+  <ul>
+    <li>Document current workflows across all departments</li>
+    <li>Identify pain points, bottlenecks, and "What Could Go Wrong" risks</li>
+    <li>Design target-state processes and SOPs</li>
+    <li>Define KPIs and dashboards needed</li>
+  </ul>
+
+  <p><strong>Phase 2: Configuration &amp; Setup (Weeks 5-10)</strong></p>
+  <ul>
+    <li>Configure ERP modules to match designed processes</li>
+    <li>Set up chart of accounts, GST settings, and tax rules</li>
+    <li>Build custom fields and workflows specific to your business</li>
+    <li>Create user roles and permission hierarchies</li>
+  </ul>
+
+  <p><strong>Phase 3: Data Migration (Weeks 8-12)</strong></p>
+  <ul>
+    <li>Clean master data (customers, suppliers, items, BOMs)</li>
+    <li>Migrate opening balances from Tally</li>
+    <li>Reconcile and validate migrated data</li>
+    <li>Set up historical reference data</li>
+  </ul>
+
+  <p><strong>Phase 4: Testing &amp; Training (Weeks 10-14)</strong></p>
+  <ul>
+    <li>Parallel run (old system + new system simultaneously)</li>
+    <li>Department-wise hands-on training</li>
+    <li>User acceptance testing with real transactions</li>
+    <li>Fix issues and refine configurations</li>
+  </ul>
+
+  <p><strong>Phase 5: Go-Live &amp; Stabilization (Weeks 14-20)</strong></p>
+  <ul>
+    <li>Switch to the new system</li>
+    <li>On-site support during the critical first month</li>
+    <li>Daily check-ins and issue resolution</li>
+    <li>Performance monitoring and optimization</li>
+  </ul>
+
+  <p><strong>Realistic timeline: 4-5 months for a ₹10-25 Cr business with 20-40 users.</strong></p>
+
+  <h2>The Tally Migration Question</h2>
+
+  <p>Most Indian MSMEs run on Tally. The question isn't whether to keep using Tally — it's when to migrate. With mandatory e-invoicing for businesses above ₹5 Cr turnover and increasing GST compliance requirements, the Tally-to-ERP migration wave is accelerating.</p>
+
+  <p>Key considerations:</p>
+  <ul>
+    <li><strong>Don't migrate everything at once.</strong> Start with purchase-to-pay and order-to-cash cycles. Add manufacturing/inventory later.</li>
+    <li><strong>Run parallel systems for at least one month.</strong> This catches data discrepancies early.</li>
+    <li><strong>Your Tally data is valuable.</strong> Migrate opening balances, customer/supplier masters, and item masters carefully. Bad master data is the #1 cause of post-migration problems.</li>
+    <li><strong>Train your accountant first.</strong> If your accounts team isn't comfortable, the entire implementation stalls.</li>
+  </ul>
+
+  <h2>Government Support: Budget 2026 Subsidies for ERP</h2>
+
+  <p>The Union Budget 2026-27 has earmarked ₹10,000 Cr for MSME capability building, with specific focus on digital modernization. The Digital MSME Initiative 2.0 promotes cloud-based ERP adoption at subsidized rates. This means your ERP implementation may qualify for government co-funding — check with your CA or local District Industries Centre.</p>
+
+  <h2>How to Choose the Right ERP Implementation Partner</h2>
+
+  <p>Ask these five questions:</p>
+  <ol>
+    <li><strong>"Do you fix our processes first, or just install software?"</strong> If they jump straight to software configuration, they're a vendor, not a partner.</li>
+    <li><strong>"Will you be physically present in our office during implementation?"</strong> Remote implementations have significantly higher failure rates for SMEs.</li>
+    <li><strong>"Do you understand our finances, not just our technology?"</strong> An implementation partner with CA/financial expertise catches issues that pure tech teams miss — like incorrect GST configurations or chart of accounts problems.</li>
+    <li><strong>"How many Indian MSME implementations have you completed?"</strong> Enterprise experience doesn't translate to SME reality. You need someone who's worked with ₹5-50 Cr businesses.</li>
+    <li><strong>"What happens after go-live?"</strong> The first 90 days post-implementation are critical. You need a partner who stays, not one who disappears after handing over the login credentials.</li>
+  </ol>
+
+  <h2>Conclusion: The Best Time to Implement ERP Was Yesterday</h2>
+
+  <p>Every month you delay ERP implementation, you're losing:</p>
+  <ul>
+    <li>Visibility into your actual financial position</li>
+    <li>Time spent on manual data entry and reconciliation</li>
+    <li>Opportunities to scale because your systems can't handle growth</li>
+    <li>Money on inventory mismatches, duplicate orders, and missed follow-ups</li>
+  </ul>
+
+  <p>The ERP market in India is growing at 13.2% CAGR. Your competitors are moving. The government is subsidising adoption. And for the first time, platforms like ERPNext make enterprise-grade ERP accessible to ₹5 Cr businesses — not just ₹500 Cr corporates.</p>
+
+  <p>The question isn't whether your business needs ERP. It's who will help you implement it right.</p>
+
+  <p><strong>Seven Labs Vision implements ERPNext, Zoho, and Odoo for Indian SMEs with a unique approach: we fix your processes first, then implement the technology. We sit in your office until your business runs without you being the bottleneck. 40+ organisations and 3000+ employees transformed.</strong></p>
+
+  <p>Ready to stop running your business on WhatsApp and Excel? Get your free business audit today.</p>
+
+  <!-- CTA -->
+  <div class="blog-cta">
+    <h3>Ready to Implement ERP?</h3>
+    <p>Get a free business audit and find out which ERP platform fits your operations.</p>
+    <a href="contact.html" class="cta-btn"><span class="material-symbols-outlined" style="font-size:18px;">calendar_today</span> Get Free Audit</a>
+  </div>
+</article>
+
+<!-- ── Footer ── -->
+<footer style="background:#0f172a;padding:64px 48px 32px;color:#94a3b8;font-family:'Inter',sans-serif;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;">
+      <div>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+          <img src="slv-northstar-logo.svg" alt="Seven Labs Vision" style="height:36px;width:auto;filter:brightness(0) invert(1);">
+        </div>
+        <p style="font-size:13px;line-height:1.7;margin-bottom:16px;">CA-led advisory firm transforming MSMEs and startups with hands-on implementation -- ERP, SOPs, KPIs, financial control.</p>
+        <p style="font-size:13px;"><span style="color:#64748b;">Email:</span> admin@sevenlabs.in</p>
+        <p style="font-size:13px;"><span style="color:#64748b;">Phone:</span> +91 91935 80737</p>
+        <div style="display:flex;gap:12px;margin-top:16px;">
+          <a href="https://www.linkedin.com/company/seven-labs-vision/" style="color:#94a3b8;font-size:13px;text-decoration:none;" target="_blank">LinkedIn</a>
+          <a href="https://www.instagram.com/sevenlabsvision/" style="color:#94a3b8;font-size:13px;text-decoration:none;" target="_blank">Instagram</a>
+          <a href="https://www.facebook.com/sevenlabsvision" style="color:#94a3b8;font-size:13px;text-decoration:none;" target="_blank">Facebook</a>
+        </div>
+      </div>
+      <div>
+        <h4 style="font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:#fff;margin-bottom:16px;text-transform:uppercase;letter-spacing:1px;">Services</h4>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <a href="virtual-cfo.html" style="font-size:13px;color:#94a3b8;text-decoration:none;">Virtual CFO</a>
+          <a href="process-design.html" style="font-size:13px;color:#94a3b8;text-decoration:none;">Process Design</a>
+          <a href="erp-implementation.html" style="font-size:13px;color:#94a3b8;text-decoration:none;">ERP Implementation</a>
+        </div>
+      </div>
+      <div>
+        <h4 style="font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:#fff;margin-bottom:16px;text-transform:uppercase;letter-spacing:1px;">Company</h4>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <a href="about.html" style="font-size:13px;color:#94a3b8;text-decoration:none;">About Us</a>
+          <a href="blog.html" style="font-size:13px;color:#94a3b8;text-decoration:none;">Blog</a>
+          <a href="careers.html" style="font-size:13px;color:#94a3b8;text-decoration:none;">Careers</a>
+          <a href="contact.html" style="font-size:13px;color:#94a3b8;text-decoration:none;">Contact</a>
+        </div>
+      </div>
+      <div>
+        <h4 style="font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:#fff;margin-bottom:16px;text-transform:uppercase;letter-spacing:1px;">Offices</h4>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <p style="font-size:13px;">Delhi NCR (Ghaziabad)</p>
+          <p style="font-size:13px;">Agra</p>
+          <p style="font-size:13px;">Jaipur</p>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid #1e293b;padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+      <p style="font-size:12px;color:#64748b;">&copy; 2026 Seven Labs Vision. All rights reserved.</p>
+      <p style="font-size:12px;color:#64748b;">Founded by CA Raghav Bansal</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

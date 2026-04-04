@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Blog | Seven Labs Vision</title>
+<meta name="description" content="Insights on ERP implementation, process design, virtual CFO services, KPI dashboards, and business operations for Indian MSMEs and startups.">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<style>
+/* ── Consistent Topbar ── */
+.site-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.85);
+}
+.site-topbar-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 10px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.site-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.site-logo {
+  height: 52px;
+  width: auto;
+}
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.site-nav-link {
+  text-decoration: none;
+  color: #475569;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+.site-nav-link:hover {
+  color: #0f172a;
+}
+.site-dropdown {
+  position: relative;
+}
+.site-dropdown-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  cursor: pointer;
+}
+.site-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 8px;
+  padding-top: 20px;
+  min-width: 280px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+  z-index: 1001;
+}
+.site-dropdown:hover .site-dropdown-menu {
+  display: block;
+}
+.site-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #0f172a;
+  transition: background 0.2s;
+}
+.site-dropdown-item:hover {
+  background: #f0fdf4;
+}
+.site-dropdown-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
+}
+.site-dropdown-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  color: #64748b;
+  margin-top: 2px;
+}
+.site-nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: #0f172a;
+  color: #fff !important;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.site-nav-cta:hover {
+  background: #6366f1;
+  transform: translateY(-1px);
+}
+@media (max-width: 768px) {
+  .site-topbar-inner {
+    padding: 10px 16px;
+  }
+  .site-nav {
+    gap: 16px;
+  }
+  .site-nav-link:not(.site-dropdown-trigger) {
+    display: none;
+  }
+  .site-dropdown-trigger span.material-symbols-outlined {
+    display: none;
+  }
+  .site-logo {
+    height: 44px;
+  }
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:#fafbfc;color:#191c1e;line-height:1.7;}
+h1,h2,h3,h4,h5,h6{font-family:'Manrope',sans-serif;font-weight:700;}
+a{color:inherit;text-decoration:none;}
+.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;}
+
+/* ── Hero ── */
+.blog-hero {
+  background: linear-gradient(135deg, #f5f3ff 0%, #fafbfc 60%);
+  padding: 100px 48px 80px;
+  text-align: center;
+}
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #e0e7ff;
+  color: #6366f1;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 999px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+.blog-hero h1 {
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+.blog-hero h1 span {
+  color: #6366f1;
+}
+.blog-hero p {
+  font-size: 17px;
+  color: #64748b;
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ── Blog Grid ── */
+.blog-section {
+  padding: 80px 48px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 32px;
+}
+.blog-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+  border-color: #6366f1;
+}
+.blog-card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.blog-card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.blog-card-category {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #6366f1;
+  background: #f5f3ff;
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+  width: fit-content;
+}
+.blog-card-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.35;
+  margin-bottom: 10px;
+}
+.blog-card-excerpt {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.65;
+  margin-bottom: 16px;
+  flex: 1;
+}
+.blog-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 12px;
+  color: #94a3b8;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 14px;
+  margin-top: auto;
+}
+.blog-card-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.blog-card-meta .material-symbols-outlined {
+  font-size: 14px;
+}
+.blog-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: auto;
+  font-size: 13px;
+  font-weight: 600;
+  color: #6366f1;
+  transition: gap 0.2s;
+}
+.blog-card:hover .blog-card-link {
+  gap: 8px;
+}
+
+/* ── Animate ── */
+.animate-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .blog-hero { padding: 80px 20px 60px; }
+  .blog-section { padding: 60px 20px; }
+  .blog-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── Consistent Topbar ── -->
+<nav class="site-topbar">
+  <div class="site-topbar-inner">
+    <a href="index.html" class="site-brand">
+      <img src="slv-northstar-logo.svg" alt="Seven Labs Vision" class="site-logo">
+    </a>
+    <div class="site-nav">
+      <a href="index.html" class="site-nav-link">Home</a>
+      <div class="site-dropdown">
+        <a href="#" class="site-nav-link site-dropdown-trigger">Services <span class="material-symbols-outlined" style="font-size:16px;vertical-align:middle;">expand_more</span></a>
+        <div class="site-dropdown-menu">
+          <a href="virtual-cfo.html" class="site-dropdown-item">
+            <span class="material-symbols-outlined" style="font-size:18px;color:#6366f1;">monitoring</span>
+            <div>
+              <div class="site-dropdown-title">Virtual CFO</div>
+              <div class="site-dropdown-desc">MIS, cash forecasting, margin analysis</div>
+            </div>
+          </a>
+          <a href="process-design.html" class="site-dropdown-item">
+            <span class="material-symbols-outlined" style="font-size:18px;color:#6366f1;">design_services</span>
+            <div>
+              <div class="site-dropdown-title">Process Design</div>
+              <div class="site-dropdown-desc">SOPs, KPIs, audit-ready systems</div>
+            </div>
+          </a>
+          <a href="erp-implementation.html" class="site-dropdown-item">
+            <span class="material-symbols-outlined" style="font-size:18px;color:#6366f1;">deployed_code</span>
+            <div>
+              <div class="site-dropdown-title">ERP Implementation</div>
+              <div class="site-dropdown-desc">ERPNext, Zoho, Odoo, Tally</div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <a href="about.html" class="site-nav-link">About</a>
+      <a href="blog.html" class="site-nav-link" style="color:#0f172a;">Blog</a>
+      <a href="contact.html" class="site-nav-link">Contact</a>
+      <a href="contact.html" class="site-nav-cta">Get Free Audit</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── Hero ── -->
+<section class="blog-hero">
+  <span class="hero-tag"><span class="material-symbols-outlined" style="font-size:14px;">article</span> Blog</span>
+  <h1>Insights for <span>Growing Businesses</span></h1>
+  <p>Practical advice on ERP, process design, financial control, and business operations for Indian MSMEs and startups.</p>
+</section>
+
+<!-- ── Blog Cards ── -->
+<section class="blog-section">
+  <div class="blog-grid">
+
+    <!-- Post 1 -->
+    <a href="blog-erp-implementation-sme-india-guide.html" class="blog-card animate-card">
+      <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop" alt="ERP Implementation for SMEs in India" class="blog-card-img">
+      <div class="blog-card-body">
+        <span class="blog-card-category">ERP &amp; Technology</span>
+        <h3 class="blog-card-title">ERP Implementation for SMEs in India: The Complete 2026 Guide</h3>
+        <p class="blog-card-excerpt">Still running your business on Tally, WhatsApp and Excel? Here's everything Indian SME owners need to know about ERP implementation -- costs, timelines, platforms, and how to avoid the 50% failure rate.</p>
+        <div class="blog-card-meta">
+          <span><span class="material-symbols-outlined">schedule</span> 15 min read</span>
+          <span><span class="material-symbols-outlined">calendar_today</span> 18 Mar 2026</span>
+          <span class="blog-card-link">Read <span class="material-symbols-outlined" style="font-size:14px;">arrow_forward</span></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Post 2 -->
+    <a href="blog-erpnext-vs-zoho-vs-odoo-indian-msme.html" class="blog-card animate-card">
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop" alt="ERPNext vs Zoho vs Odoo" class="blog-card-img">
+      <div class="blog-card-body">
+        <span class="blog-card-category">ERP &amp; Technology</span>
+        <h3 class="blog-card-title">ERPNext vs Zoho vs Odoo: Which ERP is Right for Your Indian MSME?</h3>
+        <p class="blog-card-excerpt">A no-nonsense comparison of India's top 3 SME ERP platforms -- ERPNext, Zoho One, and Odoo -- based on our experience implementing all three for businesses.</p>
+        <div class="blog-card-meta">
+          <span><span class="material-symbols-outlined">schedule</span> 12 min read</span>
+          <span><span class="material-symbols-outlined">calendar_today</span> 12 Mar 2026</span>
+          <span class="blog-card-link">Read <span class="material-symbols-outlined" style="font-size:14px;">arrow_forward</span></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Post 3 -->
+    <a href="blog-sop-development-guide-msme-india.html" class="blog-card animate-card">
+      <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop" alt="SOP Development for Indian MSMEs" class="blog-card-img">
+      <div class="blog-card-body">
+        <span class="blog-card-category">Operations &amp; Processes</span>
+        <h3 class="blog-card-title">SOP Development for Indian MSMEs: How to Create SOPs Your Team Actually Follows</h3>
+        <p class="blog-card-excerpt">Your business has processes -- they're just in your head. Here's a practical guide to documenting SOPs that reduce owner dependency and make your operations run without you.</p>
+        <div class="blog-card-meta">
+          <span><span class="material-symbols-outlined">schedule</span> 11 min read</span>
+          <span><span class="material-symbols-outlined">calendar_today</span> 5 Mar 2026</span>
+          <span class="blog-card-link">Read <span class="material-symbols-outlined" style="font-size:14px;">arrow_forward</span></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Post 4 -->
+    <a href="blog-virtual-cfo-services-sme-india.html" class="blog-card animate-card">
+      <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop" alt="Virtual CFO Services for SMEs" class="blog-card-img">
+      <div class="blog-card-body">
+        <span class="blog-card-category">Finance &amp; CFO</span>
+        <h3 class="blog-card-title">Virtual CFO Services for SMEs: Does Your Business Need One?</h3>
+        <p class="blog-card-excerpt">Most businesses can't afford a full-time CFO but desperately need financial leadership. Here's how virtual CFO services work, what they cost, and when you should get one.</p>
+        <div class="blog-card-meta">
+          <span><span class="material-symbols-outlined">schedule</span> 10 min read</span>
+          <span><span class="material-symbols-outlined">calendar_today</span> 25 Feb 2026</span>
+          <span class="blog-card-link">Read <span class="material-symbols-outlined" style="font-size:14px;">arrow_forward</span></span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Post 5 -->
+    <a href="blog-kpi-dashboards-msme-owners-india.html" class="blog-card animate-card">
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop" alt="KPI Dashboards for MSME Owners" class="blog-card-img">
+      <div class="blog-card-body">
+        <span class="blog-card-category">Operations &amp; Processes</span>
+        <h3 class="blog-card-title">KPI Dashboards for MSME Owners: Track What Actually Matters</h3>
+        <p class="blog-card-excerpt">You don't need 50 metrics. You need 7-10 KPIs that tell you exactly how your business is performing -- updated daily, not annually. Here's how to build dashboards that drive real decisions.</p>
+        <div class="blog-card-meta">
+          <span><span class="material-symbols-outlined">schedule</span> 13 min read</span>
+          <span><span class="material-symbols-outlined">calendar_today</span> 15 Feb 2026</span>
+          <span class="blog-card-link">Read <span class="material-symbols-outlined" style="font-size:14px;">arrow_forward</span></span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer style="background:#0f172a;padding:64px 48px 32px;color:#94a3b8;font-family:'Inter',sans-serif;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;">
+      <div>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+          <img src="slv-northstar-logo.svg" alt="Seven Labs Vision" style="height:36px;width:auto;filter:brightness(0) invert(1);">
+        </div>
+        <p style="font-size:13px;line-height:1.7;margin-bottom:16px;">CA-led advisory firm transforming MSMEs and startups with hands-on implementation -- ERP, SOPs, KPIs, financial control.</p>
+        <p style="font-size:13px;"><span style="color:#64748b;">Email:</span> admin@sevenlabs.in</p>
+        <p style="font-size:13px;"><span style="color:#64748b;">Phone:</span> +91 91935 80737</p>
+        <div style="display:flex;gap:12px;margin-top:16px;">
+          <a href="https://www.linkedin.com/company/seven-labs-vision/" style="color:#94a3b8;font-size:13px;text-decoration:none;" target="_blank">LinkedIn</a>
+          <a href="https://www.instagram.com/sevenlabsvision/" style="color:#94a3b8;font-size:13px;text-decoration:none;" target="_blank">Instagram</a>
+          <a href="https://www.facebook.com/sevenlabsvision" style="color:#94a3b8;font-size:13px;text-decoration:none;" target="_blank">Facebook</a>
+        </div>
+      </div>
+      <div>
+        <h4 style="font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:#fff;margin-bottom:16px;text-transform:uppercase;letter-spacing:1px;">Services</h4>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <a href="virtual-cfo.html" style="font-size:13px;color:#94a3b8;text-decoration:none;">Virtual CFO</a>
+          <a href="process-design.html" style="font-size:13px;color:#94a3b8;text-decoration:none;">Process Design</a>
+          <a href="erp-implementation.html" style="font-size:13px;color:#94a3b8;text-decoration:none;">ERP Implementation</a>
+        </div>
+      </div>
+      <div>
+        <h4 style="font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:#fff;margin-bottom:16px;text-transform:uppercase;letter-spacing:1px;">Company</h4>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <a href="about.html" style="font-size:13px;color:#94a3b8;text-decoration:none;">About Us</a>
+          <a href="blog.html" style="font-size:13px;color:#94a3b8;text-decoration:none;">Blog</a>
+          <a href="careers.html" style="font-size:13px;color:#94a3b8;text-decoration:none;">Careers</a>
+          <a href="contact.html" style="font-size:13px;color:#94a3b8;text-decoration:none;">Contact</a>
+        </div>
+      </div>
+      <div>
+        <h4 style="font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:#fff;margin-bottom:16px;text-transform:uppercase;letter-spacing:1px;">Offices</h4>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <p style="font-size:13px;">Delhi NCR (Ghaziabad)</p>
+          <p style="font-size:13px;">Agra</p>
+          <p style="font-size:13px;">Jaipur</p>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid #1e293b;padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+      <p style="font-size:12px;color:#64748b;">&copy; 2026 Seven Labs Vision. All rights reserved.</p>
+      <p style="font-size:12px;color:#64748b;">Founded by CA Raghav Bansal</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ── Scroll Animations ── -->
+<script>
+(function(){
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}
+    });
+  },{threshold:0.1,rootMargin:'0px 0px -80px 0px'});
+  document.querySelectorAll('.animate-card').forEach(function(el){obs.observe(el);});
+})();
+</script>
+</body>
+</html>

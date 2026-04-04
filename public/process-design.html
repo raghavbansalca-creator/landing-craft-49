@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Process Advisory | Seven Labs Vision</title>
+  <meta name="description" content="CA-led process advisory for MSMEs and startups. SOPs, KPIs, appraisal design, gap analysis, and controls — documented, measurable, audit-ready systems.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Manrope:wght@400;500;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@400,0&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0f172a;
+      --blue: #2563eb;
+      --indigo: #6366f1;
+      --slate: #64748b;
+      --light: #f8fafc;
+      --white: #ffffff;
+      --text: #1e293b;
+      --muted: #94a3b8;
+      --border: #e2e8f0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    /* ── Consistent Topbar ── */
+    .site-topbar { position: sticky; top: 0; z-index: 1000; background: rgba(255,255,255,0.95); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(226,232,240,0.85); }
+    .site-topbar-inner { max-width: 1280px; margin: 0 auto; padding: 10px 48px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .site-brand { display: flex; align-items: center; text-decoration: none; }
+    .site-logo { height: 52px; width: auto; }
+    .site-nav { display: flex; align-items: center; gap: 28px; }
+    .site-nav-link { text-decoration: none; color: #475569; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600; transition: color 0.2s; }
+    .site-nav-link:hover { color: #0f172a; }
+    .site-dropdown { position: relative; }
+    .site-dropdown-trigger { display: inline-flex; align-items: center; gap: 2px; cursor: pointer; }
+    .site-dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: #fff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 8px; padding-top: 20px; min-width: 280px; box-shadow: 0 12px 40px rgba(0,0,0,0.1); z-index: 1001; }
+    .site-dropdown:hover .site-dropdown-menu { display: block; }
+    .site-dropdown-item { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 10px; text-decoration: none; color: #0f172a; transition: background 0.2s; }
+    .site-dropdown-item:hover { background: #f5f3ff; }
+    .site-dropdown-title { font-family: 'Manrope', sans-serif; font-size: 14px; font-weight: 700; color: #0f172a; }
+    .site-dropdown-desc { font-family: 'Inter', sans-serif; font-size: 11px; color: #64748b; margin-top: 2px; }
+    .site-nav-cta { display: inline-flex; align-items: center; justify-content: center; padding: 10px 20px; border-radius: 999px; background: #0f172a; color: #fff !important; font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600; text-decoration: none; transition: all 0.2s; }
+    .site-nav-cta:hover { background: #6366f1; transform: translateY(-1px); }
+    @media (max-width: 768px) {
+      .site-topbar-inner { padding: 10px 16px; }
+      .site-nav { gap: 16px; }
+      .site-nav-link:not(.site-dropdown-trigger) { display: none; }
+      .site-dropdown-trigger span.material-symbols-outlined { display: none; }
+      .site-logo { height: 44px; }
+    }
+
+    /* ── Hero ── */
+    .hero {
+      max-width: 1120px; margin: 0 auto;
+      padding: 72px 40px 0;
+    }
+    .hero-pill {
+      display: inline-block;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--indigo);
+      background: #f5f3ff;
+      padding: 5px 14px; border-radius: 20px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(32px, 4.5vw, 48px);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--navy);
+      max-width: 680px;
+      margin-bottom: 16px;
+    }
+    .hero-sub {
+      font-size: 16px; color: var(--slate);
+      line-height: 1.6; max-width: 520px;
+      margin-bottom: 28px;
+    }
+    .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 14px; font-weight: 600;
+      color: white; background: var(--navy);
+      padding: 13px 28px; border-radius: 10px;
+      text-decoration: none; transition: background 0.2s;
+    }
+    .btn-primary:hover { background: #1e293b; }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 14px; font-weight: 600;
+      color: var(--navy); background: transparent;
+      padding: 13px 28px; border-radius: 10px;
+      border: 1.5px solid var(--border);
+      text-decoration: none; transition: border-color 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--navy); }
+
+    /* ── Stats Strip ── */
+    .stats-section {
+      max-width: 1120px; margin: 0 auto;
+      padding: 64px 40px 0;
+    }
+    .stats-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .stat {
+      padding: 28px 24px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+    }
+    .stat:last-child { border-right: none; }
+    .stat-num {
+      font-size: 32px; font-weight: 800; color: var(--navy);
+      letter-spacing: -0.03em; line-height: 1;
+    }
+    .stat-label {
+      font-size: 11.5px; color: var(--muted); margin-top: 6px;
+      font-weight: 500;
+    }
+
+    /* ── Before/After Comparison ── */
+    .comparison-section {
+      max-width: 1120px; margin: 0 auto;
+      padding: 80px 40px 0;
+    }
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .comparison-col {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px;
+    }
+    .comparison-col:hover { border-color: var(--indigo); }
+    .comparison-label {
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .comparison-col.before .comparison-label { color: #dc2626; }
+    .comparison-col.after .comparison-label { color: var(--indigo); }
+    .comparison-item {
+      display: flex; align-items: flex-start; gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px; color: var(--text);
+      line-height: 1.5;
+    }
+    .comparison-item:last-child { border-bottom: none; }
+    .comparison-item .material-symbols-outlined {
+      font-size: 18px; flex-shrink: 0; margin-top: 2px;
+    }
+    .comparison-col.before .comparison-item .material-symbols-outlined { color: #dc2626; }
+    .comparison-col.after .comparison-item .material-symbols-outlined { color: var(--indigo); }
+
+    /* ── Section Headings ── */
+    .section-heading {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 32px; font-weight: 700;
+      color: var(--navy);
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .section-sub {
+      font-size: 15px; color: var(--muted);
+      text-align: center;
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* ── 5 Pillars ── */
+    .pillars-section {
+      max-width: 1120px; margin: 0 auto;
+      padding: 80px 40px 0;
+    }
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      margin-top: 48px;
+    }
+    .pillar-card {
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      transition: border-color 0.2s;
+    }
+    .pillar-card:hover { border-color: var(--indigo); }
+    .pillar-icon {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      background: #f5f3ff;
+      color: var(--indigo);
+      font-size: 22px;
+      margin-bottom: 14px;
+    }
+    .pillar-card h3 {
+      font-size: 14px; font-weight: 700; color: var(--text);
+      margin-bottom: 6px;
+    }
+    .pillar-card p {
+      font-size: 12.5px; color: var(--muted); line-height: 1.55;
+    }
+
+    /* ── Four Phases ── */
+    .phases-section {
+      max-width: 1120px; margin: 0 auto;
+      padding: 80px 40px 0;
+    }
+    .phases-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 48px;
+    }
+    .phase-card {
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      transition: border-color 0.2s;
+    }
+    .phase-card:hover { border-color: var(--blue); }
+    .phase-num {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--navy); color: white;
+      font-size: 14px; font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .phase-card h3 {
+      font-size: 14px; font-weight: 700; color: var(--text);
+      margin-bottom: 2px;
+    }
+    .phase-duration {
+      font-size: 11px; font-weight: 600; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 0.08em;
+      margin-bottom: 12px;
+    }
+    .phase-items { display: flex; flex-direction: column; gap: 6px; }
+    .phase-item {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 12.5px; color: var(--slate);
+    }
+    .phase-item .material-symbols-outlined {
+      font-size: 16px; color: var(--indigo);
+    }
+
+    /* ── Workflow Examples ── */
+    .workflows-section {
+      max-width: 1120px; margin: 0 auto;
+      padding: 80px 40px 0;
+    }
+    .workflow-block {
+      margin-top: 48px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .workflow-header {
+      display: flex; align-items: center; gap: 10px;
+      padding: 18px 24px;
+      background: var(--light);
+      border-bottom: 1px solid var(--border);
+      font-size: 15px; font-weight: 700; color: var(--navy);
+    }
+    .workflow-header .material-symbols-outlined {
+      font-size: 20px; color: var(--indigo);
+    }
+    .workflow-body {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: stretch;
+    }
+    .workflow-col {
+      padding: 24px;
+    }
+    .workflow-col-label {
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .workflow-col.before .workflow-col-label { color: #dc2626; }
+    .workflow-col.after .workflow-col-label { color: var(--indigo); }
+    .workflow-step {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 13px; color: var(--text);
+      padding: 8px 0;
+    }
+    .workflow-step .material-symbols-outlined { font-size: 18px; flex-shrink: 0; }
+    .workflow-col.before .workflow-step .material-symbols-outlined { color: #dc2626; }
+    .workflow-col.after .workflow-step .material-symbols-outlined { color: var(--indigo); }
+    .workflow-arrow {
+      display: flex; align-items: center; justify-content: center;
+      padding: 0 16px;
+      border-left: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+    }
+    .workflow-arrow .material-symbols-outlined {
+      font-size: 28px; color: var(--muted);
+    }
+    .workflow-result {
+      margin-top: 12px;
+      padding: 10px 14px;
+      background: #f5f3ff;
+      border-radius: 8px;
+      font-size: 13px; font-weight: 600; color: var(--indigo);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .workflow-result .material-symbols-outlined {
+      font-size: 18px; color: var(--indigo);
+    }
+
+    /* ── Mistakes ── */
+    .mistakes-section {
+      max-width: 1120px; margin: 0 auto;
+      padding: 80px 40px 0;
+    }
+    .mistakes-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 48px;
+    }
+    .mistake-card {
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      transition: border-color 0.2s;
+    }
+    .mistake-card:hover { border-color: var(--indigo); }
+    .mistake-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      background: #f5f3ff;
+      color: var(--indigo);
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+    .mistake-quote {
+      font-size: 14px; color: var(--slate);
+      font-style: italic; line-height: 1.5;
+      margin-bottom: 12px;
+    }
+    .mistake-fix {
+      font-size: 13px; font-weight: 600; color: var(--navy);
+      line-height: 1.5;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+      display: flex; align-items: flex-start; gap: 6px;
+    }
+    .mistake-fix .material-symbols-outlined {
+      font-size: 16px; color: var(--indigo); flex-shrink: 0; margin-top: 2px;
+    }
+
+    /* ── Case Study ── */
+    .case-section {
+      max-width: 1120px; margin: 0 auto;
+      padding: 80px 40px 0;
+    }
+    .case-card {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 40px;
+      margin-top: 40px;
+    }
+    .case-meta {
+      font-size: 13px; color: var(--muted);
+      margin-bottom: 24px;
+    }
+    .case-metrics {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .case-metric {
+      text-align: center;
+      padding: 20px 12px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+    .case-metric-before {
+      font-size: 12px; color: #dc2626; font-weight: 600;
+      text-decoration: line-through;
+      margin-bottom: 4px;
+    }
+    .case-metric-after {
+      font-size: 28px; font-weight: 800; color: var(--navy);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .case-metric-label {
+      font-size: 11.5px; color: var(--muted);
+    }
+    .case-quote {
+      font-size: 15px; color: var(--slate);
+      font-style: italic; line-height: 1.6;
+      padding: 20px 24px;
+      background: var(--light);
+      border-radius: 10px;
+    }
+    .case-quote strong {
+      color: var(--navy); font-style: normal;
+    }
+
+    /* ── CTA Section ── */
+    .cta-section {
+      margin-top: 80px;
+      background: var(--navy);
+      padding: 72px 40px;
+      text-align: center;
+    }
+    .cta-section h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 32px; font-weight: 700; color: white;
+      margin-bottom: 12px;
+    }
+    .cta-section p {
+      font-size: 15px; color: #64748b;
+      max-width: 480px; margin: 0 auto 28px;
+      line-height: 1.6;
+    }
+    .cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-cta-primary {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 14px; font-weight: 600;
+      color: var(--navy); background: white;
+      padding: 14px 32px; border-radius: 10px;
+      text-decoration: none; transition: background 0.2s;
+    }
+    .btn-cta-primary:hover { background: #f1f5f9; }
+    .btn-cta-secondary {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 14px; font-weight: 600;
+      color: #94a3b8; background: transparent;
+      padding: 14px 32px; border-radius: 10px;
+      border: 1.5px solid #334155;
+      text-decoration: none; transition: border-color 0.2s;
+    }
+    .btn-cta-secondary:hover { border-color: #94a3b8; }
+
+    /* ── Responsive ── */
+    @media (max-width: 1024px) {
+      .pillars-grid { grid-template-columns: repeat(3, 1fr); }
+      .phases-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .hero { padding: 48px 24px 0; }
+      .stats-section { padding: 48px 24px 0; }
+      .stats-strip { grid-template-columns: repeat(2, 1fr); }
+      .stat:nth-child(1), .stat:nth-child(2) { border-bottom: 1px solid var(--border); }
+      .stat:nth-child(2) { border-right: none; }
+      .comparison-section { padding: 56px 24px 0; }
+      .comparison-grid { grid-template-columns: 1fr; }
+      .pillars-section { padding: 56px 24px 0; }
+      .pillars-grid { grid-template-columns: 1fr 1fr; }
+      .phases-section { padding: 56px 24px 0; }
+      .phases-grid { grid-template-columns: 1fr; }
+      .workflows-section { padding: 56px 24px 0; }
+      .workflow-body { grid-template-columns: 1fr; }
+      .workflow-arrow { padding: 12px 0; border-left: none; border-right: none; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); justify-content: center; }
+      .workflow-arrow .material-symbols-outlined { transform: rotate(90deg); }
+      .mistakes-section { padding: 56px 24px 0; }
+      .mistakes-grid { grid-template-columns: 1fr; }
+      .case-section { padding: 56px 24px 0; }
+      .case-card { padding: 24px; }
+      .case-metrics { grid-template-columns: repeat(2, 1fr); }
+      .cta-section { padding: 56px 24px; }
+      .section-heading { font-size: 28px; }
+      .cta-section h2 { font-size: 28px; }
+      .cta-buttons { flex-direction: column; align-items: center; }
+    }
+    @media (max-width: 480px) {
+      .pillars-grid { grid-template-columns: 1fr; }
+      .stats-strip { grid-template-columns: 1fr; }
+      .stat { border-right: none; border-bottom: 1px solid var(--border); }
+      .stat:last-child { border-bottom: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Consistent Topbar ── -->
+<nav class="site-topbar">
+  <div class="site-topbar-inner">
+    <a href="index.html" class="site-brand">
+      <img src="slv-northstar-logo.svg" alt="Seven Labs Vision" class="site-logo">
+    </a>
+    <div class="site-nav">
+      <a href="index.html" class="site-nav-link">Home</a>
+      <div class="site-dropdown">
+        <a href="#" class="site-nav-link site-dropdown-trigger">Services <span class="material-symbols-outlined" style="font-size:16px;vertical-align:middle;">expand_more</span></a>
+        <div class="site-dropdown-menu">
+          <a href="virtual-cfo.html" class="site-dropdown-item">
+            <span class="material-symbols-outlined" style="font-size:18px;color:#6366f1;">monitoring</span>
+            <div>
+              <div class="site-dropdown-title">Virtual CFO</div>
+              <div class="site-dropdown-desc">MIS, cash forecasting, margin analysis</div>
+            </div>
+          </a>
+          <a href="process-design.html" class="site-dropdown-item">
+            <span class="material-symbols-outlined" style="font-size:18px;color:#6366f1;">design_services</span>
+            <div>
+              <div class="site-dropdown-title">Process Design</div>
+              <div class="site-dropdown-desc">SOPs, KPIs, audit-ready systems</div>
+            </div>
+          </a>
+          <a href="erp-implementation.html" class="site-dropdown-item">
+            <span class="material-symbols-outlined" style="font-size:18px;color:#6366f1;">deployed_code</span>
+            <div>
+              <div class="site-dropdown-title">ERP Implementation</div>
+              <div class="site-dropdown-desc">ERPNext, Zoho, Odoo, Tally</div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <a href="about.html" class="site-nav-link">About</a>
+      <a href="blog.html" class="site-nav-link">Blog</a>
+      <a href="contact.html" class="site-nav-link">Contact</a>
+      <a href="contact.html" class="site-nav-cta">Get Free Audit</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── Hero ── -->
+<section class="hero">
+  <div class="hero-pill">Process Advisory</div>
+  <h1>When Raj Takes Leave, Everything Breaks.</h1>
+  <p class="hero-sub">We turn chaotic operations into documented, measurable, audit-ready systems.</p>
+  <div class="hero-ctas">
+    <a href="https://wa.me/919193580737" class="btn-primary">
+      <span class="material-symbols-outlined" style="font-size:16px;">chat</span> WhatsApp Us
+    </a>
+    <a href="#approach" class="btn-secondary">See Our Approach</a>
+  </div>
+</section>
+
+<!-- ── Stats Strip ── -->
+<section class="stats-section">
+  <div class="stats-strip">
+    <div class="stat">
+      <div class="stat-num">14 days</div>
+      <div class="stat-label">New-Hire Ramp-Up</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">85%</div>
+      <div class="stat-label">Fewer Approval Delays</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">3 days</div>
+      <div class="stat-label">Month-End Close</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Audit Trail Coverage</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Before / After Comparison ── -->
+<section class="comparison-section" id="approach">
+  <h2 class="section-heading">The Transformation</h2>
+  <p class="section-sub">What changes in 90 days.</p>
+  <div class="comparison-grid">
+    <div class="comparison-col before">
+      <div class="comparison-label">Today</div>
+      <div class="comparison-item">
+        <span class="material-symbols-outlined">close</span>
+        <span>SOPs in Raj's head</span>
+      </div>
+      <div class="comparison-item">
+        <span class="material-symbols-outlined">close</span>
+        <span>New hire guesses for 3 months</span>
+      </div>
+      <div class="comparison-item">
+        <span class="material-symbols-outlined">close</span>
+        <span>47 KPIs. Nobody tracks any.</span>
+      </div>
+      <div class="comparison-item">
+        <span class="material-symbols-outlined">close</span>
+        <span>Appraisals = politics</span>
+      </div>
+      <div class="comparison-item">
+        <span class="material-symbols-outlined">close</span>
+        <span>Month-end close: 9 days</span>
+      </div>
+      <div class="comparison-item">
+        <span class="material-symbols-outlined">close</span>
+        <span>Zero audit trail</span>
+      </div>
+      <div class="comparison-item">
+        <span class="material-symbols-outlined">close</span>
+        <span>Every approval takes 3 days</span>
+      </div>
+      <div class="comparison-item">
+        <span class="material-symbols-outlined">close</span>
+        <span>&#8377;5K and &#8377;5L = same process</span>
+      </div>
+    </div>
+    <div class="comparison-col after">
+      <div class="comparison-label">After 90 Days</div>
+      <div class="comparison-item">
+        <span class="material-symbols-outlined">check</span>
+        <span>Living SOPs in your tools</span>
+      </div>
+      <div class="comparison-item">
+        <span class="material-symbols-outlined">check</span>
+        <span>New hire productive in 14 days</span>
+      </div>
+      <div class="comparison-item">
+        <span class="material-symbols-outlined">check</span>
+        <span>3&ndash;5 KPIs per role. Tracked weekly.</span>
+      </div>
+      <div class="comparison-item">
+        <span class="material-symbols-outlined">check</span>
+        <span>Appraisals = data, not drama</span>
+      </div>
+      <div class="comparison-item">
+        <span class="material-symbols-outlined">check</span>
+        <span>Month-end close: 3 days</span>
+      </div>
+      <div class="comparison-item">
+        <span class="material-symbols-outlined">check</span>
+        <span>100% audit trail</span>
+      </div>
+      <div class="comparison-item">
+        <span class="material-symbols-outlined">check</span>
+        <span>Risk-based approvals. Same day.</span>
+      </div>
+      <div class="comparison-item">
+        <span class="material-symbols-outlined">check</span>
+        <span>Auto-log every transaction</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 5 Pillars ── -->
+<section class="pillars-section" id="pillars">
+  <h2 class="section-heading">5 Pillars. One Integrated System.</h2>
+  <p class="section-sub">Each pillar reinforces the others. Together, they make Raj optional.</p>
+  <div class="pillars-grid">
+    <div class="pillar-card">
+      <div class="pillar-icon"><span class="material-symbols-outlined">menu_book</span></div>
+      <h3>SOP Design</h3>
+      <p>Living documents embedded in your tools. Updated quarterly. New hire reads one doc, not 30 chats.</p>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-icon"><span class="material-symbols-outlined">analytics</span></div>
+      <h3>KPI / KRA</h3>
+      <p>3&ndash;5 metrics per role. Tied to compensation. Weekly reviews that actually drive action.</p>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-icon"><span class="material-symbols-outlined">person_check</span></div>
+      <h3>Appraisal Design</h3>
+      <p>Monthly 1-to-1s. Data-backed scoring. 5-day cycle. Zero politics.</p>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-icon"><span class="material-symbols-outlined">troubleshoot</span></div>
+      <h3>Gap Analysis</h3>
+      <p>We find the gaps bleeding money. Ranked by &#8377; impact. Top 5 closed in 60 days.</p>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-icon"><span class="material-symbols-outlined">shield_lock</span></div>
+      <h3>Controls</h3>
+      <p>Risk-based approvals. Small orders auto-approved. Big ones gate-checked. Full audit trail.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Four Phases ── -->
+<section class="phases-section">
+  <h2 class="section-heading">Four Phases. One Honest Timeline.</h2>
+  <p class="section-sub">CA-led. Not consulting theater.</p>
+  <div class="phases-grid">
+    <div class="phase-card">
+      <div class="phase-num">1</div>
+      <h3>Discover</h3>
+      <div class="phase-duration">Weeks 1&ndash;3</div>
+      <div class="phase-items">
+        <div class="phase-item"><span class="material-symbols-outlined">check_circle</span> Shadow 20+ people</div>
+        <div class="phase-item"><span class="material-symbols-outlined">check_circle</span> Map 12&ndash;18 processes</div>
+        <div class="phase-item"><span class="material-symbols-outlined">check_circle</span> Quantify cost of chaos</div>
+      </div>
+    </div>
+    <div class="phase-card">
+      <div class="phase-num">2</div>
+      <h3>Design</h3>
+      <div class="phase-duration">Weeks 4&ndash;8</div>
+      <div class="phase-items">
+        <div class="phase-item"><span class="material-symbols-outlined">check_circle</span> SOPs + KPI dashboard</div>
+        <div class="phase-item"><span class="material-symbols-outlined">check_circle</span> Appraisal framework</div>
+        <div class="phase-item"><span class="material-symbols-outlined">check_circle</span> Control matrix</div>
+      </div>
+    </div>
+    <div class="phase-card">
+      <div class="phase-num">3</div>
+      <h3>Pilot</h3>
+      <div class="phase-duration">Weeks 9&ndash;14</div>
+      <div class="phase-items">
+        <div class="phase-item"><span class="material-symbols-outlined">check_circle</span> 1&ndash;2 depts first</div>
+        <div class="phase-item"><span class="material-symbols-outlined">check_circle</span> Weekly refinements</div>
+        <div class="phase-item"><span class="material-symbols-outlined">check_circle</span> Peer champions lead</div>
+      </div>
+    </div>
+    <div class="phase-card">
+      <div class="phase-num">4</div>
+      <h3>Rollout</h3>
+      <div class="phase-duration">Weeks 15&ndash;20</div>
+      <div class="phase-items">
+        <div class="phase-item"><span class="material-symbols-outlined">check_circle</span> Full company go-live</div>
+        <div class="phase-item"><span class="material-symbols-outlined">check_circle</span> 90-day support</div>
+        <div class="phase-item"><span class="material-symbols-outlined">check_circle</span> Complete handoff</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 3 Workflow Examples ── -->
+<section class="workflows-section">
+  <h2 class="section-heading">See the Difference</h2>
+  <p class="section-sub">Three real workflows, transformed.</p>
+
+  <!-- Workflow 1: Purchase Order Approval -->
+  <div class="workflow-block">
+    <div class="workflow-header">
+      <span class="material-symbols-outlined">receipt_long</span> Purchase Order Approval
+    </div>
+    <div class="workflow-body">
+      <div class="workflow-col before">
+        <div class="workflow-col-label">Before</div>
+        <div class="workflow-step"><span class="material-symbols-outlined">mail</span> Email sent to manager</div>
+        <div class="workflow-step"><span class="material-symbols-outlined">print</span> Printed doc circulates</div>
+        <div class="workflow-step"><span class="material-symbols-outlined">hourglass_top</span> Lost in inbox &mdash; 3 day wait</div>
+        <div class="workflow-step"><span class="material-symbols-outlined">help</span> No record of who approved</div>
+      </div>
+      <div class="workflow-arrow"><span class="material-symbols-outlined">arrow_forward</span></div>
+      <div class="workflow-col after">
+        <div class="workflow-col-label">After</div>
+        <div class="workflow-step"><span class="material-symbols-outlined">bolt</span> &lt;&#8377;10K: Auto-approved, logged</div>
+        <div class="workflow-step"><span class="material-symbols-outlined">person</span> &#8377;10K&ndash;1L: Manager, 2hr SLA</div>
+        <div class="workflow-step"><span class="material-symbols-outlined">group</span> &gt;&#8377;1L: CFO + Manager, 4hr SLA</div>
+        <div class="workflow-step"><span class="material-symbols-outlined">verified</span> 100% audit trail</div>
+        <div class="workflow-result"><span class="material-symbols-outlined">check_circle</span> Same-day approvals. Zero audit findings.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Workflow 2: Month-End Close -->
+  <div class="workflow-block" style="margin-top: 24px;">
+    <div class="workflow-header">
+      <span class="material-symbols-outlined">calendar_month</span> Month-End Close
+    </div>
+    <div class="workflow-body">
+      <div class="workflow-col before">
+        <div class="workflow-col-label">Before</div>
+        <div class="workflow-step"><span class="material-symbols-outlined">table_chart</span> Manual GR/IR invoice matching</div>
+        <div class="workflow-step"><span class="material-symbols-outlined">forward_to_inbox</span> Chase GL entries by email</div>
+        <div class="workflow-step"><span class="material-symbols-outlined">error</span> Unreconciled items pile up</div>
+        <div class="workflow-step"><span class="material-symbols-outlined">event_busy</span> 9 days to close. 12+ errors.</div>
+      </div>
+      <div class="workflow-arrow"><span class="material-symbols-outlined">arrow_forward</span></div>
+      <div class="workflow-col after">
+        <div class="workflow-col-label">After</div>
+        <div class="workflow-step"><span class="material-symbols-outlined">notifications_active</span> Day 1: Exceptions flagged by 4pm</div>
+        <div class="workflow-step"><span class="material-symbols-outlined">task</span> Day 2: Finance resolves within SLA</div>
+        <div class="workflow-step"><span class="material-symbols-outlined">task_alt</span> Day 3: GL recon + TB ready by 8am</div>
+        <div class="workflow-result"><span class="material-symbols-outlined">check_circle</span> 3-day close. 100% trail. Finance home by 7pm.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Workflow 3: Employee Appraisal -->
+  <div class="workflow-block" style="margin-top: 24px;">
+    <div class="workflow-header">
+      <span class="material-symbols-outlined">groups</span> Employee Appraisal
+    </div>
+    <div class="workflow-body">
+      <div class="workflow-col before">
+        <div class="workflow-col-label">Before</div>
+        <div class="workflow-step"><span class="material-symbols-outlined">description</span> Form in March. Managers scramble.</div>
+        <div class="workflow-step"><span class="material-symbols-outlined">psychology_alt</span> 12 months of work &mdash; forgotten.</div>
+        <div class="workflow-step"><span class="material-symbols-outlined">gavel</span> Calibration = politics. 30% disputes.</div>
+        <div class="workflow-step"><span class="material-symbols-outlined">trending_down</span> Attrition spikes.</div>
+      </div>
+      <div class="workflow-arrow"><span class="material-symbols-outlined">arrow_forward</span></div>
+      <div class="workflow-col after">
+        <div class="workflow-col-label">After</div>
+        <div class="workflow-step"><span class="material-symbols-outlined">event_repeat</span> Monthly 1-to-1s: 30 min, documented</div>
+        <div class="workflow-step"><span class="material-symbols-outlined">database</span> 12 months of data</div>
+        <div class="workflow-step"><span class="material-symbols-outlined">equalizer</span> KPI-linked. Transparent scoring.</div>
+        <div class="workflow-result"><span class="material-symbols-outlined">check_circle</span> 5-day cycle. 0% disputes. Retention up 6%.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 6 Mistakes ── -->
+<section class="mistakes-section">
+  <h2 class="section-heading">6 Mistakes We See Every Week.</h2>
+  <p class="section-sub">And the fix for each one.</p>
+  <div class="mistakes-grid">
+    <div class="mistake-card">
+      <div class="mistake-icon"><span class="material-symbols-outlined">folder_off</span></div>
+      <div class="mistake-quote">"We made SOPs once. They're in a folder nobody opens."</div>
+      <div class="mistake-fix"><span class="material-symbols-outlined">arrow_forward</span> SOPs live where work happens. Embedded in tools. Updated quarterly.</div>
+    </div>
+    <div class="mistake-card">
+      <div class="mistake-icon"><span class="material-symbols-outlined">bar_chart_4_bars</span></div>
+      <div class="mistake-quote">"We track 47 KPIs. Nobody looks at any."</div>
+      <div class="mistake-fix"><span class="material-symbols-outlined">arrow_forward</span> 3&ndash;5 per role. Tied to pay. If it doesn't affect compensation, it won't get tracked.</div>
+    </div>
+    <div class="mistake-card">
+      <div class="mistake-icon"><span class="material-symbols-outlined">event_note</span></div>
+      <div class="mistake-quote">"Appraisals? It's a form HR sends in March."</div>
+      <div class="mistake-fix"><span class="material-symbols-outlined">arrow_forward</span> Monthly 1-to-1s. Clear rubric. 12 months of data, not guesswork.</div>
+    </div>
+    <div class="mistake-card">
+      <div class="mistake-icon"><span class="material-symbols-outlined">construction</span></div>
+      <div class="mistake-quote">"We know the gaps. We just don't have time."</div>
+      <div class="mistake-fix"><span class="material-symbols-outlined">arrow_forward</span> Gaps bleed &#8377;3&ndash;15L/yr. We audit, rank by impact, close top 5 in 60 days.</div>
+    </div>
+    <div class="mistake-card">
+      <div class="mistake-icon"><span class="material-symbols-outlined">block</span></div>
+      <div class="mistake-quote">"We added approvals. Now everything takes 3 days."</div>
+      <div class="mistake-fix"><span class="material-symbols-outlined">arrow_forward</span> Risk-based gates. &#8377;10K auto-approved. &#8377;1L+ gets CFO sign-off in 4 hours.</div>
+    </div>
+    <div class="mistake-card">
+      <div class="mistake-icon"><span class="material-symbols-outlined">auto_stories</span></div>
+      <div class="mistake-quote">"We hired a consultant. Got a 200-page report."</div>
+      <div class="mistake-fix"><span class="material-symbols-outlined">arrow_forward</span> We implement from day one. Your team shapes it. Peer champions drive adoption.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Case Study ── -->
+<section class="case-section">
+  <h2 class="section-heading">Real Client Results</h2>
+  <p class="section-sub">From Chaos to Control in 6 Months</p>
+  <div class="case-card">
+    <p class="case-meta">&#8377;68Cr Auto Parts Manufacturer &middot; Pune &middot; 2025</p>
+    <div class="case-metrics">
+      <div class="case-metric">
+        <div class="case-metric-before">50 days</div>
+        <div class="case-metric-after">14 days</div>
+        <div class="case-metric-label">New-Hire Ramp-Up</div>
+      </div>
+      <div class="case-metric">
+        <div class="case-metric-before">11.8%</div>
+        <div class="case-metric-after">3.2%</div>
+        <div class="case-metric-label">Quality Rejection</div>
+      </div>
+      <div class="case-metric">
+        <div class="case-metric-before">3 weeks</div>
+        <div class="case-metric-after">5 days</div>
+        <div class="case-metric-label">Appraisal Cycle</div>
+      </div>
+      <div class="case-metric">
+        <div class="case-metric-before">9 days</div>
+        <div class="case-metric-after">3 days</div>
+        <div class="case-metric-label">Month-End Close</div>
+      </div>
+    </div>
+    <div class="case-quote">"We thought we needed a new ERP. Turns out we needed to use our existing tools properly." &mdash; <strong>Operations Head</strong></div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta-section">
+  <h2>Raj Shouldn't Be Your Single Point of Failure.</h2>
+  <p>Let's build processes that run without any one person. Start with a 2-week diagnostic at zero risk.</p>
+  <div class="cta-buttons">
+    <a href="contact.html" class="btn-cta-primary">Schedule a Confidential Discussion &rarr;</a>
+    <a href="https://wa.me/919193580737" class="btn-cta-secondary">
+      <span class="material-symbols-outlined" style="font-size:16px;">chat</span> WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer style="background:#0f172a;padding:64px 48px 32px;color:#94a3b8;font-family:'Inter',sans-serif;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;">
+      <div>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+          <img src="slv-northstar-logo.svg" alt="Seven Labs Vision" style="height:36px;width:auto;filter:brightness(0) invert(1);">
+        </div>
+        <p style="font-size:13px;line-height:1.7;margin-bottom:16px;">CA-led advisory firm transforming MSMEs and startups with hands-on implementation — ERP, SOPs, KPIs, financial control.</p>
+        <p style="font-size:13px;"><span style="color:#64748b;">Email:</span> admin@sevenlabs.in</p>
+        <p style="font-size:13px;"><span style="color:#64748b;">Phone:</span> +91 91935 80737</p>
+        <div style="display:flex;gap:12px;margin-top:16px;">
+          <a href="https://www.linkedin.com/company/seven-labs-vision/" style="color:#94a3b8;font-size:13px;text-decoration:none;" target="_blank">LinkedIn</a>
+          <a href="https://www.instagram.com/sevenlabsvision/" style="color:#94a3b8;font-size:13px;text-decoration:none;" target="_blank">Instagram</a>
+          <a href="https://www.facebook.com/sevenlabsvision" style="color:#94a3b8;font-size:13px;text-decoration:none;" target="_blank">Facebook</a>
+        </div>
+      </div>
+      <div>
+        <h4 style="font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:#fff;margin-bottom:16px;text-transform:uppercase;letter-spacing:1px;">Services</h4>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <a href="virtual-cfo.html" style="font-size:13px;color:#94a3b8;text-decoration:none;">Virtual CFO</a>
+          <a href="process-design.html" style="font-size:13px;color:#94a3b8;text-decoration:none;">Process Design</a>
+          <a href="erp-implementation.html" style="font-size:13px;color:#94a3b8;text-decoration:none;">ERP Implementation</a>
+        </div>
+      </div>
+      <div>
+        <h4 style="font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:#fff;margin-bottom:16px;text-transform:uppercase;letter-spacing:1px;">Company</h4>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <a href="about.html" style="font-size:13px;color:#94a3b8;text-decoration:none;">About Us</a>
+          <a href="careers.html" style="font-size:13px;color:#94a3b8;text-decoration:none;">Careers</a>
+          <a href="blog.html" style="font-size:13px;color:#94a3b8;text-decoration:none;">Blog</a>
+          <a href="contact.html" style="font-size:13px;color:#94a3b8;text-decoration:none;">Contact</a>
+          <a href="index.html" style="font-size:13px;color:#94a3b8;text-decoration:none;">Home</a>
+        </div>
+      </div>
+      <div>
+        <h4 style="font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:#fff;margin-bottom:16px;text-transform:uppercase;letter-spacing:1px;">Offices</h4>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <p style="font-size:13px;">Delhi NCR (Ghaziabad)</p>
+          <p style="font-size:13px;">Agra</p>
+          <p style="font-size:13px;">Jaipur</p>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid #1e293b;padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+      <p style="font-size:12px;color:#64748b;">&copy; 2026 Seven Labs Vision. All rights reserved.</p>
+      <p style="font-size:12px;color:#64748b;">Founded by CA Raghav Bansal</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

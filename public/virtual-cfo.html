@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual CFO Services | Seven Labs Vision</title>
+  <meta name="description" content="CA-led Virtual CFO services for startups and growing businesses. Rolling cash forecasts, monthly MIS, margin analysis — without the full-time hire.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Manrope:wght@400;500;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@400,0&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0f172a;
+      --blue: #2563eb;
+      --indigo: #6366f1;
+      --slate: #64748b;
+      --light: #f8fafc;
+      --white: #ffffff;
+      --text: #1e293b;
+      --muted: #94a3b8;
+      --border: #e2e8f0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Consistent Topbar ── */
+    .site-topbar {
+      position: sticky; top: 0; z-index: 1000;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(226,232,240,0.85);
+    }
+    .site-topbar-inner {
+      max-width: 1280px; margin: 0 auto;
+      padding: 10px 48px;
+      display: flex; align-items: center; justify-content: space-between; gap: 24px;
+    }
+    .site-brand { display: flex; align-items: center; text-decoration: none; }
+    .site-logo { height: 52px; width: auto; }
+    .site-nav { display: flex; align-items: center; gap: 28px; }
+    .site-nav-link {
+      text-decoration: none; color: #475569;
+      font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600;
+      transition: color 0.2s;
+    }
+    .site-nav-link:hover { color: #0f172a; }
+    .site-dropdown { position: relative; }
+    .site-dropdown-trigger { display: inline-flex; align-items: center; gap: 2px; cursor: pointer; }
+    .site-dropdown-menu {
+      display: none; position: absolute; top: 100%; left: 50%;
+      transform: translateX(-50%); background: #fff;
+      border: 1px solid #e2e8f0; border-radius: 16px;
+      padding: 8px; padding-top: 20px;
+      min-width: 280px; box-shadow: 0 12px 40px rgba(0,0,0,0.1); z-index: 1001;
+    }
+    .site-dropdown:hover .site-dropdown-menu { display: block; }
+    .site-dropdown-item {
+      display: flex; align-items: center; gap: 12px;
+      padding: 12px 16px; border-radius: 10px;
+      text-decoration: none; color: #0f172a; transition: background 0.2s;
+    }
+    .site-dropdown-item:hover { background: #f5f3ff; }
+    .site-dropdown-title { font-family: 'Manrope', sans-serif; font-size: 14px; font-weight: 700; color: #0f172a; }
+    .site-dropdown-desc { font-family: 'Inter', sans-serif; font-size: 11px; color: #64748b; margin-top: 2px; }
+    .site-nav-cta {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 10px 20px; border-radius: 999px;
+      background: #0f172a; color: #fff !important;
+      font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600;
+      text-decoration: none; transition: all 0.2s;
+    }
+    .site-nav-cta:hover { background: #6366f1; transform: translateY(-1px); }
+    @media (max-width: 768px) {
+      .site-topbar-inner { padding: 10px 16px; }
+      .site-nav { gap: 16px; }
+      .site-nav-link:not(.site-dropdown-trigger) { display: none; }
+      .site-dropdown-trigger span.material-symbols-outlined { display: none; }
+      .site-logo { height: 44px; }
+    }
+
+    /* ── SCREEN 1: HERO + VISUAL ── */
+    .hero {
+      max-width: 1120px; margin: 0 auto;
+      padding: 72px 40px 0;
+    }
+    .hero-pill {
+      display: inline-block;
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--indigo);
+      background: #f5f3ff;
+      padding: 5px 14px; border-radius: 20px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(32px, 4.5vw, 48px);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--navy);
+      max-width: 680px;
+      margin-bottom: 16px;
+    }
+    .hero-sub {
+      font-size: 16px; color: var(--slate);
+      line-height: 1.6; max-width: 520px;
+      margin-bottom: 28px;
+    }
+    .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 14px; font-weight: 600;
+      color: white; background: var(--navy);
+      padding: 13px 28px; border-radius: 10px;
+      text-decoration: none; transition: background 0.2s;
+    }
+    .btn-primary:hover { background: #1e293b; }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 14px; font-weight: 600;
+      color: var(--navy); background: transparent;
+      padding: 13px 28px; border-radius: 10px;
+      border: 1.5px solid var(--border);
+      text-decoration: none; transition: border-color 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--navy); }
+
+    /* ── EXCEL VISUAL ── */
+    .excel-section {
+      max-width: 1120px; margin: 48px auto 0;
+      padding: 0 40px;
+    }
+    .excel-window {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(15,23,42,0.18), 0 0 0 1px rgba(15,23,42,0.08);
+    }
+    /* Title bar */
+    .excel-titlebar {
+      background: #1e3a8a;
+      padding: 8px 16px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .excel-dots { display: flex; gap: 6px; }
+    .excel-dots span {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: rgba(255,255,255,0.25);
+    }
+    .excel-filename {
+      font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.8);
+      letter-spacing: 0.02em;
+    }
+    .excel-badge {
+      font-size: 8.5px; font-weight: 600; color: rgba(255,255,255,0.5);
+      letter-spacing: 0.06em; text-transform: uppercase;
+    }
+    /* Spreadsheet grid */
+    .excel-grid {
+      background: white;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .excel-grid table {
+      width: 100%; border-collapse: collapse;
+      font-family: 'Calibri', 'Segoe UI', Arial, sans-serif;
+      font-size: 11.5px;
+    }
+    .excel-grid th, .excel-grid td {
+      padding: 6px 10px;
+      border: 1px solid #e2e8f0;
+      white-space: nowrap;
+    }
+    .excel-grid th {
+      background: #1e3a8a; color: white;
+      font-weight: 600; font-size: 10.5px;
+      text-align: center; letter-spacing: 0.02em;
+    }
+    .excel-grid th.col-a {
+      text-align: left; min-width: 200px;
+    }
+    .excel-grid th.wk { min-width: 82px; }
+    .excel-grid td { text-align: right; color: #1e293b; }
+    .excel-grid td.label-cell {
+      text-align: left; font-weight: 400; color: #475569;
+      padding-left: 20px; position: sticky; left: 0; background: inherit; z-index: 1;
+    }
+    /* Excel tab bar */
+    .excel-tabs {
+      display: flex; background: #f1f5f9;
+      border-top: 1px solid #e2e8f0;
+      padding: 0;
+    }
+    .excel-tab {
+      padding: 8px 20px; font-family: 'Calibri', Arial, sans-serif;
+      font-size: 11px; font-weight: 500; color: #64748b;
+      border: none; background: transparent; cursor: pointer;
+      border-right: 1px solid #e2e8f0;
+      transition: all 0.15s;
+    }
+    .excel-tab:hover { background: #e2e8f0; color: #1e293b; }
+    .excel-tab.active {
+      background: white; color: #1e3a8a; font-weight: 700;
+      border-bottom: 2px solid #1e3a8a;
+    }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+    /* Section header rows */
+    .excel-grid tr.section-row td {
+      background: #e2e8f0; font-weight: 700;
+      color: #1e3a8a; text-align: left;
+      padding-left: 10px; font-size: 10.5px;
+      letter-spacing: 0.02em;
+      border-top: 2px solid #1e3a8a;
+    }
+    /* Total rows */
+    .excel-grid tr.total-row td {
+      font-weight: 700;
+      border-top: 1px solid #94a3b8;
+      border-bottom: 3px double #1e3a8a;
+      background: #f8fafc;
+    }
+    .excel-grid tr.total-row td.in { color: #166534; }
+    .excel-grid tr.total-row td.out { color: #991b1b; }
+    /* Summary rows */
+    .excel-grid tr.net-row td { font-weight: 700; }
+    .excel-grid tr.closing-row td {
+      font-weight: 800; color: #1e3a8a;
+      background: #eff6ff; font-size: 12px;
+    }
+    /* Conditional formatting colors */
+    .cond-green { background: #dcfce7 !important; color: #166534 !important; }
+    .cond-amber { background: #fef3c7 !important; color: #92400e !important; }
+    .cond-red   { background: #fecaca !important; color: #991b1b !important; }
+    /* Input cells (blue text) */
+    .input-val { color: #0000ff !important; }
+    /* Alternating rows */
+    .excel-grid tr.alt td { background: #f8fbff; }
+    /* Date sub-header row */
+    .excel-grid tr.date-row td {
+      background: #f8fafc; color: #94a3b8;
+      font-size: 9.5px; text-align: center;
+      padding: 3px 10px; border-top: none;
+    }
+    .excel-grid tr.date-row td.label-cell { text-align: left; }
+
+    /* ── SCREEN 2: METRICS + DELIVERABLES ── */
+    .metrics-section {
+      max-width: 1120px; margin: 0 auto;
+      padding: 80px 40px 0;
+    }
+    .metrics-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .metric {
+      padding: 28px 24px;
+      text-align: center;
+      border-right: 1px solid var(--border);
+    }
+    .metric:last-child { border-right: none; }
+    .metric-num {
+      font-size: 36px; font-weight: 800; color: var(--navy);
+      letter-spacing: -0.03em; line-height: 1;
+    }
+    .metric-label {
+      font-size: 12px; color: var(--muted); margin-top: 6px;
+      font-weight: 500;
+    }
+
+    .deliverables {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 48px;
+    }
+    .deliverable {
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      transition: border-color 0.2s;
+    }
+    .deliverable:hover { border-color: var(--blue); }
+    .deliverable .icon {
+      font-size: 22px; color: var(--blue);
+      margin-bottom: 10px;
+    }
+    .deliverable h3 {
+      font-size: 14px; font-weight: 700; color: var(--text);
+      margin-bottom: 4px;
+    }
+    .deliverable p {
+      font-size: 12.5px; color: var(--muted); line-height: 1.55;
+    }
+
+    /* ── SCREEN 3: CTA ── */
+    .cta-section {
+      margin-top: 80px;
+      background: var(--navy);
+      padding: 72px 40px;
+      text-align: center;
+    }
+    .cta-section h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 32px; font-weight: 700; color: white;
+      margin-bottom: 12px;
+    }
+    .cta-section p {
+      font-size: 15px; color: #64748b;
+      max-width: 440px; margin: 0 auto 28px;
+      line-height: 1.6;
+    }
+    .cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-cta-primary {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 14px; font-weight: 600;
+      color: var(--navy); background: white;
+      padding: 14px 32px; border-radius: 10px;
+      text-decoration: none; transition: background 0.2s;
+    }
+    .btn-cta-primary:hover { background: #f1f5f9; }
+    .btn-cta-secondary {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 14px; font-weight: 600;
+      color: #94a3b8; background: transparent;
+      padding: 14px 32px; border-radius: 10px;
+      border: 1.5px solid #334155;
+      text-decoration: none; transition: border-color 0.2s;
+    }
+    .btn-cta-secondary:hover { border-color: #94a3b8; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .hero { padding: 48px 24px 0; }
+      .excel-section { padding: 0 16px; }
+      .excel-grid table { font-size: 10px; }
+      .excel-grid th.col-a { min-width: 140px; }
+      .excel-grid th.wk { min-width: 64px; }
+      .metrics-section { padding: 56px 24px 0; }
+      .metrics-strip { grid-template-columns: repeat(2, 1fr); }
+      .metric { border-bottom: 1px solid var(--border); }
+      .deliverables { grid-template-columns: 1fr; }
+      .cta-section { padding: 56px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Consistent Topbar ── -->
+<nav class="site-topbar">
+  <div class="site-topbar-inner">
+    <a href="index.html" class="site-brand">
+      <img src="slv-northstar-logo.svg" alt="Seven Labs Vision" class="site-logo">
+    </a>
+    <div class="site-nav">
+      <a href="index.html" class="site-nav-link">Home</a>
+      <div class="site-dropdown">
+        <a href="#" class="site-nav-link site-dropdown-trigger">Services <span class="material-symbols-outlined" style="font-size:16px;vertical-align:middle;">expand_more</span></a>
+        <div class="site-dropdown-menu">
+          <a href="virtual-cfo.html" class="site-dropdown-item">
+            <span class="material-symbols-outlined" style="font-size:18px;color:#6366f1;">monitoring</span>
+            <div>
+              <div class="site-dropdown-title">Virtual CFO</div>
+              <div class="site-dropdown-desc">MIS, cash forecasting, margin analysis</div>
+            </div>
+          </a>
+          <a href="process-design.html" class="site-dropdown-item">
+            <span class="material-symbols-outlined" style="font-size:18px;color:#6366f1;">design_services</span>
+            <div>
+              <div class="site-dropdown-title">Process Design</div>
+              <div class="site-dropdown-desc">SOPs, KPIs, audit-ready systems</div>
+            </div>
+          </a>
+          <a href="erp-implementation.html" class="site-dropdown-item">
+            <span class="material-symbols-outlined" style="font-size:18px;color:#6366f1;">deployed_code</span>
+            <div>
+              <div class="site-dropdown-title">ERP Implementation</div>
+              <div class="site-dropdown-desc">ERPNext, Zoho, Odoo, Tally</div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <a href="about.html" class="site-nav-link">About</a>
+      <a href="blog.html" class="site-nav-link">Blog</a>
+      <a href="contact.html" class="site-nav-link">Contact</a>
+      <a href="contact.html" class="site-nav-cta">Get Free Audit</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══ SCREEN 1: HERO ══ -->
+<section class="hero">
+  <div class="hero-pill">Virtual CFO</div>
+  <h1>Your Accountant Keeps You Compliant. A Virtual CFO Keeps You Ahead.</h1>
+  <p class="hero-sub">CA-led financial command for startups and growing businesses — first reliable MIS in 30 days.</p>
+  <div class="hero-ctas">
+    <a href="contact.html" class="btn-primary">Schedule a Confidential Discussion <span>&rarr;</span></a>
+    <a href="https://wa.me/919193580737" class="btn-secondary" target="_blank">WhatsApp</a>
+  </div>
+</section>
+
+<!-- ══ EXCEL WORKING PAPER VISUAL ══ -->
+<section class="excel-section">
+  <div class="excel-window">
+    <div class="excel-titlebar">
+      <div class="excel-dots"><span></span><span></span><span></span></div>
+      <div class="excel-filename" id="excel-title">SLV_CashFlow_Forecast.xlsx — Cash Flow Forecast</div>
+      <div class="excel-badge">Actual client deliverable (anonymized)</div>
+    </div>
+
+    <!-- TAB 1: CASH FLOW -->
+    <div class="tab-content active" id="tab-cashflow">
+    <div class="excel-grid">
+      <table>
+        <thead>
+          <tr>
+            <th class="col-a">Category</th>
+            <th class="wk">Week 1</th>
+            <th class="wk">Week 2</th>
+            <th class="wk">Week 3</th>
+            <th class="wk">Week 4</th>
+            <th class="wk">Week 5</th>
+            <th class="wk">Week 6</th>
+            <th class="wk">Week 7</th>
+            <th class="wk">Week 8</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="date-row">
+            <td class="label-cell"></td>
+            <td>07-Apr</td><td>14-Apr</td><td>21-Apr</td><td>28-Apr</td>
+            <td>05-May</td><td>12-May</td><td>19-May</td><td>26-May</td>
+          </tr>
+          <!-- INFLOWS -->
+          <tr class="section-row">
+            <td colspan="9">▲&nbsp; INFLOWS</td>
+          </tr>
+          <tr>
+            <td class="label-cell">SaaS Revenue Collections</td>
+            <td class="input-val">4.85</td><td class="input-val">5.12</td><td class="input-val">5.35</td><td class="input-val">5.20</td>
+            <td class="input-val">5.48</td><td class="input-val">5.62</td><td class="input-val">5.90</td><td class="input-val">6.15</td>
+          </tr>
+          <tr class="alt">
+            <td class="label-cell">Enterprise Contract Payments</td>
+            <td class="input-val">—</td><td class="input-val">—</td><td class="input-val">—</td><td class="input-val">—</td>
+            <td class="input-val">—</td><td class="input-val" style="color:#166534;font-weight:700">15.40</td><td class="input-val">—</td><td class="input-val">—</td>
+          </tr>
+          <tr>
+            <td class="label-cell">Other Income (Interest / FD)</td>
+            <td class="input-val">0.42</td><td class="input-val">0.38</td><td class="input-val">0.45</td><td class="input-val">0.40</td>
+            <td class="input-val">0.42</td><td class="input-val">0.38</td><td class="input-val">0.45</td><td class="input-val">0.40</td>
+          </tr>
+          <tr class="total-row">
+            <td class="label-cell" style="padding-left:10px;font-weight:700">TOTAL INFLOWS</td>
+            <td class="in">5.27</td><td class="in">5.50</td><td class="in">5.80</td><td class="in">5.60</td>
+            <td class="in">5.90</td><td class="in">21.40</td><td class="in">6.35</td><td class="in">6.55</td>
+          </tr>
+          <!-- OUTFLOWS -->
+          <tr class="section-row">
+            <td colspan="9">▼&nbsp; OUTFLOWS</td>
+          </tr>
+          <tr>
+            <td class="label-cell">Salaries & Wages</td>
+            <td class="input-val">8.45</td><td class="input-val">8.45</td><td class="input-val">8.45</td><td class="input-val">8.45</td>
+            <td class="input-val">8.45</td><td class="input-val">8.45</td><td class="input-val">8.45</td><td class="input-val">8.45</td>
+          </tr>
+          <tr class="alt">
+            <td class="label-cell">Contractors / Freelancers</td>
+            <td class="input-val">2.10</td><td class="input-val">1.85</td><td class="input-val">2.30</td><td class="input-val">2.15</td>
+            <td class="input-val">1.90</td><td class="input-val">2.25</td><td class="input-val">2.10</td><td class="input-val">2.40</td>
+          </tr>
+          <tr>
+            <td class="label-cell">Cloud Infrastructure</td>
+            <td class="input-val">1.85</td><td class="input-val">1.85</td><td class="input-val">1.85</td><td class="input-val">1.85</td>
+            <td class="input-val">1.85</td><td class="input-val">1.85</td><td class="input-val">1.85</td><td class="input-val">2.10</td>
+          </tr>
+          <tr class="alt">
+            <td class="label-cell">Marketing & Growth</td>
+            <td class="input-val">0.85</td><td class="input-val">0.90</td><td class="input-val">0.75</td><td class="input-val">0.80</td>
+            <td class="input-val">0.95</td><td class="input-val">0.85</td><td class="input-val">1.20</td><td class="input-val" style="color:#991b1b;font-weight:700">5.40</td>
+          </tr>
+          <tr>
+            <td class="label-cell">Statutory (GST / TDS / PF)</td>
+            <td class="input-val">0.65</td><td class="input-val">0.55</td><td class="input-val">0.60</td><td class="input-val" style="color:#991b1b;font-weight:700">3.85</td>
+            <td class="input-val">0.55</td><td class="input-val">0.60</td><td class="input-val">0.65</td><td class="input-val" style="color:#991b1b;font-weight:700">3.65</td>
+          </tr>
+          <tr class="alt">
+            <td class="label-cell">Rent / Prof. Fees / Travel</td>
+            <td class="input-val">0.45</td><td class="input-val">0.30</td><td class="input-val">2.05</td><td class="input-val">3.20</td>
+            <td class="input-val">0.65</td><td class="input-val">0.35</td><td class="input-val">2.00</td><td class="input-val">3.25</td>
+          </tr>
+          <tr class="total-row">
+            <td class="label-cell" style="padding-left:10px;font-weight:700">TOTAL OUTFLOWS</td>
+            <td class="out">14.35</td><td class="out">13.90</td><td class="out">16.00</td><td class="out">20.30</td>
+            <td class="out">14.35</td><td class="out">14.35</td><td class="out">16.25</td><td class="out">25.25</td>
+          </tr>
+          <!-- CASH POSITION -->
+          <tr class="section-row">
+            <td colspan="9">■&nbsp; CASH POSITION</td>
+          </tr>
+          <tr class="net-row">
+            <td class="label-cell" style="font-weight:700">Net Cash Flow</td>
+            <td style="color:#991b1b">-9.08</td><td style="color:#991b1b">-8.40</td><td style="color:#991b1b">-10.20</td><td style="color:#991b1b">-14.70</td>
+            <td style="color:#991b1b">-8.45</td><td style="color:#166534">7.05</td><td style="color:#991b1b">-9.90</td><td style="color:#991b1b">-18.70</td>
+          </tr>
+          <tr>
+            <td class="label-cell">Opening Balance</td>
+            <td>450.00</td><td>440.92</td><td>432.52</td><td>422.32</td>
+            <td>407.62</td><td>399.17</td><td>406.22</td><td>396.32</td>
+          </tr>
+          <tr class="closing-row">
+            <td class="label-cell" style="font-weight:800;color:#1e3a8a">Closing Balance</td>
+            <td class="cond-green">440.92</td>
+            <td class="cond-green">432.52</td>
+            <td class="cond-green">422.32</td>
+            <td class="cond-green">407.62</td>
+            <td class="cond-green">399.17</td>
+            <td class="cond-green">406.22</td>
+            <td class="cond-green">396.32</td>
+            <td class="cond-green">377.62</td>
+          </tr>
+          <tr>
+            <td class="label-cell">Runway (Weeks)</td>
+            <td>30.7</td><td>31.1</td><td>26.4</td><td>20.1</td>
+            <td>27.8</td><td>28.3</td><td>24.4</td><td>15.0</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </div><!-- /tab-cashflow -->
+
+    <!-- TAB 2: LTV / CAC -->
+    <div class="tab-content" id="tab-ltv">
+    <div class="excel-grid">
+      <table>
+        <thead>
+          <tr>
+            <th class="col-a">Unit Economics</th>
+            <th class="wk">Jan 26</th><th class="wk">Feb 26</th><th class="wk">Mar 26</th>
+            <th class="wk">Apr 26</th><th class="wk">May 26</th><th class="wk">Jun 26</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="section-row"><td colspan="7">▲&nbsp; ACQUISITION</td></tr>
+          <tr>
+            <td class="label-cell">New Customers Acquired</td>
+            <td class="input-val">45</td><td class="input-val">52</td><td class="input-val">61</td>
+            <td class="input-val">58</td><td class="input-val">72</td><td class="input-val">84</td>
+          </tr>
+          <tr class="alt">
+            <td class="label-cell">Marketing Spend (₹L)</td>
+            <td class="input-val">4.50</td><td class="input-val">5.20</td><td class="input-val">6.10</td>
+            <td class="input-val">5.80</td><td class="input-val">7.20</td><td class="input-val">8.40</td>
+          </tr>
+          <tr class="total-row">
+            <td class="label-cell" style="padding-left:10px;font-weight:700">CAC (₹)</td>
+            <td>10,000</td><td>10,000</td><td>10,000</td>
+            <td>10,000</td><td>10,000</td><td>10,000</td>
+          </tr>
+
+          <tr class="section-row"><td colspan="7">■&nbsp; RETENTION & REVENUE</td></tr>
+          <tr>
+            <td class="label-cell">Total Active Customers</td>
+            <td>312</td><td>348</td><td>390</td><td>428</td><td>478</td><td>540</td>
+          </tr>
+          <tr class="alt">
+            <td class="label-cell">Monthly Churn Rate</td>
+            <td class="input-val">3.2%</td><td class="input-val">2.8%</td><td class="input-val">3.1%</td>
+            <td class="input-val">2.5%</td><td class="input-val">2.9%</td><td class="input-val">2.4%</td>
+          </tr>
+          <tr>
+            <td class="label-cell">MRR (₹L)</td>
+            <td>9.36</td><td>10.44</td><td>11.70</td><td>12.84</td><td>14.34</td><td>16.20</td>
+          </tr>
+          <tr class="alt">
+            <td class="label-cell">ARPU (₹/month)</td>
+            <td class="input-val">3,000</td><td class="input-val">3,000</td><td class="input-val">3,000</td>
+            <td class="input-val">3,000</td><td class="input-val">3,000</td><td class="input-val">3,000</td>
+          </tr>
+          <tr>
+            <td class="label-cell">Gross Margin %</td>
+            <td class="input-val">72%</td><td class="input-val">73%</td><td class="input-val">72%</td>
+            <td class="input-val">74%</td><td class="input-val">73%</td><td class="input-val">75%</td>
+          </tr>
+
+          <tr class="section-row"><td colspan="7">★&nbsp; UNIT ECONOMICS</td></tr>
+          <tr>
+            <td class="label-cell">Avg Customer Lifetime (mo)</td>
+            <td>31.3</td><td>35.7</td><td>32.3</td><td>40.0</td><td>34.5</td><td>41.7</td>
+          </tr>
+          <tr class="closing-row">
+            <td class="label-cell" style="font-weight:800;color:#1e3a8a">LTV (₹)</td>
+            <td class="cond-green">67,500</td><td class="cond-green">78,214</td><td class="cond-green">69,677</td>
+            <td class="cond-green">88,800</td><td class="cond-green">75,517</td><td class="cond-green">93,750</td>
+          </tr>
+          <tr class="total-row">
+            <td class="label-cell" style="padding-left:10px;font-weight:700">LTV : CAC Ratio</td>
+            <td class="in" style="font-size:13px">6.8x</td><td class="in" style="font-size:13px">7.8x</td><td class="in" style="font-size:13px">7.0x</td>
+            <td class="in" style="font-size:13px">8.9x</td><td class="in" style="font-size:13px">7.6x</td><td class="in" style="font-size:13px" >9.4x</td>
+          </tr>
+          <tr>
+            <td class="label-cell">Payback Period (months)</td>
+            <td>4.6</td><td>4.6</td><td>4.6</td><td>4.5</td><td>4.6</td><td>4.4</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </div><!-- /tab-ltv -->
+
+    <!-- TAB 3: CASH CONVERSION CYCLE -->
+    <div class="tab-content" id="tab-ccc">
+    <div class="excel-grid">
+      <table>
+        <thead>
+          <tr>
+            <th class="col-a">Working Capital Analysis</th>
+            <th class="wk">Q1 FY26</th><th class="wk">Q2 FY26</th>
+            <th class="wk">Q3 FY26</th><th class="wk">Q4 FY26</th><th class="wk">Trend</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="section-row"><td colspan="6">■&nbsp; REVENUE & COST BASE</td></tr>
+          <tr>
+            <td class="label-cell">Revenue (₹ Cr)</td>
+            <td class="input-val">18.40</td><td class="input-val">21.20</td>
+            <td class="input-val">24.60</td><td class="input-val">22.80</td><td style="color:#166534;text-align:center">↑ 24%</td>
+          </tr>
+          <tr class="alt">
+            <td class="label-cell">COGS (₹ Cr)</td>
+            <td class="input-val">12.88</td><td class="input-val">14.84</td>
+            <td class="input-val">17.22</td><td class="input-val">15.96</td><td style="text-align:center;color:#64748b">70% avg</td>
+          </tr>
+          <tr>
+            <td class="label-cell">Gross Profit (₹ Cr)</td>
+            <td>5.52</td><td>6.36</td><td>7.38</td><td>6.84</td><td style="color:#166534;text-align:center">↑ 30%</td>
+          </tr>
+
+          <tr class="section-row"><td colspan="6">▲&nbsp; BALANCE SHEET AVERAGES</td></tr>
+          <tr>
+            <td class="label-cell">Avg Trade Receivables (₹ Cr)</td>
+            <td class="input-val">6.85</td><td class="input-val">7.42</td>
+            <td class="input-val">8.10</td><td class="input-val">7.55</td><td></td>
+          </tr>
+          <tr class="alt">
+            <td class="label-cell">Avg Inventory (₹ Cr)</td>
+            <td class="input-val">4.20</td><td class="input-val">4.65</td>
+            <td class="input-val">5.10</td><td class="input-val">4.80</td><td></td>
+          </tr>
+          <tr>
+            <td class="label-cell">Avg Trade Payables (₹ Cr)</td>
+            <td class="input-val">3.95</td><td class="input-val">4.30</td>
+            <td class="input-val">4.85</td><td class="input-val">4.50</td><td></td>
+          </tr>
+
+          <tr class="section-row"><td colspan="6">★&nbsp; CASH CONVERSION CYCLE</td></tr>
+          <tr>
+            <td class="label-cell">DSO (Days Sales Outstanding)</td>
+            <td>33.5</td><td>31.5</td><td>29.6</td><td>29.8</td>
+            <td style="color:#166534;text-align:center">↓ 3.7d</td>
+          </tr>
+          <tr class="alt">
+            <td class="label-cell">DIO (Days Inventory Outstanding)</td>
+            <td>29.4</td><td>28.2</td><td>26.7</td><td>27.1</td>
+            <td style="color:#166534;text-align:center">↓ 2.3d</td>
+          </tr>
+          <tr>
+            <td class="label-cell">DPO (Days Payable Outstanding)</td>
+            <td>27.6</td><td>26.1</td><td>25.3</td><td>25.4</td>
+            <td style="color:#991b1b;text-align:center">↓ 2.2d</td>
+          </tr>
+          <tr class="closing-row">
+            <td class="label-cell" style="font-weight:800;color:#1e3a8a">Cash Conversion Cycle (Days)</td>
+            <td class="cond-amber">35.3</td><td class="cond-amber">33.6</td>
+            <td class="cond-green">31.0</td><td class="cond-green">31.5</td>
+            <td class="cond-green" style="text-align:center;font-weight:800">↓ 3.8d</td>
+          </tr>
+          <tr class="total-row">
+            <td class="label-cell" style="padding-left:10px;font-weight:700">Working Capital Required (₹ Cr)</td>
+            <td>7.10</td><td>7.77</td><td>8.35</td><td>7.85</td>
+            <td style="text-align:center;color:#64748b">₹7.77 avg</td>
+          </tr>
+          <tr>
+            <td class="label-cell">WC as % of Revenue</td>
+            <td>38.6%</td><td>36.7%</td><td>33.9%</td><td>34.4%</td>
+            <td style="color:#166534;text-align:center;font-weight:700">↓ 4.2pp</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </div><!-- /tab-ccc -->
+
+    <!-- TAB BAR -->
+    <div class="excel-tabs">
+      <button class="excel-tab active" onclick="switchTab('cashflow','SLV_CashFlow_Forecast.xlsx — Cash Flow Forecast')">Cash Flow Forecast</button>
+      <button class="excel-tab" onclick="switchTab('ltv','SLV_Unit_Economics.xlsx — LTV / CAC Analysis')">LTV / CAC</button>
+      <button class="excel-tab" onclick="switchTab('ccc','SLV_Working_Capital.xlsx — Cash Conversion Cycle')">Cash Conversion Cycle</button>
+    </div>
+  </div>
+</section>
+
+<script>
+function switchTab(id, title) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.excel-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  document.getElementById('excel-title').textContent = title;
+  event.target.classList.add('active');
+}
+</script>
+
+<!-- ══ SCREEN 2: METRICS + DELIVERABLES ══ -->
+<section class="metrics-section">
+  <div class="metrics-strip">
+    <div class="metric">
+      <div class="metric-num">30</div>
+      <div class="metric-label">Days to first MIS</div>
+    </div>
+    <div class="metric">
+      <div class="metric-num">Day 5</div>
+      <div class="metric-label">Monthly delivery</div>
+    </div>
+    <div class="metric">
+      <div class="metric-num">40+</div>
+      <div class="metric-label">Firms served</div>
+    </div>
+    <div class="metric">
+      <div class="metric-num">90d</div>
+      <div class="metric-label">Cash visibility window</div>
+    </div>
+  </div>
+
+  <div class="deliverables">
+    <div class="deliverable">
+      <div class="icon"><span class="material-symbols-outlined">monitoring</span></div>
+      <h3>Cash Flow Forecasting</h3>
+      <p>30/60/90-day rolling forecast, updated weekly. You see shortfalls before they become crises.</p>
+    </div>
+    <div class="deliverable">
+      <div class="icon"><span class="material-symbols-outlined">insert_chart</span></div>
+      <h3>Management MIS</h3>
+      <p>Monthly P&L, balance sheet, and cash flow — with commentary that explains why the numbers moved.</p>
+    </div>
+    <div class="deliverable">
+      <div class="icon"><span class="material-symbols-outlined">pie_chart</span></div>
+      <h3>Margin Analysis</h3>
+      <p>Product-line and segment-level profitability. Actual contribution margins, not guesswork.</p>
+    </div>
+    <div class="deliverable">
+      <div class="icon"><span class="material-symbols-outlined">compare_arrows</span></div>
+      <h3>Budget vs Actuals</h3>
+      <p>Monthly variance with driver-level commentary. Not "revenue was down" — but why, and what to do.</p>
+    </div>
+    <div class="deliverable">
+      <div class="icon"><span class="material-symbols-outlined">rocket_launch</span></div>
+      <h3>Investor Readiness</h3>
+      <p>Financial models, board decks, data rooms. Answer investor questions off a sheet. Credible. Confident.</p>
+    </div>
+    <div class="deliverable">
+      <div class="icon"><span class="material-symbols-outlined">verified</span></div>
+      <h3>Reconciliation</h3>
+      <p>Bank, GST, inter-company — reconciled to the rupee. Clean books that survive any scrutiny.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SCREEN 3: CTA ══ -->
+<section class="cta-section">
+  <h2>The First Step Is a Conversation.</h2>
+  <p>No pitch deck. No pressure. Just a clear-eyed assessment of where your finance function stands.</p>
+  <div class="cta-buttons">
+    <a href="contact.html" class="btn-cta-primary">Schedule a Confidential Discussion <span>&rarr;</span></a>
+    <a href="https://wa.me/919193580737" class="btn-cta-secondary" target="_blank">WhatsApp</a>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer style="background:#0f172a;padding:64px 48px 32px;color:#94a3b8;font-family:'Inter',sans-serif;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;">
+      <div>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+          <img src="slv-northstar-logo.svg" alt="Seven Labs Vision" style="height:36px;width:auto;filter:brightness(0) invert(1);">
+        </div>
+        <p style="font-size:13px;line-height:1.7;margin-bottom:16px;">CA-led advisory firm transforming MSMEs and startups with hands-on implementation — ERP, SOPs, KPIs, financial control.</p>
+        <p style="font-size:13px;"><span style="color:#64748b;">Email:</span> admin@sevenlabs.in</p>
+        <p style="font-size:13px;"><span style="color:#64748b;">Phone:</span> +91 91935 80737</p>
+        <div style="display:flex;gap:12px;margin-top:16px;">
+          <a href="https://www.linkedin.com/company/seven-labs-vision/" style="color:#94a3b8;font-size:13px;text-decoration:none;" target="_blank">LinkedIn</a>
+          <a href="https://www.instagram.com/sevenlabsvision/" style="color:#94a3b8;font-size:13px;text-decoration:none;" target="_blank">Instagram</a>
+          <a href="https://www.facebook.com/sevenlabsvision" style="color:#94a3b8;font-size:13px;text-decoration:none;" target="_blank">Facebook</a>
+        </div>
+      </div>
+      <div>
+        <h4 style="font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:#fff;margin-bottom:16px;text-transform:uppercase;letter-spacing:1px;">Services</h4>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <a href="virtual-cfo.html" style="font-size:13px;color:#94a3b8;text-decoration:none;">Virtual CFO</a>
+          <a href="process-design.html" style="font-size:13px;color:#94a3b8;text-decoration:none;">Process Design</a>
+          <a href="erp-implementation.html" style="font-size:13px;color:#94a3b8;text-decoration:none;">ERP Implementation</a>
+        </div>
+      </div>
+      <div>
+        <h4 style="font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:#fff;margin-bottom:16px;text-transform:uppercase;letter-spacing:1px;">Company</h4>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <a href="about.html" style="font-size:13px;color:#94a3b8;text-decoration:none;">About Us</a>
+          <a href="careers.html" style="font-size:13px;color:#94a3b8;text-decoration:none;">Careers</a>
+          <a href="blog.html" style="font-size:13px;color:#94a3b8;text-decoration:none;">Blog</a>
+          <a href="contact.html" style="font-size:13px;color:#94a3b8;text-decoration:none;">Contact</a>
+          <a href="index.html" style="font-size:13px;color:#94a3b8;text-decoration:none;">Home</a>
+        </div>
+      </div>
+      <div>
+        <h4 style="font-family:'Manrope',sans-serif;font-size:13px;font-weight:700;color:#fff;margin-bottom:16px;text-transform:uppercase;letter-spacing:1px;">Offices</h4>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <p style="font-size:13px;">Delhi NCR (Ghaziabad)</p>
+          <p style="font-size:13px;">Agra</p>
+          <p style="font-size:13px;">Jaipur</p>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid #1e293b;padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+      <p style="font-size:12px;color:#64748b;">&copy; 2026 Seven Labs Vision. All rights reserved.</p>
+      <p style="font-size:12px;color:#64748b;">Founded by CA Raghav Bansal</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
